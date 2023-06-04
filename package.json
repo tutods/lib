@@ -5,6 +5,7 @@
   "private": false,
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "url": "https://github.com/tutods/eslint-config"
   },
