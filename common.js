@@ -1,9 +1,7 @@
+const appRoot = require('app-root-path');
 const fs = require('fs');
 const path = require('path');
-
-const tsconfigFile = fs.readFileSync(
-  path.resolve(__dirname, './tsconfig.json'),
-);
+const tsconfigFile = require(`${appRoot}/tsconfig.json`);
 
 // Paths to ignore
 const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist', 'out', 'build',
@@ -15,9 +13,9 @@ const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist
 
 
 // Paths on tsconfig.json
-const tsconfigPaths = Object.keys(tsconfigFile.compilerOptions.paths ?? {}).map(
+const tsconfigPaths = !!tsconfigFile && !!tsconfigFile.compilerOptions.paths ? Object.keys(tsconfigFile.compilerOptions.paths).map(
   (path) => path.split('/')[0],
-);
+) : undefined;
 
 console.log(tsconfigPaths, '<--');
 
