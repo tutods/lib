@@ -17,8 +17,6 @@ const tsconfigPaths = !!tsconfigFile && !!tsconfigFile.compilerOptions.paths ? O
   (path) => path.split('/')[0],
 ) : undefined;
 
-console.log(tsconfigPaths, '<--');
-
 // Folders on src/
 const srcFolders = fs
   .readdirSync('./src', {
