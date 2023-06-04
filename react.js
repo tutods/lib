@@ -1,6 +1,6 @@
-import { folders, tsconfigPaths } from './common';
+const { folders, tsconfigPaths } = require('./common');
 
-export default {
+module.exports = {
   env: {
     browser: true,
     es2021: true,

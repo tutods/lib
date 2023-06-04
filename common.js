@@ -1,17 +1,17 @@
-import * as fs from 'fs';
-import * as path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 const tsconfigFile = fs.readFileSync(
-  path.resolve(__dirname, './tsconfig.json')
-)
+  path.resolve(__dirname, './tsconfig.json'),
+);
 
 // Paths to ignore
-const pathsToIgnore = ['.git','.github','.husky','.next','.storybook','dist','out','build',
-'node_modules',
-'sanity',
-'src',
-'storybook-static',
-'styles']
+const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist', 'out', 'build',
+  'node_modules',
+  'sanity',
+  'src',
+  'storybook-static',
+  'styles'];
 
 
 // Paths on tsconfig.json
@@ -19,7 +19,7 @@ const tsconfigPaths = Object.keys(tsconfigFile.compilerOptions.paths ?? {}).map(
   (path) => path.split('/')[0],
 );
 
-console.log(tsconfigPaths,"<--")
+console.log(tsconfigPaths, '<--');
 
 // Folders on src/
 const srcFolders = fs
@@ -37,21 +37,11 @@ const rootFolders = fs
   .filter(
     (dirent) =>
       dirent.isDirectory() &&
-      ![
-        '.husky',
-        '.github',
-        '.next',
-        '.storybook',
-        'node_modules',
-        'sanity',
-        'src',
-        'storybook-static',
-        'styles',
-      ].includes(dirent.name),
+      !pathsToIgnore.includes(dirent.name),
   )
   .map((dirent) => dirent.name);
 
-// Join both folders
-const folders = [...rootFolders, ...srcFolders];
-
-export {folders, tsconfigPaths}
+module.exports = {
+  folders: [...rootFolders, ...srcFolders],
+  tsconfigPaths,
+};

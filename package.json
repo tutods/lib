@@ -1,11 +1,10 @@
 {
   "name": "@tutods/eslint-config",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "ESLint configuration used in all my projects",
   "private": false,
   "main": "index.js",
   "license": "MIT",
-  "type": "module",
   "repository": {
     "url": "https://github.com/tutods/eslint-config"
   },
