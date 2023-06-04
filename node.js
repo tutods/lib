@@ -1,7 +1,10 @@
 import { folders, tsconfigPaths } from './common';
 
 export default {
-  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+  },
   extends: ['prettier'],
   plugins: ['prettier'],
   rules: {
