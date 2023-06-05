@@ -1,0 +1,7 @@
+.next
+pnpm-lock.yaml
+.vscode
+.idea
+dist
+build
+out
