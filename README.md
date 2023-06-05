@@ -48,22 +48,15 @@ To use this **ESLint** config. you need to follow the steps below:
 
 ## About Me
 
-[![Facebook][facebook]][facebook-url] [![Twitter][twitter]][twitter-url] [![Linkedin][linkedin]][linkedin-url] [![GitHub][github]][github-url]
-[![GitLab][gitlab]][gitlab-url] [![Rocketseat][rocketseat]][rocketseat-url]
+[![Twitter][twitter]][twitter-url] [![Linkedin][linkedin]][linkedin-url] [![GitHub][github]][github-url]
 
 
 [forks-shield]: https://img.shields.io/github/forks/tutods/tailwindcss-travel-website?style=for-the-badge
 [forks-url]: https://github.com/tutods/tailwindcss-travel-website/network/members
 [stars-shield]: https://img.shields.io/github/stars/tutods/tailwindcss-travel-website?style=for-the-badge
 [stars-url]: https://github.com/tutods/tailwindcss-travel-website/stargazers
-[rocketseat]: https://img.shields.io/badge/Rocketseat-1E4174?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAALVBMVEVHcExxWsF0XMJzXMJxWcFsUsD///9jRrzY0u6Xh9Gsn9n39fyMecy0qd2bjNJWBT0WAAAABHRSTlMA2Do606wF2QAAAGlJREFUGJVdj1cWwCAIBLEsRU3uf9xobDH8+GZwUYi8i6ucJwrxKE+7D0G9Q4vlYqtmCSjndr4CgCgzlyFgfKfKCVO0LrPKjmiqMxGXkJwNnXskqWG+1oSM+BSwD8f29YLNjvx/OQrn+g99oQSoNmt3PgAAAABJRU5ErkJggg==
-[rocketseat-url]: https://app.rocketseat.com.br/me/tutods14
-[gitlab]: https://img.shields.io/badge/GitLab-1E4174?style=for-the-badge&logo=GitLab&logoColor=white
-[gitlab-url]: https://gitlab.com/jdaniel.asousa
 [github]: https://img.shields.io/badge/-Github-1E4174?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/tutods
 [github-url]: https://github.com/tutods
-[facebook]: https://img.shields.io/badge/Facebook-1E4174?style=for-the-badge&logo=facebook&logoColor=white
-[facebook-url]: https://facebook.com/tutods2014
 [twitter]: https://img.shields.io/badge/Twitter-1E4174?style=for-the-badge&logo=twitter&logoColor=white
 [twitter-url]: https://twitter.com/dsousa_12/
 [linkedin]: https://img.shields.io/badge/Linkedin-1E4174?style=for-the-badge&logo=Linkedin&logoColor=white
