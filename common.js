@@ -1,5 +1,6 @@
 const fs = require('fs');
-const tsconfigFile = require(`/tsconfig.json`);
+const appRoot = require('app-root-path');
+const tsconfigFile = require(`${appRoot}/tsconfig.json`);
 
 // Paths to ignore
 const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist', 'out', 'build',
