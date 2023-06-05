@@ -1,4 +1,4 @@
-const {folders, tsconfigPaths} = require('./common');
+const { folders, tsconfigPaths } = require('./common');
 
 module.exports = {
   env: {
@@ -10,11 +10,9 @@ module.exports = {
   rules: {
     'prettier/prettier': [
       'error',
+      {},
       {
-        singleQuote: true,
-        trailingComma: "all",
-        jsxSingleQuote: false,
-        endOfLine: "lf"
+        'usePrettierrc': false,
       },
     ],
   },

@@ -10,11 +10,9 @@ module.exports = {
   rules: {
     'prettier/prettier': [
       'error',
+      {},
       {
-        singleQuote: true,
-        trailingComma: "all",
-        jsxSingleQuote: false,
-        endOfLine: "lf"
+        'usePrettierrc': false,
       },
     ],
   },
