@@ -1,6 +1,6 @@
 {
   "name": "@tutods/eslint-config",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "ESLint configuration used in all my projects",
   "private": false,
   "main": "index.js",
