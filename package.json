@@ -22,7 +22,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
-    "app-root-path": "^3.1.0"
+    "app-root-path": "^3.1.0",
     "eslint": "^8.42.0",
     "eslint-config-next": "13.4.4",
     "eslint-config-prettier": "^8.8.0",
