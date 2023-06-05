@@ -11,7 +11,10 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        usePrettierrc: true,
+        singleQuote: true,
+        trailingComma: "all",
+        jsxSingleQuote: false,
+        endOfLine: "lf"
       },
     ],
   },
