@@ -13,9 +13,9 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: "all",
+        trailingComma: 'all',
         jsxSingleQuote: false,
-        endOfLine: "lf"
+        endOfLine: 'lf',
       },
     ],
   },
@@ -48,6 +48,10 @@ module.exports = {
         'unused-imports',
       ],
       rules: {
+        '@typescript-eslint/consistent-type-imports': ['error', {
+          prefer: 'type-imports',
+        }],
+        '@typescript-eslint/consistent-type-exports': 'error',
         '@typescript-eslint/ban-types': 'warn',
         '@typescript-eslint/no-empty-function': 'warn',
         '@typescript-eslint/no-this-alias': 'warn',
