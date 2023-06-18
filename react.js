@@ -50,8 +50,11 @@ module.exports = {
       rules: {
         '@typescript-eslint/consistent-type-imports': ['error', {
           prefer: 'type-imports',
+          fixStyle: "separate-type-imports",
         }],
-        '@typescript-eslint/consistent-type-exports': 'error',
+        '@typescript-eslint/consistent-type-exports': ['error', {
+          fixMixedExportsWithInlineTypeSpecifier: false,
+        }],
         '@typescript-eslint/ban-types': 'warn',
         '@typescript-eslint/no-empty-function': 'warn',
         '@typescript-eslint/no-this-alias': 'warn',
