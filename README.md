@@ -22,9 +22,9 @@ This repository contains the **ESLint** and **Prettier** configuration used on m
 To use this **ESLint** config. you need to follow the steps below:
 
 1. Install the package:
-    - **NPM:** `npm i -D @tutods/eslint-config`;
-    - **Yarn:** `yarn add -D @tutods/eslint-config`;
-    - **PNPM:** `pnpm add -D @tutods/eslint-config`.
+    - **NPM:** `npm i -D eslint prettier @tutods/eslint-config`;
+    - **Yarn:** `yarn add -D eslint prettier @tutods/eslint-config`;
+    - **PNPM:** `pnpm add -D eslint prettier @tutods/eslint-config`.
 
 2. Create **ESLint** config. file (if it does not exist) - `.eslintrc.json` - and past the content below:
     - **For React:**
