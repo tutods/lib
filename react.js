@@ -26,6 +26,7 @@ module.exports = {
       rules: {
         'sort-keys-fix/sort-keys-fix': 'error',
         'sort-destructure-keys/sort-destructure-keys': 'error',
+        'arrow-body-style': ['error', 'as-needed'],
       },
     },
     {
@@ -139,8 +140,7 @@ module.exports = {
           condition: 'parens-new-line',
           logical: 'parens-new-line',
           prop: 'parens-new-line',
-        }],
-        'arrow-body-style': ['error', 'as-needed'],
+        }]
       },
     },
     {
