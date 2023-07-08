@@ -8,13 +8,20 @@ const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist
   'storybook-static',
   'styles'];
 
-
 // Paths on tsconfig.json
-const tsconfig = fs.readFileSync('./tsconfig.json');
-const parsedTsconfig = JSON.parse(tsconfig);
-const tsconfigPaths = !!tsconfig && !!parsedTsconfig.compilerOptions.paths.length ? Object.keys(parsedTsconfig.compilerOptions.paths).map(
-  (path) => path.split('/')[0],
-) : undefined;
+let tsconfigPaths = undefined;
+
+
+if (fs.existsSync('./tsconfig.json')) {
+  const tsconfig = fs.readFileSync('./tsconfig.json');
+  const parsedTsconfig = JSON.parse(tsconfig);
+
+  tsconfigPaths = !!parsedTsconfig && !!parsedTsconfig.compilerOptions.paths.length ? Object.keys(parsedTsconfig.compilerOptions.paths).map(
+    (path) => path.split('/')[0],
+  ) : undefined;
+
+}
+
 
 // Folders on src/
 const srcFolders = fs
