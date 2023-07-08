@@ -1,5 +1,8 @@
 const fs = require('fs');
 
+let srcFolders = [];
+let tsconfigPaths = [];
+
 // Paths to ignore
 const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist', 'out', 'build',
   'node_modules',
@@ -9,24 +12,26 @@ const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist
   'styles'];
 
 // Paths on tsconfig.json
-let tsconfigPaths = undefined;
-
 if (fs.existsSync('./tsconfig.json')) {
   const tsconfig = fs.readFileSync('./tsconfig.json');
   const parsedTsconfig = JSON.parse(tsconfig);
 
-  tsconfigPaths = !!parsedTsconfig.compilerOptions.paths ? Object.keys(parsedTsconfig.compilerOptions.paths).map(
-    (path) => path.split('/')[0],
-  ) : undefined;
+  if (parsedTsconfig.compilerOptions && !!parsedTsconfig.compilerOptions.paths) {
+    tsconfigPaths = Object.keys(parsedTsconfig.compilerOptions?.paths).map(
+      (path) => path.split('/')[0]);
+  }
 }
 
 // Folders on src/
-const srcFolders = fs
-  .readdirSync('./src', {
-    withFileTypes: true,
-  })
-  .filter((dirent) => dirent.isDirectory() && !['styles'].includes(dirent.name))
-  .map((dirent) => dirent.name);
+if (fs.existsSync('./src')) {
+  console.log("HAVE SRC!")
+  srcFolders = fs
+    .readdirSync('./src', {
+      withFileTypes: true,
+    })
+    .filter((dirent) => dirent.isDirectory() && !['styles'].includes(dirent.name))
+    .map((dirent) => dirent.name);
+}
 
 // Folders on ./
 const rootFolders = fs
