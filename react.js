@@ -13,9 +13,9 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: "all",
+        trailingComma: 'all',
         jsxSingleQuote: false,
-        endOfLine: "lf"
+        endOfLine: 'lf',
       },
     ],
   },
@@ -50,7 +50,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/consistent-type-imports': ['error', {
           prefer: 'type-imports',
-          fixStyle: "separate-type-imports",
+          fixStyle: 'separate-type-imports',
         }],
         '@typescript-eslint/consistent-type-exports': ['error', {
           fixMixedExportsWithInlineTypeSpecifier: false,
@@ -123,6 +123,23 @@ module.exports = {
             reservedFirst: ['key'],
           },
         ],
+        'react/forbid-prop-types': ['error', {
+          forbid: ['any', 'array', 'object'],
+          checkContextTypes: true,
+          checkChildContextTypes: true,
+        }],
+        'react/jsx-no-duplicate-props': ['error', { ignoreCase: true }],
+        'react/jsx-uses-vars': 'error',
+        'react/self-closing-comp': 'error',
+        'react/jsx-wrap-multilines': ['error', {
+          declaration: 'parens-new-line',
+          assignment: 'parens-new-line',
+          return: 'parens-new-line',
+          arrow: 'parens-new-line',
+          condition: 'parens-new-line',
+          logical: 'parens-new-line',
+          prop: 'parens-new-line',
+        }],
       },
     },
     {
