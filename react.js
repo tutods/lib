@@ -140,6 +140,7 @@ module.exports = {
           logical: 'parens-new-line',
           prop: 'parens-new-line',
         }],
+        'arrow-body-style': ['error', 'as-needed'],
       },
     },
     {
