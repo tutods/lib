@@ -80,7 +80,7 @@ module.exports = {
               ['^@?\\w'],
               // Folders
               [
-                !!tsconfigPaths.length ? `^(${tsconfigPaths.join('|')})(/.*|$)` : '',
+                (!!tsconfigPaths && !!tsconfigPaths.length) ? `^(${tsconfigPaths.join('|')})(/.*|$)` : '',
                 `^(${folders.join('|')})(/.*|$)`,
                 '^\\.',
                 '^@\\/([a-z0-9]+)',
