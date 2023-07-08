@@ -24,7 +24,6 @@ if (fs.existsSync('./tsconfig.json')) {
 
 // Folders on src/
 if (fs.existsSync('./src')) {
-  console.log("HAVE SRC!")
   srcFolders = fs
     .readdirSync('./src', {
       withFileTypes: true,
