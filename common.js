@@ -13,11 +13,10 @@ const pathsToIgnore = ['.git', '.github', '.husky', '.next', '.storybook', 'dist
 
 // Paths on tsconfig.json
 if (fs.existsSync('./tsconfig.json')) {
-  const tsconfig = fs.readFileSync('./tsconfig.json');
-  const parsedTsconfig = JSON.parse(tsconfig);
+  const tsconfig = JSON.parse(fs.readFileSync('./tsconfig.json'));
 
-  if (parsedTsconfig.compilerOptions && !!parsedTsconfig.compilerOptions.paths) {
-    tsconfigPaths = Object.keys(parsedTsconfig.compilerOptions?.paths).map(
+  if (tsconfig.compilerOptions && !!tsconfig.compilerOptions.paths) {
+    tsconfigPaths = Object.keys(tsconfig.compilerOptions?.paths).map(
       (path) => path.split('/')[0]);
   }
 }

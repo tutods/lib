@@ -53,7 +53,7 @@ To use this **ESLint** config. you need to follow the steps below:
 
 [forks-shield]: https://img.shields.io/github/forks/tutods/tailwindcss-travel-website?style=for-the-badge
 [forks-url]: https://github.com/tutods/tailwindcss-travel-website/network/members
-[stars-shield]: https://img.shields.io/github/stars/tutods/tailwindcss-travel-website?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/tutods/eslint-config?style=for-the-badge
 [stars-url]: https://github.com/tutods/tailwindcss-travel-website/stargazers
 [github]: https://img.shields.io/badge/-Github-1E4174?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/tutods
 [github-url]: https://github.com/tutods
