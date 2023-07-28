@@ -7,8 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "version:stable": "",
-    "version:prerelease": "",
+    "format": "prettier --write ./packages",
     "publish:stable": "",
     "publish:prerelease": ""
   },
