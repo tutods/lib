@@ -1,1 +1,1 @@
-module.exports = required('./typescript');
+module.exports = require('./typescript');

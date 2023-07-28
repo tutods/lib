@@ -41,20 +41,21 @@ module.exports = {
         extraFileExtensions: ['.css'],
         project: './tsconfig.json',
       },
-      plugins: [
-        '@typescript-eslint',
-        'simple-import-sort',
-        'import',
-        'unused-imports',
-      ],
+      plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'unused-imports'],
       rules: {
-        '@typescript-eslint/consistent-type-imports': ['error', {
-          prefer: 'type-imports',
-          fixStyle: 'separate-type-imports',
-        }],
-        '@typescript-eslint/consistent-type-exports': ['error', {
-          fixMixedExportsWithInlineTypeSpecifier: false,
-        }],
+        '@typescript-eslint/consistent-type-imports': [
+          'error',
+          {
+            prefer: 'type-imports',
+            fixStyle: 'separate-type-imports',
+          },
+        ],
+        '@typescript-eslint/consistent-type-exports': [
+          'error',
+          {
+            fixMixedExportsWithInlineTypeSpecifier: false,
+          },
+        ],
         '@typescript-eslint/ban-types': 'warn',
         '@typescript-eslint/no-empty-function': 'warn',
         '@typescript-eslint/no-this-alias': 'warn',

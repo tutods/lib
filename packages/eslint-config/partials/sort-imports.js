@@ -1,3 +1,12 @@
+// Validation that package exists
+try {
+  const importSortPlugin = require('eslint-plugin-simple-import-sort');
+} catch (er) {
+  throw new Error('Please add eslint-plugin-simple-import-sort package');
+}
+
+const { folders, tsconfigPaths } = require('$helpers/folders');
+
 module.exports = {
   plugins: ['simple-import-sort'],
   rules: {

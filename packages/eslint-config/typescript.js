@@ -1,5 +1,14 @@
+// Validation that package exists
+try {
+  const typescript = require('typescript');
+  const tsEslintPlugin = require('@typescript-eslint/eslint-plugin');
+  const tsParser = require('@typescript-eslint/parser');
+} catch (er) {
+  throw new Error('Please add typescript and eslint packages');
+}
+
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended'],
+  extends: ['plugin:@typescript-eslint/recommended', './partials/prettier'],
   plugins: ['unused-imports'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
