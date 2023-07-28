@@ -22,7 +22,7 @@ module.exports = {
   },
   settings: {
     tailwindcss: {
-      calles: ['className', 'tw', 'cn', 'clsx'],
+      calles: ['className', 'tw', 'cn', 'clsx', 'clsxm', 'twMerge'],
     },
   },
 };
