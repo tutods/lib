@@ -1,0 +1,20 @@
+{
+  "name": "prettier-config",
+  "version": "1.0.0",
+  "keywords": [
+    "prettier",
+    "formatting"
+  ],
+  "author": {
+    "name": "Daniel Sousa @Tutods",
+    "url": "https://github.com/tutods"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "peerDependencies": {
+    "prettier": ">=2.0.0"
+  }
+}
