@@ -8,8 +8,10 @@
   ],
   "scripts": {
     "format": "prettier --write ./packages",
-    "publish:stable": "",
-    "publish:prerelease": ""
+    "pre:version:stable": "lerna version --conventional-commits yes --message \"chore(stable version): publish\"",
+    "version:stable": "lerna publish from-git --no-verify-access -no-verify-registry --yes",
+    "pre:version:beta": "lerna version --conventional-commits yes --message \"chore(beta version): publish\"",
+    "version:beta": "lerna publish from-git --canary --no-verify-access --no-verify-registry"
   },
   "devDependencies": {
     "lerna": "^7.1.4",
