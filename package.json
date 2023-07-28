@@ -6,7 +6,12 @@
   "workspaces": [
     "packages/*"
   ],
-  "dependencies": {},
+  "scripts": {
+    "version:stable": "",
+    "version:prerelease": "",
+    "publish:stable": "",
+    "publish:prerelease": ""
+  },
   "devDependencies": {
     "lerna": "^7.1.4",
     "prettier": "^3.0.0"

@@ -20,8 +20,12 @@
     "./javascript": "./javascript.js",
     "./typescript": "./typescript.js",
     "./react": "./libs/react.js",
+    "./react-tsx": "./libs/react-tsx.js",
     "./node": "./libs/node.js",
-    "./tailwind": "./libs/tailwind.js"
+    "./tailwind": "./libs/tailwind.js",
+    "./sort-keys": "./partials/sort-keys.js",
+    "./sort-imports": "./partials/sort-imports.js",
+    "./prettier": "./partials/prettier.js"
   },
   "dependencies": {
     "eslint": "^8.42.0",
@@ -31,15 +35,15 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-sort-destructure-keys": "^1.5.0",
-    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-unused-imports": "^2.0.0"
   },
   "peerDependencies": {
     "eslint": "^7.24.0|| ^8.0.0",
     "typescript": ">=4.0.1",
     "@typescript-eslint/eslint-plugin": ">=5.59.8",
-    "@typescript-eslint/parser": ">=5.59.8"
+    "@typescript-eslint/parser": ">=5.59.8",
+    "eslint-plugin-sort-destructure-keys": ">=1.5.0",
+    "eslint-plugin-sort-keys-fix": ">=1.1.2"
   },
   "peerDependenciesMeta": {
     "typescript": {
@@ -49,6 +53,12 @@
       "optional": true
     },
     "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-sort-destructure-keys": {
+      "optional": true
+    },
+    "eslint-plugin-sort-keys-fix": {
       "optional": true
     }
   }

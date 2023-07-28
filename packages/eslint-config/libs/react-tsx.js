@@ -29,6 +29,10 @@ module.exports = {
         ecmaFeatures: {
           jsx: true,
         },
+        ecmaVersion: 12,
+        sourceType: 'module',
+        extraFileExtensions: ['.css'],
+        project: './tsconfig.json',
       },
       plugins: ['@typescript-eslint', 'simple-import-sort', 'import', 'unused-imports'],
       rules: {
@@ -62,6 +66,28 @@ module.exports = {
         'import/newline-after-import': 'error',
         'import/no-duplicates': 'error',
         'unused-imports/no-unused-imports': 'error',
+        'simple-import-sort/imports': [
+          'error',
+          {
+            groups: [
+              // Packages
+              ['^@?\\w'],
+              // Folders
+              [
+                !!tsconfigPaths && !!tsconfigPaths.length
+                  ? `^(${tsconfigPaths.join('|')})(/.*|$)`
+                  : '',
+                `^(${folders.join('|')})(/.*|$)`,
+                '^\\.',
+                '^@\\/([a-z0-9]+)',
+              ],
+              // Styles
+              ['^styles', 'styles', './styles', '^.+\\.s?css$'],
+              // If not match on other groups
+              ['^'],
+            ],
+          },
+        ],
       },
     },
     {
