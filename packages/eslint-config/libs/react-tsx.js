@@ -13,6 +13,7 @@ module.exports = {
   },
   rules: {},
   settings: {
+    // TODO: check if it's necessary
     'import/parsers': {
       [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
     },
