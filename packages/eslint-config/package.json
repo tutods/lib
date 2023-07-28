@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config",
-  "version": "0.0.1-0.0.1-alpha.1.0",
+  "name": "@tutods/eslint-config",
+  "version": "0.0.1",
   "keywords": [
     "eslint",
     "react",
