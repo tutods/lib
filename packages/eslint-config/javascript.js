@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint:recommended', './partials/prettier', './partials/import'],
+  extends: ['eslint:recommended', './partials/prettier', './partials/imports'],
   plugins: [],
   rules: {
     'prefer-rest-params': 'warn',
