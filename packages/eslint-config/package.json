@@ -1,0 +1,82 @@
+{
+  "name": "eslint-config",
+  "version": "0.0.0",
+  "keywords": [
+    "eslint",
+    "react",
+    "tailwind",
+    "node",
+    "javascript",
+    "typescript"
+  ],
+  "author": {
+    "name": "Daniel Sousa @Tutods",
+    "url": "https://github.com/tutods"
+  },
+  "repository": "https://github.com/tutods/lib",
+  "license": "MIT",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./javascript": "./javascript.js",
+    "./typescript": "./typescript.js",
+    "./react": "./libs/react.js",
+    "./react-tsx": "./libs/react-tsx.js",
+    "./node": "./libs/node.js",
+    "./tailwind": "./libs/tailwind.js",
+    "./sort-keys": "./partials/sort-keys.js",
+    "./sort-imports": "./partials/sort-imports.js",
+    "./prettier": "./partials/prettier.js"
+  },
+  "dependencies": {
+    "eslint": "^8.42.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=5",
+    "@typescript-eslint/parser": ">=5",
+    "eslint": ">=8.0.0",
+    "eslint-config-prettier": ">=8",
+    "eslint-plugin-prettier": ">=5",
+    "eslint-plugin-simple-import-sort": ">=10",
+    "eslint-plugin-sort-destructure-keys": ">=1",
+    "eslint-plugin-sort-keys-fix": ">=1",
+    "eslint-plugin-tailwindcss": ">=3",
+    "typescript": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-sort-destructure-keys": {
+      "optional": true
+    },
+    "eslint-plugin-sort-keys-fix": {
+      "optional": true
+    },
+    "eslint-plugin-simple-import-sort": {
+      "optional": true
+    },
+    "eslint-plugin-tailwindcss": {
+      "optional": true
+    },
+    "eslint-config-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-prettier": {
+      "optional": true
+    }
+  },
+  "gitHead": "80054df06a91fd9cffd96e24ecd6eda62563ef8e"
+}

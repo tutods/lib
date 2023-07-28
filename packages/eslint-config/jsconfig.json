@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "$libs/*": ["libs/*"],
+      "$helpers/*": ["helpers/*"],
+      "$partials/*": ["partials/*"]
+    }
+  },
+  "include": ["./**/*.js"],
+  "exclude": ["node_modules", "**/node_modules", "dist"]
+}
