@@ -1,4 +1,4 @@
-const { folders, tsconfigPaths } = require('$helpers/folders');
+const { folders, tsconfigPaths } = require('../helpers/folders');
 
 module.exports = {
   env: {

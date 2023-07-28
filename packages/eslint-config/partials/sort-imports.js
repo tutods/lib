@@ -5,7 +5,7 @@ try {
   throw new Error('Please add eslint-plugin-simple-import-sort package');
 }
 
-const { folders, tsconfigPaths } = require('$helpers/folders');
+const { folders, tsconfigPaths } = require('../helpers/folders');
 
 module.exports = {
   plugins: ['simple-import-sort'],
