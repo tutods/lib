@@ -9,13 +9,14 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
+      // extraFileExtensions: ['.css'],
     },
   },
   rules: {},
   settings: {
     // TODO: check if it's necessary
-    'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
-    },
+    // 'import/parsers': {
+    //   [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    // },
   },
 };

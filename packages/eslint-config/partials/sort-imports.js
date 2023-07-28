@@ -10,6 +10,7 @@ const { folders, tsconfigPaths } = require('$helpers/folders');
 module.exports = {
   plugins: ['simple-import-sort'],
   rules: {
+    'simple-import-sort/exports': 'error',
     'simple-import-sort/imports': [
       'error',
       {

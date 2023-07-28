@@ -8,12 +8,18 @@ try {
 }
 
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended', './partials/prettier', './partials/import'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'javascript',
+    './partials/prettier',
+    './partials/import',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  plugins: ['@typescript-eslint'],
   rules: {
     '@typescript-eslint/consistent-type-imports': [
       'error',
@@ -39,5 +45,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/ban-ts-comment': 'warn',
   },
 };
