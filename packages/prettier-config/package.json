@@ -9,7 +9,10 @@
     "name": "Daniel Sousa @Tutods",
     "url": "https://github.com/tutods"
   },
-  "repository": "https://github.com/tutods/lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutods/lib.git"
+  },
   "license": "MIT",
   "main": "index.js",
   "exports": {

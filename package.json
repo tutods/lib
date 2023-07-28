@@ -6,6 +6,10 @@
   "workspaces": [
     "packages/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutods/lib.git"
+  },
   "scripts": {
     "format": "prettier --write ./packages",
     "pre:version:stable": "lerna version --conventional-commits yes --message \"chore(stable version): publish\"",
