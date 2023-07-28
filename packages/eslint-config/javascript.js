@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['./partials/prettier'],
+  extends: ['./partials/prettier', './partials/import'],
   plugins: [],
   rules: {},
 };

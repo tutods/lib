@@ -4,7 +4,17 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['../typescript', '../partials/sort-imports', '../partials/prettier'],
+  extends: ['./react', '../typescript', '../partials/sort-imports', '../partials/prettier'],
   plugins: [],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   rules: {},
+  settings: {
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    },
+  },
 };

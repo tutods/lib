@@ -6,11 +6,75 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    '../javascript',
+    '../partials/prettier',
+  ],
+  plugins: ['react', 'jsx-a11y'],
   rules: {
-    'prettier/prettier': ['error', {}],
+    'jsx-quotes': ['error', 'prefer-double'],
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'react/display-name': 'off',
+    'react/jsx-curly-brace-presence': [
+      'error',
+      {
+        props: 'never',
+      },
+    ],
+    'react/jsx-boolean-value': ['error', 'never'],
+    'react/jsx-sort-props': [
+      'error',
+      {
+        shorthandFirst: true,
+        multiline: 'last',
+        reservedFirst: ['key'],
+      },
+    ],
+    'react/forbid-prop-types': [
+      'error',
+      {
+        forbid: ['any', 'array', 'object'],
+        checkContextTypes: true,
+        checkChildContextTypes: true,
+      },
+    ],
+    'react/jsx-no-duplicate-props': ['error', { ignoreCase: true }],
+    'react/jsx-uses-vars': 'error',
+    'react/self-closing-comp': 'error',
+    'react/jsx-wrap-multilines': [
+      'error',
+      {
+        declaration: 'parens-new-line',
+        assignment: 'parens-new-line',
+        return: 'parens-new-line',
+        arrow: 'parens-new-line',
+        condition: 'parens-new-line',
+        logical: 'parens-new-line',
+        prop: 'parens-new-line',
+      },
+    ],
+    'jsx-a11y/alt-text': [
+      'warn',
+      {
+        elements: ['img'],
+        img: ['Image'],
+      },
+    ],
+    'jsx-a11y/aria-props': 'warn',
+    'jsx-a11y/aria-proptypes': 'warn',
+    'jsx-a11y/aria-unsupported-elements': 'warn',
+    'jsx-a11y/role-has-required-aria-props': 'warn',
+    'jsx-a11y/role-supports-aria-props': 'warn',
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+  // BACKUP
   overrides: [
     {
       files: ['**/*.ts?(x)', '**/*.(m|c)?js?(x)'],
@@ -62,66 +126,6 @@ module.exports = {
         'import/newline-after-import': 'error',
         'import/no-duplicates': 'error',
         'unused-imports/no-unused-imports': 'error',
-      },
-    },
-    {
-      files: ['**/*.tsx', '**/*.jsx'],
-      extends: ['plugin:react/recommended'],
-      plugins: ['react'],
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
-      rules: {
-        'jsx-quotes': ['error', 'prefer-double'],
-        'react/prop-types': 'off',
-        'react/react-in-jsx-scope': 'off',
-        'react/display-name': 'off',
-        'react/jsx-curly-brace-presence': [
-          'error',
-          {
-            props: 'never',
-          },
-        ],
-        'react/jsx-boolean-value': ['error', 'never'],
-        'react/jsx-sort-props': [
-          'error',
-          {
-            shorthandFirst: true,
-            multiline: 'last',
-            reservedFirst: ['key'],
-          },
-        ],
-        'react/forbid-prop-types': [
-          'error',
-          {
-            forbid: ['any', 'array', 'object'],
-            checkContextTypes: true,
-            checkChildContextTypes: true,
-          },
-        ],
-        'react/jsx-no-duplicate-props': ['error', { ignoreCase: true }],
-        'react/jsx-uses-vars': 'error',
-        'react/self-closing-comp': 'error',
-        'react/jsx-wrap-multilines': [
-          'error',
-          {
-            declaration: 'parens-new-line',
-            assignment: 'parens-new-line',
-            return: 'parens-new-line',
-            arrow: 'parens-new-line',
-            condition: 'parens-new-line',
-            logical: 'parens-new-line',
-            prop: 'parens-new-line',
-          },
-        ],
-      },
-    },
-    {
-      files: ['**/*.js?(x)'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
       },
     },
   ],

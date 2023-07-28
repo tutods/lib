@@ -8,8 +8,7 @@ try {
 }
 
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended', './partials/prettier'],
-  plugins: ['unused-imports'],
+  extends: ['plugin:@typescript-eslint/recommended', './partials/prettier', './partials/import'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -33,6 +32,12 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/no-this-alias': 'warn',
     '@typescript-eslint/no-explicit-any': 'off',
-    'unused-imports/no-unused-imports': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_',
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
 };
