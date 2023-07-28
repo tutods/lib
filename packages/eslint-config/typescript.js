@@ -10,7 +10,7 @@ try {
 module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
-    'javascript',
+    './javascript',
     './partials/prettier',
     './partials/import',
   ],
