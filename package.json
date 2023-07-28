@@ -13,9 +13,9 @@
   "scripts": {
     "format": "prettier --write ./packages",
     "pre:version:stable": "lerna version --conventional-commits yes --message \"chore(stable version): publish\"",
-    "version:stable": "lerna publish --no-private --no-verify-access -no-verify-registry --yes",
+    "version:stable": "lerna publish --no-private -no-verify-registry --yes",
     "pre:version:beta": "lerna version --conventional-commits yes --message \"chore(beta version): publish\"",
-    "version:beta": "lerna publish --no-private --canary --no-verify-access --no-verify-registry"
+    "version:beta": "lerna publish --no-private --canary --no-verify-registry"
   },
   "devDependencies": {
     "lerna": "^7.1.4",
