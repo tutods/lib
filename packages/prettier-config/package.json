@@ -1,6 +1,6 @@
 {
   "name": "prettier-config",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "keywords": [
     "prettier",
     "formatting"
@@ -9,6 +9,7 @@
     "name": "Daniel Sousa @Tutods",
     "url": "https://github.com/tutods"
   },
+  "repository": "https://github.com/tutods/lib",
   "license": "MIT",
   "main": "index.js",
   "exports": {
@@ -16,5 +17,6 @@
   },
   "peerDependencies": {
     "prettier": ">=2.0.0"
-  }
+  },
+  "gitHead": "80054df06a91fd9cffd96e24ecd6eda62563ef8e"
 }
