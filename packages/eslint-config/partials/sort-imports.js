@@ -23,10 +23,10 @@ module.exports = {
             `^(${folders.join('|')})(/.*|$)`,
             `^(.*)(${folders.join('|')})(/.*|$)`,
           ].filter(Boolean),
-          // Styles
-          ['^(.*)?styles(.*)?$', '^.+\\.s?css$', '^.+\\.sass$', '^.+\\.less$', '^(.+)?styles.ts$'],
           // Relative imports and the ones not match on the other groups
           ['^\\.(.*)?$', '^'],
+          // Styles
+          ['^(.*)?styles(.*)?$', '^.+\\.s?css$', '^.+\\.sass$', '^.+\\.less$', '^(.+)?styles.ts$'],
         ],
       },
     ],
