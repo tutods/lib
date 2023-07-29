@@ -15,13 +15,7 @@ module.exports = {
         'pages/**/*.(m|c)?js?(x)',
       ],
       rules: {
-        'react/function-component-definition': [
-          'warn',
-          {
-            namedComponents: 'arrow-function',
-            unnamedComponents: 'arrow-function',
-          },
-        ],
+        'react/function-component-definition': 'off',
       },
     },
   ],
