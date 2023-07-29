@@ -7,9 +7,9 @@ try {
 }
 
 module.exports = {
-  extends: ['plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  extends: ['prettier'],
   rules: {
     'prettier/prettier': 'error',
   },
+  plugins: ['prettier'],
 };

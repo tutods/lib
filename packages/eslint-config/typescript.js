@@ -8,7 +8,7 @@ try {
 }
 
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended', './javascript', './partials/prettier'],
+  extends: ['plugin:@typescript-eslint/recommended', './javascript'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',

@@ -4,12 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    '../javascript',
-    '../partials/prettier',
-  ],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', '../javascript'],
   plugins: ['react', 'jsx-a11y'],
   rules: {
     'jsx-quotes': ['error', 'prefer-double'],

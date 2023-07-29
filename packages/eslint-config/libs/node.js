@@ -4,11 +4,6 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    '../typescript',
-    '../partials/prettier',
-    '../partials/imports',
-    '../partials/sort-imports',
-  ],
+  extends: ['../typescript', '../partials/imports', '../partials/sort-imports'],
   rules: {},
 };

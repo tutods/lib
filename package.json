@@ -16,7 +16,6 @@
     "preversion:beta": "lerna version --conventional-commits --conventional-prerelease --preid beta --yes --message \"chore(beta version): publish\"",
     "version:beta": "lerna publish from-git --yes"
   },
-  "prettier": "@tutods/prettier-config",
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
