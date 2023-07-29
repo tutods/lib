@@ -1,5 +1,22 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.1.0](https://github.com/tutods/lib/compare/@tutods/prettier-config@0.0.10...@tutods/prettier-config@0.1.0) (2023-07-29)
+
+
+### Features
+
+* prettier setup ([99d00ee](https://github.com/tutods/lib/commit/99d00ee9001577edc499ac75478a7c1bffb1c81b))
+* setup husky and commitlint ([06c3428](https://github.com/tutods/lib/commit/06c3428a7e9db52828ef11e58af92bbadee833d7))
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
