@@ -15,6 +15,7 @@
     "url": "https://github.com/tutods"
   },
   "repository": "https://github.com/tutods/lib",
+  "homepage": "https://github.com/tutods/lib#readme",
   "license": "MIT",
   "main": "index.js",
   "exports": {
@@ -23,7 +24,7 @@
     "./typescript": "./typescript.js",
     "./react": "./libs/react.js",
     "./react-tsx": "./libs/react-tsx.js",
-    "./next-tsx": "./libs/next-tsx.js",
+    "./next": "./libs/next.js",
     "./node": "./libs/node.js",
     "./tailwind": "./libs/tailwind.js",
     "./sort-keys": "./partials/sort-keys.js",
