@@ -7,10 +7,11 @@ module.exports = {
   overrides: [
     {
       files: [
+        '**/app/**/*.ts?(x)',
         'app/**/*.ts?(x)',
-        'app/**/*.(m|c)?js?(x)',
+        'app/**/*.js?(x)',
         'pages/**/*.ts?(x)',
-        'pages/**/*.(m|c)?js?(x)',
+        'pages/**/*.js?(x)',
       ],
       rules: {
         'react/function-component-definition': 'off',
