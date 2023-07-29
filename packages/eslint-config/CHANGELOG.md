@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.1.2-beta.0...@tutods/eslint-config@1.2.0) (2023-07-29)
+
+### Features
+
+- disable function component definition for nextjs ([58399d2](https://github.com/tutods/lib/commit/58399d2738c52a305acd1a77c44875cf9ad29da1))
+
 ## [1.1.2-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.1.1...@tutods/eslint-config@1.1.2-beta.0) (2023-07-29)
 
 **Note:** Version bump only for package @tutods/eslint-config
