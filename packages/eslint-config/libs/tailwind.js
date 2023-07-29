@@ -2,7 +2,7 @@
 try {
   // eslint-disable-next-line no-unused-vars
   const plugin = require('eslint-plugin-tailwindcss');
-} catch (er) {
+} catch {
   throw new Error('Please add eslint-plugin-tailwindcss package');
 }
 

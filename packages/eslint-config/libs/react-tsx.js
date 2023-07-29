@@ -2,7 +2,7 @@ module.exports = {
   env: {
     jest: true,
   },
-  extends: ['./react', '../typescript', '../partials/sort-imports'],
+  extends: ['./react', '../typescript'],
   plugins: [],
   parserOptions: {
     ecmaFeatures: {

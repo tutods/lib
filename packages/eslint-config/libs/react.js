@@ -1,3 +1,16 @@
+try {
+  // eslint-disable-next-line no-unused-vars
+  const [reactPlugin, reactHooksPlugin, jsxA11yPlugin] = [
+    require('eslint-plugin-react'),
+    require('eslint-plugin-react-hooks'),
+    require('eslint-plugin-jsx-a11y'),
+  ];
+} catch {
+  throw new Error(
+    'Please add eslint-plugin-jsx-a11y eslint-plugin-react and eslint-plugin-react-hooks packages',
+  );
+}
+
 module.exports = {
   env: {
     jest: true,

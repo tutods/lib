@@ -6,8 +6,10 @@ try {
     require('@typescript-eslint/eslint-plugin'),
     require('@typescript-eslint/parser'),
   ];
-} catch (er) {
-  throw new Error('Please add typescript and eslint packages');
+} catch {
+  throw new Error(
+    'Please add typescript, @typescript-eslint/eslint-plugin and @typescript-eslint/parser packages',
+  );
 }
 
 module.exports = {

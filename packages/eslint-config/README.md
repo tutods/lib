@@ -58,7 +58,8 @@ See the example below.
 > }
 > ```
 >
-> **Note:** This **ESLint** configuration uses **Next.js** (with **TS**) + **TailwindCSS** + **sort keys and destructure keys** configurations.
+> **Note:** This **ESLint** configuration uses **Next.js** (with **TS**) + **TailwindCSS** + **sort keys and destructure
+> keys** configurations.
 
 ### Peers Dependencies
 
@@ -71,7 +72,9 @@ For use my **React with TypeScript** configuration, you need to install the foll
 - `typescript`;
 - `@typescript-eslint/eslint-plugin`;
 - `@typescript-eslint/parser`;
-- `eslint-plugin-simple-import-sort`.
+- `eslint-plugin-jsx-a11y`;
+- `eslint-plugin-react`;
+- `eslint-plugin-react-hooks`.
 
 #### `/prettier` configuration
 

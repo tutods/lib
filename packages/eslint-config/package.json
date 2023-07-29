@@ -23,7 +23,7 @@
   "license": "MIT",
   "main": "index.js",
   "exports": {
-    ".": "./index.js",
+    ".": "./javascript.js",
     "./javascript": "./javascript.js",
     "./typescript": "./typescript.js",
     "./react": "./libs/react.js",
@@ -42,20 +42,20 @@
     "eslint": "^8.42.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=5",
     "@typescript-eslint/parser": ">=5",
     "eslint": ">=8.0.0",
+    "eslint-plugin-jsx-a11y": ">=6",
     "eslint-config-prettier": ">=8",
     "eslint-plugin-prettier": ">=5",
     "eslint-plugin-simple-import-sort": ">=10",
     "eslint-plugin-sort-destructure-keys": ">=1",
     "eslint-plugin-sort-keys-fix": ">=1",
+    "eslint-plugin-react": ">=7",
+    "eslint-plugin-react-hooks": ">=4",
     "eslint-plugin-tailwindcss": ">=3",
     "prettier": ">=3",
     "typescript": ">=4"
@@ -89,6 +89,15 @@
       "optional": true
     },
     "eslint-plugin-prettier": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-react-hooks": {
       "optional": true
     }
   },

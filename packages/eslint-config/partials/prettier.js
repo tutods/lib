@@ -6,8 +6,10 @@ try {
     require('eslint-config-prettier'),
     require('eslint-plugin-prettier'),
   ];
-} catch (er) {
-  throw new Error('Please add prettier and eslint packages');
+} catch {
+  throw new Error(
+    'Please add prettier, eslint-config-prettier and eslint-plugin-prettier packages',
+  );
 }
 
 module.exports = {

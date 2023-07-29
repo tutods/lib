@@ -2,7 +2,7 @@
 try {
   // eslint-disable-next-line no-unused-vars
   const importSortPlugin = require('eslint-plugin-simple-import-sort');
-} catch (er) {
+} catch {
   throw new Error('Please add eslint-plugin-simple-import-sort package');
 }
 
