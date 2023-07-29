@@ -14,8 +14,12 @@
     "name": "Daniel Sousa @Tutods",
     "url": "https://github.com/tutods"
   },
-  "repository": "https://github.com/tutods/lib",
-  "homepage": "https://github.com/tutods/lib#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutods/lib.git",
+    "directory": "packages/eslint-config"
+  },
+  "homepage": "https://github.com/tutods/lib/packages/eslint-config#readme",
   "license": "MIT",
   "main": "index.js",
   "exports": {
