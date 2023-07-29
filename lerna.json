@@ -10,5 +10,11 @@
     ".*",
     "commitlint.config.js"
   ],
-  "conventionalCommits": true
+  "registry": "https://npm.pkg.github.com/tutods",
+  "conventionalCommits": true,
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com/tutods"
+    }
+  }
 }
