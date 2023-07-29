@@ -1,6 +1,8 @@
-# ESLint & Prettier Configuration
+# ESLint Config <small>(`@tutods/eslint-config`)</small>
 
-[![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url]
+[![NPM Version][npm-version-shield]][npm-link] [![NPM Downloads][npm-downloads-shield]][npm-link] ![License][npm-license-shield]
+
+---
 
 ## Getting Started
 
@@ -22,28 +24,28 @@ To use this **ESLint** config. you need to follow the steps below:
 
 1. Install the package:
 
-   - **NPM:** `npm i -D eslint prettier @tutods/eslint-config`;
-   - **Yarn:** `yarn add -D eslint prettier @tutods/eslint-config`;
-   - **PNPM:** `pnpm add -D eslint prettier @tutods/eslint-config`.
+- **NPM:** `npm i -D eslint prettier @tutods/eslint-config`;
+- **Yarn:** `yarn add -D eslint prettier @tutods/eslint-config`;
+- **PNPM:** `pnpm add -D eslint prettier @tutods/eslint-config`.
 
 2. Create **ESLint** config. file (if it does not exist) - `.eslintrc.json` - and past the content
    below:
 
-   - **For React:**
+- **For React:**
 
-   ```json
-   {
-     "extends": ["@tutods/eslint-config/react"]
-   }
-   ```
+```json
+{
+  "extends": ["@tutods/eslint-config/react"]
+}
+```
 
-   - **For Node.js:**
+- **For Node.js:**
 
-   ```json
-   {
-     "extends": ["@tutods/eslint-config/node"]
-   }
-   ```
+```json
+{
+  "extends": ["@tutods/eslint-config/node"]
+}
+```
 
 3. Your **ESLint** config. is ready!
 
@@ -52,13 +54,9 @@ To use this **ESLint** config. you need to follow the steps below:
 [![Twitter][twitter]][twitter-url] [![Linkedin][linkedin]][linkedin-url]
 [![GitHub][github]][github-url]
 
-[forks-shield]: https://img.shields.io/github/forks/tutods/tailwindcss-travel-website?style=for-the-badge
-[forks-url]: https://github.com/tutods/tailwindcss-travel-website/network/members
-[stars-shield]: https://img.shields.io/github/stars/tutods/eslint-config?style=for-the-badge
-[stars-url]: https://github.com/tutods/tailwindcss-travel-website/stargazers
-[github]: https://img.shields.io/badge/-Github-1E4174?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/tutods
-[github-url]: https://github.com/tutods
-[twitter]: https://img.shields.io/badge/Twitter-1E4174?style=for-the-badge&logo=twitter&logoColor=white
-[twitter-url]: https://twitter.com/dsousa_12/
-[linkedin]: https://img.shields.io/badge/Linkedin-1E4174?style=for-the-badge&logo=Linkedin&logoColor=white
-[linkedin-url]: https://www.linkedin.com/in/daniel-sousa-tutods/
+<!-- Links -->
+
+[npm-version-shield]: https://img.myrandomwebs.com/npm/v/@tutods/eslint-config.svg
+[npm-license-shield]: https://img.shields.io/npm/l/@tutods/eslint-config.svg
+[npm-downloads-shield]: https://img.shields.io/npm/dm/@tutods/eslint-config.svg
+[npm-link]: https://www.npmjs.com/package/@tutods/eslint-config
