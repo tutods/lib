@@ -52,17 +52,13 @@ To use this **ESLint** config. you need to follow the steps below:
 [![Twitter][twitter]][twitter-url] [![Linkedin][linkedin]][linkedin-url]
 [![GitHub][github]][github-url]
 
-[forks-shield]:
-  https://img.shields.io/github/forks/tutods/tailwindcss-travel-website?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/tutods/tailwindcss-travel-website?style=for-the-badge
 [forks-url]: https://github.com/tutods/tailwindcss-travel-website/network/members
 [stars-shield]: https://img.shields.io/github/stars/tutods/eslint-config?style=for-the-badge
 [stars-url]: https://github.com/tutods/tailwindcss-travel-website/stargazers
-[github]:
-  https://img.shields.io/badge/-Github-1E4174?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/tutods
+[github]: https://img.shields.io/badge/-Github-1E4174?style=for-the-badge&logo=Github&logoColor=white&link=https://github.com/tutods
 [github-url]: https://github.com/tutods
-[twitter]:
-  https://img.shields.io/badge/Twitter-1E4174?style=for-the-badge&logo=twitter&logoColor=white
+[twitter]: https://img.shields.io/badge/Twitter-1E4174?style=for-the-badge&logo=twitter&logoColor=white
 [twitter-url]: https://twitter.com/dsousa_12/
-[linkedin]:
-  https://img.shields.io/badge/Linkedin-1E4174?style=for-the-badge&logo=Linkedin&logoColor=white
+[linkedin]: https://img.shields.io/badge/Linkedin-1E4174?style=for-the-badge&logo=Linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/daniel-sousa-tutods/

@@ -1,15 +1,9 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "independent",
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "npmClient": "yarn",
-  "ignoreChanges": [
-    "*.md",
-    ".*",
-    "commitlint.config.js"
-  ],
+  "ignoreChanges": ["*.md", ".*", "commitlint.config.js"],
   "conventionalCommits": true,
   "access": "public"
 }
