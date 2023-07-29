@@ -3,5 +3,12 @@
   "version": "independent",
   "packages": [
     "packages/*"
-  ]
+  ],
+  "npmClient": "yarn",
+  "ignoreChanges": [
+    "*.md",
+    ".*",
+    "commitlint.config.js"
+  ],
+  "conventionalCommits": true
 }
