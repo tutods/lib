@@ -76,6 +76,8 @@ For use my **React with TypeScript** configuration, you need to install the foll
 - `eslint-plugin-react`;
 - `eslint-plugin-react-hooks`.
 
+> **Note:** if you (for example) use the `/next` config, all the dependencies listed above will be needed, because thats config extends the `/react-tsx` config.
+
 #### `/prettier` configuration
 
 For use my **Prettier** configuration, you need to install the following packages:
