@@ -1,0 +1,5 @@
+{
+  "extends": [
+    "@tutods/eslint-config/javascript"
+  ]
+}
