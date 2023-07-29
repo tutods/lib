@@ -5,7 +5,7 @@ This monorepo contains two packages:
 [![lint][lint]][lint-package]
 [![format][format]][prettier-package]
 
-For know more details about each package, please read the `README.md` file inside of each folder on `packages/` directory.
+For know more details about each package, please read the `README.md` file inside each folder on `packages/` directory.
 
 ## 🐛 Vulernabilities
 

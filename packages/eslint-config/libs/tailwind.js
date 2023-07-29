@@ -1,5 +1,6 @@
 // Validation that package exists
 try {
+  // eslint-disable-next-line no-unused-vars
   const plugin = require('eslint-plugin-tailwindcss');
 } catch (er) {
   throw new Error('Please add eslint-plugin-tailwindcss package');

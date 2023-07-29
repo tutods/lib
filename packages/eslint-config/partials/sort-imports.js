@@ -1,5 +1,6 @@
 // Validation that package exists
 try {
+  // eslint-disable-next-line no-unused-vars
   const importSortPlugin = require('eslint-plugin-simple-import-sort');
 } catch (er) {
   throw new Error('Please add eslint-plugin-simple-import-sort package');

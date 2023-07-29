@@ -1,8 +1,11 @@
 // Validation that package exists
 try {
-  const typescript = require('typescript');
-  const tsEslintPlugin = require('@typescript-eslint/eslint-plugin');
-  const tsParser = require('@typescript-eslint/parser');
+  // eslint-disable-next-line no-unused-vars
+  const [typescript, tsEslintPlugin, tsParser] = [
+    require('typescript'),
+    require('@typescript-eslint/eslint-plugin'),
+    require('@typescript-eslint/parser'),
+  ];
 } catch (er) {
   throw new Error('Please add typescript and eslint packages');
 }
