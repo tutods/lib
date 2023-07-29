@@ -28,7 +28,7 @@
     "./typescript": "./typescript.js",
     "./react": "./libs/react.js",
     "./react-tsx": "./libs/react-tsx.js",
-    "./nextjs": "./libs/nextjs.js.js",
+    "./next": "./libs/next.js",
     "./node": "./libs/node.js",
     "./tailwind": "./libs/tailwind.js",
     "./sort-keys": "./partials/sort-keys.js",
