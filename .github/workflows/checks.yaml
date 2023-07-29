@@ -13,16 +13,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "Use NodeJS 14"
+      - name: "Use NodeJS 18"
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
-
-      - name: "Setup npm" # Add our registry to npm config
-        run: | # Custom action
-          npm set @tutods:registry=https://npm.pkg.github.com/tutods
-          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+          node-version: '18'
           
       - name: Install dependencies
-        run: | # Install and link dependencies
-              yarn
+        run: yarn
