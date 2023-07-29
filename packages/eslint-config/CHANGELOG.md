@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@0.1.5...@tutods/eslint-config@1.0.1) (2023-07-29)
+
+**Note:** Version bump only for package @tutods/eslint-config
+
+
+
+
+
 ## [0.1.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@0.1.4...@tutods/eslint-config@0.1.5) (2023-07-29)
 
 **Note:** Version bump only for package @tutods/eslint-config
