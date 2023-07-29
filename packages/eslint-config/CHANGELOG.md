@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.2.0...@tutods/eslint-config@1.3.0) (2023-07-29)
+
+### Bug Fixes
+
+- cleanup packages validations and peer deps ([2e4b778](https://github.com/tutods/lib/commit/2e4b77854068a8476b310bde401828774bdd8ff2))
+- remove prettier extends ([01c3f8e](https://github.com/tutods/lib/commit/01c3f8e22c906c16535e4e427f4c7ef5ec0ad6e5))
+
+### Features
+
+- setup engines and engine strict ([59b3672](https://github.com/tutods/lib/commit/59b3672626503014aa01027002caf94e8ae0e941))
+
 # [1.2.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.1.2-beta.0...@tutods/eslint-config@1.2.0) (2023-07-29)
 
 ### Features
