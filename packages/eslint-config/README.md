@@ -76,7 +76,9 @@ For use my **React with TypeScript** configuration, you need to install the foll
 - `eslint-plugin-react`;
 - `eslint-plugin-react-hooks`.
 
-> **Note:** if you (for example) use the `/next` config, all the dependencies listed above will be needed, because thats config extends the `/react-tsx` config.
+> If you (for example) use the `/next` config, all the dependencies listed above will be needed, because that's config extends the `/react-tsx` config.
+>
+> **Note:** if you are extending `next/core-web-vitals`, you don't need to install the `eslint-plugin-react-hooks` pacakge.
 
 #### `/prettier` configuration
 
