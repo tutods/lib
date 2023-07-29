@@ -37,5 +37,12 @@
     "*.{md,mdx,json,html,css,scss,sass,less}": [
       "prettier --write"
     ]
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=18.x.x",
+    "yarn": ">=1.x.x",
+    "pnpm": "please-use-yarn",
+    "npm": "please-use-yarn"
   }
 }
