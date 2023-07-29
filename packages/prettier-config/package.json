@@ -21,6 +21,9 @@
   "exports": {
     ".": "./index.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "prettier": ">=2.0.0"
   },

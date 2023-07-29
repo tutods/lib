@@ -35,6 +35,9 @@
     "./sort-imports": "./partials/sort-imports.js",
     "./prettier": "./partials/prettier.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "eslint": "^8.42.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -85,5 +88,5 @@
       "optional": true
     }
   },
-  "gitHead": "80054df06a91fd9cffd96e24ecd6eda62563ef8e"
+  "gitHead": "b4d548f4003f8eb298d6608d643b2e3c4d6368e9"
 }
