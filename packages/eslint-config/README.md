@@ -38,9 +38,15 @@ With this package, multiple configurations are exported. You need to pick the on
 - `/sort-imports`;
 - `/sort-keys`
 
-### Extends on your **ESLint** configuration
+### Use **ESLint** configuration
+
+For use any of these **ESLint** configurations, you need to create the file `.eslintrc` on the root directory of you
+project and use the `"extends": []` to load the configurations you want.
+See the example below.
 
 > **Example:**
+>
+> **file:** `.eslintrc`
 >
 > ```json
 > {
@@ -52,11 +58,20 @@ With this package, multiple configurations are exported. You need to pick the on
 > }
 > ```
 >
-> This **ESLint** configuration uses **Next.js** (with **TS**) + **TailwindCSS** + **keys and destructuring keys sorting** configurations.
+> **Note:** This **ESLint** configuration uses **Next.js** (with **TS**) + **TailwindCSS** + **sort keys and destructure keys** configurations.
 
 ### Peers Dependencies
 
 Depending on the configuration you choose, you need to install some dependencies, examples:
+
+### `/react-tsx` configuration
+
+For use my **React with TypeScript** configuration, you need to install the following packages:
+
+- `typescript`;
+- `@typescript-eslint/eslint-plugin`;
+- `@typescript-eslint/parser`;
+- `eslint-plugin-simple-import-sort`.
 
 #### `/prettier` configuration
 
@@ -67,51 +82,6 @@ For use my **Prettier** configuration, you need to install the following package
 - `eslint-plugin-prettier`.
 
 [![Prettier](https://img.shields.io/badge/prettier%20config-000000?style=for-the-badge&logo=npm&logoColor=white)](../prettier-config/README.md)
-
-## Getting Started
-
-This repository contains the **ESLint** and **Prettier** configuration used on my projects.
-
-### What's included?
-
-- Rules to sort imports;
-- Rules to sort object keys and destructuring;
-- Avoid the usage of `../` or `./` on imports;
-- Avoid the multiples imports from same file in multiple lines (grouping into one);
-- **(REACT)** Sort component props;
-- **(REACT)** For boolean props, remove the `={true}`;
-- **(REACT)** Remove unnecessary curly braces (example: `={'value'}` will be fixed to `="value"`).
-
-### Installation
-
-To use this **ESLint** config. you need to follow the steps below:
-
-1. Install the package:
-
-- **NPM:** `npm i -D eslint prettier @tutods/eslint-config`;
-- **Yarn:** `yarn add -D eslint prettier @tutods/eslint-config`;
-- **PNPM:** `pnpm add -D eslint prettier @tutods/eslint-config`.
-
-2. Create **ESLint** config. file (if it does not exist) - `.eslintrc.json` - and past the content
-   below:
-
-- **For React:**
-
-```json
-{
-  "extends": ["@tutods/eslint-config/react"]
-}
-```
-
-- **For Node.js:**
-
-```json
-{
-  "extends": ["@tutods/eslint-config/node"]
-}
-```
-
-3. Your **ESLint** config. is ready!
 
 ## About Me
 

@@ -8,7 +8,7 @@ module.exports = {
     es2021: true,
     es6: true,
   },
-  extends: ['eslint:recommended', './partials/prettier', './partials/imports'],
+  extends: ['eslint:recommended', './partials/imports'],
   plugins: [],
   rules: {
     'prefer-rest-params': 'warn',
