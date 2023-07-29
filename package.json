@@ -9,10 +9,10 @@
   "repository": "https://github.com/tutods/lib",
   "scripts": {
     "format": "prettier --write ./packages",
-    "pre:version:stable": "lerna version --conventional-commits --include-merged-tags --conventional-graduate --message \"chore(stable version): publish\"",
+    "pre:version:stable": "lerna version --conventional-commits --conventional-graduate --yes --message \"chore(stable version): publish\"",
     "version:stable": "lerna publish from-git --no-private -no-verify-registry --yes",
-    "pre:version:beta": "lerna version --conventional-commits --include-merged-tags --conventional-prerelease --preid beta --message \"chore(beta version): publish\"",
-    "version:beta": "lerna publish from-git --no-private --canary --no-verify-registry"
+    "pre:version:beta": "lerna version --conventional-commits --conventional-prerelease --preid beta --yes --message \"chore(beta version): publish\"",
+    "version:beta": "lerna publish from-git --yes"
   },
   "devDependencies": {
     "lerna": "^7.1.4",
