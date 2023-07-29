@@ -1,0 +1,28 @@
+name: Checks
+on:
+  pull_request:
+    types: [ opened, synchronize ]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: "Use NodeJS 14"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: "Setup npm" # Add our registry to npm config
+        run: | # Custom action
+          npm set @tutods:registry=https://npm.pkg.github.com/tutods
+          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+          
+      - name: Install dependencies
+        run: | # Install and link dependencies
+              yarn
