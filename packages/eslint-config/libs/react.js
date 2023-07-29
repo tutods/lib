@@ -1,5 +1,3 @@
-const { folders, tsconfigPaths } = require('../helpers/folders');
-
 module.exports = {
   env: {
     browser: true,
