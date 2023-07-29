@@ -19,7 +19,7 @@
     "url": "https://github.com/tutods/lib.git",
     "directory": "packages/eslint-config"
   },
-  "homepage": "https://github.com/tutods/lib/packages/eslint-config#readme",
+  "homepage": "https://github.com/tutods/lib/blob/main/packages/eslint-config/README.md",
   "license": "MIT",
   "main": "index.js",
   "exports": {
