@@ -6,10 +6,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tutods/lib.git"
-  },
+  "repository": "https://github.com/tutods/lib",
   "scripts": {
     "format": "prettier --write ./packages",
     "pre:version:stable": "lerna version --conventional-commits --include-merged-tags --conventional-draduate --message \"chore(stable version): publish\"",
@@ -19,15 +16,6 @@
   },
   "devDependencies": {
     "lerna": "^7.1.4",
-    "lerna-changelog": "^2.2.0",
     "prettier": "^3.0.0"
-  },
-  "changelog": {
-    "labels": {
-      "feature": "New Feature",
-      "bug": "Bug Fix",
-      "refactor": "Refactor",
-      "chore": "Minor Changes"
-    }
   }
 }
