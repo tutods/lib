@@ -1,6 +1,6 @@
 {
   "name": "@tutods/eslint-config",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "private": false,
   "keywords": [
     "eslint",
@@ -88,5 +88,5 @@
       "optional": true
     }
   },
-  "gitHead": "b4d548f4003f8eb298d6608d643b2e3c4d6368e9"
+  "gitHead": "f8b9beafd8432648c3c15d290ad95fe1bdf95dd2"
 }
