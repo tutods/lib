@@ -45,7 +45,7 @@ Simple as create the `.prettierrc` file and paste:
 
 <br />
 
-Don't forget, that you can use my [**ESLint** config](../eslint-config/README.md) to add **Prettier** validations on your code.
+Don't forget that you can use my [**ESLint** config](../eslint-config/README.md) to add **Prettier** validations on your code.
 
 ## About Me
 
