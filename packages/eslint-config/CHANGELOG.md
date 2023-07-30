@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.4.0...@tutods/eslint-config@1.4.1-beta.0) (2023-07-30)
+
+### Bug Fixes
+
+- **wip:** typescript config ([8a1ccec](https://github.com/tutods/lib/commit/8a1ccec135076275c522832c23fa61898f4bd379))
+
 # [1.4.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.3.1...@tutods/eslint-config@1.4.0) (2023-07-30)
 
 ### Features
