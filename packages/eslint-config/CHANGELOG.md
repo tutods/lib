@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.4.1...@tutods/eslint-config@1.5.0-beta.0) (2023-07-30)
+
+### Features
+
+- typescript import resolver ([16be990](https://github.com/tutods/lib/commit/16be9902dd9c4ba3549714736112c8f26da25a54))
+
 ## [1.4.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.4.1-beta.0...@tutods/eslint-config@1.4.1) (2023-07-30)
 
 **Note:** Version bump only for package @tutods/eslint-config
