@@ -42,4 +42,9 @@ module.exports = {
     ],
     '@typescript-eslint/ban-ts-comment': 'warn',
   },
+  settings: {
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+    },
+  },
 };
