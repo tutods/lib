@@ -1,7 +1,7 @@
 module.exports = {
-  tabWidth: 2,
+  tabWidth: 8,
   useTabs: false,
-  singleQuote: true,
+  singleQuote: false,
   jsxSingleQuote: false,
   printWidth: 100,
   semi: true,
@@ -10,9 +10,4 @@ module.exports = {
   arrowParens: 'avoid',
   bracketSpacing: true,
   quoteProps: 'as-needed',
-  // htmlWhitespaceSensitivity: 'css',
-  // insertPragma: false,
-  // jsxBracketSameLine: false,
-  // proseWrap: 'always',
-  // useTabs: false,
 };
