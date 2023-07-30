@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/tutods/lib/compare/@tutods/prettier-config@0.1.2...@tutods/prettier-config@0.1.3) (2023-07-30)
+
+### Bug Fixes
+
+- prettier config ([e4bd3c6](https://github.com/tutods/lib/commit/e4bd3c68e1ff237935f33ae8daf3ca0fa7d5167f))
+
 ## [0.1.2](https://github.com/tutods/lib/compare/@tutods/prettier-config@0.1.1...@tutods/prettier-config@0.1.2) (2023-07-30)
 
 **Note:** Version bump only for package @tutods/prettier-config
