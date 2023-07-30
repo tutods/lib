@@ -41,7 +41,7 @@
   "engineStrict": true,
   "engines": {
     "node": ">=18.x.x",
-    "yarn": ">=1.x.x",
-    "npm": "please-use-yarn"
+    "npm": "please-use-yarn",
+    "yarn": ">=1.x.x"
   }
 }
