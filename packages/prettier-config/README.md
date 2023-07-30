@@ -25,30 +25,27 @@ of do it.
 
 ### Via `package.json`
 
+On this way, you need to access your `package.json` and add the following values:
+
+```json
+{
+  //  ...
+  "prettier": "@tutods/prettier.config"
+  //  ...
+}
+```
+
 ### Via `.prettierrc` <small>(`json` format)</small>
 
-With this package, multiple configurations are exported. You need to pick the ones you will use.
+Simple as create the `.prettierrc` file and paste:
 
-For use any of these **ESLint** configurations, you need to create the file `.eslintrc` on the root directory of you
-project and use the `"extends": []` to load the configurations you want.
-See the example below.
+```json
+"@tutods/prettier-config"
+```
 
-> **Example:**
->
-> **file:** `.eslintrc`
->
-> ```json
-> {
->   "extends": [
->     "@tutods/eslint-config/next",
->     "@tutods/eslint-config/tailwind",
->     "@tutods/eslint-config/sort-keys"
->   ]
-> }
-> ```
->
-> **Note:** This **ESLint** configuration uses **Next.js** (with **TS**) + **TailwindCSS** + **sort keys and destructure
-> keys** configurations.
+<br />
+
+Don't forget, that you can use my [**ESLint** config](../eslint-config/README.md) to add **Prettier** validations on your code.
 
 ## About Me
 
