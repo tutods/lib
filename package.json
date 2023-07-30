@@ -2,7 +2,7 @@
   "name": "@tutods/lib",
   "private": true,
   "license": "MIT",
-  "description": "ESLint configuration used in all my projects",
+  "description": "Monorepo to store my ESLint and Prettier configs.",
   "workspaces": [
     "packages/*"
   ],
