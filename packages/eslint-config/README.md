@@ -1,6 +1,6 @@
 # ESLint Config <small>(`@tutods/eslint-config`)</small>
 
-[![NPM Version][npm-version-shield]][npm-link] [![NPM Downloads][npm-downloads-shield]][npm-link] ![License][npm-license-shield]
+[![NPM Version][npm-version-shield]][npm-link] [![NPM Downloads][npm-downloads-shield]][npm-link] ![License][npm-license-shield] [![Changelog][changelog-shield]](CHANGELOG.md)
 
 ---
 
@@ -101,6 +101,7 @@ For use my **Prettier** configuration, you need to install the following package
 <!-- Links -->
 
 [npm-version-shield]: https://img.myrandomwebs.com/npm/v/@tutods/eslint-config.svg?label=@tutods/eslint-config&icon=npm
+[changelog-shield]: https://img.myrandomwebs.com/npm/v/@tutods/eslint-config.svg?label=Changelog&icon=npm
 [npm-license-shield]: https://img.shields.io/npm/l/@tutods/eslint-config.svg
 [npm-downloads-shield]: https://img.shields.io/npm/dm/@tutods/eslint-config.svg
 [npm-link]: https://www.npmjs.com/package/@tutods/eslint-config
