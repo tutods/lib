@@ -23,7 +23,7 @@ For know more details about each package, please read the `README.md` file insid
 
 ### 🐛 Vulernabilities
 
-![Vulnerabilities](https://snyk.io/test/github/tutods/lib/badge.svg)
+[![Vulnerabilities](https://snyk.io/test/github/tutods/lib/badge.svg)](https://snyk.io/test/github/tutods/lib)
 
 ## 🔗 More About Me
 
