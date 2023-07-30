@@ -671,7 +671,7 @@
     minimatch "^9.0.0"
 
 "@tutods/eslint-config@./packages/eslint-config":
-  version "1.2.0"
+  version "1.3.1"
   dependencies:
     eslint "^8.42.0"
     eslint-import-resolver-typescript "^3.5.5"
@@ -679,7 +679,7 @@
     eslint-plugin-unused-imports "^2.0.0"
 
 "@tutods/prettier-config@./packages/prettier-config":
-  version "0.1.1"
+  version "0.1.2"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
