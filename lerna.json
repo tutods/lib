@@ -5,5 +5,15 @@
   "npmClient": "yarn",
   "ignoreChanges": ["*.md", ".*", "commitlint.config.js"],
   "conventionalCommits": true,
-  "access": "public"
+  "access": "public",
+  "command": {
+    "version": {
+      "conventionalCommits": true
+    },
+    "create": {
+      "license": "MIT",
+      "private": false
+    }
+  },
+  "createRelease": "github"
 }
