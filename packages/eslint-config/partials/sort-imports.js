@@ -30,10 +30,10 @@ module.exports = {
             `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
             // `^(.*)(${folders.join('|')})(/.*|$)`,
           ].filter(Boolean),
-          // Styles
-          [includeStylesWord.toString(), allStylesExtension.toString()],
           // Relative imports and the ones don't match on the other groups
           [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}$`, '^'],
+          // Styles
+          [includeStylesWord.toString(), allStylesExtension.toString()],
         ],
       },
     ],
