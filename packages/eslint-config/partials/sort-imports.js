@@ -29,7 +29,7 @@ module.exports = {
             `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
             `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
             // `^(.*)(${folders.join('|')})(/.*|$)`,
-          ].filter(Boolean),
+          ],
           // Relative imports and the ones don't match on the other groups
           [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}$`, '^'],
           // Styles
