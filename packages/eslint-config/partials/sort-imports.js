@@ -9,16 +9,13 @@ const { folders, tsconfigPaths } = require('../helpers/folders-paths');
 const {
   allStylesExtension,
   includeStylesWord,
-  notIncludeStylesExtension,
+  notIncludeStyleExtensions,
   notIncludeStylesWord,
   relativePathsNotIncludeStylesWord,
 } = require('../helpers/regexs');
 
-console.log([
-  `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
-  `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
-  // `^(.*)(${folders.join('|')})(/.*|$)`,
-]);
+const allTsconfigPaths = tsconfigPaths.join('|');
+const allFolders = folders.join('|');
 
 module.exports = {
   plugins: ['simple-import-sort'],
@@ -29,17 +26,22 @@ module.exports = {
       {
         groups: [
           // Packages
-          ['^react', '^react-dom', '^\\u0000', '^@?\\w'],
+          [
+            '^react',
+            '^react-dom',
+            '^\\u0000',
+            `^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`,
+            '^@?\\w',
+          ],
           // Folders
           [
-            `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
-            `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
-            // `^(.*)(${folders.join('|')})(/.*|$)`,
+            `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStylesWord}*)?${notIncludeStyleExtensions}$`,
+            `^(${allFolders})(?:\\/[^/]+)*(\\/${notIncludeStylesWord}*)?${notIncludeStyleExtensions}$`,
           ],
           // Relative imports and the ones don't match on the other groups
-          [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}$`, '^'],
+          [`${relativePathsNotIncludeStylesWord}*${notIncludeStyleExtensions}`, '^'],
           // Styles
-          [includeStylesWord.toString(), allStylesExtension.toString()],
+          [includeStylesWord, allStylesExtension],
         ],
       },
     ],

@@ -5,6 +5,8 @@ let tsconfigPaths = [];
 
 // Paths to ignore
 const pathsToIgnore = [
+  '.idea',
+  '.vscode',
   '.git',
   '.github',
   '.husky',
