@@ -5,6 +5,12 @@ try {
   throw new Error('Please add eslint-plugin-simple-import-sort package');
 }
 
+console.log([
+  `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
+  `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
+  // `^(.*)(${folders.join('|')})(/.*|$)`,
+]);
+
 const { folders, tsconfigPaths } = require('../helpers/folders-paths');
 const {
   allStylesExtension,
