@@ -1,7 +1,6 @@
 // Validation that package exists
 try {
-  // eslint-disable-next-line no-unused-vars
-  const plugin = require('eslint-plugin-tailwindcss');
+  require('eslint-plugin-tailwindcss');
 } catch {
   throw new Error('Please add eslint-plugin-tailwindcss package');
 }
@@ -10,7 +9,6 @@ module.exports = {
   extends: ['plugin:tailwindcss/recommended'],
   plugins: ['tailwindcss'],
   rules: {
-    'tailwindcss/no-custom-classname': 'off',
     'tailwindcss/classnames-order': [
       'error',
       {
@@ -20,6 +18,7 @@ module.exports = {
     'tailwindcss/enforces-negative-arbitrary-values': 'warn',
     'tailwindcss/enforces-shorthand': 'error',
     'tailwindcss/migration-from-tailwind-2': 'error',
+    'tailwindcss/no-custom-classname': 'off',
   },
   settings: {
     tailwindcss: {

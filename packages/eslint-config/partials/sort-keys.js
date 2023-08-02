@@ -1,9 +1,6 @@
 try {
-  // eslint-disable-next-line no-unused-vars
-  const [sortKeysFixPlugin, sortDestructureKeysPlugin] = [
-    require('eslint-plugin-sort-keys-fix'),
-    require('eslint-plugin-sort-destructure-keys'),
-  ];
+  require('eslint-plugin-sort-keys-fix');
+  require('eslint-plugin-sort-destructure-keys');
 } catch {
   throw new Error(
     'Please add eslint-plugin-sort-destructure-keys and eslint-plugin-sort-keys-fix packages',
