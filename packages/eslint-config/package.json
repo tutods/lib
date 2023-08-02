@@ -37,9 +37,9 @@
     "./next": "./libs/next.js",
     "./node": "./libs/node.js",
     "./tailwind": "./libs/tailwind.js",
+    "./prettier": "./libs/prettier.js",
     "./sort-keys": "./partials/sort-keys.js",
-    "./sort-imports": "./partials/sort-imports.js",
-    "./prettier": "./partials/prettier.js"
+    "./sort-imports": "./partials/sort-imports.js"
   },
   "publishConfig": {
     "access": "public"
