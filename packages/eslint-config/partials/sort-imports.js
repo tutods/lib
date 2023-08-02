@@ -25,8 +25,8 @@ module.exports = {
       'error',
       {
         groups: [
-          // React packages
-          ['^react', '^react-dom'],
+          // React packages or imports with 'node:' prefix
+          ['^react', '^react-dom', '^node:'],
           // Packages
           ['^@?\\w', `^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^\\u0000'],
           // Folders
