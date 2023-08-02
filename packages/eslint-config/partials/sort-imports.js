@@ -1,4 +1,4 @@
-// Validation that package exists
+// Validation of package correctly installed
 try {
   require('eslint-plugin-simple-import-sort');
 } catch {

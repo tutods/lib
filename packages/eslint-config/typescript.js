@@ -1,4 +1,4 @@
-// Validation that package exists
+// Validation of package correctly installed
 try {
   require('typescript');
   require('@typescript-eslint/eslint-plugin');
