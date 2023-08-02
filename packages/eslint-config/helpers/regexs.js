@@ -6,17 +6,17 @@ const notIncludeStyleExtensions = '(?<!\\.(less|s?css|sass|styl))';
 /**
  * Regex to exclude possible matches that contain the word 'styles' or 'style'
  */
-const notIncludeStylesWord = '(?:(?!style(?:s?)).)';
+const notIncludeStyles = '(?:(?!style(?:s?)).)';
 
 /**
  * Regex to get relative paths except the ones with the word 'styles' or 'style'
  */
-const relativePathsNotIncludeStylesWord = '\\.+((?!style(s?)).)';
+const relativePathsNotIncludeStyles = '\\.+((?!style(s?)).)';
 
 /**
  * Regex for strings including the word 'styles' or 'style'
  */
-const includeStylesWord = '(.*)?style(s?)(.*)?$';
+const includeStyles = '(.*)?style(s?)(.*)?$';
 
 /**
  * Regex for all strings ending with a style file extension (like '.less', '.scss', '.css', '.sass', etc.)
@@ -25,8 +25,8 @@ const allStylesExtension = '^(.+)?\\.(less|s?css|sass|styl)$';
 
 module.exports = {
   allStylesExtension,
-  includeStylesWord,
+  includeStyles,
   notIncludeStyleExtensions,
-  notIncludeStylesWord,
-  relativePathsNotIncludeStylesWord,
+  notIncludeStyles,
+  relativePathsNotIncludeStyles,
 };

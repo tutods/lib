@@ -8,10 +8,10 @@ try {
 const { folders, tsconfigPaths } = require('../helpers/folders-paths');
 const {
   allStylesExtension,
-  includeStylesWord,
+  includeStyles,
   notIncludeStyleExtensions,
-  notIncludeStylesWord,
-  relativePathsNotIncludeStylesWord,
+  notIncludeStyles,
+  relativePathsNotIncludeStyles,
 } = require('../helpers/regexs');
 
 const allTsconfigPaths = tsconfigPaths.join('|');
@@ -31,13 +31,13 @@ module.exports = {
           [`^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^@?\\w', '^\\u0000'],
           // Folders
           [
-            `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStylesWord}*)?${notIncludeStyleExtensions}$`,
-            `^(${allFolders})(?:\\/[^/]+)*(\\/${notIncludeStylesWord}*)?${notIncludeStyleExtensions}$`,
+            `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
+            `^(${allFolders})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
           ],
           // Relative imports and the ones don't match on the other groups
-          [`${relativePathsNotIncludeStylesWord}*${notIncludeStyleExtensions}`, '^'],
+          [`${relativePathsNotIncludeStyles}*${notIncludeStyleExtensions}`, '^'],
           // Styles
-          [includeStylesWord, allStylesExtension],
+          [includeStyles, allStylesExtension],
         ],
       },
     ],
