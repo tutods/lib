@@ -3,7 +3,6 @@ module.exports = {
     jest: true,
   },
   extends: ['./react-tsx'],
-  rules: {},
   overrides: [
     {
       files: [
@@ -21,4 +20,5 @@ module.exports = {
       },
     },
   ],
+  rules: {},
 };

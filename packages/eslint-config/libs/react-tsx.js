@@ -3,7 +3,6 @@ module.exports = {
     jest: true,
   },
   extends: ['./react', '../typescript'],
-  plugins: [],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

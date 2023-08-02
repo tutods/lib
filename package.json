@@ -7,7 +7,19 @@
     "packages/*"
   ],
   "repository": "https://github.com/tutods/lib",
+  "engineStrict": true,
+  "engines": {
+    "node": ">=18.x.x",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.x.x"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "scripts": {
+    "commit": "cz",
     "prepare": "husky install",
     "format": "prettier --write ./packages **/*.md **/*.json",
     "lint": "eslint --ext .js --ignore-path .gitignore",
@@ -17,13 +29,14 @@
     "version:beta": "lerna publish from-git --canary --yes"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.7",
-    "@commitlint/config-conventional": "^17.6.7",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-sort-destructure-keys": "^1.5.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "global": "^4.4.0",
     "husky": "^8.0.3",
     "lerna": "^7.1.4",
     "lint-staged": "^13.2.3",
@@ -37,11 +50,5 @@
     "*.{md,mdx,json,html,css,scss,sass,less}": [
       "prettier --write"
     ]
-  },
-  "engineStrict": true,
-  "engines": {
-    "node": ">=18.x.x",
-    "npm": "please-use-yarn",
-    "yarn": ">=1.x.x"
   }
 }

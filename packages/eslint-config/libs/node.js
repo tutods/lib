@@ -3,5 +3,4 @@ module.exports = {
     jest: true,
   },
   extends: ['../typescript', '../partials/imports', '../partials/sort-imports'],
-  rules: {},
 };

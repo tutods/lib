@@ -1,6 +1,6 @@
 # TutoDS Lib
 
-[![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url] ![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)
 
 ---
 
