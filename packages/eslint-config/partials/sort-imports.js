@@ -26,14 +26,14 @@ module.exports = {
           ['^react', '^react-dom', '^\\u0000', '^@?\\w'],
           // Folders
           [
-            `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}`,
-            `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}`,
+            `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
+            `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}$`,
             // `^(.*)(${folders.join('|')})(/.*|$)`,
           ].filter(Boolean),
           // Styles
           [includeStylesWord.toString(), allStylesExtension.toString()],
           // Relative imports and the ones don't match on the other groups
-          [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}`, '^'],
+          [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}$`, '^'],
         ],
       },
     ],
