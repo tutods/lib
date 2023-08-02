@@ -28,7 +28,7 @@ module.exports = {
           // React packages
           ['^react', '^react-dom'],
           // Packages
-          [`^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^@?\\w', '^\\u0000'],
+          ['^@?\\w', `^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^\\u0000'],
           // Folders
           [
             `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
