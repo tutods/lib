@@ -25,14 +25,10 @@ module.exports = {
       'error',
       {
         groups: [
+          // React packages
+          ['^react', '^react-dom'],
           // Packages
-          [
-            '^react',
-            '^react-dom',
-            '^\\u0000',
-            `^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`,
-            '^@?\\w',
-          ],
+          [`^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^@?\\w', '^\\u0000'],
           // Folders
           [
             `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStylesWord}*)?${notIncludeStyleExtensions}$`,
