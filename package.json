@@ -22,6 +22,8 @@
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-sort-destructure-keys": "^1.5.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "husky": "^8.0.3",
     "lerna": "^7.1.4",
     "lint-staged": "^13.2.3",

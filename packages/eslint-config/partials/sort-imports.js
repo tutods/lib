@@ -6,7 +6,14 @@ try {
   throw new Error('Please add eslint-plugin-simple-import-sort package');
 }
 
-const { folders, tsconfigPaths } = require('../helpers/folders');
+const { folders, tsconfigPaths } = require('../helpers/folders-paths');
+const {
+  allStylesExtension,
+  includeStylesWord,
+  notIncludeStylesExtension,
+  notIncludeStylesWord,
+  relativePathsNotIncludeStylesWord,
+} = require('../helpers/regexs');
 
 module.exports = {
   plugins: ['simple-import-sort'],
@@ -20,14 +27,14 @@ module.exports = {
           ['^react', '^react-dom', '^\\u0000', '^@?\\w'],
           // Folders
           [
-            !!tsconfigPaths && !!tsconfigPaths.length ? `^(${tsconfigPaths.join('|')})(/.*|$)` : '',
-            `^(${folders.join('|')})(/.*|$)`,
-            `^(.*)(${folders.join('|')})(/.*|$)`,
+            `^(${tsconfigPaths.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}`,
+            `^(${folders.join('|')})${notIncludeStylesWord}*${notIncludeStylesExtension}`,
+            // `^(.*)(${folders.join('|')})(/.*|$)`,
           ].filter(Boolean),
-          // Relative imports and the ones not match on the other groups
-          ['^\\.(.*)?$', '^'],
           // Styles
-          ['^(.*)?styles(.*)?$', '^.+\\.s?css$', '^.+\\.sass$', '^.+\\.less$', '^(.+)?styles.ts$'],
+          [includeStylesWord.toString(), allStylesExtension.toString()],
+          // Relative imports and the ones don't match on the other groups
+          [`${relativePathsNotIncludeStylesWord}*${notIncludeStylesExtension}`, '^'],
         ],
       },
     ],
