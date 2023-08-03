@@ -55,7 +55,9 @@ if (fs.existsSync('./tsconfig.json')) {
   }
 }
 
-// Folders on src/
+/**
+ * Read directories on './src' directory
+ */
 if (fs.existsSync('./src')) {
   srcFolders = fs
     .readdirSync('./src', {
