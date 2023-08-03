@@ -1,17 +1,33 @@
 const fs = require('fs');
 
+/**
+ * Variable to store all directories names inside 'src/' directory
+ * @type {string[]}
+ * @example components
+ * @example utils
+ */
 let srcFolders = [];
+
+/**
+ * Variable to store all paths from tsconfig.json (without '/*')
+ * @type {string[]}
+ * @example @components
+ * @example @utils
+ */
 let tsconfigPaths = [];
 
-// Paths to ignore
-const pathsToIgnore = [
+/**
+ * List of directories to ignore
+ * @description When read directories on 'src/'  or './' directory, ignore if found any of these
+ * @type {string[]}
+ */
+const foldersToIgnore = [
   '.idea',
   '.vscode',
   '.git',
   '.github',
   '.husky',
   '.next',
-  '.storybook',
   'dist',
   'out',
   'build',
@@ -20,9 +36,17 @@ const pathsToIgnore = [
   'src',
   'storybook-static',
   'styles',
+  'tests',
 ];
 
-// Paths on tsconfig.json
+/**
+ * Read paths from tsconfig.json
+ * - 1. check if the file exists
+ * - 2. Read the content and parse to JSON
+ * - 3. check if the 'compilerOptions' and 'paths' key exists
+ * - 4. map all paths to 'tsconfigPahts' variable, removing the '/*'
+ * @example '@components/*' will add only '@components'
+ */
 if (fs.existsSync('./tsconfig.json')) {
   const tsconfig = JSON.parse(fs.readFileSync('./tsconfig.json'));
 
@@ -37,7 +61,7 @@ if (fs.existsSync('./src')) {
     .readdirSync('./src', {
       withFileTypes: true,
     })
-    .filter(dirent => dirent.isDirectory() && !['styles'].includes(dirent.name))
+    .filter(dirent => dirent.isDirectory() && !foldersToIgnore.includes(dirent.name))
     .map(dirent => dirent.name);
 }
 
@@ -46,7 +70,7 @@ const rootFolders = fs
   .readdirSync('./', {
     withFileTypes: true,
   })
-  .filter(dirent => dirent.isDirectory() && !pathsToIgnore.includes(dirent.name))
+  .filter(dirent => dirent.isDirectory() && !foldersToIgnore.includes(dirent.name))
   .map(dirent => dirent.name);
 
 module.exports = {
