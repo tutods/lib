@@ -1,11 +1,16 @@
-// Validation of package correctly installed
+/**
+ * ESLint configuration (or partial configuration) for sort imports following the defined groups
+ * @requires 'eslint-plugin-simple-import-sort' package
+ */
+
+// Validation if package is correctly installed
 try {
   require('eslint-plugin-simple-import-sort');
 } catch {
   throw new Error('Please add eslint-plugin-simple-import-sort package');
 }
 
-const { folders, tsconfigPaths } = require('../helpers/folders-paths');
+const { joinedFolders, joinedTsconfigPaths } = require('../helpers/folders-paths');
 const {
   allStylesExtension,
   includeStyles,
@@ -13,9 +18,6 @@ const {
   notIncludeStyles,
   relativePathsNotIncludeStyles,
 } = require('../helpers/regexs');
-
-const allTsconfigPaths = tsconfigPaths.join('|');
-const allFolders = folders.join('|');
 
 module.exports = {
   plugins: ['simple-import-sort'],
@@ -25,18 +27,36 @@ module.exports = {
       'error',
       {
         groups: [
-          // React packages or imports with 'node:' prefix
+          /**
+           * Group for packages with 'react', 'react-dom' or 'node:' prefix
+           * @example import React from 'react';
+           */
           ['^react', '^react-dom', '^node:'],
-          // Packages
-          ['^@?\\w', `^(?!(${allTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^\\u0000'],
-          // Folders
+          /**
+           * Group for all packages
+           * @example import { Button } from '@mui/material';
+           */
+          ['^@?\\w', `^(?!(${joinedTsconfigPaths})(?:\\/|$))@?\\w+(?:\\/.*)?$`, '^\\u0000'],
+          /**
+           * Group for tsconfig paths and folders (working only with 'basePath')
+           * @example import { Button } from '@components/Button';
+           * @example import { Button } from 'components/Button'; (basePath="src/" - for example)
+           */
           [
-            `^(${allTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
-            `^(${allFolders})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
+            `^(${joinedTsconfigPaths})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
+            `^(${joinedFolders})(?:\\/[^/]+)*(\\/${notIncludeStyles}*)?${notIncludeStyleExtensions}$`,
           ],
-          // Relative imports and the ones don't match on the other groups
+          /**
+           * Group for relative paths andother imports without any match
+           * @example import { Button } from '../Button';
+           */
           [`${relativePathsNotIncludeStyles}*${notIncludeStyleExtensions}`, '^'],
-          // Styles
+          /**
+           * Group for styles imports
+           * @example import styles from '@components/MyComponent/styles.ts'
+           * @example import styles from '@components/MyComponent/MyComponent.module.less'
+           * @example import styles from '@/styles/global.css'
+           */
           [includeStyles, allStylesExtension],
         ],
       },

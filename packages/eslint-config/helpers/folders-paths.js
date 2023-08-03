@@ -1,3 +1,9 @@
+/**
+ * Helper to folders and paths
+ * @description 'tsconfigPaths': list of paths, without '/*' defined on 'tsconfig.json'
+ * @description 'folders': list of all folders on './' (root dir) and './src' (source dir) excluding specific ones (like '.idea', '.vscode', ...)
+ */
+
 const fs = require('fs');
 
 /**
@@ -67,7 +73,10 @@ if (fs.existsSync('./src')) {
     .map(dirent => dirent.name);
 }
 
-// Folders on ./
+/**
+ * Read directories on './' (root) directory
+ * @type {string[]}
+ */
 const rootFolders = fs
   .readdirSync('./', {
     withFileTypes: true,
@@ -77,5 +86,7 @@ const rootFolders = fs
 
 module.exports = {
   folders: [...rootFolders, ...srcFolders],
+  joinedFolders: [...rootFolders, ...srcFolders].join('|'),
+  joinedTsconfigPaths: tsconfigPaths.join('|'),
   tsconfigPaths,
 };
