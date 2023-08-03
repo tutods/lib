@@ -14,5 +14,6 @@
       "license": "MIT",
       "private": false
     }
-  }
+  },
+  "createRelease": "github"
 }
