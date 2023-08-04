@@ -38,6 +38,7 @@ module.exports = {
         varsIgnorePattern: '^_',
       },
     ],
+    '@typescript-eslint/no-use-before-define': 'error',
   },
   settings: {
     'import/parsers': {

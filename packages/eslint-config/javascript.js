@@ -10,6 +10,8 @@ module.exports = {
     ecmaVersion: 'latest',
   },
   rules: {
+    'arrow-body-style': ['error', 'as-needed'],
+    'no-use-before-define': 'error',
     'prefer-rest-params': 'warn',
   },
 };
