@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.6.2...@tutods/eslint-config@1.7.0) (2023-08-04)
+
+### Features
+
+- **eslint:** new rules for react, javascript and typescript ([a7f97c1](https://github.com/tutods/lib/commit/a7f97c1e283108411e60d336afa95e448845e8ef))
+
 ## [1.6.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.6.1...@tutods/eslint-config@1.6.2) (2023-08-03)
 
 **Note:** Version bump only for package @tutods/eslint-config
