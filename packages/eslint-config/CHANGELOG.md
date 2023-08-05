@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.7.0...@tutods/eslint-config@1.8.0-beta.0) (2023-08-05)
+
+### Features
+
+- **javascript:** add new rules ([7ae5889](https://github.com/tutods/lib/commit/7ae588999d63ced263672b233a209faaf5b49b08))
+
 # [1.7.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.6.2...@tutods/eslint-config@1.7.0) (2023-08-04)
 
 ### Features
