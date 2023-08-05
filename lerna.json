@@ -7,7 +7,6 @@
   "conventionalCommits": true,
   "access": "public",
   "changelog": true,
-  "changelogPreset": "conventional-changelog-conventionalcommits",
   "command": {
     "version": {
       "conventionalCommits": true
