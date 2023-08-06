@@ -46,7 +46,6 @@ module.exports = {
     'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-duplicate-imports': ['error', { includeExports: true }],
     'no-else-return': ['error', { allowElseIf: false }],
     'no-empty': 'error',
     'no-empty-static-block': 'error',
