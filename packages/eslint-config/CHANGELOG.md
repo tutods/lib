@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.2...@tutods/eslint-config@1.8.0-beta.3) (2023-08-06)
+
+### Bug Fixes
+
+- **eslint:** disable no-duplicate-imports for ts/tsx files ([eec8a27](https://github.com/tutods/lib/commit/eec8a273ae4da763c81615d72140977279286d72))
+
 # [1.8.0-beta.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.1...@tutods/eslint-config@1.8.0-beta.2) (2023-08-06)
 
 ### Features
