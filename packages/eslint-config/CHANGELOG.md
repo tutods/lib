@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0-beta.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.3...@tutods/eslint-config@1.8.0-beta.4) (2023-08-06)
+
+### Bug Fixes
+
+- **eslint:** javascript object-shorthand rule ([22a7f9e](https://github.com/tutods/lib/commit/22a7f9e500be628f9ad65d470da2730819a18cb2))
+
 # [1.8.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.2...@tutods/eslint-config@1.8.0-beta.3) (2023-08-06)
 
 ### Bug Fixes
