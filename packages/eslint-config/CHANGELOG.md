@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0-beta.6](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.5...@tutods/eslint-config@1.8.0-beta.6) (2023-08-07)
+
+### Features
+
+- **eslint:** javascript array rules ([5820dc6](https://github.com/tutods/lib/commit/5820dc6cac641c21e697e73a6bcd094ea4888090))
+
 # [1.8.0-beta.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.4...@tutods/eslint-config@1.8.0-beta.5) (2023-08-07)
 
 **Note:** Version bump only for package @tutods/eslint-config
