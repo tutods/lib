@@ -9,7 +9,8 @@
   "changelog": true,
   "command": {
     "version": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "commitHooks": false
     },
     "create": {
       "license": "MIT",
