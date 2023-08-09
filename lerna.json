@@ -9,6 +9,7 @@
   "changelog": true,
   "command": {
     "version": {
+      "message": "chore(release): publish %s",
       "conventionalCommits": true,
       "commitHooks": false
     },
