@@ -2,4 +2,10 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # exec < /dev/tty && node_modules/.bin/cz --hook || true
+#exec < /dev/tty && node_modules/.bin/cz --hook || true
+
+echo "$2"
+if [ "$2" != "message" ];then
+#    exec < /dev/tty && node_modules/.bin/cz --hook "$1" "$2" "$3" || true
 exec < /dev/tty && node_modules/.bin/cz --hook || true
+fi
