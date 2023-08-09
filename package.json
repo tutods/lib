@@ -23,9 +23,9 @@
     "prepare": "husky install",
     "format": "prettier --write ./packages **/*.md **/*.json",
     "lint": "eslint --ext .js --ignore-path .gitignore",
-    "preversion:stable": "lerna version --conventional-graduate --yes --message \"chore(stable version): publish\"",
+    "preversion:stable": "lerna version --conventional-graduate --yes --no-commit-hooks --message \"chore(stable version): publish\"",
     "version:stable": "lerna publish from-git --yes",
-    "preversion:beta": "lerna version --conventional-prerelease --preid beta --yes --message \"chore(beta version): publish\"",
+    "preversion:beta": "lerna version --conventional-prerelease --preid beta --yes --no-commit-hooks --message \"chore(beta version): publish\"",
     "version:beta": "lerna publish from-git --canary --yes"
   },
   "devDependencies": {
