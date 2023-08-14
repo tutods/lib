@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.6...@tutods/eslint-config@1.9.0) (2023-08-14)
+
+
+### Features
+
+* **eslint - javascript:** new line on object after 3 properties ([4047f78](https://github.com/tutods/lib/commit/4047f7887e7cd3573bf9434fe6fb27af67af8a91))
+
+
+
+
+
 ## [1.8.6](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.6) (2023-08-08)
 
 **Note:** Version bump only for package @tutods/eslint-config
