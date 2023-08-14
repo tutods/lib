@@ -2,6 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 #exec < /dev/tty && node_modules/.bin/cz --hook || true
-if [[ "$2" != *"message"* ]];then
+if [ "$2" != "message" ];then
     exec < /dev/tty && node_modules/.bin/cz --hook "$1" "$2" "$3" || true
 fi
