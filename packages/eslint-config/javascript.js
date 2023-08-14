@@ -78,7 +78,7 @@ module.exports = {
       'error',
       {
         consistent: true,
-        minProperties: 2,
+        minProperties: 3,
         multiline: true,
       },
     ],
