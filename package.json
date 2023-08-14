@@ -23,13 +23,14 @@
     "prepare": "husky install",
     "format": "prettier --write ./packages **/*.md **/*.json",
     "lint": "eslint --ext .js --ignore-path .gitignore",
-    "preversion:stable": "lerna version --conventional-graduate --yes --no-commit-hooks",
+    "preversion:stable": "cross-env HUSKY=0 lerna version --conventional-graduate --yes --no-commit-hooks",
     "version:stable": "lerna publish from-git --yes",
-    "preversion:beta": "lerna version --conventional-prerelease --preid beta --yes --no-commit-hooks",
+    "preversion:beta": "cross-env HUSKY=0 lerna version --conventional-prerelease --preid beta --yes --no-commit-hooks",
     "version:beta": "lerna publish from-git --canary --yes"
   },
   "devDependencies": {
     "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.46.0",
     "eslint-config-prettier": "^8.9.0",
