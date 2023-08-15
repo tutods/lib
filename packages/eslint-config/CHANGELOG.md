@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.9.0...@tutods/eslint-config@1.10.0-beta.0) (2023-08-15)
+
+
+### Features
+
+* **javascript extends - wip:** try to extends javascript config for js files ([9ca88ac](https://github.com/tutods/lib/commit/9ca88ac1f9106bbebbd1aee8230b27397ec2b1af))
+
+
+
+
+
 # [1.9.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.6...@tutods/eslint-config@1.9.0) (2023-08-14)
 
 
