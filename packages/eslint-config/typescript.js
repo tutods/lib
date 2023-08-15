@@ -10,8 +10,12 @@ try {
 }
 
 module.exports = {
-  extends: ['./javascript'],
+  // Extends: ['./javascript'],
   overrides: [
+    {
+      extends: ['./javascript'],
+      files: ['*.{js,jsx,mjs,cjs}'],
+    },
     {
       extends: 'plugin:@typescript-eslint/recommended',
       files: ['*.{ts,tsx}'],
@@ -44,11 +48,11 @@ module.exports = {
         ],
         '@typescript-eslint/no-use-before-define': 'error',
       },
+      settings: {
+        'import/parsers': {
+          [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+        },
+      },
     },
   ],
-  settings: {
-    'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
-    },
-  },
 };
