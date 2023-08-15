@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.10.0...@tutods/eslint-config@1.11.0-beta.0) (2023-08-15)
+
+
+### Features
+
+* **typescript config:** rules only for ts files ([82d5c48](https://github.com/tutods/lib/commit/82d5c48041e57e51deb786f932b2a0dac604cdde))
+
+
+
+
+
 # [1.10.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.10.0-beta.0...@tutods/eslint-config@1.10.0) (2023-08-15)
 
 
