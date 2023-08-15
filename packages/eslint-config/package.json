@@ -33,7 +33,6 @@
     "./javascript": "./javascript.js",
     "./typescript": "./typescript.js",
     "./react": "./libs/react.js",
-    "./react-tsx": "./libs/react-tsx.js",
     "./next": "./libs/next.js",
     "./node": "./libs/node.js",
     "./tailwind": "./libs/tailwind.js",

@@ -2,7 +2,7 @@ module.exports = {
   env: {
     jest: true,
   },
-  extends: ['./react-tsx'],
+  extends: ['./react'],
   overrides: [
     {
       files: [

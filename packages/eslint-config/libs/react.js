@@ -13,6 +13,17 @@ module.exports = {
     jest: true,
   },
   extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', '../javascript'],
+  overrides: [
+    {
+      extends: ['../typescript'],
+      files: ['*.tsx'],
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
+  ],
   plugins: ['react', 'jsx-a11y'],
   rules: {
     'jsx-a11y/alt-text': [

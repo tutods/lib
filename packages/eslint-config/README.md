@@ -22,14 +22,13 @@
 
 With this package, multiple configurations are exported. You need to pick the ones you will use.
 
-> **Note:** probably some configurations use others, like `/react-tsx` uses `/react` configuration.
+> **Note:** probably some configurations use others, like `/react` extends `/javascript` and `/typescript` configuration.
 
 ### Configurations available
 
 - `/javascript`;
 - `/typescript`;
 - `/react`;
-- `/react-tsx`;
 - `/next`;
 - `/tailwind`;
 - `/node`;
@@ -65,7 +64,7 @@ See the example below.
 
 Depending on the configuration you choose, you need to install some dependencies, examples:
 
-### `/react-tsx` configuration
+### `/react` configuration
 
 For use my **React with TypeScript** configuration, you need to install the following packages:
 
@@ -76,7 +75,7 @@ For use my **React with TypeScript** configuration, you need to install the foll
 - `eslint-plugin-react`;
 - `eslint-plugin-react-hooks`.
 
-> If you (for example) use the `/next` config, all the dependencies listed above will be needed, because that's config extends the `/react-tsx` config.
+> If you (for example) use the `/next` config, all the dependencies listed above will be needed, because that's config extends the `/react` config.
 >
 > **Note:** if you are extending `next/core-web-vitals`, you don't need to install the `eslint-plugin-react-hooks` pacakge.
 
