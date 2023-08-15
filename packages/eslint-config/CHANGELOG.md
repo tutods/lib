@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.1...@tutods/eslint-config@1.12.0-beta.0) (2023-08-15)
+
+
+### Features
+
+* **typerscript config -wip:** overrides extending js or not ([e557451](https://github.com/tutods/lib/commit/e5574512853d4d64bbf7462b1cdcbcff19ff5cac))
+
+
+
+
+
 ## [1.11.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.0...@tutods/eslint-config@1.11.1) (2023-08-15)
 
 **Note:** Version bump only for package @tutods/eslint-config
