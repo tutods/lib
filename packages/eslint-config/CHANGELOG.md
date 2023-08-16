@@ -3,166 +3,97 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.12.0-beta.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.3...@tutods/eslint-config@1.12.0-beta.4) (2023-08-16)
-
-
-### Features
-
-* **ts config:** extends javascript config for js files only ([3432a64](https://github.com/tutods/lib/commit/3432a64cdcdfba15f7fcdcd290213519ff04dc9b))
-
-
-
-
-
-# [1.12.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.2...@tutods/eslint-config@1.12.0-beta.3) (2023-08-16)
-
+# [1.12.0-beta.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.4...@tutods/eslint-config@1.12.0-beta.5) (2023-08-16)
 
 ### Reverts
 
-* **js and ts config:** remove files key ([5d8d896](https://github.com/tutods/lib/commit/5d8d896c95a628c6de12037019ee4586a74873aa))
+- **ts config:** parser and other rules for typescript files only ([6307c18](https://github.com/tutods/lib/commit/6307c189cacd0c0b626d299c257157aced2bedce))
 
-
-
-
-
-# [1.12.0-beta.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.1...@tutods/eslint-config@1.12.0-beta.2) (2023-08-16)
-
-
-### Bug Fixes
-
-* **js and ts config:** setup files ([8ef6d10](https://github.com/tutods/lib/commit/8ef6d1018e60adcc947a9e7063c3596588f1d302))
-
-
-
-
-
-# [1.12.0-beta.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.0...@tutods/eslint-config@1.12.0-beta.1) (2023-08-15)
-
-
-### Bug Fixes
-
-* **typescript config:** extends of javascript config for js files only ([4db86ae](https://github.com/tutods/lib/commit/4db86ae435d0b7ab9b6c5619a18d9ef27925e233))
-
-
-
-
-
-# [1.12.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.1...@tutods/eslint-config@1.12.0-beta.0) (2023-08-15)
-
+# [1.12.0-beta.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.3...@tutods/eslint-config@1.12.0-beta.4) (2023-08-16)
 
 ### Features
 
-* **typerscript config -wip:** overrides extending js or not ([e557451](https://github.com/tutods/lib/commit/e5574512853d4d64bbf7462b1cdcbcff19ff5cac))
+- **ts config:** extends javascript config for js files only ([3432a64](https://github.com/tutods/lib/commit/3432a64cdcdfba15f7fcdcd290213519ff04dc9b))
 
+# [1.12.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.2...@tutods/eslint-config@1.12.0-beta.3) (2023-08-16)
 
+### Reverts
 
+- **js and ts config:** remove files key ([5d8d896](https://github.com/tutods/lib/commit/5d8d896c95a628c6de12037019ee4586a74873aa))
 
+# [1.12.0-beta.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.1...@tutods/eslint-config@1.12.0-beta.2) (2023-08-16)
+
+### Bug Fixes
+
+- **js and ts config:** setup files ([8ef6d10](https://github.com/tutods/lib/commit/8ef6d1018e60adcc947a9e7063c3596588f1d302))
+
+# [1.12.0-beta.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.0...@tutods/eslint-config@1.12.0-beta.1) (2023-08-15)
+
+### Bug Fixes
+
+- **typescript config:** extends of javascript config for js files only ([4db86ae](https://github.com/tutods/lib/commit/4db86ae435d0b7ab9b6c5619a18d9ef27925e233))
+
+# [1.12.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.1...@tutods/eslint-config@1.12.0-beta.0) (2023-08-15)
+
+### Features
+
+- **typerscript config -wip:** overrides extending js or not ([e557451](https://github.com/tutods/lib/commit/e5574512853d4d64bbf7462b1cdcbcff19ff5cac))
 
 ## [1.11.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.0...@tutods/eslint-config@1.11.1) (2023-08-15)
 
 **Note:** Version bump only for package @tutods/eslint-config
 
-
-
-
-
 # [1.11.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.0-beta.1...@tutods/eslint-config@1.11.0) (2023-08-15)
-
 
 ### Bug Fixes
 
-* **typescript config:** extends javascript file and run typescript rules for ts and tsx files ([171c055](https://github.com/tutods/lib/commit/171c055b8b20ca55bde8bcbcfef121c810b27b5f))
-
-
-
-
+- **typescript config:** extends javascript file and run typescript rules for ts and tsx files ([171c055](https://github.com/tutods/lib/commit/171c055b8b20ca55bde8bcbcfef121c810b27b5f))
 
 # [1.11.0-beta.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.11.0-beta.0...@tutods/eslint-config@1.11.0-beta.1) (2023-08-15)
 
-
 ### Bug Fixes
 
-* **typescript config:** only extends javascript rules for js files ([ea43a2f](https://github.com/tutods/lib/commit/ea43a2fccd3280f4dde014f58164ba01b5c703e0))
-
-
-
-
+- **typescript config:** only extends javascript rules for js files ([ea43a2f](https://github.com/tutods/lib/commit/ea43a2fccd3280f4dde014f58164ba01b5c703e0))
 
 # [1.11.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.10.0...@tutods/eslint-config@1.11.0-beta.0) (2023-08-15)
 
-
 ### Features
 
-* **typescript config:** rules only for ts files ([82d5c48](https://github.com/tutods/lib/commit/82d5c48041e57e51deb786f932b2a0dac604cdde))
-
-
-
-
+- **typescript config:** rules only for ts files ([82d5c48](https://github.com/tutods/lib/commit/82d5c48041e57e51deb786f932b2a0dac604cdde))
 
 # [1.10.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.10.0-beta.0...@tutods/eslint-config@1.10.0) (2023-08-15)
 
-
 ### Reverts
 
-* **typescript config:** extends javascript config ([762fdc6](https://github.com/tutods/lib/commit/762fdc6624fba2cbb4a45ea1e9860e63b7ed9ed6))
-
-
-
-
+- **typescript config:** extends javascript config ([762fdc6](https://github.com/tutods/lib/commit/762fdc6624fba2cbb4a45ea1e9860e63b7ed9ed6))
 
 # [1.10.0-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.9.0...@tutods/eslint-config@1.10.0-beta.0) (2023-08-15)
 
-
 ### Features
 
-* **javascript extends - wip:** try to extends javascript config for js files ([9ca88ac](https://github.com/tutods/lib/commit/9ca88ac1f9106bbebbd1aee8230b27397ec2b1af))
-
-
-
-
+- **javascript extends - wip:** try to extends javascript config for js files ([9ca88ac](https://github.com/tutods/lib/commit/9ca88ac1f9106bbebbd1aee8230b27397ec2b1af))
 
 # [1.9.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.6...@tutods/eslint-config@1.9.0) (2023-08-14)
 
-
 ### Features
 
-* **eslint - javascript:** new line on object after 3 properties ([4047f78](https://github.com/tutods/lib/commit/4047f7887e7cd3573bf9434fe6fb27af67af8a91))
-
-
-
-
+- **eslint - javascript:** new line on object after 3 properties ([4047f78](https://github.com/tutods/lib/commit/4047f7887e7cd3573bf9434fe6fb27af67af8a91))
 
 ## [1.8.6](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.6) (2023-08-08)
 
 **Note:** Version bump only for package @tutods/eslint-config
 
-
-
-
-
 ## [1.8.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.5) (2023-08-08)
 
 **Note:** Version bump only for package @tutods/eslint-config
-
-
-
-
 
 ## [1.8.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.4) (2023-08-08)
 
 **Note:** Version bump only for package @tutods/eslint-config
 
-
-
-
-
 ## [1.8.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.3) (2023-08-08)
 
 **Note:** Version bump only for package @tutods/eslint-config
-
-
-
-
 
 ## [1.8.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.8.0-beta.6...@tutods/eslint-config@1.8.2) (2023-08-08)
 
