@@ -10,20 +10,14 @@ try {
 }
 
 module.exports = {
-  // Extends: ['./javascript'],
-  extends: 'plugin:@typescript-eslint/recommended',
-  overrides: [
-    {
-      extends: ['./javascript'],
-      files: ['*.{js,jsx,mjs,cjs}'],
-    },
-    /*
-     * {
-     *   files: ['*.{ts,tsx}'],
-     *
-     * },
-     */
-  ],
+  env: {
+    browser: true,
+    es2021: true,
+    es6: true,
+    node: true,
+  },
+  extends: ['plugin:@typescript-eslint/recommended', './javascript'],
+  files: ['*.{ts,tsx}'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
