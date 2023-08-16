@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0-beta.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.1...@tutods/eslint-config@1.12.0-beta.2) (2023-08-16)
+
+
+### Bug Fixes
+
+* **js and ts config:** setup files ([8ef6d10](https://github.com/tutods/lib/commit/8ef6d1018e60adcc947a9e7063c3596588f1d302))
+
+
+
+
+
 # [1.12.0-beta.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.0...@tutods/eslint-config@1.12.0-beta.1) (2023-08-15)
 
 
