@@ -10,45 +10,45 @@ try {
 }
 
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended'],
+  extends: ['./javascript'],
   overrides: [
     {
-      extends: ['./javascript'],
-      files: ['*.{js,jsx,mjs,cjs}'],
+      extends: ['plugin:@typescript-eslint/recommended'],
+      files: ['*.{ts,tsx}'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 'latest',
+        project: true,
+        sourceType: 'module',
+      },
+      plugins: ['@typescript-eslint'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/ban-types': 'warn',
+        '@typescript-eslint/consistent-type-exports': [
+          'error',
+          {
+            fixMixedExportsWithInlineTypeSpecifier: false,
+          },
+        ],
+        '@typescript-eslint/consistent-type-imports': 'error',
+        '@typescript-eslint/no-empty-function': 'warn',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-this-alias': 'warn',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            argsIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+          },
+        ],
+        '@typescript-eslint/no-use-before-define': 'error',
+      },
+      settings: {
+        'import/parsers': {
+          [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
+        },
+      },
     },
   ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    project: true,
-    sourceType: 'module',
-  },
-  plugins: ['@typescript-eslint'],
-  rules: {
-    '@typescript-eslint/ban-ts-comment': 'warn',
-    '@typescript-eslint/ban-types': 'warn',
-    '@typescript-eslint/consistent-type-exports': [
-      'error',
-      {
-        fixMixedExportsWithInlineTypeSpecifier: false,
-      },
-    ],
-    '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/no-empty-function': 'warn',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-this-alias': 'warn',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-      },
-    ],
-    '@typescript-eslint/no-use-before-define': 'error',
-  },
-  settings: {
-    'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.tsx', '.d.ts'],
-    },
-  },
 };
