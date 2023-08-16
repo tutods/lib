@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.2...@tutods/eslint-config@1.12.0-beta.3) (2023-08-16)
+
+
+### Reverts
+
+* **js and ts config:** remove files key ([5d8d896](https://github.com/tutods/lib/commit/5d8d896c95a628c6de12037019ee4586a74873aa))
+
+
+
+
+
 # [1.12.0-beta.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.1...@tutods/eslint-config@1.12.0-beta.2) (2023-08-16)
 
 
