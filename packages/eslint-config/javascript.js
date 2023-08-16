@@ -6,7 +6,6 @@ module.exports = {
     node: true,
   },
   extends: ['eslint:recommended', './partials/imports'],
-  files: ['*.{js,jsx,mjs,cjs}'],
   parserOptions: {
     ecmaVersion: 'latest',
   },
