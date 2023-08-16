@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0-beta.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.3...@tutods/eslint-config@1.12.0-beta.4) (2023-08-16)
+
+
+### Features
+
+* **ts config:** extends javascript config for js files only ([3432a64](https://github.com/tutods/lib/commit/3432a64cdcdfba15f7fcdcd290213519ff04dc9b))
+
+
+
+
+
 # [1.12.0-beta.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.2...@tutods/eslint-config@1.12.0-beta.3) (2023-08-16)
 
 
