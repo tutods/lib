@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0...@tutods/eslint-config@1.12.1) (2023-08-17)
+
+### Bug Fixes
+
+- **typescript config:** remove files from top level config ([2a4818f](https://github.com/tutods/lib/commit/2a4818feb80d9551c029cada81448d0d82f77e80))
+
 # [1.12.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.5...@tutods/eslint-config@1.12.0) (2023-08-17)
 
 ### Bug Fixes
