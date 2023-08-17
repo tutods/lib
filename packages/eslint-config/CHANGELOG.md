@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2-beta.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.1...@tutods/eslint-config@1.12.2-beta.0) (2023-08-17)
+
+### Bug Fixes
+
+- **react config:** only extend javascript config for js files ([0a3a4e6](https://github.com/tutods/lib/commit/0a3a4e694204d896145c9470c87c31003a61976a))
+
 ## [1.12.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0...@tutods/eslint-config@1.12.1) (2023-08-17)
 
 ### Bug Fixes
