@@ -17,7 +17,6 @@ module.exports = {
     node: true,
   },
   extends: ['plugin:@typescript-eslint/recommended'],
-  files: ['*.{ts,tsx}'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
