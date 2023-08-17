@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.5...@tutods/eslint-config@1.12.0) (2023-08-17)
+
+### Bug Fixes
+
+- **typescript config:** remove extends of javascript config ([177943a](https://github.com/tutods/lib/commit/177943ae4e417a4c2b0fb81fa7d8d3e80ed3713b))
+
 # [1.12.0-beta.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.0-beta.4...@tutods/eslint-config@1.12.0-beta.5) (2023-08-16)
 
 ### Reverts
