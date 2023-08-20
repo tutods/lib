@@ -12,22 +12,22 @@ module.exports = {
   env: {
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended'],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', '../partials/imports'],
   overrides: [
     {
       extends: ['../typescript'],
       files: '*.{tsx,ts}',
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
     },
     {
       extends: ['../javascript'],
       files: '*.{jsx,js,mjs,cjs}',
     },
   ],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   plugins: ['react', 'jsx-a11y'],
   rules: {
     'jsx-a11y/alt-text': [
