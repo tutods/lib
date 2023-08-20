@@ -6,17 +6,14 @@
 
 ## ▶️ Installation
 
-**Using Yarn:**
-
-> `yarn add -D @tutods/eslint-config`
-
 **Using NPM:**
+`npm i -D @tutods/eslint-config`
 
-> `npm i -D @tutods/eslint-config`
+**Using Yarn:**
+`yarn add -D @tutods/eslint-config`
 
 **Using PNPM:**
-
-> `pnpm add -D @tutods/eslint-config`
+`pnpm add -D @tutods/eslint-config`
 
 ## 📄 Usage
 
@@ -66,11 +63,12 @@ Depending on the configuration you choose, you need to install some dependencies
 
 ### `/react` configuration
 
-For use my **React with TypeScript** configuration, you need to install the following packages:
+For use my **React** configuration, you need to install the following packages:
 
-- `typescript`;
-- `@typescript-eslint/eslint-plugin`;
-- `@typescript-eslint/parser`;
+- `javascript` <small>**(for `.js` and `.jsx` files)**</small>;
+- `typescript` <small>**(for `.ts` and `.tsx` files)**</small>;
+  - `@typescript-eslint/eslint-plugin`;
+  - `@typescript-eslint/parser`;
 - `eslint-plugin-jsx-a11y`;
 - `eslint-plugin-react`;
 - `eslint-plugin-react-hooks`.
