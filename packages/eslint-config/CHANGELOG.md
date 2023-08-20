@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.2...@tutods/eslint-config@1.13.0) (2023-08-20)
+
+### Features
+
+- **react config:** add imports rules for all files (js and ts) ([65f3d41](https://github.com/tutods/lib/commit/65f3d410c4dd1ff98ceb270ca9ccb35238bbccd6))
+
 ## [1.12.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.2-beta.0...@tutods/eslint-config@1.12.2) (2023-08-17)
 
 **Note:** Version bump only for package @tutods/eslint-config
