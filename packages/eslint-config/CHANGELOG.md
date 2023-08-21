@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.13.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.13.0...@tutods/eslint-config@1.13.1) (2023-08-21)
+
+### Bug Fixes
+
+- **tailwind config:** remove calles option ([bed74cc](https://github.com/tutods/lib/commit/bed74cc96ee026bf1309eb7f83e14aa73360db59))
+
 # [1.13.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.12.2...@tutods/eslint-config@1.13.0) (2023-08-20)
 
 ### Features

@@ -1,7 +1,7 @@
 {
   "name": "@tutods/eslint-config",
   "description": "ESLint configuration for JavaScript, TypeScript, React, Node.js, TailwindCSS projects, allowing to use other configs like sort imports, sort keys and more.",
-  "version": "1.13.0",
+  "version": "1.13.1",
   "private": false,
   "keywords": [
     "eslint",
