@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1-beta.1](https://github.com/tutods/lib/compare/@tutods/components@0.2.1-beta.0...@tutods/components@0.2.1-beta.1) (2023-08-26)
+
+### Bug Fixes
+
+- **conditional container - wip:** use createElement for all scenarios ([c399b98](https://github.com/tutods/lib/commit/c399b98709316bfaf3375f2e2847ccd5edabadc3))
+
 ## [0.2.1-beta.0](https://github.com/tutods/lib/compare/@tutods/components@0.2.0...@tutods/components@0.2.1-beta.0) (2023-08-26)
 
 ### Bug Fixes
