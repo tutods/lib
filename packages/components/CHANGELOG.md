@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1-beta.2](https://github.com/tutods/lib/compare/@tutods/components@0.2.1-beta.1...@tutods/components@0.2.1-beta.2) (2023-08-26)
+
+### Bug Fixes
+
+- **container element:** only return fallback if condition is false ([bb6efe4](https://github.com/tutods/lib/commit/bb6efe4271e18ba92a4ff731e956477cc6f1a2ac))
+
 ## [0.2.1-beta.1](https://github.com/tutods/lib/compare/@tutods/components@0.2.1-beta.0...@tutods/components@0.2.1-beta.1) (2023-08-26)
 
 ### Bug Fixes
