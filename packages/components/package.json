@@ -1,6 +1,9 @@
 {
   "name": "@tutods/components",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.1.0",
   "description": "React generic components that can be used in any scenario",
   "keywords": [
@@ -39,5 +42,6 @@
     "react-dom": "^18.2.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
-  }
+  },
+  "gitHead": "172bafcb71a23726d89b2e5dcafa965e999b5ce6"
 }
