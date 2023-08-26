@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/tutods/lib/compare/@tutods/components@0.1.0...@tutods/components@0.1.1) (2023-08-26)
+
+### Bug Fixes
+
+- access ([3843701](https://github.com/tutods/lib/commit/3843701b8c754b1400a4eb2b53dcdd81973e56ef))
+
 # 0.1.0 (2023-08-26)
 
 ### Features
