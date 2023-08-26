@@ -28,6 +28,7 @@
     "url": "https://github.com/tutods/lib/issues"
   },
   "scripts": {
+    "prepublish": "tsup src/index.ts --format esm,cjs --dts --external react",
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
     "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch"
   },
