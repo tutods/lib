@@ -47,7 +47,7 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
      */
   }
 
-  if (fallback) {
+  if (!when && fallback) {
     const { element: fallbackElement, props: fallbackProps = {} } = fallback;
 
     /*
