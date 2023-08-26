@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@tutods/eslint-config/react",
+    "@tutods/eslint-config/sort-imports",
+    "@tutods/eslint-config/prettier"
+  ]
+}

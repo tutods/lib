@@ -1,5 +1,9 @@
-import { ConditionalContainerProps, RenderElement } from '@/components/ConditionalContainer/types';
 import { createElement } from 'react';
+
+import type {
+  ConditionalContainerProps,
+  RenderElement,
+} from '@/components/ConditionalContainer/types';
 
 /**
  * Component to render a specific element or component according a condition
@@ -23,19 +27,15 @@ import { createElement } from 'react';
  * ```
  */
 const ConditionalContainer = <TRender extends RenderElement, TFallback extends RenderElement>({
-  when,
   children,
-  render,
   fallback,
+  render,
+  when,
 }: ConditionalContainerProps<TRender, TFallback>) => {
-  if (!children) {
-    return null;
-  }
-
   if (when) {
     const { element, props: renderProps } = render;
 
-    // for the cases like `element: "div"`
+    // For the cases like `element: "div"`
     if (typeof element === 'string') {
       return createElement(element, renderProps, children);
     }
@@ -46,7 +46,7 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
   if (fallback) {
     const { element: fallbackElement, props: fallbackProps = {} } = fallback;
 
-    // for the cases like `element: "div"`
+    // For the cases like `element: "div"`
     if (typeof fallbackElement === 'string') {
       return createElement(fallbackElement, fallbackProps, children);
     }
@@ -54,7 +54,7 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
     return fallbackElement({ children, ...fallbackProps });
   }
 
-  // when no `fallback` element is specified
+  // When no `fallback` element is specified
   return <>{children}</>;
 };
 

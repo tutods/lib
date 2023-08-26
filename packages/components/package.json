@@ -33,11 +33,20 @@
   "scripts": {
     "prepublish": "tsup src/index.ts --format esm,cjs --dts --external react",
     "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch"
+    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch",
+    "lint": "eslint --ignore-path ../../.gitignore"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
     "@types/react": "^18.2.17",
     "@types/react-dom": "^18.2.7",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^7.1.0",

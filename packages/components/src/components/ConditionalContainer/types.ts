@@ -1,4 +1,4 @@
-import { ReactElement, JSX, ComponentProps, ReactNode } from 'react';
+import type { ComponentProps, JSX, ReactElement, ReactNode } from 'react';
 
 /**
  * Available types to be used on `render` or `otherwise`
@@ -29,7 +29,7 @@ type ConditionalContainerProps<TRender extends RenderElement, TFallback extends 
   /**
    * Children of the container
    */
-  children: ReactNode;
+  children?: ReactNode;
 
   /**
    * Component to be rendered when the condition is satisfied
