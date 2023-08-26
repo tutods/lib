@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0-beta.0](https://github.com/tutods/lib/compare/@tutods/components@0.2.1-beta.3...@tutods/components@0.3.0-beta.0) (2023-08-26)
+
+### Features
+
+- **conditional container:** try to cleanup types ([6d41ccc](https://github.com/tutods/lib/commit/6d41ccc8c09ba871ad665e942293d548463ceab5))
+
 ## [0.2.1-beta.3](https://github.com/tutods/lib/compare/@tutods/components@0.2.1-beta.2...@tutods/components@0.2.1-beta.3) (2023-08-26)
 
 **Note:** Version bump only for package @tutods/components
