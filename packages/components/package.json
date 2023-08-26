@@ -1,0 +1,31 @@
+{
+  "name": "@tutods/components",
+  "version": "0.0.1",
+  "description": "React generic components that can be used in any scenario",
+  "keywords": [
+    "react",
+    "components",
+    "typescript",
+    "jsx",
+    "tsx"
+  ],
+  "author": "Daniel Sousa <jdaniel.asousa@gmail.com>",
+  "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tutods/lib.git",
+    "directory": "packages/components"
+  },
+  "bugs": {
+    "url": "https://github.com/tutods/lib/issues"
+  },
+  "scripts": {}
+}
