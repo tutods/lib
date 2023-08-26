@@ -1,5 +1,6 @@
 {
   "name": "@tutods/components",
+  "private": false,
   "version": "0.0.1",
   "description": "React generic components that can be used in any scenario",
   "keywords": [
@@ -9,16 +10,15 @@
     "jsx",
     "tsx"
   ],
-  "author": "Daniel Sousa <jdaniel.asousa@gmail.com>",
+  "author": {
+    "name": "Daniel Sousa @Tutods",
+    "url": "https://github.com/tutods"
+  },
   "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
   "license": "MIT",
-  "main": "src/index.ts",
-  "directories": {
-    "src": "src"
-  },
-  "files": [
-    "src"
-  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tutods/lib.git",
@@ -27,5 +27,16 @@
   "bugs": {
     "url": "https://github.com/tutods/lib/issues"
   },
-  "scripts": {}
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.17",
+    "@types/react-dom": "^18.2.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6"
+  }
 }
