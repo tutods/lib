@@ -19,8 +19,18 @@
   },
   "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/components.es.js",
+      "require": "./dist/components.umd.js"
+    }
+  },
+  "main": "./dist/components.umd.js",
+  "module": "./dist/components.es.js",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -31,9 +41,11 @@
     "url": "https://github.com/tutods/lib/issues"
   },
   "scripts": {
-    "prepublish": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --external react --watch",
+    "prepack": "tsc && vite build",
+    "prepublishOnly": "tsc && vite build",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "eslint --ignore-path ../../.gitignore"
   },
   "devDependencies": {
@@ -41,6 +53,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
+    "@vitejs/plugin-react": "^4.0.4",
     "eslint-config-prettier": "^8.9.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.0.0",
@@ -49,8 +62,14 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "tsup": "^7.1.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.2",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
   },
   "gitHead": "172bafcb71a23726d89b2e5dcafa965e999b5ce6"
 }

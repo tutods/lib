@@ -34,30 +34,12 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
 }: ConditionalContainerProps<TRender, TFallback>) => {
   if (when) {
     const { element, props: renderProps } = render;
-
-    /*
-     * For the cases like `element: "div"`
-     * if (typeof element === 'string') {
-     */
     return createElement(element, renderProps, children);
-    /*
-     * }
-     *
-     * return element({ children, ...renderProps });
-     */
   }
 
   if (!when && fallback) {
     const { element: fallbackElement, props: fallbackProps = {} } = fallback;
-
-    /*
-     * For the cases like `element: "div"`
-     * if (typeof fallbackElement === 'string') {
-     */
     return createElement(fallbackElement, fallbackProps, children);
-    // }
-
-    // Return fallbackElement({ children, ...fallbackProps });
   }
 
   // When no `fallback` element is specified
