@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tutods/lib/compare/@tutods/components@0.1.1...@tutods/components@0.2.0) (2023-08-26)
+
+### Features
+
+- **conditional container:** add forward ref as possible render element ([f7a6c18](https://github.com/tutods/lib/commit/f7a6c18c0134f28a5808619515c4e8c288f5f559))
+
 ## [0.1.1](https://github.com/tutods/lib/compare/@tutods/components@0.1.0...@tutods/components@0.1.1) (2023-08-26)
 
 ### Bug Fixes
