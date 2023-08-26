@@ -1,10 +1,10 @@
-import type { Component, ComponentProps, JSX, ReactNode } from 'react';
+import type { ClassicComponent, ComponentProps, FunctionComponent, JSX, ReactNode } from 'react';
 
 /**
  * Available types to be used on `render` or `otherwise`
  */
 // TS will infer the props when `element` is defined
-type RenderElement = Component<any> | keyof JSX.IntrinsicElements;
+type RenderElement = FunctionComponent<any> | ClassicComponent<any> | keyof JSX.IntrinsicElements;
 /*
  * | ((props: any) => ReactElement)
  * | ForwardRefExoticComponent<any>
