@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.14.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.13.1...@tutods/eslint-config@1.14.0) (2023-09-01)
+
+### Features
+
+- **typescript config:** add arrow function body style from javascript" ([aad1aa5](https://github.com/tutods/lib/commit/aad1aa54bfba11c4684dfc0c0cdd2e0c2766ba62))
+
 ## [1.13.1](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.13.0...@tutods/eslint-config@1.13.1) (2023-08-21)
 
 ### Bug Fixes
