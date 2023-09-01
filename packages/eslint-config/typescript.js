@@ -45,6 +45,7 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-use-before-define': 'error',
+    'arrow-body-style': ['error', 'as-needed'],
   },
   settings: {
     'import/parsers': {
