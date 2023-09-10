@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-beta.1](https://github.com/tutods/lib/compare/@tutods/components@0.4.0-beta.0...@tutods/components@0.4.0-beta.1) (2023-09-10)
+
+### Bug Fixes
+
+- **conditional container:** error render fallback ([a97a8ca](https://github.com/tutods/lib/commit/a97a8ca951973ab41078b8ac235ae8f1b6c2b7d7))
+
 # [0.4.0-beta.0](https://github.com/tutods/lib/compare/@tutods/components@0.3.0...@tutods/components@0.4.0-beta.0) (2023-09-10)
 
 ### Features
