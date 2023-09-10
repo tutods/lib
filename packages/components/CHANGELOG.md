@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-beta.0](https://github.com/tutods/lib/compare/@tutods/components@0.3.0...@tutods/components@0.4.0-beta.0) (2023-09-10)
+
+### Features
+
+- **conditional container - wip:** create element ([3b23fce](https://github.com/tutods/lib/commit/3b23fce9a13c9ab82992cd07361863d7e81ffd39))
+
 # [0.3.0](https://github.com/tutods/lib/compare/@tutods/components@0.3.0-beta.2...@tutods/components@0.3.0) (2023-08-26)
 
 **Note:** Version bump only for package @tutods/components
