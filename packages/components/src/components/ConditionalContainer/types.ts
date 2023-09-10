@@ -1,14 +1,19 @@
-import type { ComponentProps, FunctionComponent, JSX, ReactNode } from 'react';
+import type {
+  ComponentProps,
+  ForwardRefExoticComponent,
+  JSX,
+  ReactElement,
+  ReactNode,
+} from 'react';
 
 /**
  * Available types to be used on `render` or `otherwise`
  */
 // TS will infer the props when `element` is defined
-type RenderElement = FunctionComponent<any> | keyof JSX.IntrinsicElements;
-/*
- * | ((props: any) => ReactElement)
- * | ForwardRefExoticComponent<any>
- */
+type RenderElement =
+  | keyof JSX.IntrinsicElements
+  | ((props: any) => ReactElement)
+  | ForwardRefExoticComponent<any>;
 
 type ComponentArgs<T extends RenderElement> = {
   /**
