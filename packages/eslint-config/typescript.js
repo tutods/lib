@@ -16,7 +16,7 @@ module.exports = {
     es6: true,
     node: true,
   },
-  extends: ['plugin:@typescript-eslint/recommended'],
+  extends: ['plugin:@typescript-eslint/recommended', './javascript'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -45,7 +45,6 @@ module.exports = {
       },
     ],
     '@typescript-eslint/no-use-before-define': 'error',
-    'arrow-body-style': ['error', 'as-needed'],
   },
   settings: {
     'import/parsers': {
