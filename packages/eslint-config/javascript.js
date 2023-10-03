@@ -60,6 +60,13 @@ module.exports = {
     'no-throw-literal': 'error',
     'no-unneeded-ternary': 'error',
     'no-unused-expressions': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+      },
+    ],
     'no-use-before-define': 'error',
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
