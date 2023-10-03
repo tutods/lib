@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.16.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.15.0...@tutods/eslint-config@1.16.0) (2023-10-03)
+
+### Features
+
+- **eslint:** no unused vars ([0c90ed1](https://github.com/tutods/lib/commit/0c90ed1522cdf7f084b79dc26c4dd844a548e7f7))
+
 # [1.15.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.14.0...@tutods/eslint-config@1.15.0) (2023-09-24)
 
 ### Features
