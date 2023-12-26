@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/tutods/lib/blob/main/packages/eslint-config/README.md",
   "license": "MIT",
-  "main": "index.js",
+  "main": "javascript.js",
   "exports": {
     ".": "./javascript.js",
     "./javascript": "./javascript.js",
