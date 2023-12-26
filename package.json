@@ -31,15 +31,15 @@
   "devDependencies": {
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.9.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-sort-destructure-keys": "^1.5.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "husky": "^8.0.3",
     "lerna": "^8.0.1",
-    "lint-staged": "^13.2.3",
-    "prettier": "^3.0.0"
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
