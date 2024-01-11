@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.3...@tutods/eslint-config@1.16.4) (2023-12-26)
+
+### Bug Fixes
+
+- user name ([2153d4e](https://github.com/tutods/lib/commit/2153d4e6d7d7d72ca50f8289d3ac91f990f30685))
+
+## [1.16.3](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.2...@tutods/eslint-config@1.16.3) (2023-12-26)
+
+### Bug Fixes
+
+- **eslint config:** entry point ([ee4212b](https://github.com/tutods/lib/commit/ee4212b044663eb25dbf501d74201cbc87319248))
+
 ## [1.16.2](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.1...@tutods/eslint-config@1.16.2) (2023-10-21)
 
 **Note:** Version bump only for package @tutods/eslint-config

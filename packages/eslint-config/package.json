@@ -1,7 +1,7 @@
 {
   "name": "@tutods/eslint-config",
   "description": "ESLint configuration for JavaScript, TypeScript, React, Node.js, TailwindCSS projects, allowing to use other configs like sort imports, sort keys and more.",
-  "version": "1.16.2",
+  "version": "1.16.4",
   "private": false,
   "keywords": [
     "eslint",
@@ -17,7 +17,7 @@
     "configuration"
   ],
   "author": {
-    "name": "Daniel Sousa @Tutods",
+    "name": "Daniel Sousa @TutoDS",
     "url": "https://github.com/tutods"
   },
   "repository": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/tutods/lib/blob/main/packages/eslint-config/README.md",
   "license": "MIT",
-  "main": "index.js",
+  "main": "javascript.js",
   "exports": {
     ".": "./javascript.js",
     "./javascript": "./javascript.js",
@@ -44,9 +44,9 @@
     "access": "public"
   },
   "dependencies": {
-    "eslint": "^8.52.0",
+    "eslint": "^8.56.0",
     "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-unused-imports": "^3.0.0"
   },
   "peerDependencies": {
