@@ -56,7 +56,7 @@ const foldersToIgnore = [
 if (fs.existsSync('./tsconfig.json')) {
   const tsconfig = JSON.parse(fs.readFileSync('./tsconfig.json'));
 
-  if (tsconfig.compilerOptions && !!tsconfig.compilerOptions.paths) {
+  if (tsconfig.compilerOptions && tsconfig.compilerOptions.paths) {
     tsconfigPaths = Object.keys(tsconfig.compilerOptions?.paths).map(path => path.split('/')[0]);
   }
 }

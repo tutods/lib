@@ -1,7 +1,6 @@
 {
   "extends": [
     "@tutods/eslint-config/javascript",
-    "@tutods/eslint-config/sort-keys",
     "@tutods/eslint-config/prettier"
   ]
 }
