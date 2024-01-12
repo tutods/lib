@@ -1,3 +1,10 @@
+try {
+  require('eslint-plugin-unused-imports');
+  require('eslint-plugin-import');
+} catch {
+  throw new Error('Please add eslint-plugin-unused-imports and eslint-plugin-import packages');
+}
+
 module.exports = {
   overrides: [
     {
