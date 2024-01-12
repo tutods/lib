@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.16.5](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.4...@tutods/eslint-config@1.16.5) (2024-01-12)
+
+### Bug Fixes
+
+- add missing validation ([61ba909](https://github.com/tutods/lib/commit/61ba909dac75ffe0c72cf24197f702131d020657))
+- lint ([fd668d3](https://github.com/tutods/lib/commit/fd668d3739998f9a2f054ead63bfa75881ea51ea))
+
 ## [1.16.4](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.3...@tutods/eslint-config@1.16.4) (2023-12-26)
 
 ### Bug Fixes
