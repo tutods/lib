@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/tutods/lib/compare/@tutods/prettier-config@0.2.0...@tutods/prettier-config@0.2.1) (2024-01-12)
+
+### Bug Fixes
+
+- lint ([749ebf4](https://github.com/tutods/lib/commit/749ebf4121ce788fab1852dd68a5c30afa86c381))
+
 # [0.2.0](https://github.com/tutods/lib/compare/@tutods/prettier-config@0.1.3...@tutods/prettier-config@0.2.0) (2023-07-30)
 
 ### Features

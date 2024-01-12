@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/tutods/lib/compare/@tutods/components@0.4.4...@tutods/components@0.4.5) (2024-01-12)
+
+### Bug Fixes
+
+- lint ([749ebf4](https://github.com/tutods/lib/commit/749ebf4121ce788fab1852dd68a5c30afa86c381))
+
 ## [0.4.4](https://github.com/tutods/lib/compare/@tutods/components@0.4.3...@tutods/components@0.4.4) (2024-01-12)
 
 **Note:** Version bump only for package @tutods/components
