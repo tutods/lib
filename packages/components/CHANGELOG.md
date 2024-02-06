@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/tutods/lib/compare/@tutods/components@0.4.5...@tutods/components@0.5.0) (2024-02-06)
+
+### Features
+
+- add prettier config for tailwind and cleanup ([188280b](https://github.com/tutods/lib/commit/188280b43e518dad3ceae0286588cce9aab00c12))
+
 ## [0.4.5](https://github.com/tutods/lib/compare/@tutods/components@0.4.4...@tutods/components@0.4.5) (2024-01-12)
 
 ### Bug Fixes

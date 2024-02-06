@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.17.0](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.7...@tutods/eslint-config@1.17.0) (2024-02-06)
+
+### Features
+
+- add prettier config for tailwind and cleanup ([188280b](https://github.com/tutods/lib/commit/188280b43e518dad3ceae0286588cce9aab00c12))
+
 ## [1.16.7](https://github.com/tutods/lib/compare/@tutods/eslint-config@1.16.6...@tutods/eslint-config@1.16.7) (2024-01-12)
 
 ### Bug Fixes
