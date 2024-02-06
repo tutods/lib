@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "repository": "https://github.com/tutods/lib",
+  "packageManager": "yarn@1.22.21",
   "engineStrict": true,
   "engines": {
     "node": ">=18.x.x",
@@ -21,7 +22,7 @@
   "scripts": {
     "commit": "cz",
     "prepare": "husky install",
-    "format": "prettier --write ./packages **/*.md **/*.json",
+    "format": "prettier --write ./packages **/*.{js,jsx,ts,tsx,md,mdx,html,css}",
     "lint": "eslint --ext .js,.ts,.tsx,.jsx packages --ignore-path .gitignore",
     "preversion:stable": "lerna version --conventional-graduate --yes",
     "version:stable": "lerna publish from-git --yes",

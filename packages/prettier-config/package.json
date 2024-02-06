@@ -2,7 +2,6 @@
   "name": "@tutods/prettier-config",
   "description": "Prettier configuration to use in web projects, like React, Node, etc.",
   "version": "0.2.1",
-  "private": false,
   "keywords": [
     "prettier",
     "formatting",
@@ -21,13 +20,20 @@
   "license": "MIT",
   "main": "index.js",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./tailwind": "./tailwind.js"
   },
   "publishConfig": {
     "access": "public"
   },
   "peerDependencies": {
-    "prettier": ">=2.0.0"
+    "prettier": ">=3.0.0",
+    "prettier-plugin-tailwindcss": ">=0.5"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   },
   "gitHead": "f8b9beafd8432648c3c15d290ad95fe1bdf95dd2"
 }

@@ -1,6 +1,5 @@
 {
   "name": "@tutods/components",
-  "private": false,
   "publishConfig": {
     "access": "public"
   },
