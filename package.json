@@ -19,6 +19,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "prettier": "@tutods/prettier-config",
   "scripts": {
     "commit": "cz",
     "prepare": "husky install",

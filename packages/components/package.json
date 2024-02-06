@@ -24,12 +24,12 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/components.es.js",
-      "require": "./dist/components.umd.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
-  "main": "./dist/components.umd.js",
-  "module": "./dist/components.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -40,11 +40,8 @@
     "url": "https://github.com/tutods/lib/issues"
   },
   "scripts": {
-    "prepack": "tsc && vite build",
-    "prepublishOnly": "tsc && vite build",
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "build": "tsup",
     "lint": "eslint --ignore-path ../../.gitignore"
   },
   "devDependencies": {
@@ -52,7 +49,6 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
-    "@vitejs/plugin-react": "^4.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.1.2",
@@ -62,14 +58,12 @@
     "prettier": "^3.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9",
-    "vite-plugin-dts": "^3.5.2",
-    "vite-tsconfig-paths": "^4.2.0"
+    "tsup": "^8.0.1",
+    "typescript": "^5.1.6"
   },
   "peerDependencies": {
     "react": "16.8.0 || >=17.x",
     "react-dom": "16.8.0 || >=17.x"
   },
-  "gitHead": "011d33c7657112896e231c7b2b1f60c0099aff36"
+  "gitHead": "4655d3a3b9169a47b000e491dd84343fcb987dde"
 }
