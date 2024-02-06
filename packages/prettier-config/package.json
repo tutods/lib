@@ -1,7 +1,7 @@
 {
   "name": "@tutods/prettier-config",
   "description": "Prettier configuration to use in web projects, like React, Node, etc.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "prettier",
     "formatting",
