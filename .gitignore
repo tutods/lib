@@ -251,7 +251,8 @@ modules.xml
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -696,3 +697,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,yarn,visualstudiocode,webstorm,webstorm+iml,webstorm+all,jetbrains,jetbrains+iml,jetbrains+all,windows,macos,linux,sublimetext
 
+# Pack folder
+packages/**/package/*
