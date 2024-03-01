@@ -28,27 +28,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: "Version and publish"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run:
-          - npx lerna version --conventional-commits --conventional-graduate --yes
-          - npx lerna publish from-git --yes
-#  publishold:
-#    if: github.event.pull_request.merged == true
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: "Checkout"
-#        uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 0
-#      - name: "Use NodeJS 20"
-#        uses: actions/setup-node@v2
-#        with:
-#          node-version: '20'
-#
-#      - name: "Version and publish" # Interesting step
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#        run:
-#          - git config user.name "${{ github.actor }}"
-#          - git config user.email "${{ github.actor}}@users.noreply.github.com"
-#          - npx lerna version --conventional-commits --conventional-graduate --yes
-#          - npx lerna publish from-git --yes
+          - pnpm lerna version --conventional-commits --conventional-graduate --yes
+          - pnpm lerna publish from-git --yes
