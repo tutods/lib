@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/tutods/lib/compare/@tutods/components@0.6.0...@tutods/components@0.6.1) (2024-03-01)
+
+**Note:** Version bump only for package @tutods/components
+
 # [0.6.0](https://github.com/tutods/lib/compare/@tutods/components@0.5.1...@tutods/components@0.6.0) (2024-02-12)
 
 ### Features
