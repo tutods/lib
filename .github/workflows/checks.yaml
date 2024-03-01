@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '20'
-
+      - name: "Enable PNPM"
+        run:
+          - corepack enable
+          - corepack prepare pnpm@latest-8 --activate
       - name: Install dependencies
-        run: pnpm
+        run: pnpm i
