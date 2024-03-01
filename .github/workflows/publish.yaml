@@ -36,7 +36,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
         run: |
           npx lerna version --conventional-commits --conventional-graduate --yes
           npx lerna publish from-git --yes
