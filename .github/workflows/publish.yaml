@@ -28,8 +28,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: "Version and publish"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run:
           - npx lerna version --conventional-commits --conventional-graduate --yes
           - npx lerna publish from-git --yes
