@@ -30,6 +30,7 @@ jobs:
       - name: "Version and publish"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           pnpm lerna version --conventional-commits --conventional-graduate --yes
           pnpm lerna publish from-git --yes
