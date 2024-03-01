@@ -4,6 +4,7 @@ on:
     types: [ opened, synchronize ]
 jobs:
   checks:
+    using: 'node20'
     runs-on: ubuntu-20.04
     strategy:
       matrix:
@@ -14,7 +15,7 @@ jobs:
         with:
           version: 8
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
