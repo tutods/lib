@@ -7,21 +7,19 @@ on:
       - main
 jobs:
   checks:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        node-version: [ 20 ]
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v3
         with:
-          fetch-depth: 0
-
-      - name: "Use NodeJS 20"
-        uses: actions/setup-node@v2
+          version: 8
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
-      - name: "Enable PNPM"
-        run:
-          - corepack enable
-          - corepack prepare pnpm@latest-8 --activate
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
       - name: Install dependencies
-        run: pnpm i
+        run: pnpm install
