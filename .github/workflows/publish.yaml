@@ -27,7 +27,7 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: "Version and publish" # Interesting step
+      - name: "Version and publish"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run:
