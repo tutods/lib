@@ -27,10 +27,16 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
       - name: "Version and publish"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
         run: |
           npx lerna version --conventional-commits --conventional-graduate --yes
           npx lerna publish from-git --yes
