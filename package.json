@@ -19,6 +19,7 @@
     "prepare": "husky install",
     "format": "prettier --write ./packages **/*.{js,jsx,ts,tsx,md,mdx,html,css}",
     "lint": "eslint --ext .js,.ts,.tsx,.jsx packages --ignore-path .gitignore",
+    "lint:fix": "eslint --ext .js,.ts,.tsx,.jsx packages --ignore-path .gitignore --fix",
     "preversion:stable": "lerna version --conventional-graduate --yes",
     "version:stable": "lerna publish from-git --yes",
     "preversion:beta": "lerna version --conventional-prerelease --preid beta --yes",
