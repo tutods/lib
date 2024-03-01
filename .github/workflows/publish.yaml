@@ -26,9 +26,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
       - name: Install dependencies
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
         run: pnpm install
       - name: "Version and publish"
         env:
