@@ -4,7 +4,6 @@ on:
     types: [ opened, synchronize ]
 jobs:
   checks:
-    using: 'node20'
     runs-on: ubuntu-20.04
     strategy:
       matrix:
