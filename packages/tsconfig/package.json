@@ -1,0 +1,34 @@
+{
+  "name": "tsconfig",
+  "version": "0.0.0",
+  "description": "Package to store all my tsconfig",
+  "keywords": [
+    "tsconfig",
+    "typescript",
+    "json",
+    "react",
+    "node",
+    "next"
+  ],
+  "author": {
+    "name": "Daniel Sousa @Tutods",
+    "url": "https://github.com/tutods"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tutods/lib.git",
+    "directory": "packages/prettier-config"
+  },
+  "homepage": "https://github.com/tutods/lib/blob/main/packages/prettier-config/README.md",
+  "license": "MIT",
+  "main": "base.json",
+  "exports": {
+    ".": "./base.json",
+    "./node": "./node.json",
+    "./react": "./react.json",
+    "./next": "./next.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
