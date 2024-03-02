@@ -4,20 +4,20 @@
   "license": "MIT",
   "packageManager": "pnpm@8.15.4",
   "description": "Monorepo to store my ESLint and Prettier configs.",
-  "workspaces": [
-    "packages/*"
-  ],
   "repository": "https://github.com/tutods/lib",
+  "prettier": "@tutods/prettier-config",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "prettier": "@tutods/prettier-config",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "commit": "cz",
     "prepare": "husky install",
-    "format": "prettier --write ./packages **/*.{js,jsx,ts,tsx,md,mdx,html,css}",
+    "format": "prettier --write packages **/*.{js,jsx,ts,tsx,md,mdx,html,css}",
     "lint": "eslint --ext .js,.ts,.tsx,.jsx packages --ignore-path .gitignore",
     "lint:fix": "eslint --ext .js,.ts,.tsx,.jsx packages --ignore-path .gitignore --fix",
     "preversion:stable": "lerna version --conventional-graduate --yes",
