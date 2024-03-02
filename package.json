@@ -26,6 +26,8 @@
     "version:beta": "lerna publish from-git --canary --yes"
   },
   "devDependencies": {
+    "@tutods/eslint-config": "workspace:^",
+    "@tutods/prettier-config": "workspace:^",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
