@@ -2,7 +2,7 @@
   "name": "@tutods/lib",
   "private": true,
   "license": "MIT",
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.4+sha256.cea6d0bdf2de3a0549582da3983c70c92ffc577ff4410cbf190817ddc35137c2",
   "description": "Monorepo to store my ESLint and Prettier configs.",
   "workspaces": [
     "packages/*"
@@ -26,6 +26,8 @@
     "version:beta": "lerna publish from-git --canary --yes"
   },
   "devDependencies": {
+    "@tutods/eslint-config": "workspace:^",
+    "@tutods/prettier-config": "workspace:^",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
