@@ -31,6 +31,10 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Configure Git User
+        run: |
+          git config --global user.name '@tutods'
+          git config --global user.email 'tutods@users.noreply.github.com'
       - name: "Version"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
