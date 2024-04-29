@@ -33,8 +33,8 @@ importers:
         specifier: ^5.1.3
         version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
       eslint-plugin-sort-destructure-keys:
-        specifier: ^1.5.0
-        version: 1.5.0(eslint@8.57.0)
+        specifier: ^2.0.0
+        version: 2.0.0(eslint@8.57.0)
       eslint-plugin-sort-keys-fix:
         specifier: ^1.1.2
         version: 1.1.2
@@ -2873,6 +2873,17 @@ packages:
     dependencies:
       eslint: 8.57.0
       natural-compare-lite: 1.4.0
+    dev: false
+
+  /eslint-plugin-sort-destructure-keys@2.0.0(eslint@8.57.0):
+    resolution: {integrity: sha512-4w1UQCa3o/YdfWaLr9jY8LfGowwjwjmwClyFLxIsToiyIdZMq3x9Ti44nDn34DtTPP7PWg96tUONKVmATKhYGQ==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      eslint: 5 - 9
+    dependencies:
+      eslint: 8.57.0
+      natural-compare-lite: 1.4.0
+    dev: true
 
   /eslint-plugin-sort-keys-fix@1.1.2:
     resolution: {integrity: sha512-DNPHFGCA0/hZIsfODbeLZqaGY/+q3vgtshF85r+YWDNCQ2apd9PNs/zL6ttKm0nD1IFwvxyg3YOTI7FHl4unrw==}
