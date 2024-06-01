@@ -6,11 +6,9 @@ pre-commit:
     prettier:
       glob: "*.{js,jsx,ts,tsx,md,mdx,json,html,css,scss,sass,less}"
       run: prettier --write {staged_files}
-      staged_fixed: true
     eslint:
       glob: "*.{js,jsx,ts,tsx}"
       run: eslint --ignore-path .gitignore --fix {staged_files}
-      staged_fixed: true
 
 # EXAMPLE USAGE:
 #
