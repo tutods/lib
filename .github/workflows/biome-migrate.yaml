@@ -41,8 +41,8 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          echo "$(git diff  --exclude=".github/workflows/biome-migrate.yaml" --name-only HEAD HEAD^ | xargs) OUTPUT IS"
-          echo "changed_files=$(git diff  --exclude=".github/workflows/biome-migrate.yaml" --name-only HEAD HEAD^ | xargs)" >> $GITHUB_OUTPUT
+          echo "$(➜ git diff --name-only HEAD HEAD^ -- ':!.github' | xargs) OUTPUT IS"
+          echo "changed_files=$(➜ git diff --name-only HEAD HEAD^ -- ':!.github' | xargs)" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
         if: ${{ steps.changed-files.outputs.changed_files != '' }}
