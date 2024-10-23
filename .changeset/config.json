@@ -1,11 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "tutods/lib" }],
-  "commit": ["@changesets/cli/commit", { "skipCI": true }],
-  "fixed": [],
-  "linked": [],
   "access": "restricted",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "prereleaseTemplate": "{tag}-{datetime}"
+  "prereleaseTemplate": "{tag}-{datetime}",
+  "changelog": ["@changesets/changelog-github", { "repo": "tutods/lib" }],
+  "commit": ["@changesets/cli/commit", { "skipCI": true }]
 }
