@@ -1,4 +1,4 @@
-name: Biome Migration
+name: Additional fixs
 
 permissions: 
   contents: write
@@ -8,11 +8,54 @@ env:
   LEFTHOOK: 0
   CI: true
 
-on:
-  pull_request:
-    types: [opened, edited, synchronize]
+on: pull_request
 
 jobs:
+  lint:
+    name: ✍️ Fix lint errors
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.title, 'ci(changesets)')
+
+    steps:
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: "✍️ Lint: fix errors"
+        id: migration
+        run: |
+          pnpm lint:fix
+          # Check for changes
+          if git diff --name-only --exit-code; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT  
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT  
+          fi
+
+      - name: 💭 Get current branch name
+        id: get_branch
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
+        run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      
+      - name: 📥 Checkout current branch
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
+        run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
+      
+      - name: 📤 Commit changes
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "fix(lint): safe errors" || echo "No changes to commit"
+          git push
   biome-migration:
     name: ✍️ Migrate Biome
     runs-on: ubuntu-latest
