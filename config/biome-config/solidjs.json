@@ -7,5 +7,17 @@
         "noReactSpecificProps": "error"
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "include": ["app.config.ts", "app.tsx", "entry-server.tsx", "entry-client.tsx", "routes/*.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
 }
