@@ -46,7 +46,7 @@ jobs:
       - name: 📥 Checkout current branch
         if: ${{ steps.changed-files.outputs.changed_files }}
         run: |
-          echo $GITHUB_OUTPUT
+          echo "$GITHUB_OUTPUT, ${{steps.changed-files.outputs}}"
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
 
