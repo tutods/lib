@@ -5,5 +5,5 @@
   "updateInternalDependencies": "patch",
   "prereleaseTemplate": "{tag}-{datetime}",
   "changelog": ["@changesets/changelog-github", { "repo": "tutods/lib" }],
-  "commit": ["@changesets/cli/commit"]
+  "commit": ["@changesets/cli/commit", { "skipCI": true }]
 }
