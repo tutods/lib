@@ -1,8 +1,6 @@
 name: Code Check
 
-on:
-  pull_request:
-    types: [opened, edited, synchronize]
+on: [pull_request, push]
 
 env:
   LEFTHOOK: 0
