@@ -1,6 +1,7 @@
 name: Code Check
 
-on: [pull_request, push]
+on: 
+  pull_request
 
 env:
   LEFTHOOK: 0
