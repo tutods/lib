@@ -41,7 +41,7 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          echo "changed_files=$(git diff  --exclude=".github/workflows/biome-migrate.yaml" --name-only ${{ github.event.after }} ${{ github.event.before }})" >> $GITHUB_OUTPUT
+          echo "changed_files=$(git diff  --exclude=".github/workflows/biome-migrate.yaml" --name-only ${{ github.event.after }} ${{ github.event.before }} | xargs)" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
         if: ${{ steps.changed-files.outputs.changed_files != '' }}
