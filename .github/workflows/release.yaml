@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: ⏳ Release
+    runs-on: ubuntu-latest
+    steps:
+      # - name: 🦖 Cancel Previous Runs
+      #   uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: 📄 Create .npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+          echo "@tutods:registry=https://npm.pkg.github.com" >> ~/.npmrc
+
+      - name: 📦 Create Release
+        id: changesets
+        uses: changesets/action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version: pnpm version:create
+          publish: pnpm version:publish --no-git-checks --tag latest
+          title: '🤖 ci(changesets): :package: version packages'
+          commit: 'ci(changesets): version packages'
+#          setupGitUser: false
+
+#      - name: 📤 Publish version
+#        if: ${{ steps.changesets.outputs.hasChangesets == false }}
+#        run: |
+#          echo ${{steps.changesets.outputs.hasChangesets}}
+#          pnpm version:publish
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,214 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "ignore": [
+      ".vscode",
+      ".idea",
+      ".env",
+      ".env.*",
+      "dist",
+      "node_modules",
+      "CHANGELOG.md",
+      "pnpm-lock.yaml",
+      "package-lock.json",
+      "routeTree.gen.ts"
+    ],
+    "include": [
+      "*.js",
+      "*.cjs",
+      "*.ts",
+      "*.jsx",
+      "*.tsx",
+      "*.yaml",
+      "*.json",
+      "*.md",
+      "*.mdx",
+      "*.css",
+      "*.scss",
+      "*.sass",
+      "*.less",
+      "public",
+      "src"
+    ]
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 120,
+    "attributePosition": "auto",
+    "bracketSpacing": true,
+    "useEditorconfig": true,
+    "ignore": ["**/dist/", "**/pnpm-lock.yaml"]
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "jsxQuoteStyle": "double",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "always",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single",
+      "attributePosition": "auto"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "recommended": true,
+        "noForEach": "off",
+        "noUselessFragments": {
+          "level": "error",
+          "fix": "safe"
+        }
+      },
+      "correctness": {
+        "recommended": true,
+        "useHookAtTopLevel": "error",
+        "noUnusedImports": "error",
+        "noUnusedVariables": "error",
+        "noUnusedPrivateClassMembers": "error",
+        "noSwitchDeclarations": "error"
+      },
+      "style": {
+        "recommended": true,
+        "useBlockStatements": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "noDefaultExport": "error",
+        "useExportType": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useImportType": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useNamingConvention": {
+          "level": "warn",
+          "options": {
+            "strictCase": false,
+            "requireAscii": true,
+            "conventions": [
+              {
+                "selector": {
+                  "kind": "objectLiteralMember"
+                },
+                "formats": ["camelCase", "CONSTANT_CASE"]
+              },
+              {
+                "selector": {
+                  "kind": "enumMember"
+                },
+                "formats": ["CONSTANT_CASE"]
+              }
+            ]
+          }
+        }
+      },
+      "suspicious": {
+        "recommended": true,
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["error", "info", "warn"]
+          }
+        },
+        "noEmptyBlockStatements": "off"
+      },
+      "security": {
+        "recommended": true
+      },
+      "a11y": {
+        "recommended": true,
+        "useKeyWithClickEvents": "off",
+        "useAnchorContent": "off",
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "noRedundantRoles": "warn"
+      },
+      "nursery": {
+        "recommended": true,
+        "noUselessEscapeInRegex": "error",
+        "useSortedClasses": {
+          "level": "error",
+          "fix": "safe",
+          "options": {
+            "attributes": ["css", "class", "classList", "classNames", "className"],
+            "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
+          }
+        },
+        "useAriaPropsSupportedByRole": "off"
+      },
+      "performance": {
+        "recommended": true,
+        "noAccumulatingSpread": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.jsx", "*.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noImplicitBoolean": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": [
+        "rsbuild.config.js",
+        "rsbuild.config.ts",
+        "rslib.config.js",
+        "rslib.config.ts",
+        "webpack.config.js",
+        "webpack.config.ts",
+        "vite.config.js",
+        "vite.config.ts",
+        "rollup.config.js",
+        "rollup.config.ts",
+        "next.config.js",
+        "next.config.mjs",
+        "gatsby-config.js",
+        "gatsby-node.js",
+        "jest.config.js",
+        "jest.config.ts",
+        "babel.config.js",
+        "babel.config.cjs",
+        "postcss.config.js",
+        "tailwind.config.ts",
+        "tailwind.config.js",
+        "tsup.config.ts",
+        "commitlint.config.js",
+        "commitlint.config.cjs"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
+}

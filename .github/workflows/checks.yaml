@@ -1,24 +1,27 @@
-name: Checks
+name: Code Check
+
 on:
   pull_request:
-    types: [ opened, synchronize ]
+
+permissions:
+  actions: write
+  contents: read
+
 jobs:
-  checks:
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        node-version: [ 20 ]
+  lint:
+    name: 💅 Biome
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v4
         with:
-          version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install
-      - name: Run Lint
-        run: pnpm lint
+          fetch-depth: 0
+
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: 👧 Lint check
+        run: pnpm lint:ci
