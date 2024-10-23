@@ -38,10 +38,17 @@ jobs:
         run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
           
 
+      - name: Check for file changes
+        id: file_changes
+        run: |
+          git diff-tree --no-commit-id --name-only -r HEAD HEAD^ > changed_files.txt
+          echo "::set-output name=changed_files::$(cat changed_files.txt)"
+      
       - name: 📥 Checkout current branch
         run: |
           echo ${{steps.migration.outputs}}
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
+      
 
       - name: 📤 Commit changes
         run: |
