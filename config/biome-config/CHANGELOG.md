@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.0
+
+### Minor Changes
+
+- [#90](https://github.com/tutods/lib/pull/90) [`7423bca`](https://github.com/tutods/lib/commit/7423bca3698d71d37c82e57f1f6db487b6741a86) Thanks [@tutods](https://github.com/tutods)! - feat: ignore files that are necessary to be a default export on solidjs/solid start projects
+
 ## 1.0.1
 
 ### Patch Changes
