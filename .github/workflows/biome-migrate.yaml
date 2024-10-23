@@ -45,12 +45,11 @@ jobs:
           echo "::set-output name=changed_files::$(cat changes.txt)"
       
       - name: 📥 Checkout current branch
-        if: ${{ steps.changed-files.outputs.changed_files }}
+        if: ${{ steps.changed-files.outputs.changed_files != '' }}
         run: |
           echo "OUTPUT IS: $GITHUB_OUTPUT, ${{steps.changed-files.outputs}}"
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
-
       - name: 📤 Commit changes
         run: |
           git config --local user.email "action@github.com"
