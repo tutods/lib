@@ -27,7 +27,7 @@ importers:
         specifier: workspace:*
         version: link:config/biome-config
       lefthook:
-        specifier: ^1.7.22
+        specifier: ^1.8.0
         version: 1.8.0
       turbo:
         specifier: ^2.2.1
