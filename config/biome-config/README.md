@@ -18,7 +18,7 @@ For now, you will found 3 configurations, being two of them based on the main on
 To install my package and use it is very simple, you only need to following the steps above.
 
 1. Install the package using your package manager (list of commands above):
-  ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+    ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm add -D @tutods/biome-config @biomejs/biome
     ```
