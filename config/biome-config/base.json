@@ -200,7 +200,9 @@
         "tailwind.config.js",
         "tsup.config.ts",
         "commitlint.config.js",
-        "commitlint.config.cjs"
+        "commitlint.config.cjs",
+        "sanity.config.ts",
+        "sanity.cli.ts"
       ],
       "linter": {
         "rules": {
