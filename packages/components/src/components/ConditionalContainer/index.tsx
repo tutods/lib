@@ -1,9 +1,6 @@
 import { createElement } from 'react';
 
-import type {
-  ConditionalContainerProps,
-  RenderElement,
-} from '@/components/ConditionalContainer/types';
+import type { ConditionalContainerProps, RenderElement } from '@/components/ConditionalContainer/types';
 
 /**
  * Component to render a specific element or component according a condition
@@ -36,9 +33,7 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
     const { element, props: renderProps } = render;
 
     // If (typeof element === 'string') {
-    return children
-      ? createElement(element, renderProps, children)
-      : createElement(element, renderProps);
+    return children ? createElement(element, renderProps, children) : createElement(element, renderProps);
   }
 
   if (!when && fallback) {
