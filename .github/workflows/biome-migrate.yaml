@@ -41,15 +41,11 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-            if ${{ github.event_name == 'pull_request' }}; then
-                echo "changed_files=$(git diff --name-only -r HEAD^1 HEAD | xargs)" >> $GITHUB_OUTPUT
-            else
-                echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | xargs)" >> $GITHUB_OUTPUT
-            fi
+          echo "changed_files=$(git diff --name-only ${{ github.event.after }} ${{ github.event.before }})" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
         run: |
-          echo ${{ steps.migration.outputs.changed_files }}
+          echo ${{ steps.migration.outputs.changed_files }}}}
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
 
