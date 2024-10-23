@@ -34,22 +34,22 @@ jobs:
           pnpm biome migrate --write --config-path=config/biome-config/solidjs.json
           # Check for changes
           if git diff --name-only --exit-code; then
-            echo "::set-output name=files_changed::false"
+            echo "has_changes=false" >> $GITHUB_OUTPUT  
           else
-            echo "::set-output name=files_changed::true"
+            echo "has_changes=true" >> $GITHUB_OUTPUT  
           fi
 
       - name: 💭 Get current branch name
         id: get_branch
-        if: ${{ steps.migration.outputs.files_changed == 'true' }}
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
         run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
-        if: ${{ steps.migration.outputs.files_changed == 'true' }}
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
       - name: 📤 Commit changes
-        if: ${{ steps.migration.outputs.files_changed == 'true' }}
+        if: ${{ steps.migration.outputs.has_changes == 'true' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
