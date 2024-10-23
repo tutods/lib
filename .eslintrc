@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "@tutods/eslint-config/javascript",
-    "@tutods/eslint-config/prettier"
-  ]
-}

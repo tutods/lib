@@ -1,0 +1,26 @@
+{
+  "name": "@tutods/biome-config",
+  "version": "0.0.0",
+  "keywords": ["biome", "biomejs", "lint", "format"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:tutods/lib.git",
+    "directory": "config/biome-config"
+  },
+  "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
+  "main": "base.json",
+  "exports": {
+    ".": "./base.json",
+    "./nestjs": "./nestjs.json",
+    "./solidjs": "./solidjs.json"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": ">=1.9.4"
+  }
+}

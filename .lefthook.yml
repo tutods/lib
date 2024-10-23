@@ -1,47 +1,13 @@
 colors: true
 
 pre-commit:
-  parallel: true
   commands:
-    prettier:
-      glob: "*.{js,jsx,ts,tsx,md,mdx,json,html,css,scss,sass,less}"
-      run: prettier --write {staged_files}
-    eslint:
-      glob: "*.{js,jsx,ts,tsx}"
-      run: eslint --ignore-path .gitignore --fix {staged_files}
+    biome:
+      glob: "*.{ts,tsx,js,jsx,md,mdx,json,yaml,html,css,scss,sass,less}"
+      run: "pnpm lint:staged --write"
+      stage_fixed: true
 
-# EXAMPLE USAGE:
-#
-#   Refer for explanation to following link:
-#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
-#
-# pre-push:
-#   commands:
-#     packages-audit:
-#       tags: frontend security
-#       run: yarn audit
-#     gems-audit:
-#       tags: backend security
-#       run: bundle audit
-#
-# pre-commit:
-#   parallel: true
-#   commands:
-#     eslint:
-#       glob: "*.{js,ts,jsx,tsx}"
-#       run: yarn eslint {staged_files}
-#     rubocop:
-#       tags: backend style
-#       glob: "*.rb"
-#       exclude: '(^|/)(application|routes)\.rb$'
-#       run: bundle exec rubocop --force-exclusion {all_files}
-#     govet:
-#       tags: backend style
-#       files: git ls-files -m
-#       glob: "*.go"
-#       run: go vet {files}
-#   scripts:
-#     "hello.js":
-#       runner: node
-#     "any.go":
-#       runner: go run
+commit-msg:
+  commands:
+    commitlint:
+      run: npx --no -- commitlint --edit $1

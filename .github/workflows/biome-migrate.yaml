@@ -1,0 +1,44 @@
+name: Biome Migration
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+jobs:
+  biome-migration:
+    name: ✍️ Migrate Biome
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.title, 'biome') || contains(github.event.pull_request.body, 'biome')
+
+    steps:
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: ✍️ Run Biome migration
+        run: |
+          pnpm biome migrate --write --config-path=config/biome-config/base.json
+          pnpm biome migrate --write --config-path=config/biome-config/nestjs.json
+          pnpm biome migrate --write --config-path=config/biome-config/solidjs.json
+
+      - name: 💭 Get current branch name
+        id: get_branch
+        run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+
+      - name: 📥 Checkout current branch
+        run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
+
+      - name: 📤 Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "feat(biome): migrate configs" || echo "No changes to commit"
+          git push
