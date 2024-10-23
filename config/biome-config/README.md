@@ -31,8 +31,8 @@ To install my package and use it is very simple, you only need to following the 
       npm install -D @tutods/biome-config @biomejs/biome
     ```
 
-2. Create the configuration file:
-  ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+2. Create the configuration file: <br/>
+    ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm biome init
     ```
