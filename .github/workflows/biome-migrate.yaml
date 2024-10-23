@@ -32,6 +32,11 @@ jobs:
           pnpm biome migrate --write --config-path=config/biome-config/base.json
           pnpm biome migrate --write --config-path=config/biome-config/nestjs.json
           pnpm biome migrate --write --config-path=config/biome-config/solidjs.json
+          if git diff --name-only --exit-code; then
+            echo "::set-output name=files_changed::false"
+          else
+            echo "::set-output name=files_changed::true"
+          fi
 
       - name: 💭 Get current branch name
         id: get_branch
@@ -45,12 +50,13 @@ jobs:
           echo "changed_files=$(git diff --name-only ${{ github.event.after }} ${{ github.event.before }} -- ':!.github' | xargs)" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
-        if: ${{ steps.changed-files.outputs.changed_files != '' }}
+        if: ${{ steps.migration.outputs.files_changed == 'true' }}
         run: |
           echo "OUTPUT IS: $GITHUB_OUTPUT, ${{steps.changed-files.outputs}}"
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
       - name: 📤 Commit changes
+        if: ${{ steps.migration.outputs.files_changed == 'true' }}
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
