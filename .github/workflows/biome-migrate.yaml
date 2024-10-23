@@ -44,8 +44,9 @@ jobs:
           echo "changed_files=$(git diff --name-only ${{ github.event.after }} ${{ github.event.before }})" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
+        if: ${{ steps.changed-files.outputs.changed_files }}
         run: |
-          echo ${{ steps.migration.outputs.changed_files }}}}
+          echo ${{ steps.changed-files.outputs.changed_files }}
           git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
 
