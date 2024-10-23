@@ -42,7 +42,7 @@ jobs:
         id: changed-files
         run: |
           git diff --name-only ${{ github.event.after }} ${{ github.event.before }} > changes.txt
-          echo "::set-output name=changed_files::$(cat changes.txt)"
+          echo "changed_files=$(cat changes.txt)" >> $GITHUB_OUTPUT
       
       - name: 📥 Checkout current branch
         if: ${{ steps.changed-files.outputs.changed_files != '' }}
