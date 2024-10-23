@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  LEFTHOOK: 0
+  CI: true
+
 permissions:
   contents: write
   packages: write

@@ -4,6 +4,10 @@ permissions:
   contents: write
   packages: write
 
+env:
+  LEFTHOOK: 0
+  CI: true
+
 on:
   pull_request:
     types: [opened, edited, synchronize]

@@ -16,7 +16,7 @@
   },
   "scripts": {
     "commit": "cz",
-    "prepare": "lefthook install",
+    "prepare": "if [ \"$LEFTHOOK\" != \"0\" ];then lefthook install; fi",
     "build": "turbo run build",
     "lint": "biome check .",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",
