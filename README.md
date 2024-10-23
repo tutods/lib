@@ -6,40 +6,39 @@
 
 ## 📄 Goal
 
-This monorepo has the purpose to store my common packages, used in my personal projects, for now **ESLint** and **Prettier** configs, but it's prepared to handle more
-common packages for my personal projects.
+This monorepo has the purpose to store my common packages, used in my personal projects, like configs., components, hooks and many more. For now, it's more configurations but, they are useful to save time when start a new project.
 
-### 💡️What you will find?
+### 💡️ What you will find?
 
-This monorepo contains two packages:
+This monorepo, for now contains 3 packages, two of them dedicated to common configs. used across multiple projects. For now you will find the packages above:
 
-[![lint][lint]][lint-package]
-[![format][format]][prettier-package]
+[![biome][biome]][biome-package] [![typescript][typescript]][typescript-package] [![components][components]][react-package]
 
-For know more details about each package, please read the `README.md` file inside each folder on `packages/` directory:
+To know more details about each package, please read the `README.md` file inside of each package folder:
 
-- [**ESLint Config** - README](./packages/eslint-config/README.md)
-- [**Prettier Config** - README](./packages/prettier-config/README.md)
-
-### 🐛 Vulernabilities
-
-[![Vulnerabilities](https://snyk.io/test/github/tutods/lib/badge.svg)](https://snyk.io/test/github/tutods/lib)
+- [**Biome Config** - README](./config/biome-config/README.md)
+- [**TypeScript Config** - README](./config/typescript-config/README.md)
+- [**Components** - README](./packages/components/README.md)
 
 ## 🔗 More About Me
 
-[![GitHub](https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tutods) [
-![linkedin](https://img.shields.io/badge/linkedin-000000?style=for-the-badge&logo=linkedin&logoColor=white)
-](https://linkedin.com/in/daniel-sousa-tutods)
-[![twitter](https://img.shields.io/badge/twitter-000000?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/dsousa_12)
-[![instragram](https://img.shields.io/badge/instragram-000000?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/dsousa_12)
+[![GitHub][github]](https://github.com/tutods) [![linkedin][linkedin]](https://linkedin.com/in/daniel-sousa-tutods) [![twitter][twitter]](https://twitter.com/dsousa_12) [![instragram][instagram]](https://instagram.com/dsousa_12)
+
+
+<!-- Badges -->
+[biome]: https://img.shields.io/badge/biome%20config-000000?style=for-the-badge&logo=biome&logoColor=white
+[typescript]: https://img.shields.io/badge/typescript%20config-000000?style=for-the-badge&logo=typescript&logoColor=white
+[components]: https://img.shields.io/badge/react%20components-000000?style=for-the-badge&logo=react&logoColor=white
+[forks-shield]: https://img.shields.io/github/forks/tutods/lib?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/tutods/lib?style=for-the-badge
+[instagram]: https://img.shields.io/badge/instragram-000000?style=for-the-badge&logo=instagram&logoColor=white
+[twitter]: https://img.shields.io/badge/twitter-000000?style=for-the-badge&logo=x&logoColor=white
+[github]: https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white
+[linkedin]: https://img.shields.io/badge/linkedin-000000?style=for-the-badge&logo=linkedin&logoColor=white
 
 <!-- Links -->
-
-[lint]: https://img.shields.io/badge/eslint%20config-000000?style=for-the-badge&logo=npm&logoColor=white
-[format]: https://img.shields.io/badge/prettier%20config-000000?style=for-the-badge&logo=npm&logoColor=white
-[lint-package]: https://npmjs.com/@tutods/eslint-config
-[prettier-package]: https://npmjs.com/@tutods/prettier-config
-[forks-shield]: https://img.shields.io/github/forks/tutods/lib?style=for-the-badge
+[biome-package]: https://github.com/users/tutods/packages/npm/package/biome-config
+[typescript-package]: https://github.com/users/tutods/packages/npm/package/typescript-config
+[react-package]: https://github.com/users/tutods/packages/npm/package/component
 [forks-url]: https://github.com/tutods/lib/network/members
-[stars-shield]: https://img.shields.io/github/stars/tutods/lib?style=for-the-badge
 [stars-url]: https://github.com/tutods/lib/stargazers
