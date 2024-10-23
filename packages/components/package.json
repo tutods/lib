@@ -1,6 +1,6 @@
 {
   "name": "@tutods/components",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "React generic components that can be used in any scenario",
   "keywords": ["react", "components", "typescript", "jsx", "tsx"],
   "author": {
