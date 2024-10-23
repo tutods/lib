@@ -36,9 +36,12 @@ jobs:
       - name: 💭 Get current branch name
         id: get_branch
         run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+          
 
       - name: 📥 Checkout current branch
-        run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
+        run: |
+          echo ${{steps.migration.outputs}}
+          git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
 
       - name: 📤 Commit changes
         run: |
