@@ -41,7 +41,8 @@ jobs:
       - name: Get changed files
         id: changed-files
         run: |
-          echo "changed_files=$(git diff --name-only ${{ github.event.after }} ${{ github.event.before }})" >> $GITHUB_OUTPUT
+          git diff --name-only ${{ github.event.after }} ${{ github.event.before }} > changes.txt
+          echo "::set-output name=changed_files::$(cat changes.txt)"
       
       - name: 📥 Checkout current branch
         if: ${{ steps.changed-files.outputs.changed_files }}
