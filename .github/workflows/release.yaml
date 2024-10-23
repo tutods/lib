@@ -39,8 +39,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           createGithubReleases: true
-          version: CI=true pnpm version:create
-          publish: CI=true pnpm version:publish --no-git-checks --tag latest
+          version: pnpm version:create
+          publish: pnpm version:publish --no-git-checks --tag latest
           title: '🤖 ci(changesets): :package: version packages'
           commit: 'ci(changesets): version packages'
 #          setupGitUser: false

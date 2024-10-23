@@ -42,7 +42,7 @@
     "typescript": "^5.1.6"
   },
   "peerDependencies": {
-    "react": "16.8.0 || >=17.x",
-    "react-dom": "16.8.0 || >=17.x"
+    "react": ">=18.x",
+    "react-dom": ">=18.x"
   }
 }
