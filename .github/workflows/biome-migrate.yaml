@@ -1,5 +1,9 @@
 name: Biome Migration
 
+permissions: 
+  contents: write
+  packages: write
+
 on:
   pull_request:
     types: [opened, edited, synchronize]
@@ -23,6 +27,7 @@ jobs:
         uses: ./.github/actions/setup-project
 
       - name: ✍️ Run Biome migration
+        id: migration
         run: |
           pnpm biome migrate --write --config-path=config/biome-config/base.json
           pnpm biome migrate --write --config-path=config/biome-config/nestjs.json

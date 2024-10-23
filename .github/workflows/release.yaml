@@ -30,7 +30,7 @@ jobs:
       - name: 📄 Create .npmrc
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
-          echo "@code-shifters:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "@tutods:registry=https://npm.pkg.github.com" >> ~/.npmrc
 
       - name: 📦 Create Release
         id: changesets
