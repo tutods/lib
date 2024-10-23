@@ -1,0 +1,29 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["./base.json"],
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noReactSpecificProps": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": [
+        "apps/frontend/app.config.ts",
+        "apps/frontend/app.tsx",
+        "apps/frontend/entry-server.tsx",
+        "apps/frontend/entry-client.tsx",
+        "apps/frontend/routes/*.tsx"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
+}

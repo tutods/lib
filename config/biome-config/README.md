@@ -17,7 +17,11 @@ For now, you will found 3 configurations, being two of them based on the main on
 
 To install my package and use it is very simple, you only need to following the steps above.
 
-1. Install the package using your package manager (list of commands above): <br/>
+1. Create the `.npmrc` file with:
+    ```bash
+      @tutods:registry=https://npm.pkg.github.com
+    ```
+2. Install the package using your package manager (list of commands above): <br/>
     ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm add -D @tutods/biome-config @biomejs/biome
@@ -31,7 +35,7 @@ To install my package and use it is very simple, you only need to following the 
       npm install -D @tutods/biome-config @biomejs/biome
     ```
 
-2. Create the configuration file: <br/>
+3. Create the configuration file: <br/>
     ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm biome init
@@ -45,13 +49,13 @@ To install my package and use it is very simple, you only need to following the 
       npx biome init
     ```
 
-1. On the `biome.json` file (generated on the previous step), remove everything except the `$schema` and `vcs`, adding the line above:
+4. On the `biome.json` file (generated on the previous step), remove everything except the `$schema` and `vcs`, adding the line above:
     ```json
       "extends": ["@tutods/biome-config"]
     ```
      - If you want to use the `nestjs` or `solidjs` config you only need to add `/nestjs` or `/solidjs` according to the configuration you want to use.
 
-2. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
+5. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
     ```json
       "lint": "biome check .",
       "lint:fix": "biome check --no-errors-on-unmatched --write .",
