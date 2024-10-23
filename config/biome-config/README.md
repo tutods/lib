@@ -18,6 +18,7 @@ For now, you will found 3 configurations, being two of them based on the main on
 To install my package and use it is very simple, you only need to following the steps above.
 
 1. Install the package using your package manager (list of commands above):
+   
     ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm add -D @tutods/biome-config @biomejs/biome
@@ -31,7 +32,7 @@ To install my package and use it is very simple, you only need to following the 
       npm install -D @tutods/biome-config @biomejs/biome
     ```
 
-1. Create the configuration file:
+2. Create the configuration file:
   ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
       pnpm biome init
@@ -51,7 +52,7 @@ To install my package and use it is very simple, you only need to following the 
     ```
      - If you want to use the `nestjs` or `solidjs` config you only need to add `/nestjs` or `/solidjs` according to the configuration you want to use.
 
-1. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
+2. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
     ```json
       "lint": "biome check .",
       "lint:fix": "biome check --no-errors-on-unmatched --write .",
