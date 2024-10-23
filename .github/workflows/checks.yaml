@@ -2,6 +2,7 @@ name: Code Check
 
 on:
   pull_request:
+    types: [opened, edited, synchronize]
 
 permissions:
   actions: write
@@ -11,6 +12,7 @@ jobs:
   lint:
     name: 💅 Biome
     runs-on: ubuntu-latest
+
     steps:
       - name: 🦖 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
