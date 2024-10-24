@@ -9,7 +9,7 @@ env:
 
 permissions:
   actions: write
-  contents: read
+  contents: write
 
 jobs:
   lint:
@@ -29,4 +29,19 @@ jobs:
         uses: ./.github/actions/setup-project
 
       - name: 👧 Lint check
+        run: pnpm lint:ci
+        continue-on-error: true
+      
+      - name: ✍️ Fix lint issues
+        if: ${{ failure() }}
+        run: |
+          pnpm lint:fix
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'github-actions@github.com'
+          git add .
+          git commit -m 'Fix lint issues'
+          git push
+      
+      - name: Rerun Linter
+        if: ${{ failure() }}  
         run: pnpm lint:ci
