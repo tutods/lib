@@ -46,7 +46,7 @@ jobs:
         if: ${{ failure() }}
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
         
-      - name: 🔄 Commit changes
+      - name: 📤 Commit changes
         if: ${{ failure() }}
         run: |
           git config --local user.email "action@github.com"
