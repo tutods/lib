@@ -55,6 +55,6 @@ jobs:
           git commit -m "fix(lint): safe errors" || echo "No changes to commit"
           git push
 
-      - name: Rerun Linter
+      - name: 🔄 Rerun Linter
         if: ${{ failure() }}  
         run: pnpm lint:ci
