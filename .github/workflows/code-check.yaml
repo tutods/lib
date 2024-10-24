@@ -47,15 +47,20 @@ jobs:
         if: ${{ failure() }}
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
         
-      - name: 📤 Commit changes
-        if: ${{ failure() }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "fix(lint): safe errors" || echo "No changes to commit"
-          git push
+      - uses: EndBug/add-and-commit@v9
+        with:
+          message: "fix(lint): errors"
+          committer_name: GitHub Actions
+          committer_email: actions@github.com
+      # - name: 📤 Commit changes
+      #   if: ${{ failure() }}
+      #   run: |
+      #     git config --local user.email "action@github.com"
+      #     git config --local user.name "GitHub Action"
+      #     git add .
+      #     git commit -m "fix(lint): safe errors" || echo "No changes to commit"
 
-      - name: 🔄 Rerun Linter
-        if: ${{ failure() }}  
-        run: pnpm lint:ci
+      # - name: 🔄 Rerun Linter
+      #   if: ${{ failure() }}  
+      #   run: pnpm lint:ci
+  
