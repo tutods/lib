@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.2
+
+### Patch Changes
+
+- [`bd46f50`](https://github.com/tutods/lib/commit/bd46f50cf66294c6babf499a4c276089f456442e) Thanks [@tutods](https://github.com/tutods)! - chore: ignore sanity generated types
+
 ## 1.1.1
 
 ### Patch Changes
