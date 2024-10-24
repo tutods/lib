@@ -15,6 +15,7 @@ jobs:
   lint:
     name: 💅 Biome
     runs-on: ubuntu-latest
+    continue-on-error: true
 
     steps:
       - name: 🦖 Cancel Previous Runs
@@ -30,7 +31,6 @@ jobs:
 
       - name: 👧 Lint check
         run: pnpm lint:ci
-        continue-on-error: true
       
       - name: ✍️ Fix lint issues
         if: ${{ failure() }}
