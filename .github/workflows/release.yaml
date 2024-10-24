@@ -48,8 +48,8 @@ jobs:
           publish: pnpm version:publish --no-git-checks --tag latest
           title: '🤖 ci(changesets): :package: version packages'
           commit: 'ci(changesets): version packages'
-#          setupGitUser: false
-
+      
+      - uses: ./.github/workflows/code-check.yaml
 #      - name: 📤 Publish version
 #        if: ${{ steps.changesets.outputs.hasChangesets == false }}
 #        run: |
