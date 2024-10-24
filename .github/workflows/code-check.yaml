@@ -48,6 +48,7 @@ jobs:
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
         
       - uses: EndBug/add-and-commit@v9
+        if: ${{ failure() }}
         with:
           message: "fix(lint): errors"
           committer_name: GitHub Actions
