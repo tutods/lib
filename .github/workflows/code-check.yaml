@@ -37,15 +37,6 @@ jobs:
         if: ${{ failure() }}
         run: |
           pnpm lint:fix
-      
-      # - name: 💭 Get current branch name
-      #   id: get_branch
-      #   if: ${{ failure() }}
-      #   run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-        
-      # - name: 📥 Checkout current branch
-      #   if: ${{ failure() }}
-      #   run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
         
       - uses: EndBug/add-and-commit@v9
         if: ${{ failure() }}
