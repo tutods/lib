@@ -20,7 +20,7 @@ jobs:
       - name: 🔻 Checkout repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: ${{ github.head_ref }}
 
       - name: 🏃 Run Node and NPM setup
         uses: ./.github/actions/setup-project
@@ -45,14 +45,7 @@ jobs:
         if: ${{ steps.lint.outputs.has_changes == 'true' }}
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
-      - name: 🔄 Commit changes
-        if: ${{ steps.lint.outputs.has_changes == 'true' }}
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "fix(lint): safe errors" || echo "No changes to commit"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v5
       
       # - name: 📤 Pushing changes
       #   if: ${{ steps.lint.outputs.has_changes == 'true' }}
