@@ -30,28 +30,36 @@ jobs:
         uses: ./.github/actions/setup-project
 
       - name: 👧 Lint check
-        run: pnpm lint:ci
-      
-      - name: ✍️ Fix lint issues
-        if: ${{ failure() }}
+        id: lint
         run: |
           pnpm lint:fix
-        
-      - uses: EndBug/add-and-commit@v9
-        if: ${{ failure() }}
+          # Check for changes
+          if git diff --name-only --exit-code; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT  
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT  
+          fi
+      
+      - name: 💭 Get current branch name
+        id: get_branch
+        if: ${{ steps.lint.outputs.has_changes == 'true' }}
+        run: echo "BRANCH_NAME=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      
+      - name: 📥 Checkout current branch
+        if: ${{ steps.lint.outputs.has_changes == 'true' }}
+        run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
+      
+      - name: 🔄 Commit changes
+        if: ${{ steps.lint.outputs.has_changes == 'true' }}
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "fix(lint): safe errors" || echo "No changes to commit"
+      
+      - name: 📤 Pushing changes
+        if: ${{ steps.lint.outputs.has_changes == 'true' }}
+        uses: ad-m/github-push-action@master
         with:
-          message: "fix(lint): errors"
-          committer_name: GitHub Actions
-          committer_email: actions@github.com
-      # - name: 📤 Commit changes
-      #   if: ${{ failure() }}
-      #   run: |
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add .
-      #     git commit -m "fix(lint): safe errors" || echo "No changes to commit"
-
-      # - name: 🔄 Rerun Linter
-      #   if: ${{ failure() }}  
-      #   run: pnpm lint:ci
-  
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
