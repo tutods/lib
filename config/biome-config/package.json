@@ -10,12 +10,7 @@
     "directory": "config/biome-config"
   },
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
-  "keywords": [
-    "biome",
-    "biomejs",
-    "lint",
-    "format"
-  ],
+  "keywords": ["biome", "biomejs", "lint", "format"],
   "main": "base.json",
   "exports": {
     ".": "./base.json",
