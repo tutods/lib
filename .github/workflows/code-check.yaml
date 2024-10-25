@@ -3,10 +3,6 @@ name: Code Check
 on: 
   pull_request
 
-env:
-  LEFTHOOK: 0
-  CI: true
-
 permissions:
   actions: write
   contents: write
