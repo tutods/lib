@@ -46,6 +46,10 @@ jobs:
         run: git checkout ${{ steps.get_branch.outputs.BRANCH_NAME }}
       
       - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: "fix(lint): errors"
       
       # - name: 📤 Pushing changes
       #   if: ${{ steps.lint.outputs.has_changes == 'true' }}
