@@ -11,8 +11,7 @@ jobs:
   lint:
     name: 💅 Biome
     runs-on: ubuntu-latest
-    continue-on-error: true
-
+    
     steps:
       - name: 🦖 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
