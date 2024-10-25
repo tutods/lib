@@ -48,11 +48,18 @@ jobs:
           publish: pnpm version:publish --no-git-checks --tag latest
           title: '🤖 ci(changesets): :package: version packages'
           commit: 'ci(changesets): version packages'
-    
-#      - name: 📤 Publish version
-#        if: ${{ steps.changesets.outputs.hasChangesets == false }}
-#        run: |
-#          echo ${{steps.changesets.outputs.hasChangesets}}
-#          pnpm version:publish
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 👧 Lint check
+        id: lint
+        run: |
+          pnpm lint:fix
+          # Check for changes
+          if git diff --name-only --exit-code; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT  
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT  
+          fi
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # Optional. Commit message for the created commit.
+          # Defaults to "Apply automatic changes"
+          commit_message: "fix(lint): errors"
