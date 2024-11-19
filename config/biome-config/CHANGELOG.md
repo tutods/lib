@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.4
+
+### Patch Changes
+
+- [`3d95192`](https://github.com/tutods/lib/commit/3d9519216bbe8ddd89d98d37966ff8c7f6c68b3d) Thanks [@tutods](https://github.com/tutods)! - chore: ingore .vinxi
+
 ## 1.1.3
 
 ### Patch Changes

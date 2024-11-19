@@ -1,6 +1,6 @@
 {
   "name": "@tutods/biome-config",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -10,7 +10,12 @@
     "directory": "config/biome-config"
   },
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
-  "keywords": ["biome", "biomejs", "lint", "format"],
+  "keywords": [
+    "biome",
+    "biomejs",
+    "lint",
+    "format"
+  ],
   "main": "base.json",
   "exports": {
     ".": "./base.json",
