@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.3
+
+### Patch Changes
+
+- [`72b1050`](https://github.com/tutods/lib/commit/72b10507828d75d66a2205ac1b30c7284128c19c) Thanks [@tutods](https://github.com/tutods)! - chore: add output to ignored files
+
 ## 1.1.2
 
 ### Patch Changes
