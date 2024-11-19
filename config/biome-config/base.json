@@ -15,6 +15,7 @@
       ".env.*",
       "dist",
       ".output",
+      ".vinxi",
       "node_modules",
       "CHANGELOG.md",
       "pnpm-lock.yaml",
