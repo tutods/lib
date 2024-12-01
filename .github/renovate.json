@@ -1,9 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "customManagers:biomeVersions",
-    "config:recommended"
-  ],
+  "extends": ["customManagers:biomeVersions", "config:recommended"],
   "updateInternalDeps": true,
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
@@ -13,10 +10,7 @@
   "packageRules": [
     {
       "description": "Automerge non-major updates",
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ]
