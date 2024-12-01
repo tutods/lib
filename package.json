@@ -8,7 +8,7 @@
     "type": "git"
   },
   "type": "module",
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.14.4",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -31,11 +31,11 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.9",
+    "@changesets/cli": "^2.27.10",
     "@tutods/biome-config": "workspace:*",
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
     "lefthook": "^1.8.4",
-    "turbo": "^2.3.0"
+    "turbo": "^2.3.3"
   }
 }
