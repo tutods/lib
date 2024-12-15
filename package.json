@@ -33,7 +33,7 @@
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.10",
     "@tutods/biome-config": "workspace:*",
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "lefthook": "^1.9.2",
     "turbo": "^2.3.3"
