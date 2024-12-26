@@ -23,10 +23,12 @@
     "lint:staged": "biome check --no-errors-on-unmatched --staged .",
     "lint:ci": "biome ci --no-errors-on-unmatched .",
     "changeset": "changeset",
+    "postchangeset": "git push",
     "changeset:alpha": "changeset pre enter next",
     "version:create": "LEFTHOOK=0 changeset version --no-verify",
     "preversion:publish": "turbo run build",
-    "version:publish": "changeset publish"
+    "version:publish": "changeset publish",
+    "postversion:publish": "git push"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
