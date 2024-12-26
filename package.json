@@ -24,7 +24,7 @@
     "lint:ci": "biome ci --no-errors-on-unmatched .",
     "changeset": "changeset",
     "changeset:alpha": "changeset pre enter next",
-    "version:create": "changeset version --no-verify",
+    "version:create": "LEFTHOOK=0 changeset version --no-verify",
     "preversion:publish": "turbo run build",
     "version:publish": "changeset publish"
   },
