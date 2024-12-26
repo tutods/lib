@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.5
+
+### Patch Changes
+
+- [`bbadb19`](https://github.com/tutods/lib/commit/bbadb19172b6dc943d6c07d1b59ac5a9b4335710) Thanks [@tutods](https://github.com/tutods)! - fix(biome): avoid recursion on extends
+
 ## 1.1.4
 
 ### Patch Changes
