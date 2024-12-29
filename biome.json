@@ -6,5 +6,8 @@
     "useIgnoreFile": false,
     "defaultBranch": "main"
   },
-  "extends": ["@tutods/biome-config"]
+  "extends": ["@tutods/biome-config"],
+  "files": {
+    "ignore": ["**/package.json"]
+  }
 }
