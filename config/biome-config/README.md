@@ -11,7 +11,7 @@ This configuration package has the purpose of store my common configurations use
 For now, you will found 3 configurations, being two of them based on the main one:
 
 - **`base.json`**: stores the basic/global configuration;
-- **`nestjs.json`:** stores the configuration for **NestJS** projects (allowing decorators, etc.);
+- **`nestjs.jsonc`:** stores the configuration for **NestJS** projects (allowing decorators, etc.);
 - **`solidjs.json`:** stores the configuration for **SolidJS** projects, changing a few linter rules (like
   `noReactSpecificProps`).
 
