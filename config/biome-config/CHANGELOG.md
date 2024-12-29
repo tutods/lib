@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.8
+
+### Patch Changes
+
+- [`7b54f7c`](https://github.com/tutods/lib/commit/7b54f7cee102062794d9907ee9f20dc01af05a89) Thanks [@tutods](https://github.com/tutods)! - docs(biome): update readme
+
 ## 1.1.7
 
 ### Patch Changes
