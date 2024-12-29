@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.7
+
+### Patch Changes
+
+- [`04583b4`](https://github.com/tutods/lib/commit/04583b41c606c97d1d3affb5f6624fc88bc8ced6) Thanks [@tutods](https://github.com/tutods)! - fix(biome): nestjs rules
+
 ## 1.1.6
 
 ### Patch Changes
