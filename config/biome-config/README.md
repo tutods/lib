@@ -11,13 +11,13 @@ This configuration package has the purpose of store my common configurations use
 For now, you will found 3 configurations, being two of them based on the main one:
 
 - **`base.json`**: stores the basic/global configuration;
-- **`nestjs.jsonc`:** stores the configuration for **NestJS** projects (allowing decorators, etc.);
+- **`nestjs.jsonc`:** stores the configuration for **Nest.js** projects (allowing decorators, etc.);
 - **`solidjs.json`:** stores the configuration for **SolidJS** projects, changing a few linter rules (like
   `noReactSpecificProps`).
 
 ## ❓ How to install and use it?
 
-To install my package and use it is very simple, you only need to following the steps above.
+To install my package and use it is very simple, you only need to follow the steps above.
 
 1. Create the `.npmrc` file with:
     ```bash
