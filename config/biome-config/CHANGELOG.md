@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.6
+
+### Patch Changes
+
+- [`cfd8112`](https://github.com/tutods/lib/commit/cfd8112f1442536c4c97fa9db35bc6c24dadbadc) Thanks [@tutods](https://github.com/tutods)! - fix(biome): disable import type for nestjs projects
+
 ## 1.1.5
 
 ### Patch Changes
