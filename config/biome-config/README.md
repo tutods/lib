@@ -17,7 +17,7 @@ For now, you will found 3 configurations, being two of them based on the main on
 
 ## ❓ How to install and use it?
 
-To install my package and use it is very simple, you only need to follow the steps above.
+To install my package and use it is very simple, you only need to follow the steps below.
 
 1. Create the `.npmrc` file with:
     ```bash
