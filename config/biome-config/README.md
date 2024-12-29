@@ -53,7 +53,7 @@ To install my package and use it is very simple, you only need to following the 
     ```json
       "extends": ["@tutods/biome-config"]
     ```
-     - If you want to use the `nestjs` or `solidjs` config you only need to add `/nestjs` or `/solidjs` according to the configuration you want to use.
+     - If you want to use the `nestjs` or `solidjs` config you only need to add another entry with `@tutods/biome-config/nestjs` or `@tutods/biome-config/solidjs` according to the configuration you want to use.
 
 5. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
     ```json
