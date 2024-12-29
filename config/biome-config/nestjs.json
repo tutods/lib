@@ -9,6 +9,9 @@
     "rules": {
       "correctness": {
         "useHookAtTopLevel": "off"
+      },
+      "style": {
+        "useImportType": "off"
       }
     }
   }
