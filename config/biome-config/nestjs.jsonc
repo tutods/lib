@@ -1,0 +1,24 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "linter": {
+    "rules": {
+      "complexity": {
+        "noStaticOnlyClass": "off",
+        // NestJS requires this setting to be 'off' for Dependency Injection to work (singleton registration lifecyle)
+        "noUselessConstructor": "off"
+      },
+      "style": {
+        // NestJS requires this setting to be 'off' for Dependency Injection to work at runtime (reflection)
+        "useImportType": "off"
+      },
+      "correctness": {
+        "useHookAtTopLevel": "off"
+      },
+    }
+  }
+}
