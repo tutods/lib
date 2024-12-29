@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.9
+
+### Patch Changes
+
+- [`3df3082`](https://github.com/tutods/lib/commit/3df30829fbfa000403ecfaf9ff46e3dc225c8d17) Thanks [@tutods](https://github.com/tutods)! - docs(biome): add example to readme
+
 ## 1.1.8
 
 ### Patch Changes
