@@ -8,6 +8,6 @@
   },
   "extends": ["@tutods/biome-config"],
   "files": {
-    "ignore": ["package.json", "packages/**/package.json", "config/**/package.json"]
+    "ignore": ["packages/**/package.json", "config/**/package.json"]
   }
 }
