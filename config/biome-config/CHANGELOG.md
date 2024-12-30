@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.1.10
+
+### Patch Changes
+
+- [`4833f5d`](https://github.com/tutods/lib/commit/4833f5d2b05854613a2bbfc45d844836bde6550b) Thanks [@tutods](https://github.com/tutods)! - fix(biome): use json extension instead of jsonc
+
 ## 1.1.9
 
 ### Patch Changes
