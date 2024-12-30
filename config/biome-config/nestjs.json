@@ -9,16 +9,14 @@
     "rules": {
       "complexity": {
         "noStaticOnlyClass": "off",
-        // NestJS requires this setting to be 'off' for Dependency Injection to work (singleton registration lifecyle)
         "noUselessConstructor": "off"
       },
       "style": {
-        // NestJS requires this setting to be 'off' for Dependency Injection to work at runtime (reflection)
         "useImportType": "off"
       },
       "correctness": {
         "useHookAtTopLevel": "off"
-      },
+      }
     }
   }
 }
