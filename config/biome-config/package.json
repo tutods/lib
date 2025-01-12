@@ -1,6 +1,6 @@
 {
   "name": "@tutods/biome-config",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -19,7 +19,7 @@
   "main": "base.json",
   "exports": {
     ".": "./base.json",
-    "./nestjs": "./nestjs.jsonc",
+    "./nestjs": "./nestjs.json",
     "./solidjs": "./solidjs.json"
   },
   "devDependencies": {
