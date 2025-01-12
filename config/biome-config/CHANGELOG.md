@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.2.0
+
+### Minor Changes
+
+- [`6dd1b44`](https://github.com/tutods/lib/commit/6dd1b44c7a449abddc7c7096487eda3c28ddf79a) Thanks [@tutods](https://github.com/tutods)! - fix(biome): export path
+
 ## 1.1.10
 
 ### Patch Changes
