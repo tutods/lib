@@ -1,5 +1,11 @@
 # @tutods/typescript-config
 
+## 1.0.2
+
+### Patch Changes
+
+- [`a01ec3d`](https://github.com/tutods/lib/commit/a01ec3dc6a7d06eb1170c316df4ff584b2793ca2) Thanks [@tutods](https://github.com/tutods)! - feat(react): update target to ESNext
+
 ## 1.0.1
 
 ### Patch Changes
