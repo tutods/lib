@@ -52,8 +52,7 @@
     "lineWidth": 120,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "useEditorconfig": true,
-    "ignore": ["**/dist/", "**/pnpm-lock.yaml"]
+    "useEditorconfig": true
   },
   "javascript": {
     "formatter": {
