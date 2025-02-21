@@ -1,6 +1,6 @@
 {
   "name": "@tutods/components",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "description": "React generic components that can be used in any scenario",
   "private": false,
   "author": {
@@ -15,16 +15,8 @@
   "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
   "license": "MIT",
   "type": "module",
-  "keywords": [
-    "react",
-    "components",
-    "typescript",
-    "jsx",
-    "tsx"
-  ],
-  "files": [
-    "dist"
-  ],
+  "keywords": ["react", "components", "typescript", "jsx", "tsx"],
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
