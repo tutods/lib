@@ -27,6 +27,9 @@
   "release": {
     "versionPlans": true,
     "projectsRelationship": "independent",
+    "git": {
+      "commitMessage": "chore: we just released v{version} 🎉"
+    },
     "changelog": {
       "projectChangelogs": {
         "renderOptions": {
