@@ -1,3 +1,9 @@
+## 0.4.0
+
+### 🚀 Features
+
+- remove files from formatter ([ea958c1](https://github.com/tutods/lib/commit/ea958c1))
+
 ## 0.3.0
 
 ### 🚀 Features
