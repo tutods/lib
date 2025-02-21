@@ -22,9 +22,9 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@nx/js": "20.4.6",
-    "@swc-node/register": "~1.9.1",
-    "@swc/core": "~1.5.7",
-    "@swc/helpers": "~0.5.11",
+    "@swc-node/register": "~1.10.9",
+    "@swc/core": "~1.10.18",
+    "@swc/helpers": "~0.5.15",
     "@tutods/biome-config": "workspace:*",
     "lefthook": "^1.10.10",
     "nx": "20.4.6"
