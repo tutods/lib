@@ -529,3 +529,7 @@ $RECYCLE.BIN/
 
 # Turbo repo
 .turbo
+
+
+.nx/cache
+.nx/workspace-data

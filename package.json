@@ -9,35 +9,28 @@
     "type": "git"
   },
   "type": "module",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
   "scripts": {
-    "commit": "cz",
     "prepare": "if [ \"$LEFTHOOK\" != \"0\" ];then lefthook install; fi",
-    "build": "turbo run build",
+    "build": "nx run-many -t build",
     "lint": "biome check .",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",
     "lint:staged": "biome check --no-errors-on-unmatched --staged .",
-    "lint:ci": "biome ci --no-errors-on-unmatched .",
-    "changeset": "changeset",
-    "postchangeset": "git push",
-    "changeset:alpha": "changeset pre enter next",
-    "version:create": "LEFTHOOK=0 changeset version --no-verify",
-    "preversion:publish": "turbo run build",
-    "version:publish": "changeset publish",
-    "postversion:publish": "git push"
+    "lint:ci": "biome ci --no-errors-on-unmatched ."
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.28.1",
-    "@tutods/biome-config": "workspace:*",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@nx/js": "20.4.6",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@tutods/biome-config": "workspace:*",
     "lefthook": "^1.10.10",
-    "turbo": "^2.4.2"
+    "nx": "20.4.6"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": ["@biomejs/biome", "@swc/core", "esbuild", "nx"],
+    "onlyBuiltDependencies": ["lefthook"]
   }
 }

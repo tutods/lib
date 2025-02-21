@@ -1,10 +1,7 @@
 {
   "name": "@tutods/biome-config",
-  "version": "1.2.1",
-  "private": "false",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "version": "0.0.0",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
@@ -18,11 +15,7 @@
     "format"
   ],
   "main": "base.json",
-  "exports": {
-    ".": "./base.json",
-    "./nestjs": "./nestjs.json",
-    "./solidjs": "./solidjs.json"
-  },
+  "files": ["base.json", "solidjs.json", "nestjs.json"],
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },

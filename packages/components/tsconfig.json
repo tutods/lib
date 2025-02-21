@@ -1,20 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": ["@tutods/typescript-config/react.json"],
   "compilerOptions": {
-    "target": "ES6",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
