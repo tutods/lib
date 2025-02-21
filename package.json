@@ -31,13 +31,11 @@
     "@types/node": "18.16.9",
     "lefthook": "^1.10.10",
     "nx": "20.4.6",
-    "prettier": "^2.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2"
   },
   "pnpm": {
     "ignoredBuiltDependencies": ["@biomejs/biome", "@swc/core", "esbuild", "nx"],
     "onlyBuiltDependencies": ["lefthook"]
-  },
-  "dependencies": {}
+  }
 }
