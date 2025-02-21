@@ -1,21 +1,13 @@
 {
   "name": "@tutods/typescript-config",
-  "version": "1.0.2",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "version": "0.0.0",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
     "directory": "config/typescript-config"
   },
   "homepage": "https://github.com/tutods/lib/blob/main/config/typescript-config/README.md",
-  "keywords": [
-    "typescript",
-    "tsconfig"
-  ],
-  "files": [
-    "react.json",
-    "node.json"
-  ]
+  "keywords": ["typescript", "tsconfig"],
+  "files": ["react.json", "node.json"]
 }

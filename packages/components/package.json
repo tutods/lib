@@ -1,13 +1,11 @@
 {
   "name": "@tutods/components",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "React generic components that can be used in any scenario",
+  "private": false,
   "author": {
     "name": "Daniel Sousa @TutoDS",
     "url": "https://github.com/tutods"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "repository": {
     "type": "git",
