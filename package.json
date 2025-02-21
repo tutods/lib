@@ -12,6 +12,7 @@
   "scripts": {
     "prepare": "if [ \"$LEFTHOOK\" != \"0\" ];then lefthook install; fi",
     "build": "nx run-many -t build",
+    "prerelease": "nx run-many -t build",
     "release": "nx release",
     "lint": "biome check .",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",

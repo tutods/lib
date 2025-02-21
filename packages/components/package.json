@@ -15,16 +15,8 @@
   "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
   "license": "MIT",
   "type": "module",
-  "keywords": [
-    "react",
-    "components",
-    "typescript",
-    "jsx",
-    "tsx"
-  ],
-  "files": [
-    "dist"
-  ],
+  "keywords": ["react", "components", "typescript", "jsx", "tsx"],
+  "files": ["dist"],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -42,7 +34,7 @@
   "devDependencies": {
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@tutods/typescript-config": "1.1.0",
+    "@tutods/typescript-config": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tsup": "^8.3.6",
