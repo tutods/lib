@@ -1,6 +1,6 @@
 {
   "name": "@tutods/components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "React generic components that can be used in any scenario",
   "private": false,
   "author": {
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@tutods/typescript-config": "workspace:*",
+    "@tutods/typescript-config": "0.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tsup": "^8.3.6",
