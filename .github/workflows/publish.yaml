@@ -1,5 +1,15 @@
 name: publish
 
+env:
+  LEFTHOOK: 0
+  CI: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 on:
   workflow_dispatch:
 
