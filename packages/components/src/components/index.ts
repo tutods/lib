@@ -1,1 +1,1 @@
-export * from '@/components/ConditionalContainer';
+export * from '~/components/ConditionalContainer';

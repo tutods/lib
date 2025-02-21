@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 
-import type { ConditionalContainerProps, RenderElement } from '@/components/ConditionalContainer/types';
+import type { ConditionalContainerProps, RenderElement } from '~/components/ConditionalContainer/types';
 
 /**
  * Component to render a specific element or component according a condition

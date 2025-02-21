@@ -1,5 +1,6 @@
 {
   "name": "@tutods/typescript-config",
+  "description": "Package to store common TypeScript configurations for porjects, like React, Node.js, etc.",
   "version": "0.0.0",
   "private": false,
   "repository": {
