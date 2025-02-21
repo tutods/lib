@@ -23,9 +23,9 @@
       }
     }
   ],
-
   "release": {
     "versionPlans": true,
+    "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
     "git": {
       "commitMessage": "chore: we just released v{version} 🎉"
