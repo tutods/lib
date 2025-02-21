@@ -7,6 +7,7 @@ env:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -15,7 +16,7 @@ on:
 
   pull_request:
     branches:
-        - main
+      - main
     types: [closed]
 
 jobs:
@@ -29,6 +30,7 @@ jobs:
 
       - name: 🔻 Checkout repo
         uses: actions/checkout@v4
+
         with:
           ref: ${{ github.head_ref }}
 
