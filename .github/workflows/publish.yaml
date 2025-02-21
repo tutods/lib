@@ -1,0 +1,36 @@
+name: publish
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    branches:
+        - main
+    types: [closed]
+
+jobs:
+  lint:
+    name: 📤 Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: 👨‍💻 Configure git user
+        run: |
+          git config --global user.name "tutods"
+          git config --global user.email "geral@daniel-sousa.com"
+
+      - name: 🔄 Release a new package
+        run: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
