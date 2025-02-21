@@ -24,7 +24,6 @@
     }
   ],
   "release": {
-    "versionPlans": true,
     "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
     "git": {
