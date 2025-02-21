@@ -1,0 +1,19 @@
+{
+  "name": "@tutods/components",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/components/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/components/dist",
+        "main": "packages/components/src/index.ts",
+        "tsConfig": "packages/components/tsconfig.json",
+        "assets": ["packages/components/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
