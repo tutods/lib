@@ -22,5 +22,10 @@
         }
       }
     }
-  ]
+  ],
+  "release": {
+    "git": {
+      "commitArgs": "--no-verify"
+    }
+  }
 }
