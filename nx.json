@@ -28,7 +28,14 @@
     "versionPlans": true,
     "projectsRelationship": "independent",
     "changelog": {
-      "projectChangelogs": true,
+      "projectChangelogs": {
+        "renderOptions": {
+          "authors": false,
+          "mapAuthorsToGitHubUsernames": true,
+          "versionTitleDate": false,
+          "commitReferences": true
+        }
+      },
       "workspaceChangelog": false
     },
     "version": {
