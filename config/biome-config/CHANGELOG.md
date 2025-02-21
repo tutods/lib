@@ -1,5 +1,11 @@
 # @tutods/biome-config
 
+## 1.2.1
+
+### Patch Changes
+
+- [`284023f`](https://github.com/tutods/lib/commit/284023f8dd05c8f21d24aa3f721b0ad912664afe) Thanks [@tutods](https://github.com/tutods)! - chore: make private to false
+
 ## 1.2.0
 
 ### Minor Changes
