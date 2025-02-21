@@ -30,14 +30,22 @@
       "projectChangelogs": true,
       "workspaceChangelog": false
     },
-    "git": {
-      "commitArgs": "--no-verify"
-    },
     "version": {
       "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true,
         "installIgnoreScripts": true
+      }
+    },
+    "conventionalCommits": {
+      "types": {
+        "docs": true,
+        "deps": {
+          "semverBump": "patch"
+        },
+        "style": {
+          "semverBump": "minor"
+        }
       }
     }
   }
