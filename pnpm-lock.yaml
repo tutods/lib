@@ -31,7 +31,7 @@ importers:
         version: 0.5.15
       '@tutods/biome-config':
         specifier: workspace:*
-        version: link:config/biome-config
+        version: link:packages/configs/biome-config
       lefthook:
         specifier: ^1.10.10
         version: 1.10.10
@@ -39,19 +39,11 @@ importers:
         specifier: 20.4.6
         version: 20.4.6(@swc-node/register@1.10.9(@swc/core@1.10.18(@swc/helpers@0.5.15))(@swc/types@0.1.17)(typescript@5.7.3))(@swc/core@1.10.18(@swc/helpers@0.5.15))
 
-  config/biome-config:
-    devDependencies:
-      '@biomejs/biome':
-        specifier: ^1.9.4
-        version: 1.9.4
-
-  config/typescript-config: {}
-
   packages/components:
     devDependencies:
       '@tutods/typescript-config':
         specifier: workspace:*
-        version: link:../../config/typescript-config
+        version: link:../configs/typescript-config
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
@@ -70,6 +62,14 @@ importers:
       typescript:
         specifier: ^5.7.3
         version: 5.7.3
+
+  packages/configs/biome-config:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^1.9.4
+        version: 1.9.4
+
+  packages/configs/typescript-config: {}
 
 packages:
 

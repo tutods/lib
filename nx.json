@@ -23,6 +23,7 @@
       }
     }
   ],
+
   "release": {
     "projectsRelationship": "independent",
     "changelog": {
