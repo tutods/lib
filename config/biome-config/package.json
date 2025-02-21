@@ -8,18 +8,9 @@
     "directory": "config/biome-config"
   },
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
-  "keywords": [
-    "biome",
-    "biomejs",
-    "lint",
-    "format"
-  ],
+  "keywords": ["biome", "biomejs", "lint", "format"],
   "main": "base.json",
-  "exports": {
-    ".": "./base.json",
-    "./nestjs": "./nestjs.json",
-    "./solidjs": "./solidjs.json"
-  },
+  "files": ["base.json", "solidjs.json", "nestjs.json"],
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },
