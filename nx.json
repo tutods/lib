@@ -36,6 +36,7 @@
     },
     "changelog": {
       "projectChangelogs": {
+        "createRelease": "github",
         "renderOptions": {
           "authors": false,
           "mapAuthorsToGitHubUsernames": true,
