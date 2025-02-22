@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
-    "directory": "config/typescript-config"
+    "directory": "packages/configs/typescript-config"
   },
   "homepage": "https://github.com/tutods/lib/blob/main/config/typescript-config/README.md",
   "keywords": [

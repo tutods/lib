@@ -16,8 +16,8 @@ This monorepo, for now contains 3 packages, two of them dedicated to common conf
 
 To know more details about each package, please read the `README.md` file inside of each package folder:
 
-- [**Biome Config** - README](./config/biome-config/README.md)
-- [**TypeScript Config** - README](./config/typescript-config/README.md)
+- [**Biome Config** - README](./packages/configs/biome-config/README.md)
+- [**TypeScript Config** - README](./packages/configs/typescript-config/README.md)
 - [**Components** - README](./packages/components/README.md)
 
 ## 🔗 More About Me
