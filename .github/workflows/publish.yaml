@@ -8,6 +8,11 @@ on:
     types:
       - created
 
+permissions:
+  contents: write
+  packages: write
+  actions: write
+
 env:
   # NX release needs to have a GH token in env.GITHUB_TOKEN
   # As during this workflow we will create a new release
