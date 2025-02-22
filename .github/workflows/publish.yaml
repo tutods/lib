@@ -6,10 +6,9 @@ on:
     types:
       - created
 # TODO: check
-# permissions:
-#   contents: write
-#   packages: write
-#   actions: write
+permissions:
+  actions: write
+  contents: write
 
 # TODO: check
 # env:

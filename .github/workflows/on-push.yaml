@@ -8,7 +8,7 @@ on:
       - main
 
 permissions:
-  actions: read
+  actions: write
   contents: write
 
 env:
