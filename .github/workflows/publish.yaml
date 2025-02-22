@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   publish:
-    name: 📤 Pulbish package versions
+    name: 📤 Publish package versions
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
