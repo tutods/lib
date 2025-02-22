@@ -1,3 +1,9 @@
+## 0.5.0
+
+### 🚀 Features
+
+- **biome config:** exports paths ([23b630f](https://github.com/tutods/lib/commit/23b630f))
+
 ## 0.4.2
 
 ### 🩹 Fixes
