@@ -16,11 +16,11 @@
     "format"
   ],
   "main": "base.json",
-  "files": [
-    "base.json",
-    "nestjs.json",
-    "solidjs.json"
-  ],
+  "exports": {
+    ".": "./base.json",
+    "./nestjs": "./nestjs.json",
+    "./solidjs": "./solidjs.json"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },
