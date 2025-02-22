@@ -65,3 +65,12 @@ jobs:
           git config --global user.email "some@user.dev"
           git config --global user.name "YourName"
           npx nx release --skip-publish
+
+      - name: Update lock file
+        run: |
+          pnpm install --no-frozen-lockfile
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          git add pnpm-lock.yaml
+          git commit -m "chore: update lock file after release"
+          git push
