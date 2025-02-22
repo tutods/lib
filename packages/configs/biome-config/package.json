@@ -3,12 +3,16 @@
   "version": "0.5.0",
   "private": false,
   "description": "Package with generic configuration for Biome that can be used on React, Solidjs and Nest.js projects.",
+  "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
     "directory": "packages/configs/biome-config"
   },
-  "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
   "keywords": [
     "biome",
     "biomejs",

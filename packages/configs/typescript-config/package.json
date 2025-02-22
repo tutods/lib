@@ -2,13 +2,16 @@
   "name": "@tutods/typescript-config",
   "description": "Package to store common TypeScript configurations for porjects, like React, Node.js, etc.",
   "version": "0.3.2",
-  "private": false,
+  "homepage": "https://github.com/tutods/lib/blob/main/config/typescript-config/README.md",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
     "directory": "packages/configs/typescript-config"
   },
-  "homepage": "https://github.com/tutods/lib/blob/main/config/typescript-config/README.md",
   "keywords": [
     "typescript",
     "tsconfig"
