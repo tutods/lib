@@ -6,6 +6,11 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  actions: read
+  contents: write
+
 env:
   # NX release needs to have a GH token in env.GITHUB_TOKEN
   # As during this workflow we will create a new release
