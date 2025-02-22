@@ -12,8 +12,6 @@ runs:
 
     - uses: pnpm/action-setup@v4
       name: 📥 Install PNPM
-      with:
-        registry-url: 'https://registry.npmjs.org'
 
     - name: 📂 Get PNPM store directory
       shell: bash
