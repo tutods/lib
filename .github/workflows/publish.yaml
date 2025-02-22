@@ -1,48 +1,74 @@
-name: publish
+# Name of the workflow
+name: Publish
+
+# Rules that triggers the workflows
+on:
+  release:
+    types:
+      - created
 
 env:
-  LEFTHOOK: 0
-  CI: true
-
-permissions:
-  contents: write
-  pull-requests: write
-  actions: write
-
-concurrency: ${{ github.workflow }}-${{ github.ref }}
-
-on:
-  workflow_dispatch:
-
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+  # NX release needs to have a GH token in env.GITHUB_TOKEN
+  # As during this workflow we will create a new release
+  # that should trigger other workflow, we need to create custom TOKEN
+  # with proper permissions,
+  # more: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+  NPM_CONFIG_PROVENANCE: true
 
 jobs:
-  lint:
-    name: 📤 Publish
+  publish:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 10
     steps:
+      # - name: Checkout repository
+      #   uses: actions/checkout@v4
       - name: 🦖 Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
 
       - name: 🔻 Checkout repo
         uses: actions/checkout@v4
-
         with:
           ref: ${{ github.head_ref }}
+
+        # Additional steps to get a version and package name from a tag
+      # it will not be used in this example, but might be useful for some
+      # customization (like additional release of the package, or some external notifications)
+      - name: Get Version
+        run: |
+          TAG_NAME=${{github.event.release.tag_name}}
+          echo "PACKAGE_NAME=$(echo $TAG_NAME | cut -d "@" -f 1)" >> $GITHUB_ENV
+          echo "APP_VERSION=$(echo $TAG_NAME | cut -d "@" -f 2)" >> $GITHUB_ENV
 
       - name: 🏃 Run Node and NPM setup
         uses: ./.github/actions/setup-project
 
-      - name: 👨‍💻 Configure git user
-        run: |
-          git config --global user.name "tutods"
-          git config --global user.email "geral@daniel-sousa.com"
 
-      - name: 🔄 Release a new package
-        run: pnpm release
+      # - name: Install Node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 20
+      #     # Here we can setup some private registry url like nexus / jFrog,
+      #     # you can skip this parameter if you are using custom .npmrc file
+      #     registry-url: https://registry.npmjs.org/
+      #   env:
+      #     # Your personal npm access token: https://docs.npmjs.com/creating-and-viewing-access-tokens
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+      #     # We need to set provenance to true in order to generate provenance statement
+      #     NPM_CONFIG_PROVENANCE: true
+
+      # - name: Install dependencies
+      #   run: npm ci
+        # We are triggering nx release publish in --dry-run mode in order to not actually publish
+        # any package to npm registry, but only see what steps will be taken - this is set for tests only.
+        # You can remove this flag once you will be ready to publish to npm registry.
+      - name: Publish packages
+        run: |
+          git config --global user.email "some@user.dev"
+          git config --global user.name "YourName"
+          npx nx release publish --dry-run
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+          # We need to set provenance to true in order to generate provenance statement
+          NPM_CONFIG_PROVENANCE: true
