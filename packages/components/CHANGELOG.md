@@ -1,3 +1,13 @@
+## 0.4.2
+
+### 🩹 Fixes
+
+- lockfile ([2324e9b](https://github.com/tutods/lib/commit/2324e9b))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.4.2
+
 ## 0.4.1
 
 ### 🩹 Fixes

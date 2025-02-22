@@ -1,3 +1,9 @@
+## 0.4.2
+
+### 🩹 Fixes
+
+- lockfile ([2324e9b](https://github.com/tutods/lib/commit/2324e9b))
+
 ## 0.4.1
 
 ### 🩹 Fixes
