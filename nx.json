@@ -6,6 +6,12 @@
       "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
+    "nx-release-publish": {
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "{projectRoot}/dist"
+      }
+    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -31,6 +37,7 @@
   "release": {
     "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
+    "projects": ["packages/*", "packages/**/*"],
     "git": {
       "commitMessage": "chore: we just released v{version} 🎉"
     },
