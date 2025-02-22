@@ -1,3 +1,13 @@
+## 0.4.3
+
+### 🩹 Fixes
+
+- conflicts ([d196346](https://github.com/tutods/lib/commit/d196346))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.4.3
+
 ## 0.4.2
 
 ### 🩹 Fixes

@@ -1,3 +1,9 @@
+## 0.6.3
+
+### 🩹 Fixes
+
+- conflicts ([d196346](https://github.com/tutods/lib/commit/d196346))
+
 ## 0.6.2
 
 ### 🩹 Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@tutods/biome-config",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "private": false,
   "description": "Package with generic configuration for Biome that can be used on React, Solidjs and Nest.js projects.",
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
