@@ -48,15 +48,15 @@ jobs:
           git config --global user.name "YourName"
           npx nx release --skip-publish
 
-      - name: 🔐 Update lock file
-        id: new_lockfile
-        run: pnpm install --no-frozen-lockfile
+      # - name: 🔐 Update lock file
+      #   id: new_lockfile
+      #   run: pnpm install --no-frozen-lockfile
 
-      - name: 📤 Commit new lock file
-        if: ${{ steps.new_lockfile.outputs.has_changes == 'true' }}
-        run: |
-          git config --local user.name "github-actions"
-          git config --local user.email "github-actions@github.com"
-          git add pnpm-lock.yaml
-          git commit -m "chore: update lock file after release"
-          git push
+      # - name: 📤 Commit new lock file
+      #   if: ${{ steps.new_lockfile.outputs.has_changes == 'true' }}
+      #   run: |
+      #     git config --local user.name "github-actions"
+      #     git config --local user.email "github-actions@github.com"
+      #     git add pnpm-lock.yaml
+      #     git commit -m "chore: update lock file after release"
+      #     git push

@@ -28,4 +28,4 @@ runs:
 
     - name: 📲 Install project dependencies
       shell: bash
-      run: CI=true pnpm install --shamefully-hoist
+      run: CI=true pnpm install --no-frozen-lockfile --shamefully-hoist
