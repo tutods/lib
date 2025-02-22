@@ -3,6 +3,7 @@ name: Publish
 
 # Rules that triggers the workflows
 on:
+  workflow_dispatch:
   release:
     types:
       - created
