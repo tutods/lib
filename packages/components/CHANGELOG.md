@@ -1,3 +1,13 @@
+## 0.4.0
+
+### 🚀 Features
+
+- add mjs files to biome ([942a37c](https://github.com/tutods/lib/commit/942a37c))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.4.0
+
 ## 0.3.2
 
 ### 🩹 Fixes

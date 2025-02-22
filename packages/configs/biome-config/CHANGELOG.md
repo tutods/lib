@@ -1,3 +1,9 @@
+## 0.6.0
+
+### 🚀 Features
+
+- add mjs files to biome ([942a37c](https://github.com/tutods/lib/commit/942a37c))
+
 ## 0.5.0
 
 ### 🚀 Features
