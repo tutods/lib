@@ -43,22 +43,18 @@ jobs:
         run: npx nx affected -t build
 
       - name: 🔖 Run nx release
-        id: release
         run: |
           git config --global user.email "some@user.dev"
           git config --global user.name "YourName"
           npx nx release --skip-publish
-          # Check for changes
-          if git diff --name-only --exit-code; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-          else
-            echo "has_changes=true" >> $GITHUB_OUTPUT
-          fi
 
       - name: 🔐 Update lock file
-        if: ${{ steps.release.outputs.has_changes == 'true' }}
+        id: new_lockfile
+        run: pnpm install --no-frozen-lockfile
+
+      - name: 📤 Commit new lock file
+        if: ${{ steps.new_lockfile.outputs.has_changes == 'true' }}
         run: |
-          pnpm install --no-frozen-lockfile
           git config --local user.name "github-actions"
           git config --local user.email "github-actions@github.com"
           git add pnpm-lock.yaml
