@@ -4,14 +4,14 @@
   "sourceRoot": "packages/components/src",
   "projectType": "library",
   "targets": {
-    "build": {
+    "nx-release-publish": {
       "executor": "@nx/js:tsc",
+      "dependsOn": ["build"],
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "packages/components/dist",
-        "main": "packages/components/src/index.ts",
-        "tsConfig": "packages/components/tsconfig.json",
-        "assets": ["packages/components/*.md"]
+        "outputPath": "{projectRoot}/dist",
+        "main": "{projectRoot}/src/index.ts",
+        "tsConfig": "{projectRoot}/tsconfig.json"
       }
     }
   },
