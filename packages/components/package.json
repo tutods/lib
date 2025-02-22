@@ -49,11 +49,7 @@
   "devDependencies": {
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-<<<<<<< HEAD
-    "@tutods/typescript-config": "0.4.2",
-=======
     "@tutods/typescript-config": "workspace:*",
->>>>>>> 1174306 (ci: try to fix using no frozen lockfile)
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tsup": "^8.3.6",
