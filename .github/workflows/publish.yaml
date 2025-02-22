@@ -32,7 +32,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          registry-url: 'https://registry.npmjs.org'
 
         # Additional steps to get a version and package name from a tag
       # it will not be used in this example, but might be useful for some
