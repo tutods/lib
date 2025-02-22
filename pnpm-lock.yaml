@@ -75,7 +75,7 @@ importers:
   packages/components/dist:
     devDependencies:
       '@tutods/typescript-config':
-        specifier: 0.3.0
+        specifier: '*'
         version: 0.3.0
       '@types/react':
         specifier: ^19.0.10
