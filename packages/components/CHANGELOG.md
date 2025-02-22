@@ -1,3 +1,9 @@
+## 0.4.4
+
+### 🩹 Fixes
+
+- remove commented code ([3ae16f7](https://github.com/tutods/lib/commit/3ae16f7))
+
 ## 0.4.3
 
 ### 🩹 Fixes
