@@ -20,7 +20,8 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  main:
+  push:
+    name: 🔖 Release packages
     runs-on: ubuntu-latest
     steps:
       - name: 🦖 Cancel Previous Runs
@@ -33,34 +34,14 @@ jobs:
 
       - name: 🏃 Run Node and NPM setup
         uses: ./.github/actions/setup-project
-    #   - name: Checkout the main branch
-    #     uses: actions/checkout@v4
-    #     # Only a single commit is fetched by default
-    #     # we need full repo history with tags, so we are setting fetch-depth: 0
-    #     with:
-    #       fetch-depth: 0
-    #       # We need to pass Personal Access Token in order
-    #       # to force triggering on-publish workflow
-    #       token: ${{ secrets.PAT }}
 
-    #   - name: Setup node
-    #     uses: actions/setup-node@v3
-    #     with:
-    #       node-version: 20
-    #       cache: 'npm'
-
-    #   - name: Install packages
-    #     run: npm ci
-
-      - name: Sets the base and head SHAs for the nx affected commands in CI
+      - name: 💬 Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
 
-      - name: Build affected libs
+      - name: 🔄 Build affected libs
         run: npx nx affected -t build
 
-        # We need to set github email and name as nx release will
-        # create new tag with version and create new github release
-      - name: Run nx release
+      - name: 🔖 Run nx release
         id: release
         run: |
           git config --global user.email "some@user.dev"
@@ -73,7 +54,7 @@ jobs:
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
 
-      - name: Update lock file
+      - name: 🔐 Update lock file
         if: ${{ steps.release.outputs.has_changes == 'true' }}
         run: |
           pnpm install --no-frozen-lockfile

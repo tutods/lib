@@ -25,6 +25,7 @@
     "include": [
       "*.js",
       "*.cjs",
+      "*.mjs",
       "*.ts",
       "*.jsx",
       "*.tsx",
