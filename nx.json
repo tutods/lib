@@ -50,7 +50,8 @@
       "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true,
-        "installIgnoreScripts": true
+        "installIgnoreScripts": true,
+        "registry": "https://registry.npmjs.org"
       }
     },
     "conventionalCommits": {

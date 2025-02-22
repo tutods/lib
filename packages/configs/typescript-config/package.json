@@ -4,8 +4,7 @@
   "version": "0.3.2",
   "homepage": "https://github.com/tutods/lib/blob/main/config/typescript-config/README.md",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "repository": {
     "type": "git",

@@ -3,8 +3,7 @@
   "version": "0.3.2",
   "description": "React generic components that can be used in any scenario",
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
+    "access": "public"
   },
   "author": {
     "name": "Daniel Sousa @TutoDS",
