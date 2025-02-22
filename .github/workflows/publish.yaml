@@ -66,9 +66,9 @@ jobs:
         # You can remove this flag once you will be ready to publish to npm registry.
       - name: Publish packages
         run: |
-          git config --global user.email "some@user.dev"
-          git config --global user.name "YourName"
-          npx nx release publish --dry-run
+          git config --local user.name "github-actions"
+          git config --local user.email "github-actions@github.com"
+          npx nx release publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
           # We need to set provenance to true in order to generate provenance statement
