@@ -1,3 +1,9 @@
+## 0.4.2
+
+### 🩹 Fixes
+
+- config files paths ([850eeac](https://github.com/tutods/lib/commit/850eeac))
+
 ## 0.4.1
 
 ### 🩹 Fixes

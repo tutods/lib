@@ -1,3 +1,13 @@
+## 0.3.2
+
+### 🩹 Fixes
+
+- config files paths ([850eeac](https://github.com/tutods/lib/commit/850eeac))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.3.2
+
 ## 0.3.1
 
 ### 🩹 Fixes
