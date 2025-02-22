@@ -6,13 +6,6 @@
       "outputs": ["{projectRoot}/dist"],
       "cache": true
     },
-    "nx-release-publish": {
-      "dependsOn": ["build"],
-      "inputs": ["packages/components"],
-      "options": {
-        "packageRoot": "{projectRoot}/dist"
-      }
-    },
     "@nx/js:tsc": {
       "cache": true,
       "dependsOn": ["^build"],
