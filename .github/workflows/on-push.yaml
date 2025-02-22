@@ -44,8 +44,8 @@ jobs:
 
       - name: 🔖 Run nx release
         run: |
-          git config --global user.email "some@user.dev"
-          git config --global user.name "YourName"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           npx nx release --skip-publish
 
       # - name: 🔐 Update lock file
