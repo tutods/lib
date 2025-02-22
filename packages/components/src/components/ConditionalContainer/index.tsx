@@ -32,7 +32,6 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
   if (when) {
     const { element, props: renderProps } = render;
 
-    // If (typeof element === 'string') {
     return children ? createElement(element, renderProps, children) : createElement(element, renderProps);
   }
 
