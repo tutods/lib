@@ -1,3 +1,9 @@
+## 0.4.1
+
+### 🩹 Fixes
+
+- remove prettier ([e819f28](https://github.com/tutods/lib/commit/e819f28))
+
 ## 0.4.0
 
 ### 🚀 Features
