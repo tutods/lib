@@ -8,6 +8,7 @@
     },
     "nx-release-publish": {
       "dependsOn": ["build"],
+      "inputs": ["packages/components"],
       "options": {
         "packageRoot": "{projectRoot}/dist"
       }
