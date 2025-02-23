@@ -8,7 +8,8 @@
       "!{projectRoot}/**/*.spec.ts",
       "!{projectRoot}/**/*.test.ts",
       "!{projectRoot}/eslint.config.mjs",
-      "!{projectRoot}/tsup.config.ts"
+      "!{projectRoot}/tsup.config.ts",
+      "!{projectRoot}/biome.json"
     ],
     "sharedGlobals": []
   },
@@ -70,7 +71,6 @@
       "preVersionCommand": "nx run-many -t build packages/*",
       "conventionalCommits": true,
       "generatorOptions": {
-        "skipLockFileUpdate": true,
         "installIgnoreScripts": true,
         "registry": "https://registry.npmjs.org"
       }
