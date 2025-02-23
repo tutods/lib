@@ -49,6 +49,5 @@
   "pnpm": {
     "ignoredBuiltDependencies": ["@biomejs/biome", "@swc/core", "esbuild", "nx"],
     "onlyBuiltDependencies": ["lefthook"]
-  },
-  "dependencies": {}
+  }
 }

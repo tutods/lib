@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@tutods/typescript-config/react.json"],
+  "extends": ["../configs/typescript-config/react.json"],
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "moduleResolution": "node",
