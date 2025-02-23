@@ -14,6 +14,8 @@
     "build": "nx run-many -t build",
     "release": "nx release",
     "lint": "biome check .",
+    "eslint": "nx run-many -t eslint",
+    "eslint:fix": "nx run-many -t eslint --fix",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",
     "lint:staged": "biome check --no-errors-on-unmatched --staged .",
     "lint:ci": "biome ci --no-errors-on-unmatched ."
@@ -22,6 +24,9 @@
     "@biomejs/biome": "^1.9.4",
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
+    "@eslint/eslintrc": "^2.1.1",
+    "@nx/eslint": "20.4.6",
+    "@nx/eslint-plugin": "20.4.6",
     "@nx/js": "20.4.6",
     "@swc-node/register": "~1.10.9",
     "@swc/core": "~1.10.18",
@@ -30,16 +35,20 @@
     "@types/node": "22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.0.0",
     "lefthook": "^1.10.11",
     "nx": "20.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tslib": "^2.8.1",
     "tsup": "^8.3.6",
-    "typescript": "~5.7.3"
+    "typescript": "~5.7.3",
+    "typescript-eslint": "^8.19.0"
   },
   "pnpm": {
     "ignoredBuiltDependencies": ["@biomejs/biome", "@swc/core", "esbuild", "nx"],
     "onlyBuiltDependencies": ["lefthook"]
-  }
+  },
+  "dependencies": {}
 }

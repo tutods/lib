@@ -8,6 +8,6 @@
   },
   "extends": ["@tutods/biome-config"],
   "files": {
-    "ignore": ["packages/**/package.json", "config/**/package.json"]
+    "ignore": ["packages/**/package.json", "config/**/package.json", "**/eslint.config.mjs"]
   }
 }
