@@ -1,7 +1,20 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/jest.config.ts",
+      "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.test.ts",
+      "!{projectRoot}/eslint.config.mjs",
+      "!{projectRoot}/tsup.config.ts"
+    ],
+    "sharedGlobals": []
+  },
   "targetDefaults": {
     "build": {
+      "inputs": ["production", "^production"],
       "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/dist"],
       "cache": true
@@ -26,12 +39,18 @@
           "watchDepsName": "watch-deps"
         }
       }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint"
+      }
     }
   ],
   "release": {
     "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
-    "projects": ["packages/*", "packages/**/*"],
+    "projects": ["packages/*"],
     "git": {
       "commitMessage": "chore(release): {version}"
     },
@@ -48,6 +67,7 @@
       "workspaceChangelog": false
     },
     "version": {
+      "preVersionCommand": "nx run-many -t build packages/*",
       "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true,

@@ -46,15 +46,6 @@
     "dev": "tsup --watch",
     "build": "tsup"
   },
-  "devDependencies": {
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@tutods/typescript-config": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tsup": "^8.3.6",
-    "typescript": "^5.7.3"
-  },
   "peerDependencies": {
     "react": ">=19.0.0",
     "react-dom": ">=19.0.0"
