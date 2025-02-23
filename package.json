@@ -28,9 +28,14 @@
     "@swc/helpers": "~0.5.15",
     "@tutods/biome-config": "workspace:*",
     "@types/node": "22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "lefthook": "^1.10.11",
     "nx": "20.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tslib": "^2.8.1",
+    "tsup": "^8.3.6",
     "typescript": "~5.7.3"
   },
   "pnpm": {
