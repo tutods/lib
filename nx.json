@@ -31,7 +31,7 @@
   "release": {
     "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
-    "projects": ["packages/*", "packages/**/*"],
+    "projects": ["packages/*"],
     "git": {
       "commitMessage": "chore(release): {version}"
     },
@@ -48,6 +48,7 @@
       "workspaceChangelog": false
     },
     "version": {
+      "preVersionCommand": "nx run-many -t build packages/*",
       "conventionalCommits": true,
       "generatorOptions": {
         "skipLockFileUpdate": true,
