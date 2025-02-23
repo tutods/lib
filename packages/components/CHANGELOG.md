@@ -1,3 +1,9 @@
+## 0.4.5
+
+### 🩹 Fixes
+
+- disable default export rule for prettier and eslint configs ([400afc1](https://github.com/tutods/lib/commit/400afc1))
+
 ## 0.4.4
 
 ### 🩹 Fixes
