@@ -527,9 +527,7 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/react,node,linux,windows,visualstudiocode,sublimetext,yarn,macos,webstorm,webstorm+iml,webstorm+all
 
-# Turbo repo
-.turbo
-
-
+# NX
 .nx/cache
 .nx/workspace-data
+tmp
