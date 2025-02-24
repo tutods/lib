@@ -12,12 +12,7 @@
     "url": "ssh://git@github.com:tutods/lib.git",
     "directory": "packages/configs/biome-config"
   },
-  "keywords": [
-    "biome",
-    "biomejs",
-    "lint",
-    "format"
-  ],
+  "keywords": ["biome", "biomejs", "lint", "format"],
   "main": "base.json",
   "exports": {
     ".": "./base.json",

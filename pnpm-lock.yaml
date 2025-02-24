@@ -40,7 +40,7 @@ importers:
         version: 0.5.15
       '@tutods/biome-config':
         specifier: workspace:*
-        version: link:packages/configs/biome-config
+        version: link:configs/biome-config
       '@types/node':
         specifier: 22.13.5
         version: 22.13.5
@@ -81,6 +81,14 @@ importers:
         specifier: ^8.24.1
         version: 8.24.1(eslint@9.21.0(jiti@2.4.2))(typescript@5.7.3)
 
+  configs/biome-config:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^1.9.4
+        version: 1.9.4
+
+  configs/typescript-config: {}
+
   packages/components:
     dependencies:
       react:
@@ -92,15 +100,7 @@ importers:
     devDependencies:
       '@tutods/typescript-config':
         specifier: workspace:*
-        version: link:../configs/typescript-config
-
-  packages/configs/biome-config:
-    devDependencies:
-      '@biomejs/biome':
-        specifier: ^1.9.4
-        version: 1.9.4
-
-  packages/configs/typescript-config: {}
+        version: link:../../configs/typescript-config
 
 packages:
 

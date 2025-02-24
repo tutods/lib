@@ -11,12 +11,6 @@
     "url": "ssh://git@github.com:tutods/lib.git",
     "directory": "packages/configs/typescript-config"
   },
-  "keywords": [
-    "typescript",
-    "tsconfig"
-  ],
-  "files": [
-    "react.json",
-    "node.json"
-  ]
+  "keywords": ["typescript", "tsconfig"],
+  "files": ["react.json", "node.json"]
 }
