@@ -17,7 +17,7 @@ env:
   # that should trigger other workflow, we need to create custom TOKEN
   # with proper permissions,
   # more: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
-  GITHUB_TOKEN: ${{ secrets.PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   push:
@@ -47,6 +47,8 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           npx nx release --skip-publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: 🔐 Update lock file
       #   id: new_lockfile
