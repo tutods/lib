@@ -53,7 +53,8 @@
     "projectsRelationship": "independent",
     "projects": ["packages/*", "configs/*"],
     "git": {
-      "commitMessage": "chore(release): {projectName} v{version}"
+      "commitMessage": "chore(release): {projectName} v{version}",
+      "commitArgs": "--no-verified"
     },
     "changelog": {
       "projectChangelogs": {
