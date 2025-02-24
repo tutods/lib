@@ -1,7 +1,5 @@
-# Name of your workflow
 name: NX release
 
-# Rules that trigger the workflow
 on:
   push:
     branches:
@@ -14,11 +12,6 @@ permissions:
   contents: write
 
 env:
-  # NX release needs to have a GH token in env.GITHUB_TOKEN
-  # As during this workflow we will create a new release
-  # that should trigger other workflow, we need to create custom TOKEN
-  # with proper permissions,
-  # more: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -51,16 +44,3 @@ jobs:
           npx nx release --skip-publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: 🔐 Update lock file
-      #   id: new_lockfile
-      #   run: pnpm install --no-frozen-lockfile
-
-      # - name: 📤 Commit new lock file
-      #   if: ${{ steps.new_lockfile.outputs.has_changes == 'true' }}
-      #   run: |
-      #     git config --local user.name "github-actions"
-      #     git config --local user.email "github-actions@github.com"
-      #     git add pnpm-lock.yaml
-      #     git commit -m "chore: update lock file after release"
-      #     git push
