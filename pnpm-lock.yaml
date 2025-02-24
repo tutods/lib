@@ -89,6 +89,10 @@ importers:
       react-dom:
         specifier: '>=19.0.0'
         version: 19.0.0(react@19.0.0)
+    devDependencies:
+      '@tutods/typescript-config':
+        specifier: workspace:*
+        version: link:../configs/typescript-config
 
   packages/configs/biome-config:
     devDependencies:
