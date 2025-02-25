@@ -47,7 +47,7 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "@tutods/typescript-config": "0.4.4"
+    "@tutods/typescript-config": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
