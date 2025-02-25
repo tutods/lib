@@ -15,8 +15,9 @@ export default [
         },
       ],
     },
-    languageOptions: {
-      parser: await import('jsonc-eslint-parser'),
-    },
+    // TODO: how to fix?
+    // languageOptions: {
+    //   parser: await import('jsonc-eslint-parser'),
+    // },
   },
 ];

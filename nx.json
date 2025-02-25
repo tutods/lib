@@ -53,8 +53,7 @@
     "releaseTagPattern": "release/{projectName}/{version}",
     "projects": ["packages/*", "configs/*"],
     "git": {
-      "commitMessage": "chore(release): version packages",
-      "commitArgs": "--no-verified"
+      "commitMessage": "chore(release): version packages"
     },
     "changelog": {
       "projectChangelogs": {
