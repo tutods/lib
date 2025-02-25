@@ -1,3 +1,9 @@
+## 0.4.6
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.4.4
+
 ## 0.4.5
 
 ### 🩹 Fixes

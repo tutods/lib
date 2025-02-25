@@ -1,6 +1,6 @@
 {
   "name": "@tutods/components",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "React generic components that can be used in any scenario",
   "publishConfig": {
     "access": "public"
@@ -47,7 +47,7 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "@tutods/typescript-config": "workspace:*"
+    "@tutods/typescript-config": "0.4.4"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
