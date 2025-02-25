@@ -49,11 +49,11 @@
     }
   ],
   "release": {
-    "releaseTagPattern": "release/{projectName}/{version}",
     "projectsRelationship": "independent",
+    "releaseTagPattern": "release/{projectName}/{version}",
     "projects": ["packages/*", "configs/*"],
     "git": {
-      "commitMessage": "chore(release): {projectName} v{version}",
+      "commitMessage": "chore(release): version packages",
       "commitArgs": "--no-verified"
     },
     "changelog": {
