@@ -29,7 +29,7 @@
     "@nx/eslint-plugin": "20.4.6",
     "@nx/js": "20.4.6",
     "@swc-node/register": "~1.10.9",
-    "@swc/core": "~1.11.4",
+    "@swc/core": "~1.11.5",
     "@swc/helpers": "~0.5.15",
     "@tutods/biome-config": "workspace:*",
     "@types/node": "22.13.5",
