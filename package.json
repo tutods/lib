@@ -24,7 +24,7 @@
     "@biomejs/biome": "^1.9.4",
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
-    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/eslintrc": "^3.3.1",
     "@nx/eslint": "20.6.2",
     "@nx/eslint-plugin": "20.6.2",
     "@nx/js": "20.6.2",
