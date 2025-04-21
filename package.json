@@ -37,7 +37,7 @@
     "@types/react-dom": "^19.1.2",
     "eslint": "^9.25.0",
     "eslint-config-prettier": "^10.1.2",
-    "lefthook": "^1.11.10",
+    "lefthook": "^1.11.11",
     "nx": "20.8.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
