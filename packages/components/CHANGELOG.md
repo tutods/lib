@@ -1,3 +1,13 @@
+## 0.7.0
+
+### 🚀 Features
+
+- add license and update reamdes of all packages ([#320](https://github.com/tutods/lib/pull/320))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.7.0
+
 ## 0.6.5
 
 This was a version bump only for @tutods/components to align it with other projects, there were no code changes.

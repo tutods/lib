@@ -1,3 +1,9 @@
+## 0.7.0
+
+### 🚀 Features
+
+- add license and update reamdes of all packages ([#320](https://github.com/tutods/lib/pull/320))
+
 ## 0.6.5
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
