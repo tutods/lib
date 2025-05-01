@@ -60,7 +60,7 @@
     "formatter": {
       "enabled": true,
       "jsxQuoteStyle": "double",
-      "quoteProperties": "asNeeded",
+      "quoteProperties": "preserve",
       "trailingCommas": "all",
       "semicolons": "always",
       "arrowParentheses": "always",
@@ -115,13 +115,18 @@
                 "selector": {
                   "kind": "objectLiteralMember"
                 },
-                "formats": ["camelCase", "CONSTANT_CASE"]
+                "formats": [
+                  "camelCase",
+                  "CONSTANT_CASE"
+                ]
               },
               {
                 "selector": {
                   "kind": "enumMember"
                 },
-                "formats": ["CONSTANT_CASE"]
+                "formats": [
+                  "CONSTANT_CASE"
+                ]
               }
             ]
           }
@@ -132,7 +137,11 @@
         "noConsole": {
           "level": "error",
           "options": {
-            "allow": ["error", "info", "warn"]
+            "allow": [
+              "error",
+              "info",
+              "warn"
+            ]
           }
         },
         "noEmptyBlockStatements": "off"
@@ -155,8 +164,21 @@
           "level": "error",
           "fix": "safe",
           "options": {
-            "attributes": ["css", "class", "classList", "classNames", "className"],
-            "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
+            "attributes": [
+              "css",
+              "class",
+              "classList",
+              "classNames",
+              "className"
+            ],
+            "functions": [
+              "clsx",
+              "cva",
+              "tv",
+              "tw",
+              "twMerge",
+              "cn"
+            ]
           }
         },
         "useAriaPropsSupportedByRole": "off"
@@ -169,7 +191,10 @@
   },
   "overrides": [
     {
-      "include": ["*.jsx", "*.tsx"],
+      "include": [
+        "*.jsx",
+        "*.tsx"
+      ],
       "linter": {
         "rules": {
           "style": {
