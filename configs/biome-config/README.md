@@ -1,3 +1,4 @@
+<!-- omit from toc -->
 # ![Biome Config](https://img.shields.io/badge/Biome-%40tutods%2Fbiome--config-60A5FA?logo=biome&logoSize=auto&style=for-the-badge)
 
 ![npm version](https://img.shields.io/npm/v/@tutods/biome-config?style=for-the-badge) ![npm downloads](https://img.shields.io/npm/dm/@tutods/biome-config?style=for-the-badge) ![License](https://img.shields.io/npm/l/@tutods/biome-config?style=for-the-badge)
@@ -5,19 +6,18 @@
 ---
 
 ## Table of Contents
-- [](#)
-  - [Table of Contents](#table-of-contents)
-  - [📄 Goal](#-goal)
-    - [💡️ What you will find?](#️-what-you-will-find)
-  - [✨ Features](#-features)
-  - [❓ How to install and use it?](#-how-to-install-and-use-it)
-    - [Examples of usage](#examples-of-usage)
-      - [React project](#react-project)
-      - [Nest.js project](#nestjs-project)
-      - [Next.js project (App Router)](#nextjs-project-app-router)
-  - [🔧 Troubleshooting](#-troubleshooting)
-    - [Single Quotes in CSS Selectors](#single-quotes-in-css-selectors)
-  - [📋 Compatibility](#-compatibility)
+- [Table of Contents](#table-of-contents)
+- [📄 Goal](#-goal)
+  - [💡️ What you will find?](#️-what-you-will-find)
+- [✨ Features](#-features)
+- [❓ How to install and use it?](#-how-to-install-and-use-it)
+  - [Examples of usage](#examples-of-usage)
+    - [React project](#react-project)
+    - [Nest.js project](#nestjs-project)
+    - [Next.js project (App Router)](#nextjs-project-app-router)
+- [🔧 Troubleshooting](#-troubleshooting)
+  - [Single Quotes in CSS Selectors](#single-quotes-in-css-selectors)
+- [📋 Compatibility](#-compatibility)
 
 
 ## 📄 Goal
