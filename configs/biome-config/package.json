@@ -17,7 +17,8 @@
   "exports": {
     ".": "./base.json",
     "./nestjs": "./nestjs.json",
-    "./solidjs": "./solidjs.json"
+    "./solidjs": "./solidjs.json",
+    "./nextjs": "./nextjs.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"

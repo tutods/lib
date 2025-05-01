@@ -1,0 +1,55 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "linter": {
+    "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn"
+      },
+      "a11y": {
+        "useAltText": "error",
+        "useValidAnchor": "error"
+      },
+      "nursery": {
+        "noImgElement": "error",
+        "noDocumentImportInPage": "error",
+        "noHeadImportInDocument": "error",
+        "noHeadElement": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "include": [
+        "**/app/**/page.{js,jsx,ts,tsx}",
+        "**/app/**/layout.{js,jsx,ts,tsx}",
+        "**/app/**/loading.{js,jsx,ts,tsx}",
+        "**/app/**/error.{js,jsx,ts,tsx}",
+        "**/app/**/not-found.{js,jsx,ts,tsx}",
+        "**/app/**/template.{js,jsx,ts,tsx}",
+        "**/app/**/default.{js,jsx,ts,tsx}",
+        "**/app/**/route.{js,jsx,ts,tsx}",
+        "**/middleware.{js,ts}"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "include": ["**/app/api/**/*.{js,jsx,ts,tsx}"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    }
+  ]
+}
