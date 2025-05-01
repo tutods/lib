@@ -1,3 +1,7 @@
+## 0.6.5
+
+This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
+
 ## 0.6.4
 
 ### 🩹 Fixes
