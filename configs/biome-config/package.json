@@ -1,6 +1,6 @@
 {
   "name": "@tutods/biome-config",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": false,
   "license": "MIT",
   "description": "Package with generic configuration for Biome that can be used on React, Solidjs, Nest.js and Next.js projects.",

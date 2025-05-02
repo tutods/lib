@@ -1,3 +1,9 @@
+## 0.8.0
+
+### 🚀 Features
+
+- **biome-config:** add Next.js configuration ([3cf19d6](https://github.com/tutods/lib/commit/3cf19d6))
+
 ## 0.7.0
 
 ### 🚀 Features
