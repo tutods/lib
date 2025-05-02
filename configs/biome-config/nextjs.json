@@ -23,15 +23,15 @@
   "overrides": [
     {
       "include": [
-        "**/app/**/page.{js,jsx,ts,tsx}",
-        "**/app/**/layout.{js,jsx,ts,tsx}",
-        "**/app/**/loading.{js,jsx,ts,tsx}",
-        "**/app/**/error.{js,jsx,ts,tsx}",
-        "**/app/**/not-found.{js,jsx,ts,tsx}",
-        "**/app/**/template.{js,jsx,ts,tsx}",
-        "**/app/**/default.{js,jsx,ts,tsx}",
-        "**/app/**/route.{js,jsx,ts,tsx}",
-        "**/middleware.{js,ts}"
+        "src/app/**/page.tsx",
+        "src/app/**/layout.tsx",
+        "src/app/**/loading.tsx",
+        "src/app/**/error.tsx",
+        "src/app/**/not-found.tsx",
+        "src/app/**/template.tsx",
+        "src/app/**/default.tsx",
+        "src/app/**/route.tsx",
+        "src/middleware.ts"
       ],
       "linter": {
         "rules": {
