@@ -1,3 +1,9 @@
+## 0.8.1
+
+### 🩹 Fixes
+
+- remove undelcare dependencies rule ([#322](https://github.com/tutods/lib/pull/322))
+
 ## 0.8.0
 
 ### 🚀 Features
