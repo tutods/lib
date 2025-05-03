@@ -92,7 +92,6 @@
         "noUnusedPrivateClassMembers": "error",
         "noSwitchDeclarations": "error",
         "noUnusedFunctionParameters": "error",
-        "noUndeclaredDependencies": "error",
         "noUndeclaredVariables": "error"
       },
       "style": {
