@@ -1,3 +1,9 @@
+## 0.10.0
+
+### 🚀 Features
+
+- **nextjs config:** ignore files on lint ([#338](https://github.com/tutods/lib/pull/338))
+
 ## 0.9.0
 
 ### 🚀 Features
