@@ -1,3 +1,9 @@
+## 0.9.0
+
+### 🚀 Features
+
+- **nextjs config:** ignore .next folder ([#337](https://github.com/tutods/lib/pull/337))
+
 ## 0.8.1
 
 ### 🩹 Fixes
