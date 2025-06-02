@@ -44,7 +44,7 @@
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.33.0"
+    "typescript-eslint": "^8.33.1"
   },
   "pnpm": {
     "ignoredBuiltDependencies": ["@biomejs/biome", "@swc/core", "esbuild", "nx"],
