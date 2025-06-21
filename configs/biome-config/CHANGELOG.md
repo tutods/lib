@@ -1,3 +1,7 @@
+## 0.10.2
+
+This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
+
 ## 0.10.1
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
