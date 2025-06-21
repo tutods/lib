@@ -1,7 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.0.4/schema.json",
   "files": {
-    "ignore": [".next", ".vercel", ".turbo", "next-env.d.ts"]
+    "includes": ["**", "!**/.next", "!**/.vercel", "!**/.turbo", "!**/next-env.d.ts"]
   },
   "linter": {
     "rules": {
@@ -9,32 +10,45 @@
         "useExhaustiveDependencies": "error"
       },
       "suspicious": {
-        "noArrayIndexKey": "warn"
+        "noArrayIndexKey": "warn",
+        "noDocumentImportInPage": "error",
+        "noHeadImportInDocument": "error"
       },
       "a11y": {
         "useAltText": "error",
         "useValidAnchor": "error"
       },
-      "nursery": {
-        "noImgElement": "error",
-        "noDocumentImportInPage": "error",
-        "noHeadImportInDocument": "error",
+      "nursery": {},
+      "style": {
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
         "noHeadElement": "error"
+      },
+      "performance": {
+        "noImgElement": "error"
       }
     }
   },
   "overrides": [
     {
-      "include": [
-        "src/app/**/page.tsx",
-        "src/app/**/layout.tsx",
-        "src/app/**/loading.tsx",
-        "src/app/**/error.tsx",
-        "src/app/**/not-found.tsx",
-        "src/app/**/template.tsx",
-        "src/app/**/default.tsx",
-        "src/app/**/route.tsx",
-        "src/middleware.ts"
+      "includes": [
+        "**/src/app/**/page.tsx",
+        "**/src/app/**/layout.tsx",
+        "**/src/app/**/loading.tsx",
+        "**/src/app/**/error.tsx",
+        "**/src/app/**/not-found.tsx",
+        "**/src/app/**/template.tsx",
+        "**/src/app/**/default.tsx",
+        "**/src/app/**/route.tsx",
+        "**/src/middleware.ts"
       ],
       "linter": {
         "rules": {
@@ -45,7 +59,7 @@
       }
     },
     {
-      "include": ["**/app/api/**/*.{js,jsx,ts,tsx}"],
+      "includes": ["**/app/api/**/*.{js,jsx,ts,tsx}"],
       "linter": {
         "rules": {
           "style": {

@@ -1,5 +1,6 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.0.4/schema.json",
   "vcs": {
     "clientKind": "git",
     "enabled": true,
@@ -8,48 +9,34 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "ignore": [
-      ".nx",
-      ".vscode",
-      ".idea",
-      ".env",
-      ".env.*",
-      "dist",
-      "build",
-      "public",
-      "node_modules",
-      "CHANGELOG.md",
-      "coverage",
-      "out",
-      "storybook-static",
-      "yarn.lock",
-      "pnpm-lock.yaml",
-      "package-lock.json",
-      "routeTree.gen.ts",
-      "sanity.types.ts"
-    ],
-    "include": [
-      "*.js",
-      "*.cjs",
-      "*.mjs",
-      "*.ts",
-      "*.jsx",
-      "*.tsx",
-      "*.yaml",
-      "*.json",
-      "*.md",
-      "*.mdx",
-      "*.css",
-      "*.scss",
-      "*.sass",
-      "*.less",
-      "public",
-      "src"
+    "includes": [
+      "**",
+
+      "!**/dist",
+      "!**/build",
+      "!**/*.gen.ts",
+      "!**/vite.config.ts.timestamp-*.mjs",
+      "!**/src/codegen",
+
+      "!.nx",
+      "!**/.vscode",
+      "!**/.idea",
+      "!**/.env",
+      "!**/.env.*",
+      "!**/public",
+      "!**/node_modules",
+      "!**/CHANGELOG.md",
+      "!**/coverage",
+      "!**/out",
+      "!**/storybook-static",
+      "!**/yarn.lock",
+      "!**/pnpm-lock.yaml",
+      "!**/package-lock.json",
+      "!**/routeTree.gen.ts",
+      "!**/sanity.types.ts"
     ]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -87,7 +74,8 @@
           "fix": "safe"
         },
         "noUselessStringConcat": "error",
-        "noUselessTernary": "error"
+        "noUselessTernary": "error",
+        "noUselessEscapeInRegex": "error"
       },
       "correctness": {
         "recommended": true,
@@ -136,7 +124,17 @@
           }
         },
         "useShorthandAssign": "error",
-        "noNegationElse": "error"
+        "noNegationElse": "error",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
       },
       "suspicious": {
         "recommended": true,
@@ -148,7 +146,9 @@
         },
         "noControlCharactersInRegex": "error",
         "noEmptyBlockStatements": "off",
-        "useAwait": "error"
+        "useAwait": "error",
+        "noTemplateCurlyInString": "error",
+        "noOctalEscape": "error"
       },
       "security": {
         "recommended": true
@@ -160,11 +160,11 @@
         "useFocusableInteractive": "off",
         "useSemanticElements": "off",
         "noRedundantRoles": "warn",
-        "useValidAnchor": "error"
+        "useValidAnchor": "error",
+        "useAriaPropsSupportedByRole": "off"
       },
       "nursery": {
         "recommended": true,
-        "noUselessEscapeInRegex": "error",
         "useSortedClasses": {
           "level": "error",
           "fix": "safe",
@@ -172,10 +172,7 @@
             "attributes": ["css", "class", "classList", "classNames", "className"],
             "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
           }
-        },
-        "useAriaPropsSupportedByRole": "off",
-        "noTemplateCurlyInString": "error",
-        "noOctalEscape": "error"
+        }
       },
       "performance": {
         "recommended": true,
@@ -186,7 +183,7 @@
   },
   "overrides": [
     {
-      "include": ["*.jsx", "*.tsx"],
+      "includes": ["**/*.jsx", "**/*.tsx"],
       "linter": {
         "rules": {
           "style": {
@@ -196,42 +193,42 @@
       }
     },
     {
-      "include": [
-        "rsbuild.config.ts",
-        "rsbuild.config.js",
-        "rslib.config.ts",
-        "webpack.config.ts",
-        "webpack.config.js",
-        "vite.config.ts",
-        "vite.config.js",
-        "rollup.config.ts",
-        "rollup.config.js",
-        "sanity.*.ts",
-        "next.config.ts",
-        "next.config.js",
-        "next.config.mjs",
-        "next.config.cjs",
-        "jest.config.ts",
-        "jest.config.js",
-        "vitest.config.ts",
-        "vitest.config.js",
-        "babel.config.js",
-        "babel.config.cjs",
-        "babel.config.mjs",
-        "postcss.config.js",
-        "postcss.config.mjs",
-        "tailwind.config.ts",
-        "tailwind.config.js",
-        "tsup.config.ts",
-        "commitlint.config.js",
-        "commitlint.config.cjs",
-        "commitlint.config.mjs",
-        "eslint.config.js",
-        "eslint.config.cjs",
-        "eslint.config.mjs",
-        "prettier.config.js",
-        "prettier.config.cjs",
-        "prettier.config.mjs"
+      "includes": [
+        "**/rsbuild.config.ts",
+        "**/rsbuild.config.js",
+        "**/rslib.config.ts",
+        "**/webpack.config.ts",
+        "**/webpack.config.js",
+        "**/vite.config.ts",
+        "**/vite.config.js",
+        "**/rollup.config.ts",
+        "**/rollup.config.js",
+        "**/sanity.*.ts",
+        "**/next.config.ts",
+        "**/next.config.js",
+        "**/next.config.mjs",
+        "**/next.config.cjs",
+        "**/jest.config.ts",
+        "**/jest.config.js",
+        "**/vitest.config.ts",
+        "**/vitest.config.js",
+        "**/babel.config.js",
+        "**/babel.config.cjs",
+        "**/babel.config.mjs",
+        "**/postcss.config.js",
+        "**/postcss.config.mjs",
+        "**/tailwind.config.ts",
+        "**/tailwind.config.js",
+        "**/tsup.config.ts",
+        "**/commitlint.config.js",
+        "**/commitlint.config.cjs",
+        "**/commitlint.config.mjs",
+        "**/eslint.config.js",
+        "**/eslint.config.cjs",
+        "**/eslint.config.mjs",
+        "**/prettier.config.js",
+        "**/prettier.config.cjs",
+        "**/prettier.config.mjs"
       ],
       "linter": {
         "rules": {
