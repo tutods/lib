@@ -1,6 +1,7 @@
 name: NX release
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
