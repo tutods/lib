@@ -49,6 +49,7 @@
     }
   ],
   "release": {
+    "versionPlans": true,
     "projectsRelationship": "independent",
     "releaseTagPattern": "release/{projectName}/{version}",
     "projects": ["packages/*", "configs/*"],
