@@ -27,9 +27,9 @@
     "./nextjs": "./nextjs.json"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.0"
+    "@biomejs/biome": "^2.1.1"
   },
   "peerDependencies": {
-    "@biomejs/biome": ">=2.1.0"
+    "@biomejs/biome": ">=2.1.1"
   }
 }
