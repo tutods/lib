@@ -26,7 +26,7 @@
     "@commitlint/config-conventional": "^19.8.1",
     "@nx/js": "21.3.2",
     "@swc-node/register": "~1.10.10",
-    "@swc/core": "~1.13.1",
+    "@swc/core": "~1.13.2",
     "@swc/helpers": "~0.5.17",
     "@tutods/biome-config": "workspace:*",
     "@types/node": "22.16.5",
