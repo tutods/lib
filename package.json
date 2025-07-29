@@ -34,8 +34,8 @@
     "@types/react-dom": "^19.1.6",
     "lefthook": "^1.12.2",
     "nx": "21.3.8",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "tslib": "^2.8.1",
     "tsup": "^8.5.0",
     "typescript": "~5.8.3"
