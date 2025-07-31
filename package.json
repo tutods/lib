@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "description": "Monorepo to store my packages.",
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "repository": {
     "url": "https://github.com/tutods/lib",
     "type": "git"
