@@ -21,7 +21,7 @@
     "lint:ci": "biome ci --no-errors-on-unmatched ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.4",
+    "@biomejs/biome": "^2.2.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@nx/js": "21.3.11",
