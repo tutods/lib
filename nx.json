@@ -40,12 +40,6 @@
           "watchDepsName": "watch-deps"
         }
       }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "eslint"
-      }
     }
   ],
   "release": {
