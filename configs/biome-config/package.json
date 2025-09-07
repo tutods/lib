@@ -2,6 +2,7 @@
   "name": "@tutods/biome-config",
   "version": "0.10.2",
   "private": false,
+  "type": "module",
   "license": "MIT",
   "description": "Package with generic configuration for Biome that can be used on React, Solidjs, Nest.js and Next.js projects.",
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
@@ -27,9 +28,9 @@
     "./nextjs": "./nextjs.json"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.2"
+    "@biomejs/biome": "^2.2.3"
   },
   "peerDependencies": {
-    "@biomejs/biome": ">=2.2.2"
+    "@biomejs/biome": ">=2.2.3"
   }
 }
