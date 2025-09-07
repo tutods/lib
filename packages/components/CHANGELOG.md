@@ -1,3 +1,9 @@
+## 0.8.0
+
+### 🚀 Features
+
+- feat(biome): update biome version ([](https://github.com/tutods/lib/commit/))
+
 ## 0.7.0
 
 ### 🚀 Features

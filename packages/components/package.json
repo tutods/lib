@@ -1,6 +1,6 @@
 {
   "name": "@tutods/components",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "React generic components that can be used in any scenario",
   "license": "MIT",
   "publishConfig": {

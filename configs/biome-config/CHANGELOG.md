@@ -1,3 +1,9 @@
+## 0.11.0
+
+### 🚀 Features
+
+- feat(biome): update biome version ([](https://github.com/tutods/lib/commit/))
+
 ## 0.10.2
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
