@@ -11,13 +11,11 @@
     "ignoreUnknown": true,
     "includes": [
       "**",
-
       "!**/dist",
       "!**/build",
       "!**/*.gen.ts",
       "!**/vite.config.ts.timestamp-*.mjs",
       "!**/src/codegen",
-
       "!.nx",
       "!.vscode",
       "!.idea",
@@ -36,7 +34,13 @@
       "!**/sanity.types.ts"
     ]
   },
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  },
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -71,7 +75,8 @@
         "noForEach": "off",
         "noUselessFragments": {
           "level": "error",
-          "fix": "safe"
+          "fix": "safe",
+          "options": {}
         },
         "noUselessStringConcat": "error",
         "noUselessTernary": "error",
@@ -80,7 +85,11 @@
       "correctness": {
         "recommended": true,
         "useHookAtTopLevel": "error",
-        "noUnusedImports": "error",
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "error",
+          "options": {}
+        },
         "noUnusedVariables": "error",
         "noUnusedPrivateClassMembers": "error",
         "noSwitchDeclarations": "error",
@@ -91,16 +100,19 @@
         "recommended": true,
         "useBlockStatements": {
           "fix": "safe",
-          "level": "error"
+          "level": "error",
+          "options": {}
         },
         "noDefaultExport": "error",
         "useExportType": {
           "level": "error",
-          "fix": "safe"
+          "fix": "safe",
+          "options": {}
         },
         "useImportType": {
           "level": "error",
-          "fix": "safe"
+          "fix": "safe",
+          "options": {}
         },
         "useNamingConvention": {
           "level": "warn",
