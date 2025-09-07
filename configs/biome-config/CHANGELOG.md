@@ -1,3 +1,9 @@
+## 0.12.0
+
+### 🚀 Features
+
+- feat(biome): set non unused imports to safe fix ([](https://github.com/tutods/lib/commit/))
+
 ## 0.11.0
 
 ### 🚀 Features
