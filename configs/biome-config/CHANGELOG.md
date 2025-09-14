@@ -1,3 +1,9 @@
+## 0.13.0
+
+### 🚀 Features
+
+- refactor(biome): bump version ([](https://github.com/tutods/lib/commit/))
+
 ## 0.12.0
 
 ### 🚀 Features
