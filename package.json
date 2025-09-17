@@ -32,7 +32,7 @@
     "@types/node": "22.18.5",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "lefthook": "^1.13.0",
+    "lefthook": "^1.13.1",
     "nx": "21.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
