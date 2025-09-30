@@ -30,7 +30,7 @@
     "@swc/helpers": "~0.5.17",
     "@tutods/biome-config": "workspace:*",
     "@types/node": "22.18.7",
-    "@types/react": "^19.1.15",
+    "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "lefthook": "^1.13.5",
     "nx": "21.6.2",
