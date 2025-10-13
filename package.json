@@ -31,7 +31,7 @@
     "@tutods/biome-config": "workspace:*",
     "@types/node": "22.18.10",
     "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.1",
+    "@types/react-dom": "^19.2.2",
     "lefthook": "^1.13.6",
     "nx": "21.6.4",
     "react": "^19.2.0",
