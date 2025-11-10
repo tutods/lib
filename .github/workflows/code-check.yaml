@@ -35,7 +35,7 @@ jobs:
             echo "has_changes=true" >> $GITHUB_OUTPUT  
           fi
       
-      - uses: stefanzweifel/git-auto-commit-action@v6
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           # Optional. Commit message for the created commit.
           # Defaults to "Apply automatic changes"
