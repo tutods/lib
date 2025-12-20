@@ -24,7 +24,6 @@
     "enabled": true,
     "schedule": ["at any time"]
   },
-  "osvVulnerabilityAlerts": true,
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
   "semanticCommits": "enabled",
@@ -64,17 +63,11 @@
   "hostRules": [
     {
       "matchHost": "ghcr.io",
-      "hostType": "docker",
-      "encrypted": {
-        "token": "{{secrets.GITHUB_TOKEN}}"
-      }
+      "hostType": "docker"
     },
     {
       "matchHost": "npm.pkg.github.com",
-      "hostType": "npm",
-      "encrypted": {
-        "token": "{{secrets.GITHUB_TOKEN}}"
-      }
+      "hostType": "npm"
     }
   ],
   "packageRules": [
@@ -100,9 +93,6 @@
       "description": "Security updates - high priority",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
-      "vulnerabilityAlerts": {
-        "enabled": true
-      },
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
       "commitMessagePrefix": "🔒 SECURITY:",
