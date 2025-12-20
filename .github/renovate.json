@@ -9,10 +9,19 @@
     "security:openssf-scorecard"
   ],
   "timezone": "Europe/Lisbon",
-  "schedule": ["before 3am every weekday"],
-  "labels": ["dependencies", "renovate"],
-  "assignees": ["tutods"],
-  "reviewers": ["tutods"],
+  "schedule": [
+    "before 3am every weekday"
+  ],
+  "labels": [
+    "dependencies",
+    "renovate"
+  ],
+  "assignees": [
+    "tutods"
+  ],
+  "reviewers": [
+    "tutods"
+  ],
   "branchConcurrentLimit": 5,
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
@@ -22,7 +31,9 @@
   "dependencyDashboardFooter": "🤖 This dashboard is automatically updated by Renovate Bot",
   "vulnerabilityAlerts": {
     "enabled": true,
-    "schedule": ["at any time"]
+    "schedule": [
+      "at any time"
+    ]
   },
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
@@ -34,7 +45,10 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
+      "managerFilePatterns": [
+        "/^Dockerfile$/",
+        "/(^|/)Dockerfile\\.[^/]*$/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*[A-Z]+\\s+(?<packageName>.*?):(?<currentValue>.*)\\s"
       ],
@@ -43,7 +57,10 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^docker-compose\\.ya?ml$", "(^|/)docker-compose\\.[^/]*\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/^docker-compose\\.ya?ml$/",
+        "/(^|/)docker-compose\\.[^/]*\\.ya?ml$/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*image:\\s*(?<packageName>.*?):(?<currentValue>.*)\\s"
       ],
@@ -52,7 +69,9 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+      "managerFilePatterns": [
+        "/^\\.github/workflows/[^/]+\\.ya?ml$/"
+      ],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*uses:\\s*(?<packageName>.*?)@(?<currentValue>.*)\\s"
       ],
@@ -73,8 +92,15 @@
   "packageRules": [
     {
       "description": "Major updates - manual review required",
-      "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "major-update",
+        "priority-medium"
+      ],
       "automerge": false,
       "commitMessagePrefix": "⬆️ MAJOR:",
       "semanticCommitType": "feat",
@@ -82,8 +108,16 @@
     },
     {
       "description": "Minor and patch updates - auto-merge enabled",
-      "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["dependencies", "renovate", "minor-patch-update", "priority-low"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "minor-patch-update",
+        "priority-low"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "commitMessagePrefix": "⬆️",
@@ -91,87 +125,193 @@
     },
     {
       "description": "Security updates - high priority",
-      "matchDatasources": ["npm"],
-      "matchDepTypes": ["dependencies"],
-      "labels": ["dependencies", "renovate", "security", "priority-high"],
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "security",
+        "priority-high"
+      ],
       "automerge": true,
       "commitMessagePrefix": "🔒 SECURITY:",
       "semanticCommitType": "fix",
-      "schedule": ["at any time"]
+      "schedule": [
+        "at any time"
+      ]
     },
     {
       "description": "Development dependencies",
-      "matchDepTypes": ["devDependencies"],
-      "labels": ["dependencies", "renovate", "dev-dependencies", "priority-low"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "dev-dependencies",
+        "priority-low"
+      ],
       "automerge": true,
       "semanticCommitType": "chore"
     },
     {
       "description": "Docker images",
-      "matchDatasources": ["docker"],
-      "labels": ["dependencies", "renovate", "docker", "priority-medium"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "docker",
+        "priority-medium"
+      ],
       "commitMessagePrefix": "🐳",
       "semanticCommitType": "chore"
     },
     {
       "description": "GitHub Actions",
-      "matchDatasources": ["github-tags"],
-      "matchDepTypes": ["action"],
-      "labels": ["dependencies", "renovate", "github-actions", "priority-medium"],
+      "matchDatasources": [
+        "github-tags"
+      ],
+      "matchDepTypes": [
+        "action"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "github-actions",
+        "priority-medium"
+      ],
       "commitMessagePrefix": "🔧 CI:",
       "semanticCommitType": "ci"
     },
     {
       "description": "Pin digest updates",
-      "matchUpdateTypes": ["pinDigest"],
-      "labels": ["dependencies", "renovate", "pin-digest", "priority-low"],
+      "matchUpdateTypes": [
+        "pinDigest"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "pin-digest",
+        "priority-low"
+      ],
       "automerge": true,
       "commitMessagePrefix": "📌",
       "semanticCommitType": "chore"
     },
     {
       "description": "Digest updates",
-      "matchUpdateTypes": ["digest"],
-      "labels": ["dependencies", "renovate", "digest-update", "priority-low"],
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "digest-update",
+        "priority-low"
+      ],
       "automerge": true,
       "commitMessagePrefix": "🔄",
       "semanticCommitType": "chore"
     },
     {
       "description": "TypeScript and related packages",
-      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
-      "labels": ["dependencies", "renovate", "typescript", "priority-medium"],
+      "matchPackageNames": [
+        "typescript",
+        "@types/*",
+        "ts-node",
+        "tsx",
+        "tsup"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "typescript",
+        "priority-medium"
+      ],
       "commitMessagePrefix": "📘 TS:",
       "groupName": "TypeScript packages"
     },
     {
       "description": "ESLint and Prettier packages",
-      "matchPackageNames": ["eslint", "prettier", "@eslint/*", "eslint-*", "@prettier/*", "prettier-*"],
-      "labels": ["dependencies", "renovate", "linting", "priority-low"],
+      "matchPackageNames": [
+        "eslint",
+        "prettier",
+        "@eslint/*",
+        "eslint-*",
+        "@prettier/*",
+        "prettier-*"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "linting",
+        "priority-low"
+      ],
       "commitMessagePrefix": "🔧 LINT:",
       "groupName": "Linting packages",
       "automerge": true
     },
     {
       "description": "Testing packages",
-      "matchPackageNames": ["jest", "vitest", "@testing-library/*", "@jest/*", "jest-*"],
-      "labels": ["dependencies", "renovate", "testing", "priority-medium"],
+      "matchPackageNames": [
+        "jest",
+        "vitest",
+        "@testing-library/*",
+        "@jest/*",
+        "jest-*"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "testing",
+        "priority-medium"
+      ],
       "commitMessagePrefix": "🧪 TEST:",
       "groupName": "Testing packages"
     },
     {
       "description": "Build tools and bundlers",
-      "matchPackageNames": ["webpack", "vite", "rollup", "esbuild", "parcel", "@vitejs/*", "@rollup/*", "webpack-*"],
-      "labels": ["dependencies", "renovate", "build-tools", "priority-medium"],
+      "matchPackageNames": [
+        "webpack",
+        "vite",
+        "rollup",
+        "esbuild",
+        "parcel",
+        "@vitejs/*",
+        "@rollup/*",
+        "webpack-*"
+      ],
+      "labels": [
+        "dependencies",
+        "renovate",
+        "build-tools",
+        "priority-medium"
+      ],
       "commitMessagePrefix": "🔨 BUILD:",
       "groupName": "Build tools"
     }
   ],
-  "ignoreDeps": ["node"],
-  "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
+  "ignoreDeps": [
+    "node"
+  ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/coverage/**"
+  ],
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 6am on monday"],
+    "schedule": [
+      "before 6am on monday"
+    ],
     "commitMessageAction": "Lock file maintenance",
     "commitMessagePrefix": "🔒",
     "automerge": true
