@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":dependencyDashboard",
     ":semanticCommits",
     ":automergeDigest",
@@ -10,7 +10,7 @@
   ],
   "timezone": "Europe/Lisbon",
   "schedule": [
-    "every day"
+    "before 3am every weekday"
   ],
   "labels": [
     "dependencies",
@@ -45,8 +45,10 @@
         "(^|/)Dockerfile\\.[^/]*$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*[A-Z]+\\s+(?<depName>.*?):(?<currentValue>.*)\\s"
-      ]
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*[A-Z]+\\s+(?<packageName>.*?):(?<currentValue>.*)\\s"
+      ],
+      "datasourceTemplate": "{{datasource}}",
+      "depNameTemplate": "{{depName}}"
     },
     {
       "customType": "regex", 
@@ -55,8 +57,10 @@
         "(^|/)docker-compose\\.[^/]*\\.ya?ml$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*image:\\s*(?<depName>.*?):(?<currentValue>.*)\\s"
-      ]
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*image:\\s*(?<packageName>.*?):(?<currentValue>.*)\\s"
+      ],
+      "datasourceTemplate": "{{datasource}}",
+      "depNameTemplate": "{{depName}}"
     },
     {
       "customType": "regex",
@@ -64,8 +68,10 @@
         "^\\.github/workflows/[^/]+\\.ya?ml$"
       ],
       "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*uses:\\s*(?<depName>.*?)@(?<currentValue>.*)\\s"
-      ]
+        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*uses:\\s*(?<packageName>.*?)@(?<currentValue>.*)\\s"
+      ],
+      "datasourceTemplate": "{{datasource}}",
+      "depNameTemplate": "{{depName}}"
     }
   ],
   "hostRules": [
@@ -288,13 +294,5 @@
     "commitMessageAction": "Lock file maintenance",
     "commitMessagePrefix": "🔒",
     "automerge": true
-  },
-  "regexManagers": [
-    {
-      "fileMatch": ["^README\\.md$"],
-      "matchStrings": [
-        "<!-- renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))? -->.*?(?<currentValue>v?\\d+\\.\\d+\\.\\d+)"
-      ]
-    }
-  ]
+  }
 }
