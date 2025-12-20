@@ -19,7 +19,6 @@
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "📋 Dependency Dashboard",
   "dependencyDashboardHeader": "This dashboard provides an overview of all dependency updates for this repository.",
-  "dependencyDashboardFooter": "🤖 This dashboard is automatically updated by Renovate Bot",
   "vulnerabilityAlerts": {
     "enabled": true,
     "schedule": ["at any time"]
