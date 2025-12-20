@@ -15,18 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🦖 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
+        uses:  styfle/cancel-workflow-action@0.12.1
         with:
           access_token:  ${{ secrets.PAT_TOKEN }}
 
       - name: 🔻 Checkout repo
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.PAT_TOKEN }}
+          token:  ${{ secrets.PAT_TOKEN }}
           fetch-depth:  0
 
       - name: 🏃 Run Node and NPM setup
-        uses: ./.github/actions/setup-project
+        uses: ./. github/actions/setup-project
 
       - name: 💬 Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
@@ -36,8 +36,13 @@ jobs:
 
       - name: 🔖 Run nx release
         run: |
+          # Configure git to use the PAT token for authentication
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Set up git credentials using the PAT token
+          git config --global url."https://oauth2:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+          
           npx nx release --skip-publish
         env:
           GITHUB_TOKEN: ${{ secrets. PAT_TOKEN }}
@@ -63,9 +68,9 @@ jobs:
             release
             automated
 
-      - name: 🔀 Enable auto-merge
+      - name:  🔀 Enable auto-merge
         if: steps.create-pr.outputs.pull-request-number != ''
-        run: |
-          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
-        env:
+        run:  |
+          gh pr merge ${{ steps.create-pr.outputs. pull-request-number }} --auto --squash
+        env: 
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
