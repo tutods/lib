@@ -26,7 +26,7 @@ This configuration package has the purpose of store my common configurations use
 
 ### 💡️ What you will find?
 
-For now, you will found 5 configurations, being four of them based on the main one:
+For now, you will find 5 configurations, being four of them based on the main one:
 
 - **`base.json`**: stores the basic/global configuration with comprehensive linting rules for JavaScript/TypeScript projects (framework-agnostic);
 - **`react.json`**: extends base configuration with React-specific linting rules (hooks, fragments, etc.);
