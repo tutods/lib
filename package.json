@@ -29,7 +29,7 @@
     "@swc/core": "~1.14.0",
     "@swc/helpers": "~0.5.17",
     "@tutods/biome-config": "workspace:*",
-    "@types/node": "22.19.0",
+    "@types/node": "22.19.3",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "lefthook": "^1.13.6",
