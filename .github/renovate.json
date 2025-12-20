@@ -92,6 +92,7 @@
       "description": "Security updates - high priority",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
       "commitMessagePrefix": "🔒 SECURITY:",
@@ -99,26 +100,71 @@
       "schedule": ["at any time"]
     },
     {
+      "description": "Major security updates - manual review required",
+      "matchDatasources": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "security", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🔒 MAJOR SECURITY:",
+      "semanticCommitType": "feat",
+      "reviewersFromCodeOwners": true,
+      "schedule": ["at any time"]
+    },
+    {
       "description": "Development dependencies",
       "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "dev-dependencies", "priority-low"],
       "automerge": true,
       "semanticCommitType": "chore"
     },
     {
+      "description": "Major development dependencies updates",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "dev-dependencies", "priority-medium"],
+      "automerge": false,
+      "commitMessagePrefix": "⬆️ MAJOR DEV:",
+      "semanticCommitType": "feat"
+    },
+    {
       "description": "Docker images",
       "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "docker", "priority-medium"],
       "commitMessagePrefix": "🐳",
       "semanticCommitType": "chore"
     },
     {
+      "description": "Major Docker image updates",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "docker", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🐳 MAJOR:",
+      "semanticCommitType": "feat",
+      "reviewersFromCodeOwners": true
+    },
+    {
       "description": "GitHub Actions",
       "matchDatasources": ["github-tags"],
       "matchDepTypes": ["action"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "github-actions", "priority-medium"],
       "commitMessagePrefix": "🔧 CI:",
       "semanticCommitType": "ci"
+    },
+    {
+      "description": "Major GitHub Actions updates",
+      "matchDatasources": ["github-tags"],
+      "matchDepTypes": ["action"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "github-actions", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🔧 MAJOR CI:",
+      "semanticCommitType": "feat",
+      "reviewersFromCodeOwners": true
     },
     {
       "description": "Pin digest updates",
@@ -139,13 +185,26 @@
     {
       "description": "TypeScript and related packages",
       "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "typescript", "priority-medium"],
       "commitMessagePrefix": "📘 TS:",
       "groupName": "TypeScript packages"
     },
     {
+      "description": "Major TypeScript and related packages updates",
+      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "typescript", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "📘 MAJOR TS:",
+      "semanticCommitType": "feat",
+      "groupName": "Major TypeScript packages",
+      "reviewersFromCodeOwners": true
+    },
+    {
       "description": "ESLint and Prettier packages",
       "matchPackageNames": ["eslint", "prettier", "@eslint/*", "eslint-*", "@prettier/*", "prettier-*"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "linting", "priority-low"],
       "commitMessagePrefix": "🔧 LINT:",
       "groupName": "Linting packages",
@@ -154,25 +213,46 @@
     {
       "description": "Testing packages",
       "matchPackageNames": ["jest", "vitest", "@testing-library/*", "@jest/*", "jest-*"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "testing", "priority-medium"],
       "commitMessagePrefix": "🧪 TEST:",
       "groupName": "Testing packages"
     },
     {
+      "description": "Major testing packages updates",
+      "matchPackageNames": ["jest", "vitest", "@testing-library/*", "@jest/*", "jest-*"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "testing", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🧪 MAJOR TEST:",
+      "semanticCommitType": "feat",
+      "groupName": "Major testing packages",
+      "reviewersFromCodeOwners": true
+    },
+    {
       "description": "Build tools and bundlers",
       "matchPackageNames": ["webpack", "vite", "rollup", "esbuild", "parcel", "@vitejs/*", "@rollup/*", "webpack-*"],
+      "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "build-tools", "priority-medium"],
       "commitMessagePrefix": "🔨 BUILD:",
       "groupName": "Build tools"
+    },
+    {
+      "description": "Major build tools and bundlers updates",
+      "matchPackageNames": ["webpack", "vite", "rollup", "esbuild", "parcel", "@vitejs/*", "@rollup/*", "webpack-*"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "build-tools", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🔨 MAJOR BUILD:",
+      "semanticCommitType": "feat",
+      "groupName": "Major build tools",
+      "reviewersFromCodeOwners": true
     }
   ],
   "ignoreDeps": ["node"],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
+  "rangeStrategy": "bump",
   "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": ["before 6am on monday"],
-    "commitMessageAction": "Lock file maintenance",
-    "commitMessagePrefix": "🔒",
-    "automerge": true
+    "enabled": false
   }
 }
