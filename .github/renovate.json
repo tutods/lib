@@ -34,7 +34,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^Dockerfile$", "(^|/)Dockerfile\\.[^/]*$"],
+      "managerFilePatterns": ["/^Dockerfile$/", "/(^|/)Dockerfile\\.[^/]*$/"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*[A-Z]+\\s+(?<packageName>.*?):(?<currentValue>.*)\\s"
       ],
@@ -43,7 +43,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^docker-compose\\.ya?ml$", "(^|/)docker-compose\\.[^/]*\\.ya?ml$"],
+      "managerFilePatterns": ["/^docker-compose\\.ya?ml$/", "/(^|/)docker-compose\\.[^/]*\\.ya?ml$/"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*image:\\s*(?<packageName>.*?):(?<currentValue>.*)\\s"
       ],
@@ -52,7 +52,7 @@
     },
     {
       "customType": "regex",
-      "fileMatch": ["^\\.github/workflows/[^/]+\\.ya?ml$"],
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
       "matchStrings": [
         "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*uses:\\s*(?<packageName>.*?)@(?<currentValue>.*)\\s"
       ],
