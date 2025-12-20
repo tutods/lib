@@ -81,7 +81,7 @@ importers:
         version: 19.2.3(react@19.2.3)
     devDependencies:
       '@tutods/typescript-config':
-        specifier: 0.7.0
+        specifier: 0.7.1
         version: link:../../configs/typescript-config
 
 packages:

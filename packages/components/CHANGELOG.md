@@ -1,3 +1,9 @@
+## 0.8.1
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.7.1
+
 ## 0.8.0
 
 ### 🚀 Features

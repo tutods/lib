@@ -1,3 +1,9 @@
+## 0.13.1
+
+### 🚀 Features
+
+- **config:** upgrade Biome.js to v2.3.10 and optimize framework configs ([#570](https://github.com/tutods/lib/pull/570))
+
 ## 0.13.0
 
 ### 🚀 Features
