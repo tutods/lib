@@ -4,7 +4,7 @@
   "private": false,
   "type": "module",
   "license": "MIT",
-  "description": "Package with generic configuration for Biome that can be used on React, Solidjs, Nest.js and Next.js projects.",
+  "description": "Package with generic configuration for Biome that can be used on React, Solidjs, Nest.js and Next.js projects. Now with enhanced React support.",
   "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
   "publishConfig": {
     "access": "public"
