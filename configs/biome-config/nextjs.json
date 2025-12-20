@@ -17,28 +17,7 @@
         "useAltText": "error",
         "useValidAnchor": "error"
       },
-      "nursery": {
-        "noScriptUrl": "error",
-        "useArraySortCompare": "error",
-        "useAwaitThenable": "error",
-        "useRegexpExec": "warn",
-        "noEqualsToNull": "error",
-        "noLeakedRender": "error",
-        "noDuplicatedSpreadProps": "error",
-        "noAmbiguousAnchorText": "warn",
-        "noMultiStr": "error"
-      },
       "style": {
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error",
         "noHeadElement": "error"
       },
       "performance": {

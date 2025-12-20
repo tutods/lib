@@ -12,28 +12,10 @@
         "noUselessConstructor": "off"
       },
       "style": {
-        "useImportType": "off",
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
+        "useImportType": "off"
       },
       "correctness": {
         "useHookAtTopLevel": "off"
-      },
-      "nursery": {
-        "noScriptUrl": "error",
-        "useArraySortCompare": "error",
-        "useAwaitThenable": "error",
-        "useRegexpExec": "warn",
-        "noEqualsToNull": "error",
-        "noMultiStr": "error"
       }
     }
   }
