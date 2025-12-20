@@ -15,9 +15,6 @@
       "style": {
         "useImportType": "off"
       },
-      "correctness": {
-        "useHookAtTopLevel": "off"
-      },
       "a11y": {
         "recommended": false
       },

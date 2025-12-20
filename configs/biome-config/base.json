@@ -72,18 +72,12 @@
       "complexity": {
         "recommended": true,
         "noForEach": "off",
-        "noUselessFragments": {
-          "level": "error",
-          "fix": "safe",
-          "options": {}
-        },
         "noUselessStringConcat": "error",
         "noUselessTernary": "error",
         "noUselessEscapeInRegex": "error"
       },
       "correctness": {
         "recommended": true,
-        "useHookAtTopLevel": "error",
         "noUnusedImports": {
           "fix": "safe",
           "level": "error",
@@ -189,8 +183,6 @@
         "useAwaitThenable": "error",
         "useRegexpExec": "warn",
         "noEqualsToNull": "error",
-        "noLeakedRender": "error",
-        "noDuplicatedSpreadProps": "error",
         "noAmbiguousAnchorText": "warn",
         "noMultiStr": "error"
       },
@@ -202,16 +194,6 @@
     }
   },
   "overrides": [
-    {
-      "includes": ["**/*.jsx", "**/*.tsx"],
-      "linter": {
-        "rules": {
-          "style": {
-            "noImplicitBoolean": "off"
-          }
-        }
-      }
-    },
     {
       "includes": [
         "**/rsbuild.config.ts",

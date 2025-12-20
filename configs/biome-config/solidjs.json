@@ -7,9 +7,6 @@
     "rules": {
       "suspicious": {
         "noReactSpecificProps": "error"
-      },
-      "correctness": {
-        "useHookAtTopLevel": "off"
       }
     }
   },
