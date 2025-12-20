@@ -36,14 +36,22 @@ jobs:
 
       - name: 🔖 Run nx release
         run: |
-          # Configure git to use the PAT token for authentication
+          # Configure git user
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Set up git credentials using the PAT token
-          git remote set-url origin https://oauth2:${GITHUB_TOKEN}@github.com/tutods/lib.git
+          # Get current remote URL and update it with token
+          REPO_URL=$(git remote get-url origin)
+          echo "Original remote URL: $REPO_URL"
 
-          npx nx release --skip-publish
+          # Set remote URL with token authentication
+          git remote set-url origin "https://oauth2:${GITHUB_TOKEN}@github.com/tutods/lib.git"
+
+          # Verify the remote URL was updated
+          echo "Updated remote URL: $(git remote get-url origin)"
+
+          # Run nx release with verbose output
+          npx nx release --skip-publish --verbose
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
