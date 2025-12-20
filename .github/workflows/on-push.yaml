@@ -26,7 +26,7 @@ jobs:
           fetch-depth:  0
 
       - name: 🏃 Run Node and NPM setup
-        uses: ./. github/actions/setup-project
+        uses: ./.github/actions/setup-project
 
       - name: 💬 Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
