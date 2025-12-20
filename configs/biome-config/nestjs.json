@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "javascript": {
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
@@ -9,23 +9,23 @@
     "rules": {
       "complexity": {
         "noStaticOnlyClass": "off",
-        "noUselessConstructor": "off"
+        "noUselessConstructor": "off",
+        "noUselessFragments": "off"
       },
       "style": {
-        "useImportType": "off",
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
+        "useImportType": "off"
       },
       "correctness": {
         "useHookAtTopLevel": "off"
+      },
+      "a11y": {
+        "recommended": false
+      },
+      "nursery": {
+        "noLeakedRender": "off",
+        "noDuplicatedSpreadProps": "off",
+        "noAmbiguousAnchorText": "off",
+        "useSortedClasses": "off"
       }
     }
   }
