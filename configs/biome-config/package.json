@@ -23,6 +23,7 @@
   "main": "base.json",
   "exports": {
     ".": "./base.json",
+    "./react": "./react.json",
     "./nestjs": "./nestjs.json",
     "./solidjs": "./solidjs.json",
     "./nextjs": "./nextjs.json"

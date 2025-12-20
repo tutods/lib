@@ -26,11 +26,12 @@ This configuration package has the purpose of store my common configurations use
 
 ### 💡️ What you will find?
 
-For now, you will found 4 configurations, being three of them based on the main one:
+For now, you will find 5 configurations, being four of them based on the main one:
 
-- **`base.json`**: stores the basic/global configuration with comprehensive linting rules for JavaScript/TypeScript projects;
+- **`base.json`**: stores the basic/global configuration with comprehensive linting rules for JavaScript/TypeScript projects (framework-agnostic);
+- **`react.json`**: extends base configuration with React-specific linting rules (hooks, fragments, etc.);
 - **`nestjs.jsonc`:** extends base configuration for **Nest.js** projects (allowing decorators, etc.);
-- **`solidjs.json`:** extends base configuration for **SolidJS** projects, changing React-specific rules;
+- **`solidjs.json`:** extends base configuration for **SolidJS** projects, with SolidJS-specific rules;
 - **`nextjs.json`:** extends base configuration for **Next.js** projects (App Router), disabling `noDefaultExport` rule for specific Next.js files that require default exports.
 
 ## ✨ Features
@@ -94,9 +95,9 @@ To install my package and use it is very simple, you only need to follow the ste
 
 Below, you can find examples of usages:
 
-- for a **React** project, using only the base configuration;
+- for a **React** project, using the base configuration and React-specific rules;
 - for a **Nest.js** project, using the base configuration and the specific Nest.js configuration with specific rules;
-- for a **Next.js** project, using the base configuration and the specific Next.js configuration with App Router rules.
+- for a **Next.js** project, using the base configuration, React configuration, and the specific Next.js configuration with App Router rules.
 
 #### React project
 
@@ -104,7 +105,8 @@ Below, you can find examples of usages:
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "extends": [
-    "@tutods/biome-config"
+    "@tutods/biome-config",
+    "@tutods/biome-config/react"
   ]
 }
 ```
@@ -128,6 +130,7 @@ Below, you can find examples of usages:
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "extends": [
     "@tutods/biome-config",
+    "@tutods/biome-config/react",
     "@tutods/biome-config/nextjs"
   ]
 }

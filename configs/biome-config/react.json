@@ -1,0 +1,33 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "linter": {
+    "rules": {
+      "complexity": {
+        "noUselessFragments": {
+          "level": "error",
+          "fix": "safe",
+          "options": {}
+        }
+      },
+      "correctness": {
+        "useHookAtTopLevel": "error"
+      },
+      "nursery": {
+        "noLeakedRender": "error",
+        "noDuplicatedSpreadProps": "error"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.jsx", "**/*.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noImplicitBoolean": "off"
+          }
+        }
+      }
+    }
+  ]
+}
