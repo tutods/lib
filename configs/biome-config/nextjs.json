@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "files": {
     "includes": ["**", "!**/.next", "!**/.vercel", "!**/.turbo", "!**/next-env.d.ts"]
   },
@@ -17,7 +17,17 @@
         "useAltText": "error",
         "useValidAnchor": "error"
       },
-      "nursery": {},
+      "nursery": {
+        "noScriptUrl": "error",
+        "useArraySortCompare": "error",
+        "useAwaitThenable": "error",
+        "useRegexpExec": "warn",
+        "noEqualsToNull": "error",
+        "noLeakedRender": "error",
+        "noDuplicatedSpreadProps": "error",
+        "noAmbiguousAnchorText": "warn",
+        "noMultiStr": "error"
+      },
       "style": {
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",

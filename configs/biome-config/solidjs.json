@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
   "files": {
     "includes": ["**", "!**/.vinxi", "!**/.output"]
   },
@@ -19,6 +19,16 @@
         "useNumberNamespace": "error",
         "noInferrableTypes": "error",
         "noUselessElse": "error"
+      },
+      "nursery": {
+        "noScriptUrl": "error",
+        "useArraySortCompare": "error",
+        "useAwaitThenable": "error",
+        "useRegexpExec": "warn",
+        "noEqualsToNull": "error",
+        "noLeakedRender": "error",
+        "noDuplicatedSpreadProps": "error",
+        "noMultiStr": "error"
       }
     }
   },
