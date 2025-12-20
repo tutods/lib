@@ -115,18 +115,20 @@
       "description": "Development dependencies",
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["dependencies", "renovate", "dev-dependencies", "priority-low"],
+      "labels": ["renovate", "dev-dependencies", "priority-low"],
       "automerge": true,
-      "semanticCommitType": "chore"
+      "semanticCommitType": "chore",
+      "groupName": "Dev dependencies (minor & patch)"
     },
     {
       "description": "Major development dependencies updates",
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "renovate", "major-update", "dev-dependencies", "priority-medium"],
+      "labels": ["renovate", "major-update", "dev-dependencies", "priority-medium"],
       "automerge": false,
       "commitMessagePrefix": "⬆️ MAJOR DEV:",
-      "semanticCommitType": "feat"
+      "semanticCommitType": "feat",
+      "groupName": "Dev dependencies (major)"
     },
     {
       "description": "Docker images",
