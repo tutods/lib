@@ -1,0 +1,51 @@
+name: NX release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/**"
+      - "configs/**"
+
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT }}
+
+jobs:
+  push:
+    name: 🔖 Release packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.PAT }}
+          fetch-depth: 0
+
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
+
+      - name: 💬 Sets the base and head SHAs for the nx affected commands in CI
+        uses: nrwl/nx-set-shas@v4
+
+      - name: 🔄 Build affected libs
+        run: npx nx affected -t build
+
+      - name: 🔖 Run nx release
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          npx nx release --skip-publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
