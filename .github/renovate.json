@@ -86,7 +86,7 @@
       "labels": ["dependencies", "renovate", "minor-patch-update", "priority-low"],
       "automerge": true,
       "automergeType": "pr",
-      "commitMessagePrefix": "⬆️",
+      "commitMessagePrefix": "🔧 DEPS:",
       "semanticCommitType": "chore"
     },
     {
