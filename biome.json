@@ -8,7 +8,7 @@
   },
   "extends": ["@tutods/biome-config"],
   "files": {
-    "includes": ["**", "!**/packages/**/package.json", "!**/config/**/package.json", "!.nx", "!**/dist"]
+    "includes": ["!**/packages/**/package.json", "!**/config/**/package.json", "!.nx", "!**/dist"]
   },
   "linter": {
     "rules": {
