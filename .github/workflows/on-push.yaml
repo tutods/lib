@@ -1,97 +1,52 @@
+# Name of your workflow
 name: NX release
 
+# Rules that trigger the workflow
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-    paths:
-      - "packages/**"
-      - "configs/**"
+env:
+  # NX release needs to have a GH token in env.GITHUB_TOKEN
+  # As during this workflow we will create a new release
+  # that should trigger other workflow, we need to create custom TOKEN
+  # with proper permissions,
+  # more: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+  GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
 
 jobs:
-  push:
-    name: 🔖 Release packages
+  main:
     runs-on: ubuntu-latest
     steps:
-      - name: 🦖 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
+      - name: Checkout the main branch
+        uses: actions/checkout@v4
+        # Only a single commit is fetched by default
+        # we need full repo history with tags, so we are setting fetch-depth: 0
         with:
-          access_token: ${{ secrets.PAT_TOKEN }}
-
-      - name: 🔻 Checkout repo
-        uses: actions/checkout@v6
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
+          # We need to pass Personal Access Token in order
+          # to force triggering on-publish workflow
+          token: ${{ secrets.PAT_TOKEN }}
 
-      - name: 🏃 Run Node and NPM setup
-        uses: ./.github/actions/setup-project
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
 
-      - name: 💬 Sets the base and head SHAs for the nx affected commands in CI
+      - name: Install packages
+        run: npm ci
+
+      - name: Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
 
-      - name: 🔄 Build affected libs
+      - name: Build affected libs
         run: npx nx affected -t build
 
-      - name: 🔖 Run nx release
+        # We need to set github email and name as nx release will
+        # create new tag with version and create new github release
+      - name: Run nx release
         run: |
-          # Debug token availability
-          if [ -z "$PAT_TOKEN" ]; then
-            echo "ERROR: PAT_TOKEN is not set"
-            exit 1
-          fi
-          echo "PAT_TOKEN is available (length: ${#PAT_TOKEN})"
-
-          # Configure git user
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Configure git to use PAT token for all GitHub operations
-          git config --global url."https://oauth2:${PAT_TOKEN}@github.com/".insteadOf "https://github.com/"
-
-          # Also update the current remote explicitly
-          git remote set-url origin "https://oauth2:${PAT_TOKEN}@github.com/tutods/lib.git"
-
-          # Verify configuration
-          echo "Git URL rewrite config:"
-          git config --global --get-regexp url
-          echo "Current remote URL (masked):"
-          git remote get-url origin | sed 's/oauth2:[^@]*@/oauth2:***@/'
-
-          # Test git access
-          echo "Testing git access..."
-          git ls-remote origin HEAD
-
-          # Run nx release with verbose output
-          npx nx release --skip-publish --verbose
-        env:
-          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-
-      - name: 📝 Create Pull Request
-        id: create-pr
-        uses: peter-evans/create-pull-request@v6
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
-          branch: release/automated-${{ github.run_number }}
-          title: "chore: automated version release"
-          body: |
-            ## 🤖 Automated Release
-
-            This PR was automatically created by the NX release workflow.
-
-            ### Changes
-            - Version bumps
-            - Updated CHANGELOG files
-
-            This PR will be automatically merged once all checks pass.
-          labels: |
-            release
-            automated
-
-      - name: 🔀 Enable auto-merge
-        if: steps.create-pr.outputs.pull-request-number != ''
-        run: |
-          gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --auto --squash
-        env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          git config --global user.email "jdaniel.asousa@gmail.com"
+          git config --global user.name "Daniel Sousa @TutoDS"
+          npx nx release --skip-publish
