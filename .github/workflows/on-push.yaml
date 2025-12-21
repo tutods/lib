@@ -37,14 +37,14 @@ jobs:
       - name: 🏃 Run Node and NPM setup
         uses: ./.github/actions/setup-project
 
-      - name: Sets the base and head SHAs for the nx affected commands in CI
+      - name: 🎯 Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
 
-      - name: Build affected libs
+      - name: 🔨 Build affected libs
         run: npx nx affected -t build
 
       # Generate release branch name with timestamp to avoid conflicts
-      - name: Generate release branch name
+      - name: 🏷️ Generate release branch name
         id: branch-name
         run: |
           TIMESTAMP=$(date +%Y%m%d-%H%M%S)
@@ -52,7 +52,7 @@ jobs:
           echo "branch_name=${BRANCH_NAME}" >> $GITHUB_OUTPUT
 
       # Create and switch to release branch
-      - name: Create release branch
+      - name: 🌿 Create release branch
         run: |
           git checkout -b ${{ steps.branch-name.outputs.branch_name }}
           git config --global user.name "github-actions[bot]"
@@ -60,7 +60,7 @@ jobs:
           git config --global push.autoSetupRemote true
 
       # Run nx release on the branch
-      - name: Run nx release
+      - name: 🚀 Run nx release
         id: nx-release
         run: |
           npx nx release --skip-publish
@@ -72,13 +72,13 @@ jobs:
           fi
 
       # Push the release branch only if there are changes
-      - name: Push release branch
+      - name: 📤 Push release branch
         if: steps.nx-release.outputs.has_changes == 'true'
         run: |
           git push origin ${{ steps.branch-name.outputs.branch_name }}
 
       # Create pull request with auto-merge
-      - name: Create Pull Request
+      - name: 📋 Create Pull Request
         if: steps.nx-release.outputs.has_changes == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
@@ -106,7 +106,7 @@ jobs:
           delete-branch: true
 
       # Auto-merge the pull request
-      - name: Enable auto-merge
+      - name: 🔄 Enable auto-merge
         if: steps.nx-release.outputs.has_changes == 'true'
         run: |
           # Wait a moment for PR to be fully created
@@ -121,14 +121,14 @@ jobs:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}
 
       # Output information about the release
-      - name: Release summary
+      - name: ✅ Release summary
         if: steps.nx-release.outputs.has_changes == 'true'
         run: |
           echo "✅ Release branch created: ${{ steps.branch-name.outputs.branch_name }}"
           echo "✅ Pull request created and set to auto-merge"
           echo "🔄 Waiting for status checks to pass before merging"
 
-      - name: No changes summary
+      - name: ℹ️ No changes summary
         if: steps.nx-release.outputs.has_changes == 'false'
         run: |
           echo "ℹ️ No changes detected - skipping release"
