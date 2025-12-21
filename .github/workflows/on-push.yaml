@@ -57,6 +57,7 @@ jobs:
           git checkout -b ${{ steps.branch-name.outputs.branch_name }}
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global push.autoSetupRemote true
 
       # Run nx release on the branch
       - name: Run nx release
@@ -74,7 +75,7 @@ jobs:
       - name: Push release branch
         if: steps.nx-release.outputs.has_changes == 'true'
         run: |
-          git push --set-upstream origin ${{ steps.branch-name.outputs.branch_name }}
+          git push origin ${{ steps.branch-name.outputs.branch_name }}
 
       # Create pull request with auto-merge
       - name: Create Pull Request
