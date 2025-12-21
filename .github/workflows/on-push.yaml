@@ -3,9 +3,13 @@ name: NX release
 
 # Rules that trigger the workflow
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
+    paths:
+      - "packages/**"
+      - "configs/**"
 env:
   # NX release needs to have a GH token in env.GITHUB_TOKEN
   # As during this workflow we will create a new release
@@ -42,6 +46,8 @@ jobs:
         # create new tag with version and create new github release
       - name: Run nx release
         run: |
-          git config --global user.email "jdaniel.asousa@gmail.com"
-          git config --global user.name "Daniel Sousa @TutoDS"
+          # Configure git user
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
           npx nx release --skip-publish
