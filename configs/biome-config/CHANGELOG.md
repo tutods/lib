@@ -1,3 +1,9 @@
+## 0.13.2
+
+### 🚀 Features
+
+- **biome-config:** split React-specific rules into separate react.json config ([#579](https://github.com/tutods/lib/pull/579))
+
 ## 0.13.1
 
 ### 🚀 Features
