@@ -36,24 +36,37 @@ jobs:
 
       - name: 🔖 Run nx release
         run: |
+          # Debug token availability
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "ERROR: PAT_TOKEN is not set"
+            exit 1
+          fi
+          echo "PAT_TOKEN is available (length: ${#PAT_TOKEN})"
+
           # Configure git user
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # Get current remote URL and update it with token
-          REPO_URL=$(git remote get-url origin)
-          echo "Original remote URL: $REPO_URL"
+          # Configure git to use PAT token for all GitHub operations
+          git config --global url."https://oauth2:${PAT_TOKEN}@github.com/".insteadOf "https://github.com/"
 
-          # Set remote URL with token authentication
-          git remote set-url origin "https://oauth2:${GITHUB_TOKEN}@github.com/tutods/lib.git"
+          # Also update the current remote explicitly
+          git remote set-url origin "https://oauth2:${PAT_TOKEN}@github.com/tutods/lib.git"
 
-          # Verify the remote URL was updated
-          echo "Updated remote URL: $(git remote get-url origin)"
+          # Verify configuration
+          echo "Git URL rewrite config:"
+          git config --global --get-regexp url
+          echo "Current remote URL (masked):"
+          git remote get-url origin | sed 's/oauth2:[^@]*@/oauth2:***@/'
+
+          # Test git access
+          echo "Testing git access..."
+          git ls-remote origin HEAD
 
           # Run nx release with verbose output
           npx nx release --skip-publish --verbose
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
       - name: 📝 Create Pull Request
         id: create-pr
