@@ -18,24 +18,19 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the main branch
-        uses: actions/checkout@v4
-        # Only a single commit is fetched by default
-        # we need full repo history with tags, so we are setting fetch-depth: 0
+      - name: 🦖 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+
+      - name: 🔻 Checkout repo
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           # We need to pass Personal Access Token in order
           # to force triggering on-publish workflow
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install packages
-        run: npm ci
+      - name: 🏃 Run Node and NPM setup
+        uses: ./.github/actions/setup-project
 
       - name: Sets the base and head SHAs for the nx affected commands in CI
         uses: nrwl/nx-set-shas@v4
