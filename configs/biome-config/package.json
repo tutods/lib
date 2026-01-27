@@ -32,6 +32,6 @@
     "@biomejs/biome": "^2.3.12"
   },
   "peerDependencies": {
-    "@biomejs/biome": ">=2.3.12"
+    "@biomejs/biome": ">=2.3.13"
   }
 }
