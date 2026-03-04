@@ -22,8 +22,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.5",
-    "@commitlint/cli": "^20.4.2",
-    "@commitlint/config-conventional": "^20.4.2",
+    "@commitlint/cli": "^20.4.3",
+    "@commitlint/config-conventional": "^20.4.3",
     "@nx/js": "22.5.3",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.18",
