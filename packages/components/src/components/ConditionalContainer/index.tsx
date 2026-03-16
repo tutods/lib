@@ -47,5 +47,5 @@ const ConditionalContainer = <TRender extends RenderElement, TFallback extends R
   return <>{children}</>;
 };
 
-export { ConditionalContainer };
 export type { ConditionalContainerProps };
+export { ConditionalContainer };
