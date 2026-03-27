@@ -13,16 +13,16 @@ importers:
         version: 2.4.9
       '@commitlint/cli':
         specifier: ^20.5.0
-        version: 20.5.0(@types/node@24.12.0)(conventional-commits-parser@6.3.0)(typescript@5.9.3)
+        version: 20.5.0(@types/node@24.12.0)(conventional-commits-parser@6.3.0)(typescript@6.0.2)
       '@commitlint/config-conventional':
         specifier: ^20.5.0
         version: 20.5.0
       '@nx/js':
         specifier: 22.6.2
-        version: 22.6.2(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
+        version: 22.6.2(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
       '@swc-node/register':
         specifier: ~1.11.1
-        version: 1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3)
+        version: 1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2)
       '@swc/core':
         specifier: ~1.15.21
         version: 1.15.21(@swc/helpers@0.5.20)
@@ -46,7 +46,7 @@ importers:
         version: 2.1.4
       nx:
         specifier: 22.6.2
-        version: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))
+        version: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))
       react:
         specifier: ^19.2.4
         version: 19.2.4
@@ -58,10 +58,10 @@ importers:
         version: 2.8.1
       tsup:
         specifier: ^8.5.1
-        version: 8.5.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(jiti@2.6.1)(typescript@5.9.3)(yaml@2.8.2)
+        version: 8.5.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(jiti@2.6.1)(typescript@6.0.2)(yaml@2.8.2)
       typescript:
-        specifier: ~5.9.3
-        version: 5.9.3
+        specifier: ~6.0.2
+        version: 6.0.2
 
   configs/biome-config:
     devDependencies:
@@ -2409,8 +2409,8 @@ packages:
       typescript:
         optional: true
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.2:
+    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3228,11 +3228,11 @@ snapshots:
   '@biomejs/cli-win32-x64@2.4.9':
     optional: true
 
-  '@commitlint/cli@20.5.0(@types/node@24.12.0)(conventional-commits-parser@6.3.0)(typescript@5.9.3)':
+  '@commitlint/cli@20.5.0(@types/node@24.12.0)(conventional-commits-parser@6.3.0)(typescript@6.0.2)':
     dependencies:
       '@commitlint/format': 20.5.0
       '@commitlint/lint': 20.5.0
-      '@commitlint/load': 20.5.0(@types/node@24.12.0)(typescript@5.9.3)
+      '@commitlint/load': 20.5.0(@types/node@24.12.0)(typescript@6.0.2)
       '@commitlint/read': 20.5.0(conventional-commits-parser@6.3.0)
       '@commitlint/types': 20.5.0
       tinyexec: 1.0.2
@@ -3281,14 +3281,14 @@ snapshots:
       '@commitlint/rules': 20.5.0
       '@commitlint/types': 20.5.0
 
-  '@commitlint/load@20.5.0(@types/node@24.12.0)(typescript@5.9.3)':
+  '@commitlint/load@20.5.0(@types/node@24.12.0)(typescript@6.0.2)':
     dependencies:
       '@commitlint/config-validator': 20.5.0
       '@commitlint/execute-rule': 20.0.0
       '@commitlint/resolve-extends': 20.5.0
       '@commitlint/types': 20.5.0
-      cosmiconfig: 9.0.1(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.12.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig: 9.0.1(typescript@6.0.2)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.12.0)(cosmiconfig@9.0.1(typescript@6.0.2))(typescript@6.0.2)
       is-plain-obj: 4.1.0
       lodash.mergewith: 4.6.2
       picocolors: 1.1.1
@@ -3483,18 +3483,18 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@nx/devkit@22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)))':
+  '@nx/devkit@22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)))':
     dependencies:
       '@zkochan/js-yaml': 0.0.7
       ejs: 3.1.10
       enquirer: 2.3.6
       minimatch: 10.2.4
-      nx: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))
+      nx: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))
       semver: 7.7.3
       tslib: 2.8.1
       yargs-parser: 21.1.1
 
-  '@nx/js@22.6.2(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)))':
+  '@nx/js@22.6.2(@babel/traverse@7.28.5)(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)))':
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-proposal-decorators': 7.28.0(@babel/core@7.28.5)
@@ -3503,8 +3503,8 @@ snapshots:
       '@babel/preset-env': 7.28.5(@babel/core@7.28.5)
       '@babel/preset-typescript': 7.28.5(@babel/core@7.28.5)
       '@babel/runtime': 7.28.4
-      '@nx/devkit': 22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
-      '@nx/workspace': 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))
+      '@nx/devkit': 22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
+      '@nx/workspace': 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))
       '@zkochan/js-yaml': 0.0.7
       babel-plugin-const-enum: 1.2.0(@babel/core@7.28.5)
       babel-plugin-macros: 3.1.0
@@ -3560,13 +3560,13 @@ snapshots:
   '@nx/nx-win32-x64-msvc@22.6.2':
     optional: true
 
-  '@nx/workspace@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))':
+  '@nx/workspace@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))':
     dependencies:
-      '@nx/devkit': 22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
+      '@nx/devkit': 22.6.2(nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)))
       '@zkochan/js-yaml': 0.0.7
       chalk: 4.1.2
       enquirer: 2.3.6
-      nx: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20))
+      nx: 22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20))
       picomatch: 4.0.2
       semver: 7.7.3
       tslib: 2.8.1
@@ -3717,7 +3717,7 @@ snapshots:
       '@swc/core': 1.15.21(@swc/helpers@0.5.20)
       '@swc/types': 0.1.25
 
-  '@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3)':
+  '@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2)':
     dependencies:
       '@swc-node/core': 1.14.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)
       '@swc-node/sourcemap-support': 0.6.1
@@ -3727,7 +3727,7 @@ snapshots:
       oxc-resolver: 11.16.0
       pirates: 4.0.7
       tslib: 2.8.1
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - '@swc/types'
       - supports-color
@@ -4050,12 +4050,12 @@ snapshots:
     dependencies:
       browserslist: 4.28.1
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@24.12.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@24.12.0)(cosmiconfig@9.0.1(typescript@6.0.2))(typescript@6.0.2):
     dependencies:
       '@types/node': 24.12.0
-      cosmiconfig: 9.0.1(typescript@5.9.3)
+      cosmiconfig: 9.0.1(typescript@6.0.2)
       jiti: 2.6.1
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   cosmiconfig@7.1.0:
     dependencies:
@@ -4065,14 +4065,14 @@ snapshots:
       path-type: 4.0.0
       yaml: 1.10.2
 
-  cosmiconfig@9.0.1(typescript@5.9.3):
+  cosmiconfig@9.0.1(typescript@6.0.2):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.1
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.9.3
+      typescript: 6.0.2
 
   csstype@3.2.3: {}
 
@@ -4476,7 +4476,7 @@ snapshots:
     dependencies:
       path-key: 3.1.1
 
-  nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3))(@swc/core@1.15.21(@swc/helpers@0.5.20)):
+  nx@22.6.2(@swc-node/register@1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2))(@swc/core@1.15.21(@swc/helpers@0.5.20)):
     dependencies:
       '@ltd/j-toml': 1.38.0
       '@napi-rs/wasm-runtime': 0.2.4
@@ -4525,7 +4525,7 @@ snapshots:
       '@nx/nx-linux-x64-musl': 22.6.2
       '@nx/nx-win32-arm64-msvc': 22.6.2
       '@nx/nx-win32-x64-msvc': 22.6.2
-      '@swc-node/register': 1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@5.9.3)
+      '@swc-node/register': 1.11.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(@swc/types@0.1.25)(typescript@6.0.2)
       '@swc/core': 1.15.21(@swc/helpers@0.5.20)
     transitivePeerDependencies:
       - debug
@@ -4812,7 +4812,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(jiti@2.6.1)(typescript@5.9.3)(yaml@2.8.2):
+  tsup@8.5.1(@swc/core@1.15.21(@swc/helpers@0.5.20))(jiti@2.6.1)(typescript@6.0.2)(yaml@2.8.2):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.27.2)
       cac: 6.7.14
@@ -4833,14 +4833,14 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       '@swc/core': 1.15.21(@swc/helpers@0.5.20)
-      typescript: 5.9.3
+      typescript: 6.0.2
     transitivePeerDependencies:
       - jiti
       - supports-color
       - tsx
       - yaml
 
-  typescript@5.9.3: {}
+  typescript@6.0.2: {}
 
   ufo@1.6.1: {}
 
