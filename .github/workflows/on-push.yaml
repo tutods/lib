@@ -9,6 +9,10 @@ on:
       - "packages/**"
       - "configs/**"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   actions: write
   contents: write
@@ -23,9 +27,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[no ci]')
     steps:
-      - name: 🦖 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-
       - name: 🔻 Checkout repo
         uses: actions/checkout@v6
         with:
@@ -85,7 +86,7 @@ jobs:
           sleep 5
           PR_NUMBER=$(gh pr list --head release/auto-version-bump --state open --json number --jq '.[0].number')
           if [ -n "$PR_NUMBER" ]; then
-            gh pr merge "$PR_NUMBER" --auto --squash
+            gh pr merge "$PR_NUMBER" --auto --merge
           fi
         env:
           GH_TOKEN: ${{ secrets.PAT_TOKEN }}

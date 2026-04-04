@@ -2,6 +2,10 @@ name: Code Check
 
 on: pull_request
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   actions: read
   contents: write
@@ -12,9 +16,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🦖 Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.13.1
-
       - name: 🔻 Checkout repo
         uses: actions/checkout@v6
         with:

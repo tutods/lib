@@ -8,7 +8,6 @@
     "noEmit": true,
     "moduleResolution": "bundler",
     "useDefineForClassFields": true,
-    "allowImportingTsExtensions": false,
     "jsx": "react-jsx"
   }
 }

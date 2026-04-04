@@ -18,7 +18,12 @@
         "useImportType": "off"
       },
       "suspicious": {
-        "noConsole": "off"
+        "noConsole": {
+          "level": "error",
+          "options": {
+            "allow": ["error", "warn", "log"]
+          }
+        }
       },
       "a11y": {
         "recommended": false
