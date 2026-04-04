@@ -48,6 +48,14 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: 💾 Cache git objects
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+        with:
+          path: .git/objects
+          key: git-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            git-${{ runner.os }}-
+
       - name: 🔧 Setup Node and install dependencies
         uses: ./.github/actions/node-setup-and-install
 
@@ -56,6 +64,17 @@ jobs:
           echo "npm-authenticate=true" >> $GITHUB_OUTPUT
           echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_TOKEN }}" > .npmrc
         id: npm-auth
+
+      - name: 💾 Cache build outputs
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+        with:
+          path: |
+            packages/*/dist
+            configs/*/dist
+          key: build-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}
+          restore-keys: |
+            build-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+            build-${{ runner.os }}-
 
       - name: 🏗️ Build all packages
         run: pnpm nx run-many -t build
@@ -96,15 +115,23 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6
         with:
           fetch-depth: 0
 
-      - name: Fetch all tags
+      - name: 💾 Cache git objects
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+        with:
+          path: .git/objects
+          key: git-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            git-${{ runner.os }}-
+
+      - name: 🏷️ Fetch all tags
         run: git fetch --tags --force
 
-      - name: Create and push git tags
+      - name: 🎯 Create and push git tags
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -143,7 +170,7 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6
         with:
           fetch-depth: 1
@@ -153,7 +180,7 @@ jobs:
       # Creates a GitHub Release per package, using the CHANGELOG.md section for
       # the current version as the release notes. Skipped for packages whose
       # release already exists (safe to re-run after a partial failure).
-      - name: Create GitHub Releases
+      - name: 🎉 Create GitHub Releases
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}

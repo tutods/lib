@@ -16,10 +16,7 @@ runs:
       uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f #v6.3
       with:
         node-version-file: ".nvmrc"
-        # No cache: "pnpm" here — the custom node_modules cache below is the
-        # sole fast path. Both caches share the same pnpm-lock.yaml key so they
-        # always hit or miss together; the pnpm store would be restored on hits
-        # but never used (install is skipped), making it pure overhead.
+        cache: 'pnpm'  # Caches pnpm store globally — shared across all jobs
 
     # Cache node_modules keyed on OS + lockfile — the only cache needed.
     # No restore-keys: a partially wrong node_modules is worse than a miss.

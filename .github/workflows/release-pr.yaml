@@ -47,6 +47,14 @@ jobs:
           fetch-depth: 0
           token: ${{ github.token }}
 
+      - name: 💾 Cache git objects
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+        with:
+          path: .git/objects
+          key: git-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            git-${{ runner.os }}-
+
       - name: 🏷️ Fetch all tags
         run: git fetch --tags --force
 
