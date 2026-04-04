@@ -17,7 +17,15 @@
     "tsconfig"
   ],
   "files": [
+    "base.json",
     "react.json",
-    "node.json"
-  ]
+    "node.json",
+    "nestjs.json"
+  ],
+  "exports": {
+    ".": "./base.json",
+    "./react": "./react.json",
+    "./node": "./node.json",
+    "./nestjs": "./nestjs.json"
+  }
 }

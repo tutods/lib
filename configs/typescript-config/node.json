@@ -1,13 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["es2023"],
+    "target": "ES2022",
+    "lib": ["ES2023"],
     "module": "Node16",
-    "target": "es2022",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "moduleResolution": "Node16",
-    "verbatimModuleSyntax": true
+    "moduleResolution": "Node16"
   }
 }
