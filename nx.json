@@ -48,7 +48,9 @@
     "releaseTagPattern": "release/{projectName}/{version}",
     "projects": ["packages/*", "configs/*"],
     "git": {
-      "commitMessage": "chore(release): version packages [no ci]"
+      "commit": false,
+      "tag": false,
+      "push": false
     },
     "changelog": {
       "projectChangelogs": {
