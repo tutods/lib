@@ -17,3 +17,11 @@ This package is optimized for performance. For best results:
 - Import only what you need
 - Enable production mode in your build tool
 
+
+## Getting Started
+
+Install the package:
+```bash
+npm install @tutods/components
+```
+
