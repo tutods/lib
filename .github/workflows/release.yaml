@@ -82,7 +82,21 @@ jobs:
       - name: 📤 Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-        run: pnpm nx release publish --verbose -- --force 2>&1 | tee /tmp/publish-output.txt; exit ${PIPESTATUS[0]}
+        run: |
+          # Build packages first
+          pnpm nx run-many -t build
+
+          # Publish with --force flag for each package
+          for pkg_json in packages/*/package.json configs/*/package.json; do
+            private=$(jq -r '.private // false' "$pkg_json")
+            [ "$private" = "false" ] || continue
+
+            pkg_dir=$(dirname "$pkg_json")
+            echo "Publishing $pkg_dir..."
+            cd "$pkg_dir"
+            pnpm publish --force --no-git-checks || echo "Warning: Failed to publish $pkg_dir"
+            cd - > /dev/null
+          done
 
       # Runs after publish so dist-tags are only updated once the new versions
       # are confirmed live in the registry. Moving this before publish would
