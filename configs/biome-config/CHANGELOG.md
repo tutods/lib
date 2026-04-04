@@ -1,3 +1,22 @@
+## 0.13.4 (2026-04-04)
+
+### 🚀 Features
+
+- **biome-config:** upgrade to domains, restore nextjs.json ([b3c0b7a6](https://github.com/tutods/lib/commit/b3c0b7a6))
+
+### 🩹 Fixes
+
+- **ci:** resolve TS5101 baseUrl deprecation in components DTS build ([32a7ef53](https://github.com/tutods/lib/commit/32a7ef53))
+
+### 🏡 Chore
+
+- tsconfig ([5b11f02d](https://github.com/tutods/lib/commit/5b11f02d))
+
+### ❤️ Thank You
+
+- Claude Sonnet 4.6
+- Daniel Sousa @TutoDS
+
 ## 0.13.3
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
