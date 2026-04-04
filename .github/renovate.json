@@ -1,14 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":automergeDigest",
-    ":automergeMinor",
-    ":pinDigests",
-    "security:openssf-scorecard"
-  ],
+  "extends": ["config:recommended", ":dependencyDashboard", ":semanticCommits", "security:openssf-scorecard"],
   "timezone": "Europe/Lisbon",
   "schedule": ["before 3am every weekday"],
   "labels": ["dependencies", "renovate"],
@@ -67,8 +59,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
       "automerge": false,
-      "commitMessagePrefix": "⬆️ MAJOR:",
-      "reviewersFromCodeOwners": true
+      "commitMessagePrefix": "⬆️ MAJOR:"
     },
     {
       "description": "Minor and patch updates - auto-merge enabled",
@@ -96,7 +87,6 @@
       "labels": ["dependencies", "renovate", "major-update", "security", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔒 MAJOR SECURITY:",
-      "reviewersFromCodeOwners": true,
       "schedule": ["at any time"]
     },
     {
@@ -133,7 +123,6 @@
       "labels": ["dependencies", "renovate", "major-update", "github-actions", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔧 MAJOR CI:",
-      "reviewersFromCodeOwners": true,
       "pinDigests": true
     },
     {
@@ -163,8 +152,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "docker", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🐳 MAJOR:",
-      "reviewersFromCodeOwners": true
+      "commitMessagePrefix": "🐳 MAJOR:"
     },
     {
       "description": "TypeScript and related packages",
@@ -181,8 +169,7 @@
       "labels": ["dependencies", "renovate", "major-update", "typescript", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "📘 MAJOR TS:",
-      "groupName": "Major TypeScript packages",
-      "reviewersFromCodeOwners": true
+      "groupName": "Major TypeScript packages"
     },
     {
       "description": "Biome packages",
@@ -207,8 +194,7 @@
       "labels": ["dependencies", "renovate", "major-update", "testing", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🧪 MAJOR TEST:",
-      "groupName": "Major testing packages",
-      "reviewersFromCodeOwners": true
+      "groupName": "Major testing packages"
     },
     {
       "description": "Build tools and bundlers",
@@ -225,8 +211,7 @@
       "labels": ["dependencies", "renovate", "major-update", "build-tools", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔨 MAJOR BUILD:",
-      "groupName": "Major build tools",
-      "reviewersFromCodeOwners": true
+      "groupName": "Major build tools"
     }
   ],
   "ignoreDeps": ["node"],
