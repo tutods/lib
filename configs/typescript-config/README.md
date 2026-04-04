@@ -22,8 +22,10 @@ This configuration package provides common TypeScript configurations that can be
 
 This package includes TypeScript configurations for:
 
-- **`react.json`**: Configuration optimized for React projects
+- **`base.json`**: Base TypeScript configuration with strict type checking and modern ES targets
+- **`react.json`**: Configuration optimized for React projects with JSX support
 - **`node.json`**: Configuration optimized for Node.js projects
+- **`nestjs.json`**: Configuration optimized for NestJS backend applications
 
 ## ✨ Features
 
@@ -56,6 +58,51 @@ To install and use this package, follow these steps:
 ## 📚 Examples of usage
 
 ### React project
+
+```json
+{
+  "extends": "@tutods/typescript-config/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
+### Node.js project
+
+```json
+{
+  "extends": "@tutods/typescript-config/node.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
+### NestJS project
+
+```json
+{
+  "extends": "@tutods/typescript-config/nestjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@common/*": ["./src/common/*"],
+      "@modules/*": ["./src/modules/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
 
 ```json
 {

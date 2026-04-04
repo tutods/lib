@@ -49,6 +49,7 @@ This monorepo uses:
 - **PNPM** as the package manager
 - **Biome** for linting and formatting
 - **Commitizen** for standardized commit messages
+- **GitHub Actions** for CI/CD automation
 
 ### Getting Started
 
@@ -63,6 +64,35 @@ pnpm install
 # Build all packages
 pnpm build
 ```
+
+## 🔄 CI/CD
+
+This monorepo uses automated workflows for continuous integration, testing, and deployment:
+
+### Workflows
+
+- **Code Check** - Runs Biome linting on every pull request
+- **Commit Lint** - Validates commit messages follow conventional commits
+- **Release PR** - Automatically creates release PRs when you push to main
+- **Release** - Publishes packages to npm when release PR is merged
+- **Performance Tracking** - Monitors CI/CD performance metrics
+
+### Release Process
+
+This project uses **automated releases** powered by NX Release and Conventional Commits:
+
+1. **Push to main** with conventional commits (feat, fix, docs, etc.)
+2. **Release PR** is automatically created with version bumps and changelogs
+3. **Review and merge** the release PR
+4. **Packages are published** to npm automatically
+5. **Git tags** are created (`@tutods/package@version`)
+6. **GitHub releases** are created with changelogs
+
+For detailed information, see [Release Documentation](./docs/RELEASE.md).
+
+### Performance Dashboard
+
+View real-time CI/CD performance metrics: [Performance Dashboard](https://tutods.github.io/lib/perf-dashboard.html)
 
 ## 📥 Installation
 
