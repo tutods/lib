@@ -68,6 +68,9 @@
       "generatorOptions": {
         "installIgnoreScripts": true,
         "registry": "https://registry.npmjs.org"
+      },
+      "versionActionsOptions": {
+        "installArgs": "--no-frozen-lockfile"
       }
     },
     "conventionalCommits": {
