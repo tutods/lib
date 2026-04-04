@@ -167,7 +167,7 @@ jobs:
 
             name=$(jq -r '.name' "$pkg_json")
             version=$(jq -r '.version' "$pkg_json")
-            tag="release/${name}/${version}"
+            tag="${name}@${version}"
 
             if git rev-parse "$tag" >/dev/null 2>&1; then
               echo "Tag already exists: $tag (skipping)"
@@ -216,7 +216,7 @@ jobs:
 
             name=$(jq -r '.name' "$pkg_json")
             version=$(jq -r '.version' "$pkg_json")
-            tag="release/${name}/${version}"
+            tag="${name}@${version}"
             pkg_dir=$(dirname "$pkg_json")
 
             if gh release view "$tag" --repo "$REPO" >/dev/null 2>&1; then
