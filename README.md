@@ -3,6 +3,11 @@
 
 [![Stargazers][stars-shield]][stars-url] [![Forks][forks-shield]][forks-url] ![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge) ![License](https://img.shields.io/github/license/tutods/lib?style=for-the-badge)
 
+<!-- omit from toc -->
+## 🔄 CI/CD Status
+
+[![Code Check][code-check-badge]](../../actions/workflows/code-check.yaml) [![Commit Lint][commit-lint-badge]](../../actions/workflows/commit-lint.yaml) [![Release PR][release-pr-badge]](../../actions/workflows/release-pr.yaml) [![Release][release-badge]](../../actions/workflows/release.yaml)
+
 > A collection of reusable packages, configurations, and components for web development projects.
 
 ---
@@ -96,6 +101,10 @@ Please make sure to update tests as appropriate and follow the existing code sty
 
 <!-- Badges -->
 [biome]: https://img.shields.io/badge/biome%20config-000000?style=for-the-badge&logo=biome&logoColor=white
+[code-check-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/code-check.yaml?branch=main&label=code%20check&logo=github&style=for-the-badge
+[commit-lint-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/commit-lint.yaml?branch=main&label=commit%20lint&logo=github&style=for-the-badge
+[release-pr-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/release-pr.yaml?branch=main&label=release%20pr&logo=github&style=for-the-badge
+[release-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/release.yaml?branch=main&label=release&logo=github&style=for-the-badge
 [typescript]: https://img.shields.io/badge/typescript%20config-000000?style=for-the-badge&logo=typescript&logoColor=white
 [components]: https://img.shields.io/badge/react%20components-000000?style=for-the-badge&logo=react&logoColor=white
 [forks-shield]: https://img.shields.io/github/forks/tutods/lib?style=for-the-badge
