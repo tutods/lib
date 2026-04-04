@@ -3,9 +3,7 @@
   "extends": ["@tutods/typescript-config/react.json"],
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     }

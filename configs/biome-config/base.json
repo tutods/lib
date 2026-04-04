@@ -97,7 +97,7 @@
   "linter": {
     "enabled": true,
     "domains": {
-      "project": "all",
+      "project": "recommended",
       "test": "recommended",
       "types": "all"
     },
