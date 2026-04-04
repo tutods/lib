@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CI/CD Performance Dashboard - TutoDS Lib</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      padding: 30px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .metric-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .metric-card h3 {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+    .metric-card .value {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .metric-card .label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #333;
+    }
+    tr:hover {
+      background: #f8f9fa;
+    }
+    .status-success {
+      color: #28a745;
+      font-weight: 600;
+    }
+    .status-failure {
+      color: #dc3545;
+      font-weight: 600;
+    }
+    .loading {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+    .last-updated {
+      text-align: right;
+      color: #999;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 CI/CD Performance Dashboard</h1>
+    <p class="subtitle">Real-time workflow performance metrics for TutoDS Lib</p>
+
+    <div class="metrics-grid" id="metrics-grid">
+      <div class="loading">Loading metrics...</div>
+    </div>
+
+    <div id="workflow-details"></div>
+
+    <p class="last-updated" id="last-updated"></p>
+  </div>
+
+  <script>
+    async function loadMetrics() {
+      try {
+        const response = await fetch('../.github/perf/metrics.json');
+        const data = await response.json();
+
+        displayMetrics(data);
+      } catch (error) {
+        console.error('Failed to load metrics:', error);
+        document.getElementById('metrics-grid').innerHTML =
+          '<div class="loading">⚠️ No metrics available yet - workflows will populate data automatically</div>';
+      }
+    }
+
+    function displayMetrics(data) {
+      const workflows = data.workflows || {};
+      const workflowNames = Object.keys(workflows);
+
+      if (workflowNames.length === 0) {
+        document.getElementById('metrics-grid').innerHTML =
+          '<div class="loading">⚠️ No metrics available yet - workflows will populate data automatically</div>';
+        return;
+      }
+
+      // Calculate overall stats
+      let totalRuns = 0;
+      let totalSuccess = 0;
+      let totalDuration = 0;
+      let workflowCount = 0;
+
+      workflowNames.forEach(name => {
+        const wf = workflows[name];
+        totalRuns += wf.total_runs || 0;
+        totalSuccess += wf.successful_runs || 0;
+        totalDuration += (wf.avg_duration_sec || 0) * (wf.total_runs || 0);
+        workflowCount++;
+      });
+
+      const overallSuccessRate = totalRuns > 0 ? ((totalSuccess / totalRuns) * 100).toFixed(1) : 0;
+      const overallAvgDuration = totalRuns > 0 ? (totalDuration / totalRuns).toFixed(1) : 0;
+
+      // Display metrics cards
+      document.getElementById('metrics-grid').innerHTML = `
+        <div class="metric-card">
+          <h3>📊 Total Workflows</h3>
+          <div class="value">${workflowCount}</div>
+          <div class="label">Active workflows</div>
+        </div>
+        <div class="metric-card">
+          <h3>✅ Overall Success Rate</h3>
+          <div class="value">${overallSuccessRate}%</div>
+          <div class="label">${totalSuccess} of ${totalRuns} runs</div>
+        </div>
+        <div class="metric-card">
+          <h3>⚡ Avg Duration</h3>
+          <div class="value">${overallAvgDuration}s</div>
+          <div class="label">Across all workflows</div>
+        </div>
+        <div class="metric-card">
+          <h3>🔄 Total Runs</h3>
+          <div class="value">${totalRuns}</div>
+          <div class="label">All time</div>
+        </div>
+      `;
+
+      // Display workflow details table
+      let tableHTML = `
+        <h2 style="margin-top: 40px; margin-bottom: 20px; color: #333;">Workflow Details</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Workflow</th>
+              <th>Total Runs</th>
+              <th>Success Rate</th>
+              <th>Avg Duration</th>
+              <th>Last Status</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      workflowNames.forEach(name => {
+        const wf = workflows[name];
+        const successRate = wf.total_runs > 0
+          ? ((wf.successful_runs / wf.total_runs) * 100).toFixed(1)
+          : 0;
+        const lastRun = wf.runs && wf.runs.length > 0 ? wf.runs[wf.runs.length - 1] : null;
+        const lastStatus = lastRun ? lastRun.status : 'N/A';
+        const statusClass = lastStatus === 'success' ? 'status-success' :
+                           lastStatus === 'failure' ? 'status-failure' : '';
+
+        tableHTML += `
+          <tr>
+            <td><strong>${name}</strong></td>
+            <td>${wf.total_runs || 0}</td>
+            <td>${successRate}%</td>
+            <td>${(wf.avg_duration_sec || 0).toFixed(1)}s</td>
+            <td class="${statusClass}">${lastStatus}</td>
+          </tr>
+        `;
+      });
+
+      tableHTML += `
+          </tbody>
+        </table>
+      `;
+
+      document.getElementById('workflow-details').innerHTML = tableHTML;
+      document.getElementById('last-updated').textContent =
+        `Last updated: ${new Date().toLocaleString()}`;
+    }
+
+    loadMetrics();
+    setInterval(loadMetrics, 60000); // Refresh every minute
+  </script>
+</body>
+</html>
