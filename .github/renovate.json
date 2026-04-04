@@ -19,10 +19,11 @@
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
   "semanticCommits": "enabled",
-  "commitMessagePrefix": "⬆️",
+  "commitMessagePrefix": "chore(deps):",
+  "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "to v{{newVersion}}",
-  "commitBody": "Updated by Renovate Bot",
+  "commitMessageExtra": "to {{newVersion}}",
+  "commitBody": "Signed-off-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
   "customManagers": [
     {
       "customType": "regex",
@@ -59,7 +60,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
       "automerge": false,
-      "commitMessagePrefix": "⬆️ MAJOR:"
+      "commitMessagePrefix": "chore(deps):"
     },
     {
       "description": "Minor and patch updates - auto-merge enabled",
@@ -67,7 +68,7 @@
       "labels": ["dependencies", "renovate", "minor-patch-update", "priority-low"],
       "automerge": true,
       "automergeType": "pr",
-      "commitMessagePrefix": "🔧 DEPS:"
+      "commitMessagePrefix": "chore(deps):"
     },
     {
       "description": "Security updates - high priority, always processed",
@@ -76,7 +77,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
-      "commitMessagePrefix": "🔒 SECURITY:",
+      "commitMessagePrefix": "fix(deps):",
       "schedule": ["at any time"]
     },
     {
@@ -86,7 +87,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "security", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🔒 MAJOR SECURITY:",
+      "commitMessagePrefix": "fix(deps):",
       "schedule": ["at any time"]
     },
     {
@@ -95,7 +96,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["renovate", "dev-dependencies", "priority-low"],
       "automerge": true,
-      "commitMessagePrefix": "🔧 DEV:",
+      "commitMessagePrefix": "chore(deps-dev):",
       "groupName": "Dev dependencies (minor & patch)"
     },
     {
@@ -104,7 +105,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["renovate", "major-update", "dev-dependencies", "priority-medium"],
       "automerge": false,
-      "commitMessagePrefix": "⬆️ MAJOR DEV:",
+      "commitMessagePrefix": "chore(deps-dev):",
       "groupName": "Dev dependencies (major)"
     },
     {
@@ -112,7 +113,7 @@
       "matchDatasources": ["github-tags"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "github-actions", "priority-medium"],
-      "commitMessagePrefix": "🔧 CI:",
+      "commitMessagePrefix": "ci(deps):",
       "automerge": true,
       "pinDigests": true
     },
@@ -122,7 +123,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "github-actions", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🔧 MAJOR CI:",
+      "commitMessagePrefix": "ci(deps):",
       "pinDigests": true
     },
     {
@@ -130,21 +131,21 @@
       "matchUpdateTypes": ["pinDigest"],
       "labels": ["dependencies", "renovate", "pin-digest", "priority-low"],
       "automerge": true,
-      "commitMessagePrefix": "📌"
+      "commitMessagePrefix": "chore(deps):"
     },
     {
       "description": "Digest updates",
       "matchUpdateTypes": ["digest"],
       "labels": ["dependencies", "renovate", "digest-update", "priority-low"],
       "automerge": true,
-      "commitMessagePrefix": "🔄"
+      "commitMessagePrefix": "chore(deps):"
     },
     {
       "description": "Docker images - auto-merge minor & patch",
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "docker", "priority-medium"],
-      "commitMessagePrefix": "🐳"
+      "commitMessagePrefix": "chore(docker):"
     },
     {
       "description": "Major Docker image updates - manual review",
@@ -152,14 +153,14 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "docker", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🐳 MAJOR:"
+      "commitMessagePrefix": "chore(docker):"
     },
     {
       "description": "TypeScript and related packages",
       "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "typescript", "priority-medium"],
-      "commitMessagePrefix": "📘 TS:",
+      "commitMessagePrefix": "chore(typescript):",
       "groupName": "TypeScript packages"
     },
     {
@@ -168,7 +169,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "typescript", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "📘 MAJOR TS:",
+      "commitMessagePrefix": "chore(typescript):",
       "groupName": "Major TypeScript packages"
     },
     {
@@ -176,7 +177,7 @@
       "matchPackageNames": ["@biomejs/biome", "@biomejs/cli-*", "biome"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "biome", "priority-medium"],
-      "commitMessagePrefix": "🦀 BIOME:",
+      "commitMessagePrefix": "chore(biome):",
       "groupName": "Biome packages"
     },
     {
@@ -184,7 +185,7 @@
       "matchPackageNames": ["jest", "vitest", "@testing-library/*", "@jest/*", "jest-*"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "testing", "priority-medium"],
-      "commitMessagePrefix": "🧪 TEST:",
+      "commitMessagePrefix": "chore(test):",
       "groupName": "Testing packages"
     },
     {
@@ -193,7 +194,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "testing", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🧪 MAJOR TEST:",
+      "commitMessagePrefix": "chore(test):",
       "groupName": "Major testing packages"
     },
     {
@@ -201,7 +202,7 @@
       "matchPackageNames": ["webpack", "vite", "rollup", "esbuild", "parcel", "@vitejs/*", "@rollup/*", "webpack-*"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "build-tools", "priority-medium"],
-      "commitMessagePrefix": "🔨 BUILD:",
+      "commitMessagePrefix": "chore(build):",
       "groupName": "Build tools"
     },
     {
@@ -210,7 +211,7 @@
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "build-tools", "priority-high"],
       "automerge": false,
-      "commitMessagePrefix": "🔨 MAJOR BUILD:",
+      "commitMessagePrefix": "chore(build):",
       "groupName": "Major build tools"
     }
   ],
@@ -220,7 +221,7 @@
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["on the first day of the month"],
-    "commitMessagePrefix": "🔒 LOCKFILE:",
+    "commitMessagePrefix": "chore(deps):",
     "automerge": true
   }
 }
