@@ -393,4 +393,4 @@ jobs:
           echo "### 🎨 Dashboard Generated" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "View the live dashboard at:" >> $GITHUB_STEP_SUMMARY
-          echo "https://tutods.github.io/lib/perf-dashboard.html" >> $GITHUB_STEP_SUMMARY
+          echo "https://tutods.github.io/lib/docs/perf-dashboard.html" >> $GITHUB_STEP_SUMMARY

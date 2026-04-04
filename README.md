@@ -92,7 +92,7 @@ For detailed information, see [Release Documentation](./docs/RELEASE.md).
 
 ### Performance Dashboard
 
-View real-time CI/CD performance metrics: [Performance Dashboard](https://tutods.github.io/lib/perf-dashboard.html)
+View real-time CI/CD performance metrics: [Performance Dashboard](https://tutods.github.io/lib/docs/perf-dashboard.html)
 
 ## 📥 Installation
 
