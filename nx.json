@@ -70,7 +70,8 @@
         "registry": "https://registry.npmjs.org"
       },
       "versionActionsOptions": {
-        "installArgs": "--no-frozen-lockfile"
+        "installArgs": "--no-frozen-lockfile",
+        "skipLockFileUpdate": true
       }
     },
     "conventionalCommits": {
