@@ -76,9 +76,6 @@ jobs:
             build-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
             build-${{ runner.os }}-
 
-      - name: 🏗️ Build all packages
-        run: pnpm nx run-many -t build
-
       - name: 📤 Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
