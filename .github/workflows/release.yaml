@@ -63,7 +63,7 @@ jobs:
 
       - name: 🔐 Configure npm authentication
         run: |
-          echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
 
       - name: 💾 Cache build outputs
         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
@@ -83,6 +83,9 @@ jobs:
           # Build packages first
           pnpm nx run-many -t build
 
+          # Track failures
+          FAILED=""
+
           # Publish with --force flag for each package
           for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
@@ -91,9 +94,20 @@ jobs:
             pkg_dir=$(dirname "$pkg_json")
             echo "Publishing $pkg_dir..."
             cd "$pkg_dir"
-            pnpm publish --force --no-git-checks || echo "Warning: Failed to publish $pkg_dir"
+            if ! pnpm publish --force --no-git-checks; then
+              echo "❌ Failed to publish $pkg_dir"
+              FAILED="$FAILED $pkg_dir"
+            else
+              echo "✅ Successfully published $pkg_dir"
+            fi
             cd - > /dev/null
           done
+
+          # Fail if any package failed to publish
+          if [ -n "$FAILED" ]; then
+            echo "::error::The following packages failed to publish:$FAILED"
+            exit 1
+          fi
 
       # Runs after publish so dist-tags are only updated once the new versions
       # are confirmed live in the registry. Moving this before publish would
