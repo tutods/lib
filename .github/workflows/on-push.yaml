@@ -38,7 +38,7 @@ jobs:
         uses: ./.github/actions/setup-project
 
       - name: 🎯 Sets the base and head SHAs for the nx affected commands in CI
-        uses: nrwl/nx-set-shas@v4
+        uses: nrwl/nx-set-shas@v5
 
       - name: 🔨 Build affected libs
         run: npx nx affected -t build
