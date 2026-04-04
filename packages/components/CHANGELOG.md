@@ -1,3 +1,13 @@
+## 0.8.4 (2026-04-04)
+
+### 📖 Documentation
+
+- improve documentation across the monorepo ([485df2c3](https://github.com/tutods/lib/commit/485df2c3))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.8.3 (2026-04-04)
 
 ### 📖 Documentation
