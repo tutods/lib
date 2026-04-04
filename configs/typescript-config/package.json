@@ -21,11 +21,5 @@
     "react.json",
     "node.json",
     "nestjs.json"
-  ],
-  "exports": {
-    ".": "./base.json",
-    "./react": "./react.json",
-    "./node": "./node.json",
-    "./nestjs": "./nestjs.json"
-  }
+  ]
 }
