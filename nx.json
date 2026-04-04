@@ -52,7 +52,6 @@
       "projectChangelogs": true
     },
     "publish": {
-      "registry": "https://registry.npmjs.org",
       "installIgnoreScripts": true
     }
   },
