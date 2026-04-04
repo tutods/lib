@@ -4,29 +4,44 @@
   "private": false,
   "type": "module",
   "license": "MIT",
-  "description": "Package with generic configuration for Biome that can be used on React, Solidjs, Nest.js and Next.js projects. Now with enhanced React support.",
-  "homepage": "https://github.com/tutods/lib/blob/main/config/biome-config/README.md",
+  "description": "Shareable Biome configuration for React, Next.js, NestJS, SolidJS, Tailwind CSS, and Sanity CMS projects. Built for monorepos.",
+  "homepage": "https://github.com/tutods/lib/blob/main/configs/biome-config/README.md",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "ssh://git@github.com:tutods/lib.git",
-    "directory": "packages/configs/biome-config"
+    "directory": "configs/biome-config"
   },
   "keywords": [
     "biome",
     "biomejs",
     "lint",
-    "format"
+    "format",
+    "react",
+    "nextjs",
+    "nestjs",
+    "solidjs",
+    "tailwindcss",
+    "sanity",
+    "monorepo"
+  ],
+  "files": [
+    "*.json",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "main": "base.json",
   "exports": {
     ".": "./base.json",
     "./react": "./react.json",
+    "./nextjs": "./nextjs.json",
+    "./tailwind": "./tailwind.json",
     "./nestjs": "./nestjs.json",
     "./solidjs": "./solidjs.json",
-    "./nextjs": "./nextjs.json"
+    "./sanity": "./sanity.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.10"

@@ -2,10 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    "customManagers:biomeVersions",
     ":dependencyDashboard",
     ":semanticCommits",
     ":automergeDigest",
     ":automergeMinor",
+    ":pinDigests",
     "security:openssf-scorecard"
   ],
   "timezone": "Europe/Lisbon",
@@ -48,15 +50,6 @@
       ],
       "datasourceTemplate": "{{datasource}}",
       "depNameTemplate": "{{depName}}"
-    },
-    {
-      "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*uses:\\s*(?<packageName>.*?)@(?<currentValue>.*)\\s"
-      ],
-      "datasourceTemplate": "{{datasource}}",
-      "depNameTemplate": "{{depName}}"
     }
   ],
   "hostRules": [
@@ -76,7 +69,6 @@
       "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
       "automerge": false,
       "commitMessagePrefix": "⬆️ MAJOR:",
-      "semanticCommitType": "feat",
       "reviewersFromCodeOwners": true
     },
     {
@@ -85,104 +77,95 @@
       "labels": ["dependencies", "renovate", "minor-patch-update", "priority-low"],
       "automerge": true,
       "automergeType": "pr",
-      "commitMessagePrefix": "🔧 DEPS:",
-      "semanticCommitType": "chore"
+      "commitMessagePrefix": "🔧 DEPS:"
     },
     {
-      "description": "Security updates - high priority",
+      "description": "Security updates - high priority, always processed",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
       "commitMessagePrefix": "🔒 SECURITY:",
-      "semanticCommitType": "fix",
       "schedule": ["at any time"]
     },
     {
-      "description": "Major security updates - manual review required",
+      "description": "Major security updates - manual review, always processed",
       "matchDatasources": ["npm"],
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "security", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔒 MAJOR SECURITY:",
-      "semanticCommitType": "feat",
       "reviewersFromCodeOwners": true,
       "schedule": ["at any time"]
     },
     {
-      "description": "Development dependencies",
+      "description": "Development dependencies - group minor & patch",
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["renovate", "dev-dependencies", "priority-low"],
       "automerge": true,
-      "semanticCommitType": "chore",
+      "commitMessagePrefix": "🔧 DEV:",
       "groupName": "Dev dependencies (minor & patch)"
     },
     {
-      "description": "Major development dependencies updates",
+      "description": "Major development dependencies - manual review",
       "matchDepTypes": ["devDependencies"],
       "matchUpdateTypes": ["major"],
       "labels": ["renovate", "major-update", "dev-dependencies", "priority-medium"],
       "automerge": false,
       "commitMessagePrefix": "⬆️ MAJOR DEV:",
-      "semanticCommitType": "feat",
       "groupName": "Dev dependencies (major)"
     },
     {
-      "description": "Docker images",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["dependencies", "renovate", "docker", "priority-medium"],
-      "commitMessagePrefix": "🐳",
-      "semanticCommitType": "chore"
-    },
-    {
-      "description": "Major Docker image updates",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "renovate", "major-update", "docker", "priority-high"],
-      "automerge": false,
-      "commitMessagePrefix": "🐳 MAJOR:",
-      "semanticCommitType": "feat",
-      "reviewersFromCodeOwners": true
-    },
-    {
-      "description": "GitHub Actions",
+      "description": "GitHub Actions - pin digests, auto-merge minor & patch",
       "matchDatasources": ["github-tags"],
-      "matchDepTypes": ["action"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "github-actions", "priority-medium"],
       "commitMessagePrefix": "🔧 CI:",
-      "semanticCommitType": "ci"
+      "automerge": true,
+      "pinDigests": true
     },
     {
-      "description": "Major GitHub Actions updates",
+      "description": "Major GitHub Actions updates - manual review",
       "matchDatasources": ["github-tags"],
-      "matchDepTypes": ["action"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "github-actions", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔧 MAJOR CI:",
-      "semanticCommitType": "feat",
-      "reviewersFromCodeOwners": true
+      "reviewersFromCodeOwners": true,
+      "pinDigests": true
     },
     {
       "description": "Pin digest updates",
       "matchUpdateTypes": ["pinDigest"],
       "labels": ["dependencies", "renovate", "pin-digest", "priority-low"],
       "automerge": true,
-      "commitMessagePrefix": "📌",
-      "semanticCommitType": "chore"
+      "commitMessagePrefix": "📌"
     },
     {
       "description": "Digest updates",
       "matchUpdateTypes": ["digest"],
       "labels": ["dependencies", "renovate", "digest-update", "priority-low"],
       "automerge": true,
-      "commitMessagePrefix": "🔄",
-      "semanticCommitType": "chore"
+      "commitMessagePrefix": "🔄"
+    },
+    {
+      "description": "Docker images - auto-merge minor & patch",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "labels": ["dependencies", "renovate", "docker", "priority-medium"],
+      "commitMessagePrefix": "🐳"
+    },
+    {
+      "description": "Major Docker image updates - manual review",
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["major"],
+      "labels": ["dependencies", "renovate", "major-update", "docker", "priority-high"],
+      "automerge": false,
+      "commitMessagePrefix": "🐳 MAJOR:",
+      "reviewersFromCodeOwners": true
     },
     {
       "description": "TypeScript and related packages",
@@ -193,24 +176,22 @@
       "groupName": "TypeScript packages"
     },
     {
-      "description": "Major TypeScript and related packages updates",
+      "description": "Major TypeScript and related packages - manual review",
       "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "typescript", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "📘 MAJOR TS:",
-      "semanticCommitType": "feat",
       "groupName": "Major TypeScript packages",
       "reviewersFromCodeOwners": true
     },
     {
-      "description": "ESLint and Prettier packages",
-      "matchPackageNames": ["eslint", "prettier", "@eslint/*", "eslint-*", "@prettier/*", "prettier-*"],
+      "description": "Biome packages",
+      "matchPackageNames": ["@biomejs/biome", "@biomejs/cli-*", "biome"],
       "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["dependencies", "renovate", "linting", "priority-low"],
-      "commitMessagePrefix": "🔧 LINT:",
-      "groupName": "Linting packages",
-      "automerge": true
+      "labels": ["dependencies", "renovate", "biome", "priority-medium"],
+      "commitMessagePrefix": "🦀 BIOME:",
+      "groupName": "Biome packages"
     },
     {
       "description": "Testing packages",
@@ -221,13 +202,12 @@
       "groupName": "Testing packages"
     },
     {
-      "description": "Major testing packages updates",
+      "description": "Major testing packages - manual review",
       "matchPackageNames": ["jest", "vitest", "@testing-library/*", "@jest/*", "jest-*"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "testing", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🧪 MAJOR TEST:",
-      "semanticCommitType": "feat",
       "groupName": "Major testing packages",
       "reviewersFromCodeOwners": true
     },
@@ -240,13 +220,12 @@
       "groupName": "Build tools"
     },
     {
-      "description": "Major build tools and bundlers updates",
+      "description": "Major build tools and bundlers - manual review",
       "matchPackageNames": ["webpack", "vite", "rollup", "esbuild", "parcel", "@vitejs/*", "@rollup/*", "webpack-*"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "build-tools", "priority-high"],
       "automerge": false,
       "commitMessagePrefix": "🔨 MAJOR BUILD:",
-      "semanticCommitType": "feat",
       "groupName": "Major build tools",
       "reviewersFromCodeOwners": true
     }
@@ -255,6 +234,9 @@
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
-    "enabled": false
+    "enabled": true,
+    "schedule": ["on the first day of the month"],
+    "commitMessagePrefix": "🔒 LOCKFILE:",
+    "automerge": true
   }
 }

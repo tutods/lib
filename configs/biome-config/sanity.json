@@ -1,0 +1,32 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "overrides": [
+    {
+      "includes": ["**/sanity.config.ts", "**/sanity.config.js", "**/sanity.cli.ts", "**/sanity.cli.js"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/sanity/**/schema*.{ts,tsx,js,jsx}",
+        "**/schemas/**/*.{ts,tsx,js,jsx}",
+        "**/studio/**/*.{ts,tsx,js,jsx}"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noDefaultExport": "off"
+          },
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    }
+  ]
+}

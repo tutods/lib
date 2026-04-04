@@ -1,28 +1,27 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "javascript": {
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     }
   },
   "linter": {
+    "domains": {
+      "test": "recommended"
+    },
     "rules": {
       "complexity": {
         "noStaticOnlyClass": "off",
-        "noUselessConstructor": "off",
-        "noUselessFragments": "off"
+        "noUselessConstructor": "off"
       },
       "style": {
         "useImportType": "off"
       },
+      "suspicious": {
+        "noConsole": "off"
+      },
       "a11y": {
         "recommended": false
-      },
-      "nursery": {
-        "noLeakedRender": "off",
-        "noDuplicatedSpreadProps": "off",
-        "noAmbiguousAnchorText": "off",
-        "useSortedClasses": "off"
       }
     }
   }

@@ -12,98 +12,107 @@
 - [✨ Features](#-features)
 - [❓ How to install and use it?](#-how-to-install-and-use-it)
   - [Examples of usage](#examples-of-usage)
-    - [React project](#react-project)
-    - [Nest.js project](#nestjs-project)
-    - [Next.js project (App Router)](#nextjs-project-app-router)
+    - [React project (Vite, CRA)](#react-project-vite-cra)
+    - [React + Tailwind CSS project](#react--tailwind-css-project)
+    - [Next.js project](#nextjs-project)
+    - [Next.js + Tailwind CSS + Sanity CMS](#nextjs--tailwind-css--sanity-cms)
+    - [NestJS project](#nestjs-project)
+    - [SolidJS project](#solidjs-project)
+    - [Vanilla TypeScript project](#vanilla-typescript-project)
+  - [Available configurations](#available-configurations)
+- [🏗️ Monorepo Support](#️-monorepo-support)
 - [🔧 Troubleshooting](#-troubleshooting)
   - [Single Quotes in CSS Selectors](#single-quotes-in-css-selectors)
 - [📋 Compatibility](#-compatibility)
+- [🤝 Contributing](#-contributing)
 
 
 ## 📄 Goal
 
-This configuration package has the purpose of store my common configurations used on **[Biome](https://biomejs.dev)**.
+This configuration package stores my common configurations used on **[Biome](https://biomejs.dev)** — the fast formatter and linter for JavaScript, TypeScript, JSX, JSON, CSS, and more.
+
+Built with **monorepo support** in mind, every config uses glob patterns that work at any directory depth (`apps/*`, `packages/*`, etc.).
 
 ### 💡️ What you will find?
 
-For now, you will find 5 configurations, being four of them based on the main one:
+7 composable configurations. Extend only what you need:
 
-- **`base.json`**: stores the basic/global configuration with comprehensive linting rules for JavaScript/TypeScript projects (framework-agnostic);
-- **`react.json`**: extends base configuration with React-specific linting rules (hooks, fragments, etc.);
-- **`nestjs.jsonc`:** extends base configuration for **Nest.js** projects (allowing decorators, etc.);
-- **`solidjs.json`:** extends base configuration for **SolidJS** projects, with SolidJS-specific rules;
-- **`nextjs.json`:** extends base configuration for **Next.js** projects (App Router), disabling `noDefaultExport` rule for specific Next.js files that require default exports.
+| Config | Description |
+|--------|-------------|
+| **`base.json`** | Framework-agnostic core — formatting, VCS, file exclusions, and strict linting rules for any JS/TS project. Includes type-inference rules and auto-enables test domain rules when jest/vitest is detected. |
+| **`react.json`** | React rules — hooks, fragments, a11y, `noReactForwardRef`. Uses the `react` domain (auto-activates when `react` is in `package.json`). |
+| **`nextjs.json`** | Next.js rules — uses the `next` domain (auto-activates when `next >= 14` is detected). Includes App Router overrides (`noDefaultExport` off for pages/layouts/routes). Use together with `react.json`. |
+| **`tailwind.json`** | Tailwind CSS utility class sorting via `useSortedClasses`. Supports `className`, `class`, `clsx`, `cva`, `cn`, `twMerge`, `tv`. |
+| **`nestjs.json`** | NestJS — enables unsafe parameter decorators, disables a11y rules, turns off rules that conflict with NestJS patterns. Auto-enables test domain rules (Jest). |
+| **`solidjs.json`** | SolidJS — uses the `solid` domain. Includes SolidStart entry point overrides. |
+| **`sanity.json`** | Sanity CMS — overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed). |
+
 
 ## ✨ Features
 
-- 🔍 **Comprehensive Linting** - Strict rules for code quality
-- 🎨 **Consistent Formatting** - Uniform code style across projects
-- 🧩 **Project-Specific Configs** - Tailored for different frameworks
-- 🚀 **Easy Integration** - Simple setup with minimal configuration
+- 🔍 **Comprehensive Linting** — Strict rules across `complexity`, `correctness`, `style`, `suspicious`, `security`, `performance`, `nursery`, and the `types` domain
+- 🎨 **Consistent Formatting** — Uniform code style: single quotes, 2-space indent, 120 line width, trailing commas
+- 🧩 **Composable Configs** — Mix and match only what your project needs
+- 📦 **Monorepo-Ready** — All glob patterns use `**` for any directory depth. Supports the `"extends": "//"` microsyntax
+- 🚀 **Biome v2 Domains** — Uses `react`, `next`, `solid`, `test`, `types` domains for automatic rule activation based on your dependencies
+- 🔒 **Safe Nursery Rules** — Explicitly opt-in to stable nursery rules only; no `nursery.recommended: true`
+
 
 ## ❓ How to install and use it?
 
-To install my package and use it is very simple, you only need to follow the steps below.
+1. Install the package using your package manager:
 
-
-1. Install the package using your package manager (list of commands above): <br/>
    ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
     ```bash
-      pnpm add -D @tutods/biome-config @biomejs/biome
-    ```
-   ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
-    ```bash
-      yarn add -D @tutods/biome-config @biomejs/biome
-    ```
-   ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
-    ```bash
-      npm install -D @tutods/biome-config @biomejs/biome
+    pnpm add -D @tutods/biome-config @biomejs/biome
     ```
 
-1. Create the configuration file: <br/>
-   ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
-    ```bash
-      pnpm biome init
-    ```
    ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
     ```bash
-      yarn biome init
-    ```
-   ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
-    ```bash
-      npx biome init
+    yarn add -D @tutods/biome-config @biomejs/biome
     ```
 
-1. On the `biome.json` file (generated on the previous step), remove everything except the `$schema` and `vcs`, adding
-   the line above:
+   ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+    ```bash
+    npm install -D @tutods/biome-config @biomejs/biome
+    ```
+
+2. Create the configuration file:
+
+    ```bash
+    pnpm biome init
+    ```
+
+3. Edit your `biome.json` to extend the configs you need:
+
     ```json
+    {
+      "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
       "extends": ["@tutods/biome-config"]
+    }
     ```
-    - If you want to use the `nestjs`, `solidjs`, or `nextjs` config you only need to add another entry with
-      `@tutods/biome-config/nestjs`, `@tutods/biome-config/solidjs`, or `@tutods/biome-config/nextjs` according to the configuration you want to use.
 
-1. To finish, is missing to setup the scripts on your `package.json`, I usually use the following scripts:
+4. Add lint scripts to your `package.json`:
+
     ```json
+    {
       "lint": "biome check .",
       "lint:fix": "biome check --no-errors-on-unmatched --write .",
       "lint:staged": "biome check --no-errors-on-unmatched --staged .",
-      "lint:ci": "biome ci --no-errors-on-unmatched .",
+      "lint:ci": "biome ci --no-errors-on-unmatched ."
+    }
     ```
-   > ⚠️ **Note:** you can use your own scripts!
+
+> **Note:** You can customize the scripts to fit your workflow.
+
 
 ### Examples of usage
 
-Below, you can find examples of usages:
-
-- for a **React** project, using the base configuration and React-specific rules;
-- for a **Nest.js** project, using the base configuration and the specific Nest.js configuration with specific rules;
-- for a **Next.js** project, using the base configuration, React configuration, and the specific Next.js configuration with App Router rules.
-
-#### React project
+#### React project (Vite, CRA)
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react"
@@ -111,23 +120,26 @@ Below, you can find examples of usages:
 }
 ```
 
-#### Nest.js project
+#### React + Tailwind CSS project
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "extends": [
     "@tutods/biome-config",
-    "@tutods/biome-config/nestjs"
+    "@tutods/biome-config/react",
+    "@tutods/biome-config/tailwind"
   ]
 }
 ```
 
-#### Next.js project (App Router)
+#### Next.js project
+
+Next.js projects extend **both** `react` and `nextjs`. The `next` domain auto-activates when `next` is found in `package.json`.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -136,25 +148,165 @@ Below, you can find examples of usages:
 }
 ```
 
+#### Next.js + Tailwind CSS + Sanity CMS
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "extends": [
+    "@tutods/biome-config",
+    "@tutods/biome-config/react",
+    "@tutods/biome-config/nextjs",
+    "@tutods/biome-config/tailwind",
+    "@tutods/biome-config/sanity"
+  ]
+}
+```
+
+#### NestJS project
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "extends": [
+    "@tutods/biome-config",
+    "@tutods/biome-config/nestjs"
+  ]
+}
+```
+
+#### SolidJS project
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "extends": [
+    "@tutods/biome-config",
+    "@tutods/biome-config/solidjs"
+  ]
+}
+```
+
+#### Vanilla TypeScript project
+
+Just the base — no framework, no UI rules.
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "extends": [
+    "@tutods/biome-config"
+  ]
+}
+```
+
+
+### Available configurations
+
+| Export | Config | Use for |
+|--------|--------|---------|
+| `@tutods/biome-config` | `base.json` | Any JS/TS project |
+| `@tutods/biome-config/react` | `react.json` | React (Vite, CRA, Remix) |
+| `@tutods/biome-config/nextjs` | `nextjs.json` | Next.js (use with `react`) |
+| `@tutods/biome-config/tailwind` | `tailwind.json` | Tailwind CSS projects |
+| `@tutods/biome-config/nestjs` | `nestjs.json` | NestJS backends |
+| `@tutods/biome-config/solidjs` | `solidjs.json` | SolidJS, SolidStart |
+| `@tutods/biome-config/sanity` | `sanity.json` | Sanity CMS projects |
+
+
+## 🏗️ Monorepo Support
+
+All file inclusion/exclusion patterns use `**` globs that work at any directory depth. This means they work correctly in monorepo layouts like:
+
+```
+my-monorepo/
+├── apps/
+│   ├── web/          # Next.js app
+│   ├── admin/        # React app
+│   └── api/          # NestJS app
+├── packages/
+│   ├── ui/           # Shared UI components
+│   └── utils/        # Shared utilities
+├── configs/
+│   └── biome-config/
+└── biome.json
+```
+
+The root `biome.json` extends the base config:
+
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+    "defaultBranch": "main"
+  },
+  "extends": ["@tutods/biome-config"],
+  "files": {
+    "includes": [
+      "!**/packages/**/package.json",
+      "!**/configs/**/package.json",
+      "!**/dist"
+    ]
+  }
+}
+```
+
+Each app uses the `"extends": "//"` microsyntax to inherit from the root without needing a relative path:
+
+```json
+// apps/web/biome.json
+{
+  "extends": ["//", "@tutods/biome-config/react", "@tutods/biome-config/nextjs", "@tutods/biome-config/tailwind"]
+}
+```
+
+```json
+// apps/api/biome.json
+{
+  "extends": ["//", "@tutods/biome-config/nestjs"]
+}
+```
+
+The `"//"` always resolves to the workspace root, regardless of nesting depth.
+
+
 ## 🔧 Troubleshooting
+
 ### Single Quotes in CSS Selectors
 
-When using CSS selectors with single quotes (like class*='size-' ) in JSX attributes, you may encounter issues with Biome's formatting. To resolve this:
+When using CSS selectors with single quotes (like `class*='size-'`) in JSX attributes, you may encounter issues with Biome's formatting. To resolve this:
 
 1. Use template literals for className strings with complex selectors:
-```jsx
-className={`component [&_svg:not([class*='size-'])]:size-4`}
-```
+    ```jsx
+    className={`component [&_svg:not([class*='size-'])]:size-4`}
+    ```
+
 2. Or escape the single quotes in your selectors:
-```jsx
-className="component [&_svg:not([class*=\\'size-\\'])]:size-4"
-```
+    ```jsx
+    className="component [&_svg:not([class*=\\'size-\\'])]:size-4"
+    ```
+
 
 ## 📋 Compatibility
+
 This configuration package is tested with:
 
-- **Biome** v1.9.x
-- **Node.js** v18+
+- **Biome** v2.4.x
+- **Node.js** v20+
+
+Uses Biome v2 features:
+- `linter.domains` for technology-specific rule groups (`react`, `next`, `solid`, `test`, `types`)
+- `"extends": "//"` microsyntax for monorepo root inheritance
+- Promoted nursery rules (`noUselessUndefined`, `useMaxParams`, `noImportCycles`, `noUnusedExpressions`, `useConsistentArrowReturn`, `noDeprecatedImports`)
+- `assist.actions.source.organizeImports` for import sorting
+
+
+## 🤝 Contributing
+
+Issues and pull requests are welcome at [github.com/tutods/lib](https://github.com/tutods/lib).
 
 ---
-*Last updated: Testing automated release workflow*
+*Last updated: Biome v2 domains + nextjs.json config restructure*

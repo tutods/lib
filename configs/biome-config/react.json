@@ -1,6 +1,9 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "linter": {
+    "domains": {
+      "react": "recommended"
+    },
     "rules": {
       "complexity": {
         "noUselessFragments": {
@@ -10,11 +13,27 @@
         }
       },
       "correctness": {
+        "useExhaustiveDependencies": "error",
         "useHookAtTopLevel": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn",
+        "noReactForwardRef": "warn"
       },
       "nursery": {
         "noLeakedRender": "error",
         "noDuplicatedSpreadProps": "error"
+      },
+      "a11y": {
+        "recommended": true,
+        "useKeyWithClickEvents": "off",
+        "useAnchorContent": "off",
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "noRedundantRoles": "warn",
+        "useValidAnchor": "error",
+        "useAriaPropsSupportedByRole": "off",
+        "useAltText": "error"
       }
     }
   },

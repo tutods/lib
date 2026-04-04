@@ -1,13 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
-  "files": {
-    "includes": ["**", "!**/.vinxi", "!**/.output"]
-  },
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "linter": {
-    "rules": {
-      "suspicious": {
-        "noReactSpecificProps": "error"
-      }
+    "domains": {
+      "solid": "recommended"
     }
   },
   "overrides": [

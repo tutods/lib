@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -8,22 +8,6 @@
   },
   "extends": ["@tutods/biome-config"],
   "files": {
-    "includes": ["!**/packages/**/package.json", "!**/config/**/package.json", "!.nx", "!**/dist"]
-  },
-  "linter": {
-    "rules": {
-      "style": {
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
-      }
-    }
+    "includes": ["!**/configs/**/package.json", "!**/packages/**/package.json", "!.nx", "!**/dist"]
   }
 }

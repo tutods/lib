@@ -1,6 +1,6 @@
 name: "Setup Node and PNPM"
 
-description: "Installs Node and PNPM dependencies"
+description: "Sets up Node.js, PNPM, and installs dependencies"
 
 runs:
   using: "composite"
@@ -13,19 +13,12 @@ runs:
     - uses: pnpm/action-setup@v5
       name: 📥 Install PNPM
 
-    # - name: 📂 Get PNPM store directory
-    #   shell: bash
-    #   run: |
-    #     echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-    # - uses: actions/cache@v4
-    #   name: 💾 Setup PNPM cache
-    #   with:
-    #     key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-    #     path: ${{ env.STORE_PATH }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-pnpm-store-
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
+        cache: pnpm
 
     - name: 📲 Install project dependencies
       shell: bash
-      run: CI=true pnpm install --shamefully-hoist
+      run: CI=true pnpm install --frozen-lockfile

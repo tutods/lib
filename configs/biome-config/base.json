@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "vcs": {
     "clientKind": "git",
     "enabled": true,
@@ -12,16 +12,23 @@
       "**",
       "!**/dist",
       "!**/build",
+      "!**/.next",
+      "!**/.vercel",
+      "!**/.turbo",
+      "!**/.vinxi",
+      "!**/.output",
+      "!**/.nx",
+      "!**/.vscode",
+      "!**/.idea",
       "!**/*.gen.ts",
+      "!**/*.gen.tsx",
+      "!**/*.gen.js",
       "!**/vite.config.ts.timestamp-*.mjs",
       "!**/src/codegen",
-      "!.nx",
-      "!.vscode",
-      "!.idea",
       "!**/.env",
       "!**/.env.*",
       "!**/public",
-      "!node_modules",
+      "!**/node_modules",
       "!**/CHANGELOG.md",
       "!**/coverage",
       "!**/out",
@@ -30,7 +37,8 @@
       "!**/pnpm-lock.yaml",
       "!**/package-lock.json",
       "!**/routeTree.gen.ts",
-      "!**/sanity.types.ts"
+      "!**/sanity.types.ts",
+      "!**/next-env.d.ts"
     ]
   },
   "assist": {
@@ -51,6 +59,18 @@
     "bracketSpacing": true,
     "useEditorconfig": true
   },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 120,
+      "quoteStyle": "single"
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
   "javascript": {
     "formatter": {
       "enabled": true,
@@ -65,8 +85,22 @@
       "attributePosition": "auto"
     }
   },
+  "json": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 120,
+      "trailingCommas": "none"
+    }
+  },
   "linter": {
     "enabled": true,
+    "domains": {
+      "project": "all",
+      "test": "recommended",
+      "types": "all"
+    },
     "rules": {
       "recommended": true,
       "complexity": {
@@ -74,7 +108,9 @@
         "noForEach": "off",
         "noUselessStringConcat": "error",
         "noUselessTernary": "error",
-        "noUselessEscapeInRegex": "error"
+        "noUselessEscapeInRegex": "error",
+        "noUselessUndefined": "error",
+        "useMaxParams": "warn"
       },
       "correctness": {
         "recommended": true,
@@ -107,6 +143,7 @@
           "fix": "safe",
           "options": {}
         },
+        "useConsistentArrowReturn": "warn",
         "useNamingConvention": {
           "level": "warn",
           "options": {
@@ -153,43 +190,22 @@
         "noEmptyBlockStatements": "off",
         "useAwait": "error",
         "noTemplateCurlyInString": "error",
-        "noOctalEscape": "error"
+        "noOctalEscape": "error",
+        "noDeprecatedImports": "warn"
       },
       "security": {
         "recommended": true
-      },
-      "a11y": {
-        "recommended": true,
-        "useKeyWithClickEvents": "off",
-        "useAnchorContent": "off",
-        "useFocusableInteractive": "off",
-        "useSemanticElements": "off",
-        "noRedundantRoles": "warn",
-        "useValidAnchor": "error",
-        "useAriaPropsSupportedByRole": "off"
-      },
-      "nursery": {
-        "recommended": true,
-        "useSortedClasses": {
-          "level": "error",
-          "fix": "safe",
-          "options": {
-            "attributes": ["css", "class", "classList", "classNames", "className"],
-            "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
-          }
-        },
-        "noScriptUrl": "error",
-        "useArraySortCompare": "error",
-        "useAwaitThenable": "error",
-        "useRegexpExec": "warn",
-        "noEqualsToNull": "error",
-        "noAmbiguousAnchorText": "warn",
-        "noMultiStr": "error"
       },
       "performance": {
         "recommended": true,
         "noAccumulatingSpread": "off",
         "noDelete": "error"
+      },
+      "nursery": {
+        "noScriptUrl": "error",
+        "noEqualsToNull": "error",
+        "noAmbiguousAnchorText": "warn",
+        "noMultiStr": "error"
       }
     }
   },
@@ -205,7 +221,6 @@
         "**/vite.config.js",
         "**/rollup.config.ts",
         "**/rollup.config.js",
-        "**/sanity.*.ts",
         "**/next.config.ts",
         "**/next.config.js",
         "**/next.config.mjs",
@@ -236,6 +251,27 @@
         "rules": {
           "style": {
             "noDefaultExport": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+        "**/*.spec.js",
+        "**/*.spec.jsx",
+        "**/__tests__/**/*.{ts,tsx,js,jsx}",
+        "**/e2e/**/*.{ts,tsx,js,jsx}"
+      ],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsole": "off"
           }
         }
       }
