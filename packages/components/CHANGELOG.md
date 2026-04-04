@@ -1,3 +1,18 @@
+## 0.8.3 (2026-04-04)
+
+### 📖 Documentation
+
+- **components:** add getting started guide ([d0c62e6d](https://github.com/tutods/lib/commit/d0c62e6d))
+- **components:** add performance tips to README ([321d2e91](https://github.com/tutods/lib/commit/321d2e91))
+
+### 🏡 Chore
+
+- **release:** publish ([#677](https://github.com/tutods/lib/pull/677))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.8.2 (2026-04-04)
 
 ### 🩹 Fixes
