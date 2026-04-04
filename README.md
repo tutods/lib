@@ -75,7 +75,6 @@ This monorepo uses automated workflows for continuous integration, testing, and 
 - **Commit Lint** - Validates commit messages follow conventional commits
 - **Release PR** - Automatically creates release PRs when you push to main
 - **Release** - Publishes packages to npm when release PR is merged
-- **Performance Tracking** - Monitors CI/CD performance metrics
 
 ### Release Process
 
