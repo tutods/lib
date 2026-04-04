@@ -35,10 +35,12 @@ jobs:
     name: Version and Create Release PR
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    # Skip when the release PR (release/next → main) is being merged — its merge
-    # commit message always contains 'release/next' as part of the branch path.
-    # The has_changes=false early-exit inside the job is a further safety net.
-    if: "!contains(github.event.head_commit.message, 'release/next')"
+    # Skip when:
+    # 1. The release PR (release/next → main) is being merged (contains 'release/next')
+    # 2. It's an NX release commit (contains '[release]')
+    if: |
+      !contains(github.event.head_commit.message, 'release/next') &&
+      !contains(github.event.head_commit.message, '[release]')
 
     steps:
       - name: 📥 Checkout (full history for conventional commits)

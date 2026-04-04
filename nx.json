@@ -29,7 +29,8 @@
     "git": {
       "commit": true,
       "tag": false,
-      "push": false
+      "push": false,
+      "commitMessage": "chore(release): version packages [release]"
     },
     "conventionalCommits": {
       "types": {
