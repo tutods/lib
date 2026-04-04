@@ -14,7 +14,7 @@ on:
         options:
           - 1
           - 7
-          -30
+          - 30
           - 90
 
 permissions:
