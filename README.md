@@ -90,10 +90,6 @@ This project uses **automated releases** powered by NX Release and Conventional 
 
 For detailed information, see [Release Documentation](./docs/RELEASE.md).
 
-### Performance Dashboard
-
-View real-time CI/CD performance metrics: [Performance Dashboard](https://tutods.github.io/lib/docs/perf-dashboard.html)
-
 ## 📥 Installation
 
 You can install any of the packages individually using npm, yarn, or pnpm:
