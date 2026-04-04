@@ -1,10 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": ["@tutods/typescript-config/react.json"],
-  "compilerOptions": {
-    "paths": {
-      "~/*": ["src/*"]
-    }
-  },
   "include": ["src", "tsup.config.ts"]
 }
