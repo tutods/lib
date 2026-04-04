@@ -27,7 +27,7 @@
     "projectsRelationship": "independent",
     "releaseTagPattern": "release/{projectName}/{version}",
     "git": {
-      "commit": false,
+      "commit": true,
       "tag": false,
       "push": false
     },
@@ -39,7 +39,7 @@
         "build": true,
         "revert": true,
         "test": false,
-        "ci": false,
+        "ci": true,
         "chore": true
       }
     },

@@ -73,16 +73,13 @@ jobs:
         run: |
           BEFORE=$(git rev-parse HEAD)
           pnpm exec nx release --skip-publish --verbose 2>&1 | tee /tmp/version-output.txt
+          AFTER=$(git rev-parse HEAD)
 
-          # Check if there are any staged changes
-          if git diff --cached --quiet; then
+          if [ "$BEFORE" = "$AFTER" ]; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
             echo "::notice::No version changes detected — no releasable commits since last tags. Skipping."
           else
-            # Commit the version changes
-            git commit -m "chore(release): version packages [release]"
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
-            echo "::notice::Version changes detected and committed."
           fi
 
       - name: 📤 Push to release/next
