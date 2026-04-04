@@ -82,7 +82,7 @@ jobs:
       - name: 📤 Publish to npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-        run: pnpm nx release publish --verbose 2>&1 | tee /tmp/publish-output.txt; exit ${PIPESTATUS[0]}
+        run: pnpm nx release publish --verbose -- --force 2>&1 | tee /tmp/publish-output.txt; exit ${PIPESTATUS[0]}
 
       # Runs after publish so dist-tags are only updated once the new versions
       # are confirmed live in the registry. Moving this before publish would
