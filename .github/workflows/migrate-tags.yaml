@@ -12,7 +12,6 @@ on:
 permissions:
   contents: write
   id-token: write
-  workflows: write
 
 env:
   NX_DAEMON: false

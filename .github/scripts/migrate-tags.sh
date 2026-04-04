@@ -64,9 +64,14 @@ while IFS= read -r old_tag; do
       git tag -a "$new_tag" -m "${new_tag}" "${commit}"
       ((created_tags++)) || true
 
-      # Push new tag
+      # Push new tag (may fail if tag contains workflow files)
       echo "   📤 Pushing new tag"
-      git push origin "$new_tag"
+      if git push origin "$new_tag" 2>&1; then
+        echo "   ✅ Tag pushed successfully"
+      else
+        echo "   ⚠️  Could not push tag (likely contains workflow changes)"
+        echo "   💡 You can push it manually later with: git push origin $new_tag"
+      fi
 
       # Try to create GitHub release with changelog
       # Find the package directory
