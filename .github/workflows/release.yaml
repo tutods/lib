@@ -59,6 +59,10 @@ jobs:
       - name: 🔧 Setup Node and install dependencies
         uses: ./.github/actions/node-setup-and-install
 
+      - name: 🔐 Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
+
       - name: 💾 Cache build outputs
         uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
         with:
