@@ -22,7 +22,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: 🏃 Setup project
-        uses: ./.github/actions/setup-project
+        uses: ./.github/actions/node-setup-and-install
 
       - name: 👧 Lint check
         id: lint
