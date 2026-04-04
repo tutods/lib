@@ -96,8 +96,8 @@ jobs:
                   event: $event
                 }]
                 | .workflows[$workflow].total_runs += 1
-                | (.workflows[$workflow].successful_runs += 1 | .) if $status == "success" else .
-                | (.workflows[$workflow].failed_runs += 1 | .) if $status == "failure" else .
+                | if $status == "success" then .workflows[$workflow].successful_runs += 1 else . end
+                | if $status == "failure" then .workflows[$workflow].failed_runs += 1 else . end
                 | .workflows[$workflow].avg_duration_sec = ((.workflows[$workflow].avg_duration_sec * (.workflows[$workflow].total_runs - 1)) + ($duration | tonumber)) / .workflows[$workflow].total_runs
               ')
 
