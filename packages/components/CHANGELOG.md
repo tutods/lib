@@ -1,3 +1,21 @@
+## 0.8.2 (2026-04-04)
+
+### 🩹 Fixes
+
+- **ci:** resolve TS5101 baseUrl deprecation in components DTS build ([32a7ef53](https://github.com/tutods/lib/commit/32a7ef53))
+- path aliases, tsconfig.base deprecations, and action versions ([9c4d1fdd](https://github.com/tutods/lib/commit/9c4d1fdd))
+- **components:** resolve path alias and pnpm warning ([a1d2fda0](https://github.com/tutods/lib/commit/a1d2fda0))
+- publish gate, renovate preset, and typescript-config restructure ([c93e2f82](https://github.com/tutods/lib/commit/c93e2f82))
+
+### 🏡 Chore
+
+- tsconfig ([5b11f02d](https://github.com/tutods/lib/commit/5b11f02d))
+
+### ❤️ Thank You
+
+- Claude Sonnet 4.6
+- Daniel Sousa @TutoDS
+
 ## 0.8.1
 
 ### 🧱 Updated Dependencies
