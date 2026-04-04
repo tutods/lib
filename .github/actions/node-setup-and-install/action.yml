@@ -1,0 +1,53 @@
+name: "Setup Node and PNPM and Install Dependencies"
+
+description: >
+  Installs PNPM and Node.js, restores the node_modules cache, then installs
+  dependencies from npm registry.
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: 📦 Install PNPM
+      uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 #v5
+      # Reads packageManager field from package.json — pnpm@10.33.0
+
+    - name: 🟢 Install Node.js
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f #v6.3
+      with:
+        node-version-file: ".nvmrc"
+        # No cache: "pnpm" here — the custom node_modules cache below is the
+        # sole fast path. Both caches share the same pnpm-lock.yaml key so they
+        # always hit or miss together; the pnpm store would be restored on hits
+        # but never used (install is skipped), making it pure overhead.
+
+    # Cache node_modules keyed on OS + lockfile — the only cache needed.
+    # No restore-keys: a partially wrong node_modules is worse than a miss.
+    - name: 💾 Cache node_modules
+      id: cache-node-modules
+      uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+      with:
+        path: |
+          node_modules
+          packages/*/node_modules
+          apps/*/node_modules
+        key: node-modules-${{ runner.os }}-${{ hashFiles('.nvmrc', 'pnpm-lock.yaml') }}
+
+    - name: 📥 Install dependencies
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      shell: bash
+      run: pnpm install --frozen-lockfile
+
+    - name: 💾 Cache NX computation cache
+      uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 #v5.0.4
+      with:
+        path: |
+          .nx/cache
+          node_modules/.cache
+        # run_id makes the key unique per run so each run saves its updated NX
+        # task results. restore-keys fall back to the most recent cache for the
+        # same lockfile, letting NX decide internally which tasks are still valid.
+        key: nx-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}
+        restore-keys: |
+          nx-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-
+          nx-${{ runner.os }}-

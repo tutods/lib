@@ -1,0 +1,195 @@
+name: Release
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+  workflow_dispatch:
+    # Manual trigger — use when a publish needs to be retried without re-merging
+    # the release PR (e.g. after a partial failure where tags were already pushed).
+
+# cancel-in-progress: false ensures an in-flight publish is never interrupted.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+env:
+  NX_DAEMON: false
+  NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+  LEFTHOOK: "0"
+
+jobs:
+  # ─── BUILD AND PUBLISH ────────────────────────────────────────────────────────
+  # First job — runs when the release/next PR is merged into main.
+  # Uses pull_request_target so the trigger is based on the branch name
+  # (head.ref == 'release/next'), not a commit message — works correctly for
+  # regular merge commits, squash merges, and rebase merges alike.
+  #
+  # Authenticates to npm, installs dependencies, builds all packages, publishes
+  # to npm registry, and sets the `latest` dist-tag on each package.
+  #
+  # Tags are intentionally NOT created here — they are pushed in the `tag` job
+  # only after a successful publish, so a failed publish never leaves orphaned
+  # git tags pointing at versions that don't exist in the registry.
+  #
+  # Downstream jobs are skipped automatically when this job is skipped or fails.
+  build-and-publish:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'release/next'
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6
+        with:
+          fetch-depth: 1
+
+      - name: 🔧 Setup Node and install dependencies
+        uses: ./.github/actions/node-setup-and-install
+
+      - name: 🔐 Authenticate to npm registry
+        run: |
+          echo "npm-authenticate=true" >> $GITHUB_OUTPUT
+          echo "//registry.npmjs.org/:_authToken=\${{ secrets.NPM_TOKEN }}" > .npmrc
+        id: npm-auth
+
+      - name: 🏗️ Build all packages
+        run: pnpm nx run-many -t build
+
+      - name: 📤 Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm nx release publish --verbose 2>&1 | tee /tmp/publish-output.txt; exit ${PIPESTATUS[0]}
+
+      # Runs after publish so dist-tags are only updated once the new versions
+      # are confirmed live in the registry. Moving this before publish would
+      # point `latest` at a version that may not exist if publish fails.
+      - name: 🏷️ Ensure latest dist-tag is set for all packages
+        run: |
+          for pkg_json in packages/*/package.json; do
+            private=$(jq -r '.private // false' "$pkg_json")
+            [ "$private" = "false" ] || continue
+            name=$(jq -r '.name' "$pkg_json")
+            version=$(jq -r '.version' "$pkg_json")
+            npm dist-tag add "${name}@${version}" latest 2>/dev/null \
+              && echo "✅ Set latest tag: ${name}@${version}" \
+              || echo "⚠️  Skipped (not yet published): ${name}@${version}"
+          done
+
+  # ─── TAG ──────────────────────────────────────────────────────────────────────
+  # Runs only after build-and-publish succeeds — guarantees that every pushed
+  # tag has a corresponding published version in the registry. A failed publish
+  # therefore never leaves orphaned tags that would corrupt future release windows
+  # or confuse `nx release` version anchoring.
+  #
+  # Safe to re-run: the tagging step skips tags that already exist.
+  tag:
+    name: Create and Push Git Tags
+    needs: build-and-publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all tags
+        run: git fetch --tags --force
+
+      - name: Create and push git tags
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          for pkg_json in packages/*/package.json; do
+            private=$(jq -r '.private // false' "$pkg_json")
+            [ "$private" = "false" ] || continue
+
+            name=$(jq -r '.name' "$pkg_json")
+            version=$(jq -r '.version' "$pkg_json")
+            tag="${name}@${version}"
+
+            if git rev-parse "$tag" >/dev/null 2>&1; then
+              echo "Tag already exists: $tag (skipping)"
+            else
+              git tag -a "$tag" -m "$tag"
+              echo "Created tag: $tag"
+            fi
+          done
+
+          git push origin --tags
+
+  # ─── GITHUB RELEASES ──────────────────────────────────────────────────────────
+  # Creates one GitHub Release per package using the CHANGELOG.md section for
+  # the current version as release notes.
+  #
+  # Runs on ubuntu-latest — only needs gh CLI and the repo checkout, no fe-runner.
+  # Safe to re-run after a partial failure: skips releases that already exist.
+  # Skipped automatically if tag was skipped or failed.
+  github-releases:
+    name: Create GitHub Releases
+    needs: tag
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd #v6
+        with:
+          fetch-depth: 1
+
+      # gh is pre-installed on ubuntu-latest — no setup step needed.
+
+      # Creates a GitHub Release per package, using the CHANGELOG.md section for
+      # the current version as the release notes. Skipped for packages whose
+      # release already exists (safe to re-run after a partial failure).
+      - name: Create GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          for pkg_json in packages/*/package.json; do
+            private=$(jq -r '.private // false' "$pkg_json")
+            [ "$private" = "false" ] || continue
+
+            name=$(jq -r '.name' "$pkg_json")
+            version=$(jq -r '.version' "$pkg_json")
+            tag="${name}@${version}"
+            pkg_dir=$(dirname "$pkg_json")
+
+            if gh release view "$tag" --repo "$REPO" >/dev/null 2>&1; then
+              echo "GitHub Release already exists for $tag — skipping"
+              continue
+            fi
+
+            # Extract the changelog section for this version: everything between
+            # "## {version}" and the next "## " header.
+            changelog_file="${pkg_dir}/CHANGELOG.md"
+            notes=""
+            if [ -f "$changelog_file" ]; then
+              notes=$(awk -v ver="${version}" \
+                'substr($0, 1, length("## " ver)) == ("## " ver) { flag=1; next }
+                 /^## / { if (flag) exit }
+                 flag { print }' \
+                "$changelog_file")
+            fi
+
+            printf '%s\n' "${notes:-"No changelog available."}" > /tmp/release-notes.txt
+
+            gh release create "$tag" \
+              --repo "$REPO" \
+              --title "$tag" \
+              --notes-file /tmp/release-notes.txt
+
+            echo "Created GitHub Release: $tag"
+          done

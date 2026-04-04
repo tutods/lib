@@ -1,0 +1,66 @@
+name: "Detect Affected Projects"
+
+description: >
+  Detects which NX projects were affected by the current push.
+  Outputs a comma-separated list of affected project names.
+  Assumes checkout and pnpm install have already been performed by the caller.
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: 🔍 Detect affected projects
+      id: affected
+      shell: bash
+
+inputs:
+  base_sha:
+    description: "Base commit SHA for NX affected comparison"
+    required: true
+  head_sha:
+    description: "Head commit SHA for NX affected comparison"
+    required: true
+
+outputs:
+  projects:
+    description: "Comma-separated list of affected project names"
+    value: ${{ steps.affected.outputs.projects }}
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Detect affected projects
+      id: affected
+      shell: bash
+      run: |
+        set -e
+
+        BASE_SHA="${{ inputs.base_sha }}"
+        HEAD_SHA="${{ inputs.head_sha }}"
+
+        if [ "$BASE_SHA" = "0000000000000000000000000000000000000000" ]; then
+          BASE_SHA=$(git rev-list --max-parents=0 HEAD)
+        fi
+
+        echo "Detecting NX affected projects (base=$BASE_SHA, head=$HEAD_SHA)..."
+        NX_STDERR=$(mktemp)
+        NX_AFFECTED=$(NX_BASE="$BASE_SHA" NX_HEAD="$HEAD_SHA" \
+          pnpm exec nx show projects --affected 2>"$NX_STDERR") || {
+          echo "::error::NX affected detection failed (base=$BASE_SHA, head=$HEAD_SHA):"
+          cat "$NX_STDERR"
+          rm -f "$NX_STDERR"
+          exit 1
+        }
+        rm -f "$NX_STDERR"
+        echo "NX affected: ${NX_AFFECTED:-<none>}"
+
+        if [ -z "$NX_AFFECTED" ]; then
+          echo "No affected projects found."
+          echo "projects=none" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+
+        PROJECTS=$(echo "$NX_AFFECTED" | tr '\n' ',' | sed 's/,$//')
+
+        echo "projects=${PROJECTS}" >> "$GITHUB_OUTPUT"

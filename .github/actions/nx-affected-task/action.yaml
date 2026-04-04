@@ -1,0 +1,38 @@
+name: "Run NX Affected Task"
+description: >
+  Runs `pnpm nx affected -t <task>` against the current NX_BASE/NX_HEAD range
+  and captures the last 30 lines of output as error_snippet on failure.
+  Requires NX_BASE and NX_HEAD to be set in the calling job's env.
+
+inputs:
+  task:
+    description: "NX task name to run against affected projects (e.g. lint, build, test)"
+    required: true
+
+outputs:
+  error_snippet:
+    description: "Last 30 lines of task output — populated only on failure"
+    value: ${{ steps.capture.outputs.error_snippet }}
+
+runs:
+  using: composite
+
+  steps:
+    - name: 🏃 Run NX affected (${{ inputs.task }})
+      shell: bash
+      env:
+        TASK: ${{ inputs.task }}
+      run: pnpm nx affected -t "$TASK" 2>&1 | tee "/tmp/nx-${TASK}.txt"; exit ${PIPESTATUS[0]}
+
+    - name: 📋 Capture error output
+      id: capture
+      if: failure()
+      shell: bash
+      env:
+        TASK: ${{ inputs.task }}
+      run: |
+        {
+          echo 'error_snippet<<EOF'
+          tail -30 "/tmp/nx-${TASK}.txt"
+          echo 'EOF'
+        } >> "$GITHUB_OUTPUT"

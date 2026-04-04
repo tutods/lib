@@ -2,90 +2,71 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [
+      {
+        "runtime": "node -e 'console.log(`${process.platform}-${process.arch}`)'"
+      },
+      {
+        "runtime": "node --version"
+      },
+      {
+        "runtime": "pnpm --version"
+      }
+    ],
     "production": [
       "default",
-      "!{projectRoot}/jest.config.ts",
       "!{projectRoot}/**/*.spec.ts",
+      "!{projectRoot}/**/*.spec.tsx",
       "!{projectRoot}/**/*.test.ts",
-      "!{projectRoot}/eslint.config.mjs",
-      "!{projectRoot}/tsup.config.ts",
-      "!{projectRoot}/biome.json"
-    ],
-    "sharedGlobals": []
+      "!{projectRoot}/**/*.test.tsx",
+      "!{projectRoot}/**/*.stories.ts",
+      "!{projectRoot}/**/*.stories.tsx"
+    ]
   },
-  "targetDefaults": {
-    "build": {
-      "inputs": ["production", "^production"],
-      "dependsOn": ["^build"],
-      "outputs": ["{projectRoot}/dist"],
-      "cache": true
-    },
-    "@nx/js:tsc": {
-      "cache": true,
-      "dependsOn": ["^build"],
-      "inputs": ["default", "^default"]
-    }
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/js/typescript",
-      "options": {
-        "typecheck": {
-          "targetName": "typecheck"
-        },
-        "build": {
-          "targetName": "build",
-          "configName": "tsconfig.lib.json",
-          "buildDepsName": "build-deps",
-          "watchDepsName": "watch-deps"
-        }
-      }
-    }
-  ],
   "release": {
-    "versionPlans": false,
     "projectsRelationship": "independent",
-    "releaseTagPattern": "release/{projectName}/{version}",
-    "projects": ["packages/*", "configs/*"],
+    "releaseTagPattern": "{projectName}@{version}",
     "git": {
       "commit": false,
       "tag": false,
       "push": false
     },
-    "changelog": {
-      "projectChangelogs": {
-        "createRelease": "github",
-        "renderOptions": {
-          "authors": false,
-          "mapAuthorsToGitHubUsernames": true,
-          "versionTitleDate": false,
-          "commitReferences": true
-        }
-      },
-      "workspaceChangelog": false
-    },
-    "version": {
-      "preVersionCommand": "nx run-many -t build packages/*",
-      "conventionalCommits": true,
-      "generatorOptions": {
-        "installIgnoreScripts": true,
-        "registry": "https://registry.npmjs.org"
-      },
-      "versionActionsOptions": {
-        "installArgs": "--no-frozen-lockfile",
-        "skipLockFileUpdate": true
-      }
-    },
     "conventionalCommits": {
       "types": {
         "docs": true,
-        "deps": {
-          "semverBump": "patch"
-        },
-        "style": {
-          "semverBump": "minor"
-        }
+        "refactor": true,
+        "style": true,
+        "build": true,
+        "revert": true,
+        "test": false,
+        "ci": false,
+        "chore": true
       }
+    },
+    "version": {
+      "conventionalCommits": true
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": true
+    },
+    "publish": {
+      "registry": "https://registry.npmjs.org",
+      "installIgnoreScripts": true
     }
-  }
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["production", "^production"],
+      "dependsOn": ["^build"],
+      "cache": true,
+      "outputs": ["{projectRoot}/dist"]
+    },
+    "lint": {
+      "cache": true,
+      "inputs": ["default", "{workspaceRoot}/biome.json", "{projectRoot}/biome.json"]
+    }
+  },
+  "analytics": false,
+  "neverConnectToCloud": true
 }
