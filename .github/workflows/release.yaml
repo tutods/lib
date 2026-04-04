@@ -37,7 +37,9 @@ jobs:
     name: Build and Publish
     runs-on: ubuntu-latest
     timeout-minutes: 25
-    if: github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'release/next'
+    if: |
+      (github.event.pull_request.merged == true && github.event.pull_request.head.ref == 'release/next') ||
+      github.event_name == 'workflow_dispatch'
     permissions:
       contents: read
       id-token: write
