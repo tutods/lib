@@ -74,11 +74,11 @@ importers:
   packages/components:
     dependencies:
       react:
-        specifier: '>=19.2.4'
-        version: 19.2.4
+        specifier: '>=19.2.5'
+        version: 19.2.5
       react-dom:
-        specifier: '>=19.2.4'
-        version: 19.2.4(react@19.2.4)
+        specifier: '>=19.2.5'
+        version: 19.2.5(react@19.2.5)
     devDependencies:
       '@tutods/typescript-config':
         specifier: 0.7.1
