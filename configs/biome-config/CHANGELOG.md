@@ -1,3 +1,9 @@
+## 0.13.6 (2026-04-10)
+
+### 🏡 Chore
+
+- **biome:** update @biomejs/biome to 2.4.11 ([#687](https://github.com/tutods/lib/pull/687))
+
 ## 0.13.5 (2026-04-04)
 
 ### 🏡 Chore
