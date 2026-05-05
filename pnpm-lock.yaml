@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.4.13
+        specifier: ^2.4.14
         version: 2.4.14
       '@commitlint/cli':
         specifier: ^20.5.3
@@ -66,7 +66,7 @@ importers:
   configs/biome-config:
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.4.13
+        specifier: ^2.4.14
         version: 2.4.14
 
   configs/typescript-config: {}
