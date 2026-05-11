@@ -44,9 +44,9 @@
     "./sanity": "./sanity.json"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.14"
+    "@biomejs/biome": "^2.4.15"
   },
   "peerDependencies": {
-    "@biomejs/biome": ">=2.4.14"
+    "@biomejs/biome": ">=2.4.15"
   }
 }
