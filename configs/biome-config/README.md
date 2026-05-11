@@ -39,13 +39,13 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 | Config | Description |
 |--------|-------------|
-| **`base.json`** | Framework-agnostic core — formatting, VCS, file exclusions, and strict linting rules for any JS/TS project. Includes type-inference rules and auto-enables test domain rules when jest/vitest is detected. |
+| **`base.json`** | Framework-agnostic core — formatting, VCS, file exclusions, and strict linting rules for any JS/TS project. Includes type-inference rules, logic simplification, and auto-enables test domain rules when jest/vitest is detected. |
 | **`react.json`** | React rules — hooks, fragments, a11y, `noReactForwardRef`. Uses the `react` domain (auto-activates when `react` is in `package.json`). |
-| **`nextjs.json`** | Next.js rules — uses the `next` domain (auto-activates when `next >= 14` is detected). Includes App Router overrides (`noDefaultExport` off for pages/layouts/routes). Use together with `react.json`. |
+| **`nextjs.json`** | Next.js rules — uses the `next` and `react` domains (auto-activates when `next >= 14` is detected). Includes App Router overrides (`noDefaultExport` off for pages/layouts/routes). Use together with `react.json` for additional a11y/fragment rules. |
 | **`tailwind.json`** | Tailwind CSS utility class sorting via `useSortedClasses`. Supports `className`, `class`, `clsx`, `cva`, `cn`, `twMerge`, `tv`. |
 | **`nestjs.json`** | NestJS — enables unsafe parameter decorators, disables a11y rules, turns off rules that conflict with NestJS patterns. Auto-enables test domain rules (Jest). |
 | **`solidjs.json`** | SolidJS — uses the `solid` domain. Includes SolidStart entry point overrides. |
-| **`sanity.json`** | Sanity CMS — overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed). |
+| **`sanity.json`** | Sanity CMS — uses the `react` domain. Includes overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed). |
 
 
 ## ✨ Features
@@ -55,7 +55,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 - 🧩 **Composable Configs** — Mix and match only what your project needs
 - 📦 **Monorepo-Ready** — All glob patterns use `**` for any directory depth. Supports the `"extends": "//"` microsyntax
 - 🚀 **Biome v2 Domains** — Uses `react`, `next`, `solid`, `test`, `types` domains for automatic rule activation based on your dependencies
-- 🔒 **Safe Nursery Rules** — Explicitly opt-in to stable nursery rules only; no `nursery.recommended: true`
+- 🧪 **Nursery Rules** — `nursery.recommended` is enabled to automatically benefit from new stable-quality rules as Biome evolves
 
 
 ## ❓ How to install and use it?
@@ -87,7 +87,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
     ```json
     {
-      "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+      "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
       "extends": ["@tutods/biome-config"]
     }
     ```
@@ -112,7 +112,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react"
@@ -124,7 +124,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -135,11 +135,11 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 #### Next.js project
 
-Next.js projects extend **both** `react` and `nextjs`. The `next` domain auto-activates when `next` is found in `package.json`.
+Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config includes the `react` domain, but `react.json` adds extra a11y, fragment, and JSX rules.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -152,7 +152,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `next` domain auto-ac
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -167,7 +167,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `next` domain auto-ac
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/nestjs"
@@ -179,7 +179,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `next` domain auto-ac
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/solidjs"
@@ -193,7 +193,7 @@ Just the base — no framework, no UI rules.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "extends": [
     "@tutods/biome-config"
   ]
@@ -236,7 +236,7 @@ The root `biome.json` extends the base config:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -302,6 +302,7 @@ Uses Biome v2 features:
 - `"extends": "//"` microsyntax for monorepo root inheritance
 - Promoted nursery rules (`noUselessUndefined`, `useMaxParams`, `noImportCycles`, `noUnusedExpressions`, `useConsistentArrowReturn`, `noDeprecatedImports`)
 - `assist.actions.source.organizeImports` for import sorting
+- `nursery.recommended` enabled for automatic new rule adoption
 
 
 ## 🤝 Contributing
@@ -309,4 +310,4 @@ Uses Biome v2 features:
 Issues and pull requests are welcome at [github.com/tutods/lib](https://github.com/tutods/lib).
 
 ---
-*Last updated: Biome v2 domains + nextjs.json config restructure*
+*Last updated: Biome v2.4.15 — schema sync, new rules, domain improvements*

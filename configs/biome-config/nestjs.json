@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
   "javascript": {
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
@@ -12,22 +12,70 @@
     "rules": {
       "complexity": {
         "noStaticOnlyClass": "off",
-        "noUselessConstructor": "off"
+        "noUselessConstructor": "off",
+        "noBannedTypes": "warn"
       },
-      "style": {
-        "useImportType": "off"
+      "correctness": {
+        "noUnusedImports": "warn"
       },
       "suspicious": {
-        "noConsole": {
-          "level": "error",
+        "noExplicitAny": "warn"
+      },
+      "style": {
+        "useExportType": "off",
+        "useImportType": "off",
+        "useNamingConvention": {
+          "level": "warn",
           "options": {
-            "allow": ["error", "warn", "log"]
+            "conventions": [
+              {
+                "formats": ["camelCase", "CONSTANT_CASE", "snake_case", "PascalCase"],
+                "selector": {
+                  "kind": "objectLiteralMember"
+                }
+              },
+              {
+                "formats": ["PascalCase"],
+                "selector": {
+                  "kind": "typeAlias"
+                }
+              },
+              {
+                "formats": ["camelCase", "CONSTANT_CASE", "snake_case"],
+                "selector": {
+                  "kind": "typeProperty"
+                }
+              },
+              {
+                "formats": ["PascalCase"],
+                "selector": {
+                  "kind": "enum"
+                }
+              },
+              {
+                "formats": ["CONSTANT_CASE"],
+                "selector": {
+                  "kind": "enumMember"
+                }
+              }
+            ],
+            "requireAscii": true,
+            "strictCase": false
           }
         }
-      },
-      "a11y": {
-        "recommended": false
       }
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["tests/**/*.ts", "**/*.spec.ts", "**/*.test.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    }
+  ]
 }

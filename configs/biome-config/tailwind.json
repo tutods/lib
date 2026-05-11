@@ -1,14 +1,40 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "rules": {
       "nursery": {
         "useSortedClasses": {
-          "level": "error",
           "fix": "safe",
+          "level": "error",
           "options": {
             "attributes": ["css", "class", "classList", "classNames", "className"],
             "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
+          }
+        }
+      },
+      "suspicious": {
+        "noUnknownAtRules": {
+          "level": "error",
+          "options": {
+            "ignore": [
+              "tailwind",
+              "apply",
+              "config",
+              "custom-variant",
+              "keyframes",
+              "layer",
+              "plugin",
+              "reference",
+              "source",
+              "theme",
+              "utility",
+              "variant"
+            ]
           }
         }
       }

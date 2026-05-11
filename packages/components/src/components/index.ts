@@ -1,1 +1,2 @@
-export * from './ConditionalContainer';
+export * from './conditional-contianer';
+export * from './show';
