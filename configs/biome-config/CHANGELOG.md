@@ -1,3 +1,22 @@
+## 0.14.0 (2026-05-11)
+
+### 🚀 Features
+
+- **biome-config:** upgrade schemas to 2.4.15, add domains, fix file patterns ([91dad841](https://github.com/tutods/lib/commit/91dad841))
+
+### 🏡 Chore
+
+- **biome:** update @biomejs/biome to 2.4.15 ([#712](https://github.com/tutods/lib/pull/712))
+- **biome:** update @biomejs/biome to 2.4.14 ([#707](https://github.com/tutods/lib/pull/707))
+- **biome:** update @biomejs/biome to 2.4.13 ([#697](https://github.com/tutods/lib/pull/697))
+- **biome:** update @biomejs/biome to 2.4.12 ([#690](https://github.com/tutods/lib/pull/690))
+- **release:** version packages [release] ([ad8611ad](https://github.com/tutods/lib/commit/ad8611ad))
+- **biome:** update @biomejs/biome to 2.4.11 ([#687](https://github.com/tutods/lib/pull/687))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.13.6 (2026-04-10)
 
 ### 🏡 Chore
