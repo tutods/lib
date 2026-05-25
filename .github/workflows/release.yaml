@@ -25,8 +25,9 @@ jobs:
   # (head.ref == 'release/next'), not a commit message — works correctly for
   # regular merge commits, squash merges, and rebase merges alike.
   #
-  # Authenticates to npm, installs dependencies, builds all packages, publishes
-  # to npm registry, and sets the `latest` dist-tag on each package.
+  # Authenticates to npm via OIDC (Trusted Publishing — no stored token needed).
+  # Builds all packages, publishes to npm with provenance, and sets the `latest`
+  # dist-tag on each package.
   #
   # Tags are intentionally NOT created here — they are pushed in the `tag` job
   # only after a successful publish, so a failed publish never leaves orphaned
@@ -61,9 +62,10 @@ jobs:
       - name: 🔧 Setup Node and install dependencies
         uses: ./.github/actions/node-setup-and-install
 
-      - name: 🔐 Configure npm authentication
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_ACCESS_TOKEN }}" > .npmrc
+      - name: 🔐 Configure npm registry (Trusted Publishing via OIDC)
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          registry-url: 'https://registry.npmjs.org'
 
       - name: 💾 Cache build outputs
         uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
@@ -78,6 +80,7 @@ jobs:
 
       - name: 📤 Publish to npm
         env:
+          NPM_CONFIG_PROVENANCE: "true"
           NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: |
           # Build packages first
@@ -86,7 +89,7 @@ jobs:
           # Track failures
           FAILED=""
 
-          # Publish with --force flag for each package
+          # Publish each public package with provenance and public access
           for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
             [ "$private" = "false" ] || continue
@@ -94,7 +97,7 @@ jobs:
             pkg_dir=$(dirname "$pkg_json")
             echo "Publishing $pkg_dir..."
             cd "$pkg_dir"
-            if ! pnpm publish --force --no-git-checks; then
+            if ! pnpm publish --force --no-git-checks --access public; then
               echo "❌ Failed to publish $pkg_dir"
               FAILED="$FAILED $pkg_dir"
             else
@@ -113,6 +116,8 @@ jobs:
       # are confirmed live in the registry. Moving this before publish would
       # point `latest` at a version that may not exist if publish fails.
       - name: 🏷️ Ensure latest dist-tag is set for all packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: |
           for pkg_json in packages/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
