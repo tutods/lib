@@ -81,7 +81,6 @@ jobs:
       - name: 📤 Publish to npm
         env:
           NPM_CONFIG_PROVENANCE: "true"
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: |
           # Build packages first
           pnpm nx run-many -t build
@@ -89,15 +88,25 @@ jobs:
           # Track failures
           FAILED=""
 
-          # Publish each public package with provenance and public access
+          # Publish each public package with provenance and public access.
+          # Already-published versions are skipped so workflow_dispatch retries
+          # don't fail on packages that succeeded in a previous run.
           for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
             [ "$private" = "false" ] || continue
 
             pkg_dir=$(dirname "$pkg_json")
-            echo "Publishing $pkg_dir..."
+            name=$(jq -r '.name' "$pkg_json")
+            version=$(jq -r '.version' "$pkg_json")
+
+            if npm view "${name}@${version}" version 2>/dev/null | grep -qx "${version}"; then
+              echo "⏭️ Already published ${name}@${version} — skipping"
+              continue
+            fi
+
+            echo "Publishing ${name}@${version}..."
             cd "$pkg_dir"
-            if ! pnpm publish --force --no-git-checks --access public; then
+            if ! pnpm publish --no-git-checks --access public; then
               echo "❌ Failed to publish $pkg_dir"
               FAILED="$FAILED $pkg_dir"
             else
@@ -116,8 +125,6 @@ jobs:
       # are confirmed live in the registry. Moving this before publish would
       # point `latest` at a version that may not exist if publish fails.
       - name: 🏷️ Ensure latest dist-tag is set for all packages
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
         run: |
           for pkg_json in packages/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
