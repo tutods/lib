@@ -1,3 +1,13 @@
+## 0.9.0 (2026-05-25)
+
+### 🚀 Features
+
+- **components:** add render prop to Show with typed value access ([bb188a0](https://github.com/tutods/lib/commit/bb188a0))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.8.4 (2026-04-04)
 
 ### 📖 Documentation
