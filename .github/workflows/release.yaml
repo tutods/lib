@@ -106,7 +106,7 @@ jobs:
 
             echo "Publishing ${name}@${version}..."
             cd "$pkg_dir"
-            if ! pnpm publish --no-git-checks --access public; then
+            if ! npm publish --access public; then
               echo "❌ Failed to publish $pkg_dir"
               FAILED="$FAILED $pkg_dir"
             else
