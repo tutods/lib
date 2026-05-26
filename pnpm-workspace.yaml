@@ -3,4 +3,23 @@ packages:
   - "configs/*"
 
 allowBuilds:
+  "@swc/core": false
+  esbuild: false
   lefthook: true
+  nx: true
+
+minimumReleaseAgeExclude:
+  - "@nx/devkit@22.7.4"
+  - "@nx/js@22.7.4"
+  - "@nx/nx-darwin-arm64@22.7.4"
+  - "@nx/nx-darwin-x64@22.7.4"
+  - "@nx/nx-freebsd-x64@22.7.4"
+  - "@nx/nx-linux-arm-gnueabihf@22.7.4"
+  - "@nx/nx-linux-arm64-gnu@22.7.4"
+  - "@nx/nx-linux-arm64-musl@22.7.4"
+  - "@nx/nx-linux-x64-gnu@22.7.4"
+  - "@nx/nx-linux-x64-musl@22.7.4"
+  - "@nx/nx-win32-arm64-msvc@22.7.4"
+  - "@nx/nx-win32-x64-msvc@22.7.4"
+  - "@nx/workspace@22.7.4"
+  - nx@22.7.4
