@@ -18,7 +18,8 @@
     "eslint:fix": "nx run-many -t eslint --fix",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",
     "lint:staged": "biome check --no-errors-on-unmatched --staged .",
-    "lint:ci": "biome ci --no-errors-on-unmatched ."
+    "lint:ci": "biome ci --no-errors-on-unmatched .",
+    "renovate:validate": "renovate-config-validator --strict configs/renovate-config/default.json .github/renovate.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
@@ -36,6 +37,7 @@
     "nx": "22.7.4",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
+    "renovate": "^43.150.0",
     "tslib": "^2.8.1",
     "tsup": "^8.5.1",
     "typescript": "~6.0.3"

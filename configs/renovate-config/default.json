@@ -1,6 +1,5 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [":dependencyDashboard", ":semanticCommits", "security:openssf-scorecard"],
+  "extends": [":dependencyDashboard", ":semanticCommits", "security:openssf-scorecard", "customManagers:biomeVersions"],
   "timezone": "Europe/Lisbon",
   "schedule": ["before 3am every weekday"],
   "labels": ["dependencies", "renovate"],
@@ -15,7 +14,7 @@
   "rebaseWhen": "conflicted",
   "minimumReleaseAge": "3 days",
   "osvVulnerabilityAlerts": true,
-  "fetchReleaseNotes": true,
+  "fetchChangeLogs": "pr",
   "rollbackPrs": true,
   "configMigration": true,
   "separateMinorPatch": true,
@@ -24,7 +23,6 @@
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
   "commitMessageSuffix": "to {{newVersion}}",
-  "commitMessageBody": "Signed-off-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
   "customManagers": [
     {
       "customType": "regex",
