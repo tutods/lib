@@ -1,3 +1,13 @@
+## 0.9.2 (2026-05-27)
+
+### 🩹 Fixes
+
+- package.json warnings ([d0a4f76](https://github.com/tutods/lib/commit/d0a4f76))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.9.1 (2026-05-27)
 
 This was a version bump only for @tutods/components to align it with other projects, there were no code changes.
