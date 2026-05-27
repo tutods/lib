@@ -1,0 +1,29 @@
+{
+  "name": "@tutods/renovate-config",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "description": "Shareable Renovate configuration preset for @tutods projects — consistent autosharding across repos.",
+  "homepage": "https://github.com/tutods/lib/blob/main/configs/renovate-config/README.md",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:tutods/lib.git",
+    "directory": "configs/renovate-config"
+  },
+  "keywords": [
+    "renovate",
+    "renovate-config",
+    "renovate-preset",
+    "dependency-management",
+    "automerge"
+  ],
+  "files": [
+    "default.json",
+    "README.md",
+    "LICENSE"
+  ]
+}
