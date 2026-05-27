@@ -21,6 +21,7 @@
     "dependency-management",
     "automerge"
   ],
+  "main": "default.json",
   "files": [
     "default.json",
     "README.md",
