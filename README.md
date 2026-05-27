@@ -28,9 +28,9 @@ This monorepo has the purpose to store my common packages, used in my personal p
 
 ### 💡️ What you will find?
 
-This monorepo currently contains 3 packages, two of them dedicated to common configs used across multiple projects:
+This monorepo currently contains 4 packages, three of them dedicated to common configs used across multiple projects:
 
-[![biome][biome]][biome-package] [![typescript][typescript]][typescript-package] [![components][components]][react-package]
+[![biome][biome]][biome-package] [![typescript][typescript]][typescript-package] [![renovate][renovate-badge]][renovate-package] [![components][components]][react-package]
 
 Each package is designed to be lightweight, well-documented, and easy to integrate into your projects.
 
@@ -40,7 +40,9 @@ To know more details about each package, please read the `README.md` file inside
 
 - [**Biome Config**](./configs/biome-config/README.md) - Comprehensive configuration for Biome linter and formatter, ensuring consistent code style across projects
 - [**TypeScript Config**](./configs/typescript-config/README.md) - TypeScript configurations for different project types with sensible defaults and strict type checking
+- [**Renovate Config**](./configs/renovate-config/README.md) - Shared Renovate preset with automerge policies, security scanning, and digest pinning
 - [**Components**](./packages/components/README.md) - Reusable React components built with accessibility and performance in mind
+- [**Adding Packages Guide**](./docs/ADDING_PACKAGES.md) — How to add a new publishable package to the monorepo
 
 ## 🛠 Development
 
@@ -131,6 +133,8 @@ Please make sure to update tests as appropriate and follow the existing code sty
 [release-pr-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/release-pr.yaml?branch=main&label=release%20pr&logo=github&style=for-the-badge
 [release-badge]: https://img.shields.io/github/actions/workflow/status/tutods/lib/release.yaml?branch=main&label=release&logo=github&style=for-the-badge
 [typescript]: https://img.shields.io/badge/typescript%20config-000000?style=for-the-badge&logo=typescript&logoColor=white
+[renovate-badge]: https://img.shields.io/badge/renovate%20config-000000?style=for-the-badge&logo=renovate&logoColor=white
+[renovate]: https://img.shields.io/badge/renovate%20config-000000?style=for-the-badge&logo=renovate&logoColor=white
 [components]: https://img.shields.io/badge/react%20components-000000?style=for-the-badge&logo=react&logoColor=white
 [forks-shield]: https://img.shields.io/github/forks/tutods/lib?style=for-the-badge
 [stars-shield]: https://img.shields.io/github/stars/tutods/lib?style=for-the-badge
@@ -142,6 +146,7 @@ Please make sure to update tests as appropriate and follow the existing code sty
 <!-- Links -->
 [biome-package]: https://github.com/users/tutods/packages/npm/package/biome-config
 [typescript-package]: https://github.com/users/tutods/packages/npm/package/typescript-config
+[renovate-package]: https://github.com/users/tutods/packages/npm/package/renovate-config
 [react-package]: https://github.com/users/tutods/packages/npm/package/component
 [forks-url]: https://github.com/tutods/lib/network/members
 [stars-url]: https://github.com/tutods/lib/stargazers

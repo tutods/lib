@@ -19,7 +19,7 @@
   "configMigration": true,
   "separateMinorPatch": true,
   "separateMultipleMajor": true,
-  "commitMessagePrefix": "chore(deps):",
+  "commitMessagePrefix": "chore(dependency):",
   "commitMessageAction": "update",
   "commitMessageTopic": "{{depName}}",
   "commitMessageSuffix": "to {{newVersion}}",
