@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:tutods/lib.git",
+    "url": "git+ssh://git@github.com/tutods/lib.git",
     "directory": "configs/renovate-config"
   },
   "keywords": [
