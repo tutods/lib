@@ -69,6 +69,8 @@ importers:
         specifier: ^2.4.15
         version: 2.4.15
 
+  configs/renovate-config: {}
+
   configs/typescript-config: {}
 
   packages/components:
