@@ -4,14 +4,14 @@ packages:
 
 allowBuilds:
   "@swc/core": false
-  better-sqlite3: set this to true or false
-  core-js-pure: set this to true or false
-  dtrace-provider: set this to true or false
+  better-sqlite3: true
+  core-js-pure: false
+  dtrace-provider: false
   esbuild: false
   lefthook: true
   nx: true
-  protobufjs: set this to true or false
-  re2: set this to true or false
+  protobufjs: false
+  re2: true
 
 minimumReleaseAgeExclude:
   - "@nx/devkit@22.7.4"
