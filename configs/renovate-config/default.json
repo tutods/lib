@@ -12,7 +12,7 @@
   "dependencyDashboardApproval": true,
   "stopUpdatingLabel": "renovate:stop",
   "rebaseWhen": "conflicted",
-  "minimumReleaseAge": "3 days",
+  "minimumReleaseAge": "1 day",
   "platformAutomerge": true,
   "osvVulnerabilityAlerts": true,
   "fetchChangeLogs": "pr",
