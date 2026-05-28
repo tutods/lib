@@ -26,6 +26,7 @@
     "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^21.0.1",
     "@nx/js": "22.7.4",
+    "@tutods/renovate-config": "workspace:*",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.40",
     "@swc/helpers": "~0.5.22",

@@ -32,6 +32,9 @@ importers:
       '@tutods/biome-config':
         specifier: workspace:*
         version: link:configs/biome-config
+      '@tutods/renovate-config':
+        specifier: workspace:*
+        version: link:configs/renovate-config
       '@types/node':
         specifier: 25.9.1
         version: 25.9.1
