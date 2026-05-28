@@ -6,13 +6,12 @@
 ---
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [📄 Goal](#-goal)
   - [💡 What you get](#-what-you-get)
 - [✨ Features](#-features)
 - [❓ How to install and use it](#-how-to-install-and-use-it)
-  - [Installation](#installation)
-  - [Local repos (unpublished / same monorepo)](#local-repos-unpublished--same-monorepo)
+  - [Recommended usage](#recommended-usage)
+  - [Optional npm package](#optional-npm-package)
   - [Adding project-specific rules](#adding-project-specific-rules)
   - [Overriding inherited settings](#overriding-inherited-settings)
 - [⚙️ What's included](#️-whats-included)
@@ -22,7 +21,7 @@
 
 ## 📄 Goal
 
-This is a **shared Renovate preset** — a single source of truth for dependency update automation across all `@tutods` projects. Extend it once per repo and get consistent automerge policies, security scanning, digest pinning, and labeling without duplicating config.
+This is a **shared Renovate preset**: a single source of truth for dependency update automation across `@tutods` projects. Extend it once per repo and get consistent automerge policies, security scanning, digest pinning, and labeling without duplicating config.
 
 ### 💡 What you get
 
@@ -48,12 +47,36 @@ This is a **shared Renovate preset** — a single source of truth for dependency
 - ⏳ **Minimum release age** — waits 3 days before picking up a newly-published version (avoids broken releases)
 - 🧹 **Dashboard autoclose** — auto-closes the dashboard issue when no open updates remain
 - 🧩 **Config migration** — Renovate self-updates its own config when breaking changes happen
-- 📝 **Release notes** — embeds release notes in the PR description
+- 📝 **Changelogs** — embeds changelog details in the PR description
 - 📦 **pnpm-native** — dedupes the lockfile automatically after every bump
 
 ## ❓ How to install and use it
 
-### Installation
+### Recommended usage
+
+Create or update your `.github/renovate.json` and extend the repository-hosted preset:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>tutods/lib//configs/renovate-config/default"]
+}
+```
+
+That's it. You get all the rules, automerge policies, and security scanning listed above.
+
+For repos in the same GitHub organization, you can also use the local preset syntax:
+
+```json
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>tutods/lib//configs/renovate-config/default"]
+}
+```
+
+### Optional npm package
+
+The package is also published to npm for compatibility, although Renovate now recommends repository-hosted presets over npm-hosted presets.
 
 ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
 ```bash
@@ -70,28 +93,14 @@ yarn add -D @tutods/renovate-config
 npm install -D @tutods/renovate-config
 ```
 
-Then create (or update) your `.github/renovate.json`:
+Then extend the scoped npm preset:
 
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["@tutods/renovate-config"]
+  "extends": ["@tutods"]
 }
 ```
-
-That's it. You get all the rules, automerge policies, and security scanning listed above.
-
-### Local repos (unpublished / same monorepo)
-
-If the package hasn't been published to npm yet (or you're inside the same monorepo), use the local preset syntax:
-
-```json
-{
-  "extends": ["local>tutods/lib//configs/renovate-config"]
-}
-```
-
-This tells Renovate to fetch the preset from the GitHub repo directly, bypassing npm.
 
 ### Adding project-specific rules
 
@@ -100,7 +109,7 @@ Add them alongside the preset — they merge on top:
 ```json
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["@tutods/renovate-config"],
+  "extends": ["github>tutods/lib//configs/renovate-config/default"],
   "timezone": "America/New_York",
   "packageRules": [
     {
@@ -119,7 +128,7 @@ Any key you set in your local `renovate.json` overrides the inherited value. For
 
 ```json
 {
-  "extends": ["@tutods/renovate-config"],
+  "extends": ["github>tutods/lib//configs/renovate-config/default"],
   "schedule": ["before 6am on Monday"]
 }
 ```
@@ -144,7 +153,7 @@ Any key you set in your local `renovate.json` overrides the inherited value. For
 | `dependencyDashboardAutoclose` | `true` | Auto-closes dashboard when clean |
 | `stopUpdatingLabel` | `renovate:stop` | Emergency brake for vulnerable deps |
 | `osvVulnerabilityAlerts` | `true` | OSV/GHSA vulnerability scanning |
-| `fetchReleaseNotes` | `true` | Embeds release notes in PR body |
+| `fetchChangeLogs` | `"pr"` | Embeds changelogs in PR body |
 | `rollbackPrs` | `true` | Creates rollback PRs for pulled releases |
 | `configMigration` | `true` | Auto-migrates config on breaking Renovate changes |
 | `postUpdateOptions` | `["pnpmDedupe"]` | Dedupes pnpm lockfile after updates |
@@ -179,8 +188,8 @@ Any key you set in your local `renovate.json` overrides the inherited value. For
 - **Renovate** v38+
 - **Node.js** v20+
 - Works with npm, yarn, and pnpm projects
-- GitHub-hosted repos only (the `local>` preset path relies on GitHub)
+- Recommended examples use GitHub-hosted preset paths
 
 ---
 
-*Last updated: Renovate v39+ — digest pinning, config migration, rollback PRs*
+*Last updated: Renovate v43+ — repository-hosted preset usage, digest pinning, config migration, rollback PRs*

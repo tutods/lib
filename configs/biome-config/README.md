@@ -6,11 +6,10 @@
 ---
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [📄 Goal](#-goal)
-  - [💡️ What you will find?](#️-what-you-will-find)
+  - [What you will find](#what-you-will-find)
 - [✨ Features](#-features)
-- [❓ How to install and use it?](#-how-to-install-and-use-it)
+- [❓ How to install and use it](#-how-to-install-and-use-it)
   - [Examples of usage](#examples-of-usage)
     - [React project (Vite, CRA)](#react-project-vite-cra)
     - [React + Tailwind CSS project](#react--tailwind-css-project)
@@ -33,9 +32,9 @@ This configuration package stores my common configurations used on **[Biome](htt
 
 Built with **monorepo support** in mind, every config uses glob patterns that work at any directory depth (`apps/*`, `packages/*`, etc.).
 
-### 💡️ What you will find?
+### What you will find
 
-7 composable configurations. Extend only what you need:
+Seven composable configurations. Extend only what you need:
 
 | Config | Description |
 |--------|-------------|
@@ -58,50 +57,50 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 - 🧪 **Nursery Rules** — `nursery.recommended` is enabled to automatically benefit from new stable-quality rules as Biome evolves
 
 
-## ❓ How to install and use it?
+## ❓ How to install and use it
 
-1. Install the package using your package manager:
+Install the package with Biome:
 
-   ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
-    ```bash
-    pnpm add -D @tutods/biome-config @biomejs/biome
-    ```
+![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+```bash
+pnpm add -D @tutods/biome-config @biomejs/biome
+```
 
-   ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
-    ```bash
-    yarn add -D @tutods/biome-config @biomejs/biome
-    ```
+![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
+```bash
+yarn add -D @tutods/biome-config @biomejs/biome
+```
 
-   ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
-    ```bash
-    npm install -D @tutods/biome-config @biomejs/biome
-    ```
+![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+```bash
+npm install -D @tutods/biome-config @biomejs/biome
+```
 
-2. Create the configuration file:
+Create the configuration file:
 
-    ```bash
-    pnpm biome init
-    ```
+```bash
+pnpm biome init
+```
 
-3. Edit your `biome.json` to extend the configs you need:
+Edit your `biome.json` to extend the configs you need:
 
-    ```json
-    {
-      "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
-      "extends": ["@tutods/biome-config"]
-    }
-    ```
+```json
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "extends": ["@tutods/biome-config"]
+}
+```
 
-4. Add lint scripts to your `package.json`:
+Add lint scripts to your `package.json`:
 
-    ```json
-    {
-      "lint": "biome check .",
-      "lint:fix": "biome check --no-errors-on-unmatched --write .",
-      "lint:staged": "biome check --no-errors-on-unmatched --staged .",
-      "lint:ci": "biome ci --no-errors-on-unmatched ."
-    }
-    ```
+```json
+{
+  "lint": "biome check .",
+  "lint:fix": "biome check --no-errors-on-unmatched --write .",
+  "lint:staged": "biome check --no-errors-on-unmatched --staged .",
+  "lint:ci": "biome ci --no-errors-on-unmatched ."
+}
+```
 
 > **Note:** You can customize the scripts to fit your workflow.
 
@@ -112,7 +111,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react"
@@ -124,7 +123,7 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -139,7 +138,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -152,7 +151,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -167,7 +166,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/nestjs"
@@ -179,7 +178,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/solidjs"
@@ -193,7 +192,7 @@ Just the base — no framework, no UI rules.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "extends": [
     "@tutods/biome-config"
   ]
@@ -236,7 +235,7 @@ The root `biome.json` extends the base config:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -256,14 +255,14 @@ The root `biome.json` extends the base config:
 
 Each app uses the `"extends": "//"` microsyntax to inherit from the root without needing a relative path:
 
-```json
+```jsonc
 // apps/web/biome.json
 {
   "extends": ["//", "@tutods/biome-config/react", "@tutods/biome-config/nextjs", "@tutods/biome-config/tailwind"]
 }
 ```
 
-```json
+```jsonc
 // apps/api/biome.json
 {
   "extends": ["//", "@tutods/biome-config/nestjs"]
@@ -295,6 +294,7 @@ When using CSS selectors with single quotes (like `class*='size-'`) in JSX attri
 This configuration package is tested with:
 
 - **Biome** v2.4.x
+- **Peer dependency** `@biomejs/biome >=2.4.16`
 - **Node.js** v20+
 
 Uses Biome v2 features:
@@ -310,4 +310,4 @@ Uses Biome v2 features:
 Issues and pull requests are welcome at [github.com/tutods/lib](https://github.com/tutods/lib).
 
 ---
-*Last updated: Biome v2.4.15 — schema sync, new rules, domain improvements*
+*Last updated: Biome v2.4.x — setup examples, rule groups, and domain improvements*

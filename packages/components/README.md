@@ -5,26 +5,24 @@
 
 ---
 
-> Reusable React components built with accessibility, performance, and type safety in mind
+> Small React helper components built with type safety and composition in mind
 
 ## 📄 Goal
 
-This package provides a collection of generic, reusable React components that can be used across different projects. Each component is built with:
+This package provides generic React helpers used across projects. The current public API focuses on conditional rendering and conditional element composition:
 
-- ♿ **Accessibility** - WCAG compliant components
-- ⚡ **Performance** - Optimized with React best practices
-- 🔒 **Type Safety** - Full TypeScript support
-- 🎨 **Customizable** - Easy to style and extend
+- **`Show`** - Render children or a fallback when a value is truthy
+- **`ConditionalContainer`** - Render one element/component or another based on a boolean condition
 
 ## ✨ Features
 
 - 📦 **Tree-shakeable** - Import only what you need
-- 🎯 **Zero Runtime Config** - Works out of the box
-- 🧩 **Composable** - Build complex UIs from simple components
-- 📱 **Responsive** - Mobile-first design approach
-- 🌗 **Theme Agnostic** - Use with any styling solution
+- 🎯 **Zero runtime config** - Works out of the box
+- 🧩 **Composable** - Use intrinsic elements or custom React components
+- 🔒 **Type-safe** - TypeScript definitions are emitted with the package
+- 🎨 **Style agnostic** - No bundled styles or theme assumptions
 
-## ❓ How to install and use it?
+## ❓ How to install and use it
 
 ### Installation
 
@@ -41,7 +39,7 @@ yarn add @tutods/components
 
 ### Peer Dependencies
 
-This package requires React 19.2.4 or higher:
+This package requires React 19.2.6 or higher:
 
 ```bash
 pnpm add react react-dom
@@ -49,47 +47,64 @@ pnpm add react react-dom
 
 ## 📚 Usage
 
-### Basic Example
+### Show
 
 ```tsx
-import { Button } from '@tutods/components';
+import { Show } from '@tutods/components';
 
-function App() {
+type User = {
+  name: string;
+};
+
+function ProfileGreeting({ user }: { user?: User }) {
   return (
-    <Button variant="primary" onClick={() => console.log('Clicked!')}>
-      Click me
-    </Button>
+    <Show
+      when={user}
+      fallback={<p>Welcome, guest.</p>}
+      render={currentUser => <p>Welcome, {currentUser.name}.</p>}
+    />
   );
 }
 ```
 
-### With Custom Styles
+`Show` treats `when` as a truthy check. Use `render` when you need type-safe access to the non-null value, or pass `children` for simple conditional output.
+
+### ConditionalContainer
 
 ```tsx
-import { Button } from '@tutods/components';
-import './App.css';
+import { ConditionalContainer } from '@tutods/components';
+import type { ReactNode } from 'react';
 
-function App() {
+type SmartActionProps = {
+  href?: string;
+  children: ReactNode;
+};
+
+function SmartAction({ href, children }: SmartActionProps) {
   return (
-    <Button className="my-custom-button" variant="secondary">
-      Custom Styled Button
-    </Button>
+    <ConditionalContainer
+      when={Boolean(href)}
+      render={{
+        element: 'a',
+        props: { href },
+      }}
+      fallback={{
+        element: 'button',
+        props: { type: 'button' },
+      }}
+    >
+      {children}
+    </ConditionalContainer>
   );
 }
 ```
 
 ## Available Components
 
-This package is currently in early development. More components will be added in future releases.
-
-**Planned Components:**
-- Button
-- Input
-- Modal
-- Select
-- Checkbox
-- Radio
-- And more...
+| Component | Purpose |
+|-----------|---------|
+| `Show` | Conditional rendering with optional fallback and render-prop support |
+| `ConditionalContainer` | Switches the rendered wrapper element/component while preserving children |
 
 ## 🏗️ Development
 
@@ -98,16 +113,16 @@ This package is currently in early development. More components will be added in
 pnpm install
 
 # Build the package
-pnpm build
+pnpm --filter @tutods/components build
 
 # Run in watch mode
-pnpm dev
+pnpm --filter @tutods/components dev
 ```
 
 ## 📋 Requirements
 
-- **React**: >=19.2.4
-- **React DOM**: >=19.2.4
+- **React**: >=19.2.6
+- **React DOM**: >=19.2.6
 - **TypeScript**: >=5.0.0
 
 ## 🤝 Contributing

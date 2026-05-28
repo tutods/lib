@@ -6,19 +6,21 @@
 ---
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [📄 Goal](#-goal)
-- [💡 What you will find?](#-what-you-will-find)
+- [What you will find](#what-you-will-find)
 - [✨ Features](#-features)
-- [❓ How to install and use it?](#-how-to-install-and-use-it)
+- [❓ How to install and use it](#-how-to-install-and-use-it)
 - [📚 Examples of usage](#-examples-of-usage)
   - [React project](#react-project)
+  - [Node.js project](#nodejs-project)
+  - [NestJS project](#nestjs-project)
+- [📋 Available configurations](#-available-configurations)
 
 ## 📄 Goal
 
-This configuration package provides common TypeScript configurations that can be used across different project types. It aims to standardize TypeScript settings across your projects while reducing the boilerplate configuration needed for each new project.
+This package provides shared TypeScript configurations for common project types. It standardizes strict compiler settings across projects while keeping each local `tsconfig.json` small.
 
-## 💡 What you will find?
+## What you will find
 
 This package includes TypeScript configurations for:
 
@@ -35,25 +37,26 @@ This package includes TypeScript configurations for:
 - 🔄 **Consistent Settings** - Standardized TypeScript settings across projects
 - 🛠️ **Best Practices** - Incorporates TypeScript community best practices
 
-## ❓ How to install and use it?
+## ❓ How to install and use it
 
-To install and use this package, follow these steps:
+Install the package with TypeScript:
 
-1. Install the package using your package manager: <br/>
-   ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
-    ```bash
-    pnpm add -D @tutods/typescript-config typescript
-    ```
-   ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
-    ```bash
-    yarn add -D @tutods/typescript-config typescript
-    ```
-   ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
-    ```bash
-    npm install -D @tutods/typescript-config typescript
-    ```
+![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+```bash
+pnpm add -D @tutods/typescript-config typescript
+```
 
-2. Create a `tsconfig.json` file in your project root and extend the configuration
+![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
+```bash
+yarn add -D @tutods/typescript-config typescript
+```
+
+![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+```bash
+npm install -D @tutods/typescript-config typescript
+```
+
+Create a `tsconfig.json` file in your project root and extend the configuration that matches your project.
 
 ## 📚 Examples of usage
 
@@ -104,14 +107,11 @@ To install and use this package, follow these steps:
 }
 ```
 
-```json
-{
-  "extends": "@tutods/typescript-config/react.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src"]
-}
+## 📋 Available configurations
+
+| Config | Use for |
+|--------|---------|
+| `@tutods/typescript-config/base.json` | Shared strict defaults for any TypeScript project |
+| `@tutods/typescript-config/react.json` | React applications and libraries |
+| `@tutods/typescript-config/node.json` | Node.js applications and packages |
+| `@tutods/typescript-config/nestjs.json` | NestJS backend applications |
