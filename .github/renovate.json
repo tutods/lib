@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["@tutods"],
+  "extends": ["github>tutods/lib//configs/renovate-config/default"],
   "assignees": ["tutods"],
   "reviewers": ["tutods"],
   "hostRules": [
