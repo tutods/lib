@@ -13,6 +13,7 @@
   "stopUpdatingLabel": "renovate:stop",
   "rebaseWhen": "conflicted",
   "minimumReleaseAge": "3 days",
+  "platformAutomerge": true,
   "osvVulnerabilityAlerts": true,
   "fetchChangeLogs": "pr",
   "rollbackPrs": true,

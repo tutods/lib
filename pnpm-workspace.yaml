@@ -2,6 +2,8 @@ packages:
   - "packages/*"
   - "configs/*"
 
+minimumReleaseAge: 0
+
 allowBuilds:
   "@swc/core": false
   better-sqlite3: true
@@ -12,28 +14,3 @@ allowBuilds:
   nx: true
   protobufjs: false
   re2: true
-
-minimumReleaseAgeExclude:
-  - "@biomejs/biome@2.4.16"
-  - "@biomejs/cli-darwin-arm64@2.4.16"
-  - "@biomejs/cli-darwin-x64@2.4.16"
-  - "@biomejs/cli-linux-arm64@2.4.16"
-  - "@biomejs/cli-linux-arm64-musl@2.4.16"
-  - "@biomejs/cli-linux-x64@2.4.16"
-  - "@biomejs/cli-linux-x64-musl@2.4.16"
-  - "@biomejs/cli-win32-arm64@2.4.16"
-  - "@biomejs/cli-win32-x64@2.4.16"
-  - "@nx/devkit@22.7.4"
-  - "@nx/js@22.7.4"
-  - "@nx/nx-darwin-arm64@22.7.4"
-  - "@nx/nx-darwin-x64@22.7.4"
-  - "@nx/nx-freebsd-x64@22.7.4"
-  - "@nx/nx-linux-arm-gnueabihf@22.7.4"
-  - "@nx/nx-linux-arm64-gnu@22.7.4"
-  - "@nx/nx-linux-arm64-musl@22.7.4"
-  - "@nx/nx-linux-x64-gnu@22.7.4"
-  - "@nx/nx-linux-x64-musl@22.7.4"
-  - "@nx/nx-win32-arm64-msvc@22.7.4"
-  - "@nx/nx-win32-x64-msvc@22.7.4"
-  - "@nx/workspace@22.7.4"
-  - nx@22.7.4
