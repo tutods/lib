@@ -26,5 +26,10 @@
     "default.json",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "renovate-config": {
+    "default": {
+      "extends": ["github>tutods/lib//configs/renovate-config/default"]
+    }
+  }
 }
