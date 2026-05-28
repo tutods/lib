@@ -126,7 +126,7 @@ jobs:
       # point `latest` at a version that may not exist if publish fails.
       - name: 🏷️ Ensure latest dist-tag is set for all packages
         run: |
-          for pkg_json in packages/*/package.json; do
+          for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
             [ "$private" = "false" ] || continue
             name=$(jq -r '.name' "$pkg_json")
@@ -173,7 +173,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          for pkg_json in packages/*/package.json; do
+          for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
             [ "$private" = "false" ] || continue
 
@@ -222,7 +222,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         run: |
-          for pkg_json in packages/*/package.json; do
+          for pkg_json in packages/*/package.json configs/*/package.json; do
             private=$(jq -r '.private // false' "$pkg_json")
             [ "$private" = "false" ] || continue
 
