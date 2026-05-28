@@ -1,3 +1,7 @@
+## 0.9.3 (2026-05-28)
+
+This was a version bump only for @tutods/components to align it with other projects, there were no code changes.
+
 ## 0.9.2 (2026-05-27)
 
 ### 🩹 Fixes
