@@ -1,3 +1,17 @@
+## 0.0.3 (2026-05-28)
+
+### 🩹 Fixes
+
+- **renovate-config:** fix duplicate version in commit messages ([f2a2052](https://github.com/tutods/lib/commit/f2a2052))
+
+### 🏡 Chore
+
+- **release:** version packages [release] ([db38dd1](https://github.com/tutods/lib/commit/db38dd1))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.0.2 (2026-05-27)
 
 ### 🩹 Fixes
