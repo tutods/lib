@@ -25,6 +25,9 @@ type Props<T> = {
   fallback?: ReactNode;
 };
 
+/**
+ * Renders its children if the `when` prop is truthy, otherwise renders the `fallback` prop.
+ */
 function Show<T>({ when, render, children, fallback = null }: Props<T>) {
   if (when) {
     if (render) {
