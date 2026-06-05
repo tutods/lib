@@ -1,3 +1,10 @@
+## 0.9.4 (2026-06-05)
+
+### 🩹 Fixes
+
+- **deps:** Update dependency react-dom to >=19.2.7 ([#741](https://github.com/tutods/lib/pull/741))
+- **deps:** Update dependency react to >=19.2.7 ([#740](https://github.com/tutods/lib/pull/740))
+
 ## 0.9.3 (2026-05-28)
 
 This was a version bump only for @tutods/components to align it with other projects, there were no code changes.
