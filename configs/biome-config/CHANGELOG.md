@@ -1,3 +1,7 @@
+## 0.14.1 (2026-06-05)
+
+This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
+
 ## 0.14.0 (2026-05-11)
 
 ### 🚀 Features
