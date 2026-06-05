@@ -82,7 +82,7 @@ importers:
   packages/components:
     dependencies:
       react:
-        specifier: '>=19.2.6'
+        specifier: '>=19.2.7'
         version: 19.2.7
       react-dom:
         specifier: '>=19.2.6'
