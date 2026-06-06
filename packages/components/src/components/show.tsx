@@ -27,6 +27,26 @@ type Props<T> = {
 
 /**
  * Renders its children if the `when` prop is truthy, otherwise renders the `fallback` prop.
+ *
+ * @param when   - The condition to evaluate. Renders children/render when truthy.
+ * @param render - Render prop receiving the non-nullable `when` value. Takes
+ *                 precedence over `children` when both are provided.
+ * @param children - Content to render when the condition is met. Can be a
+ *                   React node or a lazy function that returns a React node.
+ * @param fallback  - Content rendered when the condition is not met.
+ *                    Defaults to `null`.
+ *
+ * @example
+ * ```tsx
+ * <Show when={user} fallback={<LoginButton />}>
+ *   <Dashboard user={user} />
+ * </Show>
+ * ```
+ *
+ * @example
+ * ```tsx
+ * <Show when={items.length > 0} render={(items) => <List data={items} />} fallback={<Empty />} />
+ * ```
  */
 function Show<T>({ when, render, children, fallback = null }: Props<T>) {
 	if (when) {
