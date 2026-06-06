@@ -17,7 +17,6 @@ runs:
       with:
         node-version-file: ".nvmrc"
         cache: 'pnpm'  # Caches pnpm store globally — shared across all jobs
-        registry-url: 'https://registry.npmjs.org'
 
     # Cache node_modules keyed on OS + lockfile — the only cache needed.
     # No restore-keys: a partially wrong node_modules is worse than a miss.
