@@ -17,7 +17,7 @@ This guide covers the steps to add a new publishable package to this monorepo â€
 
 | Path | Purpose |
 |------|---------|
-| `configs/<name>/` | Shareable configurations (Biome, TypeScript, Renovate, ESLint, etc.) |
+| `configs/<name>/` | Shareable configurations (Biome, TypeScript, Renovate, etc.) |
 | `packages/<name>/` | Runtime libraries (React components, hooks, utilities, etc.) |
 
 Both are automatically discovered by pnpm and NX â€” no manual workspace registration needed. `pnpm-workspace.yaml` already includes `configs/*` and `packages/*`.

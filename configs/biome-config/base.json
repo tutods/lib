@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
   "vcs": {
     "clientKind": "git",
     "defaultBranch": "main",
@@ -38,7 +38,9 @@
       "!**/sanity.types.ts",
       "!**/next-env.d.ts",
       "!**/src/codegen",
-      "!**/vite.config.ts.timestamp-*.mjs"
+      "!**/vite.config.ts.timestamp-*.mjs",
+      "!**/configs/**/package.json",
+      "!**/packages/**/package.json"
     ]
   },
   "assist": {

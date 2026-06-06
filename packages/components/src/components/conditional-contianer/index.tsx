@@ -1,6 +1,6 @@
-import { createElement } from 'react';
+import { createElement } from "react";
 
-import type { ConditionalContainerProps, RenderElement } from './types';
+import type { ConditionalContainerProps, RenderElement } from "./types";
 
 /**
  * Component to render a specific element or component according a condition
@@ -23,28 +23,33 @@ import type { ConditionalContainerProps, RenderElement } from './types';
  * </ConditionalContainer>
  * ```
  */
-const ConditionalContainer = <TRender extends RenderElement, TFallback extends RenderElement>({
-  children,
-  fallback,
-  render,
-  when,
+const ConditionalContainer = <
+	TRender extends RenderElement,
+	TFallback extends RenderElement,
+>({
+	children,
+	fallback,
+	render,
+	when,
 }: ConditionalContainerProps<TRender, TFallback>) => {
-  if (when) {
-    const { element, props: renderProps } = render;
+	if (when) {
+		const { element, props: renderProps } = render;
 
-    return children ? createElement(element, renderProps, children) : createElement(element, renderProps);
-  }
+		return children
+			? createElement(element, renderProps, children)
+			: createElement(element, renderProps);
+	}
 
-  if (!when && fallback) {
-    const { element: fallbackElement, props: fallbackProps = {} } = fallback;
+	if (!when && fallback) {
+		const { element: fallbackElement, props: fallbackProps = {} } = fallback;
 
-    return children
-      ? createElement(fallbackElement, fallbackProps, children)
-      : createElement(fallbackElement, fallbackProps);
-  }
+		return children
+			? createElement(fallbackElement, fallbackProps, children)
+			: createElement(fallbackElement, fallbackProps);
+	}
 
-  // When no `fallback` element is specified
-  return <>{children}</>;
+	// When no `fallback` element is specified
+	return <>{children}</>;
 };
 
 export type { ConditionalContainerProps };

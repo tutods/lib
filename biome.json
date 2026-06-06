@@ -1,13 +1,5 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true,
-    "defaultBranch": "main"
-  },
-  "extends": ["@tutods/biome-config"],
-  "files": {
-    "includes": ["!**/configs/**/package.json", "!**/packages/**/package.json", "!.nx", "!**/dist"]
-  }
+  "root": true,
+  "extends": ["@tutods/biome-config"]
 }

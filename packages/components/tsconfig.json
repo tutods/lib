@@ -1,8 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": ["@tutods/typescript-config/react.json"],
-  "compilerOptions": {
-    "ignoreDeprecations": "6.0"
-  },
-  "include": ["src", "rslib.config.ts"]
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": ["@tutods/typescript-config/react.json"],
+	"compilerOptions": {
+		"rootDir": "src"
+	},
+	"include": ["src"]
 }

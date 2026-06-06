@@ -64,7 +64,12 @@
     },
     "lint": {
       "cache": true,
-      "inputs": ["default", "{workspaceRoot}/biome.json", "{projectRoot}/biome.json"]
+      "inputs": [
+        "default",
+        "{workspaceRoot}/biome.json",
+        "{projectRoot}/biome.json",
+        { "externalDependencies": ["@biomejs/biome"] }
+      ]
     }
   },
   "analytics": false,

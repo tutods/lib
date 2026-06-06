@@ -1,52 +1,54 @@
 {
-  "name": "@tutods/components",
-  "version": "0.9.4",
-  "description": "React generic components that can be used in any scenario",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": {
-    "name": "Daniel Sousa @TutoDS",
-    "url": "https://github.com/tutods"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/tutods/lib.git",
-    "directory": "packages/components"
-  },
-  "homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
-  "type": "module",
-  "keywords": [
-    "react",
-    "components",
-    "typescript",
-    "jsx",
-    "tsx"
-  ],
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
-  },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "module": "./dist/index.js",
-  "scripts": {
-    "dev": "rslib build --watch",
-    "build": "rslib build"
-  },
-  "devDependencies": {
-    "@tutods/typescript-config": "0.7.1"
-  },
-  "peerDependencies": {
-    "react": ">=19.2.7",
-    "react-dom": ">=19.2.7"
-  }
+	"name": "@tutods/components",
+	"version": "0.9.4",
+	"description": "React generic components that can be used in any scenario",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"name": "Daniel Sousa @TutoDS",
+		"url": "https://github.com/tutods"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/tutods/lib.git",
+		"directory": "packages/components"
+	},
+	"homepage": "https://github.com/tutods/lib/blob/main/packages/components/README.md",
+	"type": "module",
+	"keywords": [
+		"react",
+		"components",
+		"typescript",
+		"jsx",
+		"tsx"
+	],
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			}
+		}
+	},
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"module": "./dist/index.js",
+	"scripts": {
+		"dev": "rslib build --watch",
+		"build": "rslib build"
+	},
+	"devDependencies": {
+		"@rsbuild/plugin-react": "^2.0.1",
+		"@rslib/core": "^0.22.0",
+		"@tutods/typescript-config": "0.7.1"
+	},
+	"peerDependencies": {
+		"react": ">=19.2.7",
+		"react-dom": ">=19.2.7"
+	}
 }
