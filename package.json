@@ -25,12 +25,15 @@
     "@biomejs/biome": "^2.4.16",
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",
+    "@microsoft/api-extractor": "^7.58.7",
     "@nx/js": "22.7.5",
-    "@tutods/renovate-config": "workspace:*",
+    "@rsbuild/plugin-react": "^2.0.1",
+    "@rslib/core": "^0.22.0",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.40",
     "@swc/helpers": "~0.5.22",
     "@tutods/biome-config": "workspace:*",
+    "@tutods/renovate-config": "workspace:*",
     "@types/node": "25.9.1",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
@@ -40,7 +43,6 @@
     "react-dom": "^19.2.7",
     "renovate": "^43.212.4",
     "tslib": "^2.8.1",
-    "tsup": "^8.5.1",
     "typescript": "~6.0.3"
   }
 }

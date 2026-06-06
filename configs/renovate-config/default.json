@@ -157,7 +157,7 @@
     },
     {
       "description": "TypeScript and related packages",
-      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
+      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "@rslib/*", "@rsbuild/*"],
       "matchUpdateTypes": ["minor", "patch"],
       "labels": ["dependencies", "renovate", "typescript", "priority-medium"],
       "commitMessagePrefix": "chore(typescript):",
@@ -165,7 +165,7 @@
     },
     {
       "description": "Major TypeScript and related packages - manual review",
-      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "tsup"],
+      "matchPackageNames": ["typescript", "@types/*", "ts-node", "tsx", "@rslib/*", "@rsbuild/*"],
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "typescript", "priority-high"],
       "automerge": false,

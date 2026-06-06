@@ -75,7 +75,7 @@ Use an existing sibling package as a template. Here are the critical fields:
 
 ## Step 3 — Add Package Content
 
-Write your config files, source code, or whatever the package exports. For a config package, the entry point is usually a JSON file. For code packages, add a `tsup` build target (copy from `packages/components`).
+Write your config files, source code, or whatever the package exports. For a config package, the entry point is usually a JSON file. For code packages, add a `rslib` build target (copy from `packages/components`).
 
 ## Step 4 — Create the Baseline Git Tag
 
