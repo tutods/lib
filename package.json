@@ -14,8 +14,6 @@
     "build": "nx run-many -t build",
     "release": "nx release",
     "lint": "biome check .",
-    "eslint": "nx run-many -t eslint",
-    "eslint:fix": "nx run-many -t eslint --fix",
     "lint:fix": "biome check --no-errors-on-unmatched --write .",
     "lint:staged": "biome check --no-errors-on-unmatched --staged .",
     "lint:ci": "biome ci --no-errors-on-unmatched .",
