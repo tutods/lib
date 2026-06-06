@@ -56,37 +56,11 @@
       "automergeType": "pr"
     },
     {
-      "description": "Security updates - high priority, always processed",
-      "matchUpdateTypes": ["minor", "patch"],
+      "description": "Security vulnerability fixes — always processed, high priority",
+      "matchVulnerabilityAlerts": true,
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
       "commitMessagePrefix": "fix(deps):",
-      "schedule": ["at any time"]
-    },
-    {
-      "description": "Major security updates - manual review, always processed",
-      "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "renovate", "major-update", "security", "priority-high"],
-      "automerge": false,
-      "commitMessagePrefix": "fix(deps):",
-      "schedule": ["at any time"]
-    },
-    {
-      "description": "Development dependency security updates - high priority",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "labels": ["dependencies", "renovate", "security", "dev-dependencies", "priority-high"],
-      "automerge": true,
-      "commitMessagePrefix": "fix(deps-dev):",
-      "schedule": ["at any time"]
-    },
-    {
-      "description": "Major development dependency security updates - manual review",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["major"],
-      "labels": ["dependencies", "renovate", "major-update", "security", "dev-dependencies", "priority-high"],
-      "automerge": false,
-      "commitMessagePrefix": "fix(deps-dev):",
       "schedule": ["at any time"]
     },
     {
