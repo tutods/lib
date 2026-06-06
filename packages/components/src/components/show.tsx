@@ -45,7 +45,7 @@ type Props<T> = {
  *
  * @example
  * ```tsx
- * <Show when={items.length > 0} render={(items) => <List data={items} />} fallback={<Empty />} />
+ * <Show when={items} render={(items) => <List data={items} />} fallback={<Empty />} />
  * ```
  */
 function Show<T>({ when, render, children, fallback = null }: Props<T>) {
