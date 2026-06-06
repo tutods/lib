@@ -4,5 +4,5 @@
   "compilerOptions": {
     "ignoreDeprecations": "6.0"
   },
-  "include": ["src", "tsup.config.ts"]
+  "include": ["src", "rslib.config.ts"]
 }
