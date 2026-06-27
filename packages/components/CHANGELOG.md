@@ -1,3 +1,9 @@
+## 0.9.5 (2026-06-27)
+
+### 🩹 Fixes
+
+- **deps:** Update pnpm to v11.8.0 [SECURITY] ([#752](https://github.com/tutods/lib/pull/752))
+
 ## 0.9.4 (2026-06-05)
 
 ### 🩹 Fixes
