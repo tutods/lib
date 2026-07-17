@@ -44,7 +44,7 @@
 	},
 	"devDependencies": {
 		"@rsbuild/plugin-react": "^2.0.1",
-		"@rslib/core": "^0.22.0",
+		"@rslib/core": "^0.22.1",
 		"@tutods/typescript-config": "0.7.1"
 	},
 	"peerDependencies": {
