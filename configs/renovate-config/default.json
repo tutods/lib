@@ -70,7 +70,7 @@
       "labels": ["renovate", "dev-dependencies", "priority-low"],
       "automerge": true,
       "commitMessagePrefix": "chore(deps-dev):",
-      "groupName": "Dev dependencies (minor & patch)"
+      "groupName": "Dev dependencies"
     },
     {
       "description": "Major development dependencies - manual review",
