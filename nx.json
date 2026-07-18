@@ -25,7 +25,6 @@
   },
   "release": {
     "projectsRelationship": "independent",
-    "releaseTagPattern": "{projectName}@{version}",
     "git": {
       "commit": true,
       "tag": false,
@@ -53,6 +52,9 @@
     },
     "publish": {
       "installIgnoreScripts": true
+    },
+    "releaseTag": {
+      "pattern": "{projectName}@{version}"
     }
   },
   "targetDefaults": {
@@ -68,7 +70,9 @@
         "default",
         "{workspaceRoot}/biome.json",
         "{projectRoot}/biome.json",
-        { "externalDependencies": ["@biomejs/biome"] }
+        {
+          "externalDependencies": ["@biomejs/biome"]
+        }
       ]
     }
   },
