@@ -198,7 +198,8 @@
       "groupName": "Major build tools"
     },
     {
-      "description": "Ignore node engine updates",
+      "description": "Ignore node engine updates in package.json (still allow .nvmrc bumps via the nvm manager)",
+      "matchManagers": ["npm"],
       "matchPackageNames": ["node"],
       "enabled": false
     }
