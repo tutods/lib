@@ -1,5 +1,5 @@
 {
-  "extends": [":dependencyDashboard", ":semanticCommits", "security:openssf-scorecard", "customManagers:biomeVersions"],
+  "extends": [":dependencyDashboard", ":semanticCommits", "security:openssf-scorecard"],
   "timezone": "Europe/Lisbon",
   "schedule": ["before 3am every weekday"],
   "labels": ["dependencies", "renovate"],
@@ -22,6 +22,16 @@
   "separateMultipleMajor": true,
   "commitMessagePrefix": "chore(deps):",
   "customManagers": [
+    {
+      "customType": "jsonata",
+      "managerFilePatterns": [
+        "/^configs/biome-config/(base|react|nextjs|nestjs|solidjs|tailwind|sanity)\\.json$/",
+        "/(^|/)biome\\.jsonc?$/"
+      ],
+      "matchStrings": ["{\"currentValue\": $split($.\"$schema\",(\"/\"))[-2]}"],
+      "datasourceTemplate": "npm",
+      "depNameTemplate": "@biomejs/biome"
+    },
     {
       "customType": "regex",
       "managerFilePatterns": ["/^Dockerfile$/", "/(^|/)Dockerfile\\.[^/]*$/"],
