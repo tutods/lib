@@ -206,11 +206,6 @@
       "automerge": false,
       "commitMessagePrefix": "chore(build):",
       "groupName": "Major build tools"
-    },
-    {
-      "description": "Ignore node engine updates",
-      "matchPackageNames": ["node"],
-      "enabled": false
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
