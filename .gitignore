@@ -529,3 +529,8 @@ $RECYCLE.BIN/
 .nx/cache
 .nx/workspace-data
 tmp
+
+.claude/worktrees
+.nx/polygraph
+.nx/self-healing
+.nx/migrate-runs
