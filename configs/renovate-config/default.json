@@ -196,12 +196,6 @@
       "automerge": false,
       "commitMessagePrefix": "chore(build):",
       "groupName": "Major build tools"
-    },
-    {
-      "description": "Ignore node engine updates in package.json (still allow .nvmrc bumps via the nvm manager)",
-      "matchManagers": ["npm"],
-      "matchPackageNames": ["node"],
-      "enabled": false
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
