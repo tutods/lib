@@ -66,10 +66,11 @@
       "automergeType": "pr"
     },
     {
-      "description": "Security vulnerability fixes — always processed, high priority",
+      "description": "Security vulnerability fixes — always processed, high priority, no approval needed",
       "matchVulnerabilityAlerts": true,
       "labels": ["dependencies", "renovate", "security", "priority-high"],
       "automerge": true,
+      "dependencyDashboardApproval": false,
       "commitMessagePrefix": "fix(deps):",
       "schedule": ["at any time"]
     },
