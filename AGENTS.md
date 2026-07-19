@@ -67,6 +67,13 @@ There is no `test` or `typecheck` script. Type errors surface via `pnpm build` (
 - Tooling config improvements made here (renovate-config, biome-config) usually apply to sibling repos (jps, farmacia-nova) — mention the propagation when changing them.
 - `.claude/skills/migrate-to-rslib` exists — the Rslib migration already happened; the skill is historical.
 
+## Release pipeline (two workflows — do not improvise)
+
+1. Push/merge to `main` → `release-pr.yaml` runs `nx release --skip-publish`, computes bumps from Conventional Commits, force-pushes `release/next`, opens/updates a release PR.
+2. Merging that PR (head `release/next`) → `release.yaml` publishes to npm via **OIDC Trusted Publishing** (no stored token) with provenance and sets `latest` dist-tags. Manual retry: `workflow_dispatch` on Release.
+
+Consequences: commit types drive shipped versions (`nx.json` → `release.conventionalCommits`: `feat` = minor; `fix`/`docs`/`chore`/`ci` = patch; `test` = no bump) — a mislabeled commit publishes a wrong version. Tags look like `components@0.9.4`, created only by the release workflow. The OIDC/npm auth steps (manual `.npmrc` write, combined setup-node) were hard-won fixes — don't "clean them up".
+
 ## Docs
 
 - Rslib: https://rslib.rs/llms.txt
