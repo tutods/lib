@@ -1,3 +1,17 @@
+## 0.0.6 (2026-07-23)
+
+### 🚀 Features
+
+- **renovate-config:** auto-create security PRs without dashboard approval ([9afbf87](https://github.com/tutods/lib/commit/9afbf87))
+
+### 🩹 Fixes
+
+- **renovate-config:** cap node memory to stop kernel-OOM on lockfile maintenance ([#12868](https://github.com/tutods/lib/issues/12868))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.0.5 (2026-06-27)
 
 This was a version bump only for @tutods/renovate-config to align it with other projects, there were no code changes.

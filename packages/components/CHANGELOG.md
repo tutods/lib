@@ -1,3 +1,14 @@
+## 0.9.6 (2026-07-23)
+
+### 🩹 Fixes
+
+- **deps:** Update dependency react-dom to >=19.2.8 ([#787](https://github.com/tutods/lib/pull/787))
+- **deps:** Update dependency react to >=19.2.8 ([#786](https://github.com/tutods/lib/pull/786))
+
+### 🏡 Chore
+
+- **deps-dev:** Update dependency @swc-node/register to ~1.12.1 ([#778](https://github.com/tutods/lib/pull/778))
+
 ## 0.9.5 (2026-06-27)
 
 ### 🩹 Fixes
