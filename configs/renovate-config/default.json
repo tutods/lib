@@ -3,7 +3,7 @@
   "timezone": "Europe/Lisbon",
   "schedule": ["before 3am every weekday"],
   "labels": ["dependencies", "renovate"],
-  "branchConcurrentLimit": 5,
+  "branchConcurrentLimit": 3,
   "prConcurrentLimit": 10,
   "prHourlyLimit": 2,
   "dependencyDashboardTitle": "📋 Dependency Dashboard",
@@ -210,12 +210,15 @@
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
-  "postUpdateOptions": ["pnpmDedupe"],
+  "postUpdateOptions": [],
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["on the first day of the month"],
     "commitMessagePrefix": "chore(deps):",
     "automerge": true
+  },
+  "toolSettings": {
+    "nodeMaxMemory": "2048"
   }
 }
