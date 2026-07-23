@@ -1,3 +1,9 @@
+## 0.14.3 (2026-07-23)
+
+### 🏡 Chore
+
+- **biome:** Update dependency @biomejs/biome to v2.5.5 ([#784](https://github.com/tutods/lib/pull/784))
+
 ## 0.14.2 (2026-06-27)
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
