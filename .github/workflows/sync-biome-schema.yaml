@@ -1,0 +1,81 @@
+name: Sync Biome Schema
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/package.json"
+      - "pnpm-lock.yaml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: sync-biome-schema
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # ─── SYNC BIOME $schema ─────────────────────────────────────────────────────
+  # Backstop for the Renovate jsonata custom manager (configs/renovate-config/
+  # default.json): catches manual `@biomejs/biome` bumps that skip Renovate.
+  # Reads the installed Biome version and rewrites the `$schema` URL version
+  # in every Biome config file, opening a PR if anything drifted. The PR only
+  # ever touches Biome config JSON files, none of which match this workflow's
+  # trigger paths, so merging it cannot re-trigger this workflow.
+  sync-schema:
+    name: 🧬 Sync Biome $schema
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: 🔧 Setup Node and install dependencies
+        uses: ./.github/actions/node-setup-and-install
+
+      - name: 🔍 Resolve installed Biome version
+        id: biome-version
+        run: |
+          VERSION=$(node -p "require('@biomejs/biome/package.json').version")
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: ✏️ Rewrite $schema versions
+        id: sync
+        env:
+          VERSION: ${{ steps.biome-version.outputs.version }}
+        run: |
+          FILES="configs/biome-config/base.json configs/biome-config/react.json configs/biome-config/nextjs.json configs/biome-config/nestjs.json configs/biome-config/solidjs.json configs/biome-config/tailwind.json configs/biome-config/sanity.json biome.json"
+          FILES="$FILES $(find packages -maxdepth 2 -name 'biome.json' 2>/dev/null)"
+
+          for f in $FILES; do
+            [ -f "$f" ] || continue
+            sed -i -E "s#(biomejs\.dev/schemas/)[0-9]+\.[0-9]+\.[0-9]+(/schema\.json)#\1${VERSION}\2#" "$f"
+          done
+
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 🔨 Create or update schema-sync PR
+        if: steps.sync.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v8.1.1
+        with:
+          branch: chore/biome-schema-sync
+          base: main
+          commit-message: "chore(biome): sync config $schema to ${{ steps.biome-version.outputs.version }}"
+          title: "chore(biome): sync config $schema to ${{ steps.biome-version.outputs.version }}"
+          body: |
+            Installed `@biomejs/biome` is `${{ steps.biome-version.outputs.version }}`, but one or
+            more Biome config `$schema` URLs point at an older schema version. This syncs them.
+
+            _Opened automatically by the Sync Biome Schema workflow on push to `main`._
+          labels: |
+            chore
+            biome
+          delete-branch: true

@@ -9,12 +9,20 @@
   "dependencyDashboardTitle": "📋 Dependency Dashboard",
   "dependencyDashboardHeader": "This dashboard provides an overview of all dependency updates for this repository.",
   "dependencyDashboardAutoclose": true,
-  "dependencyDashboardApproval": true,
+  "dependencyDashboardApproval": false,
+  "prTitleStrict": true,
   "stopUpdatingLabel": "renovate:stop",
   "rebaseWhen": "conflicted",
   "minimumReleaseAge": "1 day",
   "platformAutomerge": true,
   "osvVulnerabilityAlerts": true,
+  "vulnerabilityAlerts": {
+    "labels": ["dependencies", "renovate", "security", "priority-high"],
+    "automerge": true,
+    "dependencyDashboardApproval": false,
+    "commitMessagePrefix": "fix(deps):",
+    "schedule": ["at any time"]
+  },
   "fetchChangeLogs": "pr",
   "rollbackPrs": true,
   "configMigration": true,
@@ -24,6 +32,7 @@
   "customManagers": [
     {
       "customType": "jsonata",
+      "fileFormat": "json",
       "managerFilePatterns": [
         "/^configs/biome-config/(base|react|nextjs|nestjs|solidjs|tailwind|sanity)\\.json$/",
         "/(^|/)biome\\.jsonc?$/"
@@ -56,7 +65,8 @@
       "description": "Major updates - manual review required",
       "matchUpdateTypes": ["major"],
       "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
-      "automerge": false
+      "automerge": false,
+      "dependencyDashboardApproval": true
     },
     {
       "description": "Minor and patch updates - auto-merge enabled",
@@ -64,15 +74,6 @@
       "labels": ["dependencies", "renovate", "minor-patch-update", "priority-low"],
       "automerge": true,
       "automergeType": "pr"
-    },
-    {
-      "description": "Security vulnerability fixes — always processed, high priority, no approval needed",
-      "matchVulnerabilityAlerts": true,
-      "labels": ["dependencies", "renovate", "security", "priority-high"],
-      "automerge": true,
-      "dependencyDashboardApproval": false,
-      "commitMessagePrefix": "fix(deps):",
-      "schedule": ["at any time"]
     },
     {
       "description": "Development dependencies - group minor & patch",
@@ -207,6 +208,88 @@
       "automerge": false,
       "commitMessagePrefix": "chore(build):",
       "groupName": "Major build tools"
+    },
+    {
+      "description": "TanStack packages",
+      "matchPackageNames": ["@tanstack/*"],
+      "labels": ["dependencies", "renovate", "tanstack"],
+      "commitMessagePrefix": "chore(tanstack):",
+      "groupName": "TanStack packages"
+    },
+    {
+      "description": "React core packages",
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+      "labels": ["dependencies", "renovate", "react"],
+      "commitMessagePrefix": "chore(react):",
+      "groupName": "React packages"
+    },
+    {
+      "description": "shadcn/Radix UI packages",
+      "matchPackageNames": [
+        "@radix-ui/*",
+        "radix-ui",
+        "class-variance-authority",
+        "clsx",
+        "tailwind-merge",
+        "tw-animate-css",
+        "cmdk",
+        "vaul",
+        "lucide-react",
+        "sonner",
+        "shadcn"
+      ],
+      "labels": ["dependencies", "renovate", "ui"],
+      "commitMessagePrefix": "chore(ui):",
+      "groupName": "shadcn/Radix UI packages"
+    },
+    {
+      "description": "Sanity CMS packages",
+      "matchPackageNames": ["sanity", "groq", "@sanity/*"],
+      "labels": ["dependencies", "renovate", "sanity"],
+      "commitMessagePrefix": "chore(sanity):",
+      "groupName": "Sanity CMS packages"
+    },
+    {
+      "description": "NestJS packages",
+      "matchPackageNames": ["@nestjs/*"],
+      "labels": ["dependencies", "renovate", "nestjs"],
+      "commitMessagePrefix": "chore(nestjs):",
+      "groupName": "NestJS packages"
+    },
+    {
+      "description": "Prisma packages",
+      "matchPackageNames": ["prisma", "@prisma/*"],
+      "labels": ["dependencies", "renovate", "prisma"],
+      "commitMessagePrefix": "chore(prisma):",
+      "groupName": "Prisma packages"
+    },
+    {
+      "description": "Better Auth packages",
+      "matchPackageNames": ["better-auth", "@better-auth/*", "@thallesp/nestjs-better-auth"],
+      "labels": ["dependencies", "renovate", "better-auth"],
+      "commitMessagePrefix": "chore(better-auth):",
+      "groupName": "Better Auth packages"
+    },
+    {
+      "description": "Payload CMS packages",
+      "matchPackageNames": ["payload", "@payloadcms/*"],
+      "labels": ["dependencies", "renovate", "payload"],
+      "commitMessagePrefix": "chore(payload):",
+      "groupName": "Payload CMS packages"
+    },
+    {
+      "description": "Fontsource packages",
+      "matchPackageNames": ["@fontsource/*", "@fontsource-variable/*"],
+      "labels": ["dependencies", "renovate", "fontsource"],
+      "commitMessagePrefix": "chore(fonts):",
+      "groupName": "Fontsource packages"
+    },
+    {
+      "description": "Dev tooling packages (excludes biome/typescript — already grouped above)",
+      "matchPackageNames": ["@tutods/biome-config", "@tutods/typescript-config", "lefthook", "turbo"],
+      "labels": ["dependencies", "renovate", "dev-tooling"],
+      "commitMessagePrefix": "chore(tooling):",
+      "groupName": "Dev tooling packages"
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
@@ -219,6 +302,6 @@
     "automerge": true
   },
   "toolSettings": {
-    "nodeMaxMemory": "2048"
+    "nodeMaxMemory": 2048
   }
 }
