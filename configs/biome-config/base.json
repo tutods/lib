@@ -133,6 +133,17 @@
           "fix": "safe",
           "level": "error"
         },
+        "noRestrictedImports": {
+          "level": "error",
+          "options": {
+            "patterns": [
+              {
+                "group": ["../../**"],
+                "message": "Deep relative imports are banned — use a path alias instead."
+              }
+            ]
+          }
+        },
         "recommended": true,
         "useBlockStatements": {
           "fix": "safe",
