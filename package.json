@@ -30,7 +30,7 @@
     "@swc/helpers": "~0.5.23",
     "@tutods/biome-config": "workspace:*",
     "@tutods/renovate-config": "workspace:*",
-    "@types/node": "26.1.2",
+    "@types/node": "26.2.0",
     "@types/react": "^19.2.18",
     "lefthook": "^2.1.10",
     "nx": "23.1.1",
