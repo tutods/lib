@@ -2,15 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>tutods/lib//configs/renovate-config/default"],
   "assignees": ["renovate[bot]"],
-  "reviewers": ["tutods"],
-  "hostRules": [
-    {
-      "matchHost": "ghcr.io",
-      "hostType": "docker"
-    },
-    {
-      "matchHost": "npm.pkg.github.com",
-      "hostType": "npm"
-    }
-  ]
+  "reviewers": ["tutods"]
 }

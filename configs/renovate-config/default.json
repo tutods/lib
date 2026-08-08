@@ -286,14 +286,14 @@
     },
     {
       "description": "Dev tooling packages (excludes biome/typescript — already grouped above)",
-      "matchPackageNames": ["@tutods/biome-config", "@tutods/typescript-config", "lefthook", "turbo"],
+      "matchPackageNames": ["@tutods/biome-config", "@tutods/typescript-config", "lefthook", "nx", "@nx/*"],
       "labels": ["dependencies", "renovate", "dev-tooling"],
       "commitMessagePrefix": "chore(tooling):",
       "groupName": "Dev tooling packages"
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
-  "postUpdateOptions": [],
+  "postUpdateOptions": ["pnpmDedupe"],
   "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
