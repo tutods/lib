@@ -1,0 +1,9 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-code-workflows": { "source": { "source": "github", "repo": "wshobson/agents" } }
+  },
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "developer-essentials@claude-code-workflows": true
+  }
+}
