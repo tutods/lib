@@ -25,3 +25,9 @@ blocks it — don't add a new one beside it.
 Wrong: adding an `.nvmrc` custom manager while
 `matchPackageNames: ["node"], enabled: false` stays in place.
 Right: delete the ignore rule in the same change.
+
+### AI tooling
+
+Claude Code plugins for this repo (typescript-lsp, developer-essentials) are
+committed in `.claude/settings.json`. Personal overrides go in
+`.claude/settings.local.json` (gitignored).
