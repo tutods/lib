@@ -26,7 +26,7 @@
     "@rsbuild/plugin-react": "^2.1.0",
     "@rslib/core": "^0.23.2",
     "@swc-node/register": "~1.12.1",
-    "@swc/core": "~1.15.47",
+    "@swc/core": "~1.16.0",
     "@swc/helpers": "~0.5.23",
     "@tutods/biome-config": "workspace:*",
     "@tutods/renovate-config": "workspace:*",
