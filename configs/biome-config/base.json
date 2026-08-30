@@ -58,6 +58,9 @@
     },
     "linter": {
       "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "formatter": {
