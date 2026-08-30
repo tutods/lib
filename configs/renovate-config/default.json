@@ -290,6 +290,16 @@
       "labels": ["dependencies", "renovate", "dev-tooling"],
       "commitMessagePrefix": "chore(tooling):",
       "groupName": "Dev tooling packages"
+    },
+    {
+      "description": "Batch every non-major update into a single weekly PR per repo. This rule is last so its groupName wins over the per-ecosystem groups above, which then only shape the major-update PRs.",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "pinDigest"],
+      "groupName": "all non-major dependencies",
+      "schedule": ["before 3am on Monday"],
+      "commitMessagePrefix": "chore(deps):",
+      "labels": ["dependencies", "renovate"],
+      "automerge": true,
+      "automergeType": "pr"
     }
   ],
   "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.next/**", "**/coverage/**"],
