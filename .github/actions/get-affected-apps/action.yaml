@@ -5,14 +5,6 @@ description: >
   Outputs a comma-separated list of affected project names.
   Assumes checkout and pnpm install have already been performed by the caller.
 
-runs:
-  using: "composite"
-
-  steps:
-    - name: 🔍 Detect affected projects
-      id: affected
-      shell: bash
-
 inputs:
   base_sha:
     description: "Base commit SHA for NX affected comparison"
