@@ -35,7 +35,7 @@ jobs:
           fi
 
       - name: 📤 Commit lint fixes
-        if: steps.lint.outputs.has_changes == 'true'
+        if: steps.lint.outputs.has_changes == 'true' && github.actor != 'renovate[bot]'
         uses: stefanzweifel/git-auto-commit-action@v7.2.0
         with:
           commit_message: "fix(lint): auto-fix linting errors"
