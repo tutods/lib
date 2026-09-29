@@ -29,7 +29,7 @@
     "@swc/helpers": "~0.5.23",
     "@tutods/biome-config": "workspace:*",
     "@tutods/renovate-config": "workspace:*",
-    "@types/node": "26.6.2",
+    "@types/node": "26.6.3",
     "@types/react": "^19.3.0",
     "knip": "^6.38.0",
     "lefthook": "^2.1.14",

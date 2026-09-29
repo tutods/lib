@@ -43,7 +43,7 @@
 		"build": "rslib build"
 	},
 	"devDependencies": {
-		"@rsbuild/plugin-react": "^2.1.0",
+		"@rsbuild/plugin-react": "^2.1.1",
 		"@rslib/core": "^1.0.2",
 		"@tutods/typescript-config": "0.7.1"
 	},
