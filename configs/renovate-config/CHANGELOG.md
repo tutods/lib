@@ -1,3 +1,7 @@
+## 0.0.7 (2026-09-29)
+
+This was a version bump only for @tutods/renovate-config to align it with other projects, there were no code changes.
+
 ## 0.0.6 (2026-07-23)
 
 ### 🚀 Features
