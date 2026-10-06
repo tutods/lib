@@ -20,19 +20,19 @@
     "lint:ci": "biome ci --no-errors-on-unmatched ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.14",
+    "@biomejs/biome": "^2.5.15",
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
     "@nx/js": "23.2.1",
     "@swc-node/register": "~1.12.1",
-    "@swc/core": "~1.16.2",
+    "@swc/core": "~1.16.13",
     "@swc/helpers": "~0.5.23",
     "@tutods/biome-config": "workspace:*",
     "@tutods/renovate-config": "workspace:*",
-    "@types/node": "26.6.3",
+    "@types/node": "26.6.4",
     "@types/react": "^19.3.0",
     "knip": "^6.38.0",
-    "lefthook": "^2.1.14",
+    "lefthook": "^2.1.16",
     "nx": "23.2.1",
     "react": "^19.3.0",
     "typescript": "~7.0.2"
