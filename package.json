@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "description": "Monorepo to store my packages.",
-  "packageManager": "pnpm@12.6.0",
+  "packageManager": "pnpm@12.9.1",
   "repository": {
     "url": "https://github.com/tutods/lib",
     "type": "git"
@@ -31,7 +31,7 @@
     "@tutods/renovate-config": "workspace:*",
     "@types/node": "26.6.4",
     "@types/react": "^19.3.0",
-    "knip": "^6.38.0",
+    "knip": "^6.39.0",
     "lefthook": "^2.1.16",
     "nx": "23.2.1",
     "react": "^19.3.0",
