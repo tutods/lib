@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "description": "Monorepo to store my packages.",
-  "packageManager": "pnpm@12.9.1",
+  "packageManager": "pnpm@12.11.2",
   "repository": {
     "url": "https://github.com/tutods/lib",
     "type": "git"
@@ -23,7 +23,7 @@
     "@biomejs/biome": "^2.5.15",
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
-    "@nx/js": "23.2.1",
+    "@nx/js": "23.3.0",
     "@swc-node/register": "~1.12.1",
     "@swc/core": "~1.16.13",
     "@swc/helpers": "~0.5.23",
@@ -31,9 +31,9 @@
     "@tutods/renovate-config": "workspace:*",
     "@types/node": "26.6.4",
     "@types/react": "^19.3.0",
-    "knip": "^6.39.0",
-    "lefthook": "^2.1.16",
-    "nx": "23.2.1",
+    "knip": "^6.41.0",
+    "lefthook": "^2.2.1",
+    "nx": "23.3.0",
     "react": "^19.3.0",
     "typescript": "~7.0.2"
   }
