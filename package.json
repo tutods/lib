@@ -21,20 +21,20 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.2",
-    "@commitlint/cli": "^21.2.3",
-    "@commitlint/config-conventional": "^21.2.3",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@nx/js": "23.3.0",
     "@swc-node/register": "~1.12.1",
-    "@swc/core": "~1.16.13",
+    "@swc/core": "~1.16.20",
     "@swc/helpers": "~0.5.23",
     "@tutods/biome-config": "workspace:*",
     "@tutods/renovate-config": "workspace:*",
-    "@types/node": "26.6.4",
+    "@types/node": "26.6.5",
     "@types/react": "^19.3.0",
     "knip": "^6.42.1",
-    "lefthook": "^2.2.1",
+    "lefthook": "^2.2.2",
     "nx": "23.3.0",
-    "react": "^19.3.0",
+    "react": "^19.3.1",
     "typescript": "~7.0.2"
   }
 }
