@@ -31,7 +31,7 @@
     "@tutods/renovate-config": "workspace:*",
     "@types/node": "26.6.5",
     "@types/react": "^19.3.0",
-    "knip": "^6.42.1",
+    "knip": "^6.43.0",
     "lefthook": "^2.2.2",
     "nx": "24.0.0",
     "react": "^19.3.1",
