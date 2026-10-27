@@ -63,13 +63,16 @@ jobs:
 
       - name: 🔐 Configure npm registry
         run: |
-          # Trusted publishing (OIDC) is not configured on npmjs.com for these
-          # packages, so authenticate with NPM_ACCESS_TOKEN. id-token: write
-          # still signs the --provenance attestation.
-          cat >> .npmrc << 'EOF'
+          # Authenticate with NPM_ACCESS_TOKEN; id-token: write still signs the
+          # --provenance attestation. The auth goes in a user-level npmrc
+          # because `npm publish` runs inside each package directory, where
+          # npm treats that directory as the project and ignores the root .npmrc.
+          npmrc="$RUNNER_TEMP/.npmrc"
+          cat > "$npmrc" << 'EOF'
           registry=https://registry.npmjs.org
           //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
           EOF
+          echo "NPM_CONFIG_USERCONFIG=$npmrc" >> "$GITHUB_ENV"
 
       - name: 💾 Cache build outputs
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
