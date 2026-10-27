@@ -212,17 +212,17 @@ After merging the release PR:
 
 NX Release uses **Conventional Commits** to determine version increments:
 
-| Commit Type | Bump | Example |
-|-------------|------|---------|
-| `feat` | **Minor** | 0.8.0 → 0.9.0 |
-| `fix` | **Patch** | 0.8.0 → 0.8.1 |
-| `docs` | **Patch** | 0.8.0 → 0.8.1 |
-| `refactor` | **Patch** | 0.8.0 → 0.8.1 |
-| `chore` | **Patch** | 0.8.0 → 0.8.1 |
-| `ci` | **Patch** | 0.8.0 → 0.8.1 |
-| `style` | **Patch** | 0.8.0 → 0.8.1 |
-| `perf` | **Minor** | 0.8.0 → 0.9.0 |
-| `test` | **None** | Ignored |
+| Commit Type | Bump      | Example       |
+| ----------- | --------- | ------------- |
+| `feat`      | **Minor** | 0.8.0 → 0.9.0 |
+| `fix`       | **Patch** | 0.8.0 → 0.8.1 |
+| `docs`      | **Patch** | 0.8.0 → 0.8.1 |
+| `refactor`  | **Patch** | 0.8.0 → 0.8.1 |
+| `chore`     | **Patch** | 0.8.0 → 0.8.1 |
+| `ci`        | **Patch** | 0.8.0 → 0.8.1 |
+| `style`     | **Patch** | 0.8.0 → 0.8.1 |
+| `perf`      | **Minor** | 0.8.0 → 0.9.0 |
+| `test`      | **None**  | Ignored       |
 
 ### Examples
 
@@ -411,4 +411,4 @@ If you have questions or issues with the release process:
 
 ---
 
-*Happy releasing! 🚀*
+_Happy releasing! 🚀_

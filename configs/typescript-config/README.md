@@ -6,6 +6,7 @@
 ---
 
 ## Table of Contents
+
 - [📄 Goal](#-goal)
 - [What you will find](#what-you-will-find)
 - [✨ Features](#-features)
@@ -109,9 +110,9 @@ Create a `tsconfig.json` file in your project root and extend the configuration 
 
 ## 📋 Available configurations
 
-| Config | Use for |
-|--------|---------|
-| `@tutods/typescript-config/base.json` | Shared strict defaults for any TypeScript project |
-| `@tutods/typescript-config/react.json` | React applications and libraries |
-| `@tutods/typescript-config/node.json` | Node.js applications and packages |
-| `@tutods/typescript-config/nestjs.json` | NestJS backend applications |
+| Config                                  | Use for                                           |
+| --------------------------------------- | ------------------------------------------------- |
+| `@tutods/typescript-config/base.json`   | Shared strict defaults for any TypeScript project |
+| `@tutods/typescript-config/react.json`  | React applications and libraries                  |
+| `@tutods/typescript-config/node.json`   | Node.js applications and packages                 |
+| `@tutods/typescript-config/nestjs.json` | NestJS backend applications                       |

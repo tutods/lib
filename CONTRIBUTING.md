@@ -206,19 +206,24 @@ Include:
 
 ```markdown
 ## What
+
 Brief description of what this PR does.
 
 ## Why
+
 Reason for these changes.
 
 ## How
+
 Technical approach (if needed).
 
 ## Related
+
 - Closes #123
 - Related to #456
 
 ## Checklist
+
 - [ ] Code follows project standards
 - [ ] Tests pass
 - [ ] Documentation updated

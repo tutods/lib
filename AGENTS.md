@@ -6,15 +6,15 @@ Personal open-source monorepo for publishable npm packages under the `@tutods` s
 
 ## Stack
 
-| Piece | Version / tool | Notes |
-|-------|---------------|-------|
-| Workspace | Nx 23 + pnpm 11 (`pnpm-workspace.yaml`: `packages/*`, `configs/*`) | Nx runs/caches builds; pnpm is the only package manager |
-| Bundler | Rslib (`@rslib/core`) per package | ESM only, `dts: true` — no CJS output |
-| Language | TypeScript 7.x (native TS compiler — bleeding edge) | |
-| UI | React 19 as **peerDependency** (`>=19.2.7`) | Never move React to `dependencies` |
-| Lint/format | Biome (config from `@tutods/biome-config`, workspace package) | Tabs, double quotes — Biome enforces, don't hand-format |
-| Hooks | lefthook (`.lefthook.yml`): pre-commit Biome on staged, commit-msg commitlint | |
-| Releases | `nx release` — independent versioning, conventional commits drive bumps | |
+| Piece       | Version / tool                                                                | Notes                                                       |
+| ----------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Workspace   | Nx 23 + pnpm 11 (`pnpm-workspace.yaml`: `packages/*`, `configs/*`)            | Nx runs/caches builds; pnpm is the only package manager     |
+| Bundler     | Rslib (`@rslib/core`) per package                                             | ESM only, `dts: true` — no CJS output                       |
+| Language    | TypeScript 7.x (native TS compiler — bleeding edge)                           |                                                             |
+| UI          | React 19 as **peerDependency** (`>=19.2.7`)                                   | Never move React to `dependencies`                          |
+| Lint/format | Biome (config from `@tutods/biome-config`, workspace package)                 | 2 spaces, single quotes — Biome enforces, don't hand-format |
+| Hooks       | lefthook (`.lefthook.yml`): pre-commit Biome on staged, commit-msg commitlint |                                                             |
+| Releases    | `nx release` — independent versioning, conventional commits drive bumps       |                                                             |
 
 Layout:
 
@@ -27,14 +27,14 @@ configs/               @tutods/{biome,typescript,renovate}-config — published 
 
 Run from repo root with pnpm (never npm/yarn — `packageManager` pins pnpm):
 
-| Command | What |
-|---------|------|
-| `pnpm build` | `nx run-many -t build` — builds all packages |
-| `pnpm lint` | `biome check .` |
-| `pnpm lint:fix` | Biome with `--write` |
-| `pnpm lint:ci` | CI variant |
-| `pnpm --filter @tutods/components dev` | Rslib watch mode for the components package |
-| `pnpm release` | `nx release` — only when explicitly asked; it creates a version commit (no tag/push) |
+| Command                                | What                                                                                 |
+| -------------------------------------- | ------------------------------------------------------------------------------------ |
+| `pnpm build`                           | `nx run-many -t build` — builds all packages                                         |
+| `pnpm lint`                            | `biome check .`                                                                      |
+| `pnpm lint:fix`                        | Biome with `--write`                                                                 |
+| `pnpm lint:ci`                         | CI variant                                                                           |
+| `pnpm --filter @tutods/components dev` | Rslib watch mode for the components package                                          |
+| `pnpm release`                         | `nx release` — only when explicitly asked; it creates a version commit (no tag/push) |
 
 There is no `test` or `typecheck` script. Type errors surface via `pnpm build` (Rslib emits d.ts). If you need a standalone type check, run `pnpm exec tsc --noEmit -p packages/components/tsconfig.json`.
 
