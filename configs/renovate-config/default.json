@@ -28,7 +28,7 @@
   "rollbackPrs": true,
   "configMigration": true,
   "separateMinorPatch": true,
-  "separateMultipleMajor": true,
+  "separateMultipleMajor": false,
   "commitMessagePrefix": "chore(deps):",
   "customManagers": [
     {
@@ -68,6 +68,12 @@
       "labels": ["dependencies", "renovate", "major-update", "priority-medium"],
       "automerge": false,
       "dependencyDashboardApproval": true
+    },
+    {
+      "description": "pnpm overrides are security floors - keep minor/patch, never propose a major",
+      "matchDepTypes": ["pnpm.overrides", "pnpm-workspace.overrides"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
     },
     {
       "description": "Minor and patch updates - auto-merge enabled",
