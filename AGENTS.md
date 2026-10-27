@@ -6,15 +6,15 @@ Personal open-source monorepo for publishable npm packages under the `@tutods` s
 
 ## Stack
 
-| Piece       | Version / tool                                                                | Notes                                                   |
-| ----------- | ----------------------------------------------------------------------------- | ------------------------------------------------------- |
-| Workspace   | Nx 23 + pnpm 11 (`pnpm-workspace.yaml`: `packages/*`, `configs/*`)            | Nx runs/caches builds; pnpm is the only package manager |
-| Bundler     | Rslib (`@rslib/core`) per package                                             | ESM only, `dts: true` — no CJS output                   |
-| Language    | TypeScript 7.x (native TS compiler — bleeding edge)                           |                                                         |
-| UI          | React 19 as **peerDependency** (`>=19.2.7`)                                   | Never move React to `dependencies`                      |
-| Lint/format | Biome (config from `@tutods/biome-config`, workspace package)                 | Tabs, double quotes — Biome enforces, don't hand-format |
-| Hooks       | lefthook (`.lefthook.yml`): pre-commit Biome on staged, commit-msg commitlint |                                                         |
-| Releases    | `nx release` — independent versioning, conventional commits drive bumps       |                                                         |
+| Piece       | Version / tool                                                                | Notes                                                       |
+| ----------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Workspace   | Nx 23 + pnpm 11 (`pnpm-workspace.yaml`: `packages/*`, `configs/*`)            | Nx runs/caches builds; pnpm is the only package manager     |
+| Bundler     | Rslib (`@rslib/core`) per package                                             | ESM only, `dts: true` — no CJS output                       |
+| Language    | TypeScript 7.x (native TS compiler — bleeding edge)                           |                                                             |
+| UI          | React 19 as **peerDependency** (`>=19.2.7`)                                   | Never move React to `dependencies`                          |
+| Lint/format | Biome (config from `@tutods/biome-config`, workspace package)                 | 2 spaces, single quotes — Biome enforces, don't hand-format |
+| Hooks       | lefthook (`.lefthook.yml`): pre-commit Biome on staged, commit-msg commitlint |                                                             |
+| Releases    | `nx release` — independent versioning, conventional commits drive bumps       |                                                             |
 
 Layout:
 
