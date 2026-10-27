@@ -11,8 +11,10 @@
 > A collection of reusable packages, configurations, and components for web development projects.
 
 ---
+
 <!-- omit from toc -->
 ## Table of Contents
+
 - [📄 Goal](#-goal)
   - [What you will find](#what-you-will-find)
 - [📦 Packages](#-packages)

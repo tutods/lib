@@ -40,27 +40,27 @@ This document lists all the labels that should be configured in this repository.
 
 ## 🎨 Label Colors (Recommended)
 
-| Label | Color | Description |
-|-------|-------|-------------|
-| `dependencies` | `#0366d6` | Blue |
-| `renovate` | `#0e8a16` | Green |
-| `dev-dependencies` | `##5319e7` | Purple |
-| `major-update` | `##d73a4a` | Red |
-| `minor-patch-update` | `##a2eeef` | Light blue |
-| `security` | `##b60205` | Dark red |
-| `pin-digest` | `##fbca04` | Yellow |
-| `digest-update` | `###7057ff` | Purple |
-| `priority-high` | `##b60205` | Dark red |
-| `priority-medium` | `##fbca04` | Yellow |
-| `priority-low` | `##e4e669` | Light green |
-| `github-actions` | `##2088ff` | Blue |
-| `docker` | `##384d54` | Dark gray |
-| `typescript` | `##3178c6` | TypeScript blue |
-| `biome` | `##60a5fa` | Biome blue |
-| `testing` | `###f1e05a` | JavaScript yellow |
-| `build-tools` | `###0052cc` | Dark blue |
-| `release` | `##2cbe4e` | Green |
-| `automated` | `###0066cc` | Blue |
+| Label                | Color       | Description       |
+| -------------------- | ----------- | ----------------- |
+| `dependencies`       | `#0366d6`   | Blue              |
+| `renovate`           | `#0e8a16`   | Green             |
+| `dev-dependencies`   | `##5319e7`  | Purple            |
+| `major-update`       | `##d73a4a`  | Red               |
+| `minor-patch-update` | `##a2eeef`  | Light blue        |
+| `security`           | `##b60205`  | Dark red          |
+| `pin-digest`         | `##fbca04`  | Yellow            |
+| `digest-update`      | `###7057ff` | Purple            |
+| `priority-high`      | `##b60205`  | Dark red          |
+| `priority-medium`    | `##fbca04`  | Yellow            |
+| `priority-low`       | `##e4e669`  | Light green       |
+| `github-actions`     | `##2088ff`  | Blue              |
+| `docker`             | `##384d54`  | Dark gray         |
+| `typescript`         | `##3178c6`  | TypeScript blue   |
+| `biome`              | `##60a5fa`  | Biome blue        |
+| `testing`            | `###f1e05a` | JavaScript yellow |
+| `build-tools`        | `###0052cc` | Dark blue         |
+| `release`            | `##2cbe4e`  | Green             |
+| `automated`          | `###0066cc` | Blue              |
 
 ## 📝 Creating Labels in GitHub
 
@@ -127,4 +127,4 @@ Renovate automatically applies labels based on the rules in `.github/renovate.js
 
 ---
 
-*Last updated: 2025-04-04*
+_Last updated: 2025-04-04_

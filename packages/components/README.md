@@ -58,11 +58,7 @@ type User = {
 
 function ProfileGreeting({ user }: { user?: User }) {
   return (
-    <Show
-      when={user}
-      fallback={<p>Welcome, guest.</p>}
-      render={currentUser => <p>Welcome, {currentUser.name}.</p>}
-    />
+    <Show when={user} fallback={<p>Welcome, guest.</p>} render={currentUser => <p>Welcome, {currentUser.name}.</p>} />
   );
 }
 ```
@@ -101,9 +97,9 @@ function SmartAction({ href, children }: SmartActionProps) {
 
 ## Available Components
 
-| Component | Purpose |
-|-----------|---------|
-| `Show` | Conditional rendering with optional fallback and render-prop support |
+| Component              | Purpose                                                                   |
+| ---------------------- | ------------------------------------------------------------------------- |
+| `Show`                 | Conditional rendering with optional fallback and render-prop support      |
 | `ConditionalContainer` | Switches the rendered wrapper element/component while preserving children |
 
 ## 🏗️ Development

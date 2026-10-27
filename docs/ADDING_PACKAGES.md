@@ -15,9 +15,9 @@ This guide covers the steps to add a new publishable package to this monorepo �
 
 ## Directory Conventions
 
-| Path | Purpose |
-|------|---------|
-| `configs/<name>/` | Shareable configurations (Biome, TypeScript, Renovate, etc.) |
+| Path               | Purpose                                                      |
+| ------------------ | ------------------------------------------------------------ |
+| `configs/<name>/`  | Shareable configurations (Biome, TypeScript, Renovate, etc.) |
 | `packages/<name>/` | Runtime libraries (React components, hooks, utilities, etc.) |
 
 Both are automatically discovered by pnpm and NX — no manual workspace registration needed. `pnpm-workspace.yaml` already includes `configs/*` and `packages/*`.
@@ -65,13 +65,13 @@ Use an existing sibling package as a template. Here are the critical fields:
 }
 ```
 
-| Field | Why it matters |
-|-------|---------------|
-| `private: false` | Without this, npm refuses to publish |
-| `publishConfig.access: "public"` | Required for scoped packages (`@tutods/*`) |
-| `repository.directory` | Must match the subdirectory path exactly — npm provenance depends on it |
-| `files` | Controls what lands in the tarball — keep it minimal |
-| `version` | Start at `0.0.1` — NX will bump it from the first conventional commit |
+| Field                            | Why it matters                                                          |
+| -------------------------------- | ----------------------------------------------------------------------- |
+| `private: false`                 | Without this, npm refuses to publish                                    |
+| `publishConfig.access: "public"` | Required for scoped packages (`@tutods/*`)                              |
+| `repository.directory`           | Must match the subdirectory path exactly — npm provenance depends on it |
+| `files`                          | Controls what lands in the tarball — keep it minimal                    |
+| `version`                        | Start at `0.0.1` — NX will bump it from the first conventional commit   |
 
 ## Step 3 — Add Package Content
 
@@ -143,10 +143,10 @@ release.yaml ──► npm publish (OIDC) + git tags + GitHub Releases
 
 ## Common Pitfalls
 
-| Problem | Cause | Fix |
-|---------|-------|-----|
-| NX skips the package during `nx release` | No git tag exists for the package | Create the baseline tag (Step 4) |
-| `npm publish` fails with 404 | npm Trusted Publishing not configured for the new package scope | Add the GitHub repo to [npm's Trusted Publishers](https://www.npmjs.com/settings/tutods/publishers) |
-| `pnpm install` fails in CI with `ERR_PNPM_IGNORED_BUILDS` | New transitive dependencies need build script approval | Run `pnpm approve-builds` locally or set `allowBuilds` in `pnpm-workspace.yaml` |
-| `private: false` but package still won't publish | Missing `publishConfig.access: "public"` for scoped packages | Add the field (Step 2) |
-| Version goes `0.0.1` → `0.0.1` (no bump) | Commit type is `chore`, `docs`, `style`, or `test` — these don't bump version | Use `feat` for a minor bump or `fix` for a patch |
+| Problem                                                   | Cause                                                                         | Fix                                                                                                 |
+| --------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| NX skips the package during `nx release`                  | No git tag exists for the package                                             | Create the baseline tag (Step 4)                                                                    |
+| `npm publish` fails with 404                              | npm Trusted Publishing not configured for the new package scope               | Add the GitHub repo to [npm's Trusted Publishers](https://www.npmjs.com/settings/tutods/publishers) |
+| `pnpm install` fails in CI with `ERR_PNPM_IGNORED_BUILDS` | New transitive dependencies need build script approval                        | Run `pnpm approve-builds` locally or set `allowBuilds` in `pnpm-workspace.yaml`                     |
+| `private: false` but package still won't publish          | Missing `publishConfig.access: "public"` for scoped packages                  | Add the field (Step 2)                                                                              |
+| Version goes `0.0.1` → `0.0.1` (no bump)                  | Commit type is `chore`, `docs`, `style`, or `test` — these don't bump version | Use `feat` for a minor bump or `fix` for a patch                                                    |

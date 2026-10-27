@@ -6,6 +6,7 @@
 ---
 
 ## Table of Contents
+
 - [📄 Goal](#-goal)
   - [💡 What you get](#-what-you-get)
 - [✨ Features](#-features)
@@ -25,17 +26,17 @@ This is a **shared Renovate preset**: a single source of truth for dependency up
 
 ### 💡 What you get
 
-| Area | Behavior |
-|------|----------|
-| **Minor & patch** | Auto-merged via PR |
-| **Major** | Requires dashboard approval |
-| **Security advisories** | Instantly processed, auto-merged (minor/patch), grouped with `fix(deps):` prefix |
-| **GitHub Actions** | Digest-pinned, minor/patch auto-merged |
-| **Docker images** | Digest-pinned, minor/patch auto-merged |
-| **devDependencies** | Grouped by minor/patch and major |
-| **TypeScript, Biome, Testing, Build tools** | Dedicated groups with appropriate commit prefixes |
-| **pnpm** | Runs `pnpm dedupe` post-update |
-| **Lockfile** | Monthly maintenance PR |
+| Area                                        | Behavior                                                                         |
+| ------------------------------------------- | -------------------------------------------------------------------------------- |
+| **Minor & patch**                           | Auto-merged via PR                                                               |
+| **Major**                                   | Requires dashboard approval                                                      |
+| **Security advisories**                     | Instantly processed, auto-merged (minor/patch), grouped with `fix(deps):` prefix |
+| **GitHub Actions**                          | Digest-pinned, minor/patch auto-merged                                           |
+| **Docker images**                           | Digest-pinned, minor/patch auto-merged                                           |
+| **devDependencies**                         | Grouped by minor/patch and major                                                 |
+| **TypeScript, Biome, Testing, Build tools** | Dedicated groups with appropriate commit prefixes                                |
+| **pnpm**                                    | Runs `pnpm dedupe` post-update                                                   |
+| **Lockfile**                                | Monthly maintenance PR                                                           |
 
 ## ✨ Features
 
@@ -137,51 +138,51 @@ Any key you set in your local `renovate.json` overrides the inherited value. For
 
 ### Core settings
 
-| Setting | Value | Why |
-|---------|-------|-----|
-| `schedule` | `before 3am every weekday` | Runs outside working hours |
-| `timezone` | `Europe/Lisbon` | Consistent timezone reference |
-| `prHourlyLimit` | `2` | Prevents PR floods |
-| `prConcurrentLimit` | `10` | Keeps the PR list manageable |
-| `branchConcurrentLimit` | `5` | Limits parallel branch noise |
-| `minimumReleaseAge` | `3 days` | Avoids broken releases |
-| `rebaseWhen` | `conflicted` | Only force-push when needed |
-| `rangeStrategy` | `bump` | Bumps ranges to the new version |
-| `separateMinorPatch` | `true` | Separate PRs for minor and patch |
-| `separateMultipleMajor` | `true` | Separate PRs per major dependency |
-| `dependencyDashboardApproval` | `true` | Major updates require explicit approval |
-| `dependencyDashboardAutoclose` | `true` | Auto-closes dashboard when clean |
-| `stopUpdatingLabel` | `renovate:stop` | Emergency brake for vulnerable deps |
-| `osvVulnerabilityAlerts` | `true` | OSV/GHSA vulnerability scanning |
-| `fetchChangeLogs` | `"pr"` | Embeds changelogs in PR body |
-| `rollbackPrs` | `true` | Creates rollback PRs for pulled releases |
-| `configMigration` | `true` | Auto-migrates config on breaking Renovate changes |
-| `postUpdateOptions` | `["pnpmDedupe"]` | Dedupes pnpm lockfile after updates |
-| `lockFileMaintenance` | Monthly, auto-merged | Keeps the lockfile healthy |
+| Setting                        | Value                      | Why                                               |
+| ------------------------------ | -------------------------- | ------------------------------------------------- |
+| `schedule`                     | `before 3am every weekday` | Runs outside working hours                        |
+| `timezone`                     | `Europe/Lisbon`            | Consistent timezone reference                     |
+| `prHourlyLimit`                | `2`                        | Prevents PR floods                                |
+| `prConcurrentLimit`            | `10`                       | Keeps the PR list manageable                      |
+| `branchConcurrentLimit`        | `5`                        | Limits parallel branch noise                      |
+| `minimumReleaseAge`            | `3 days`                   | Avoids broken releases                            |
+| `rebaseWhen`                   | `conflicted`               | Only force-push when needed                       |
+| `rangeStrategy`                | `bump`                     | Bumps ranges to the new version                   |
+| `separateMinorPatch`           | `true`                     | Separate PRs for minor and patch                  |
+| `separateMultipleMajor`        | `true`                     | Separate PRs per major dependency                 |
+| `dependencyDashboardApproval`  | `true`                     | Major updates require explicit approval           |
+| `dependencyDashboardAutoclose` | `true`                     | Auto-closes dashboard when clean                  |
+| `stopUpdatingLabel`            | `renovate:stop`            | Emergency brake for vulnerable deps               |
+| `osvVulnerabilityAlerts`       | `true`                     | OSV/GHSA vulnerability scanning                   |
+| `fetchChangeLogs`              | `"pr"`                     | Embeds changelogs in PR body                      |
+| `rollbackPrs`                  | `true`                     | Creates rollback PRs for pulled releases          |
+| `configMigration`              | `true`                     | Auto-migrates config on breaking Renovate changes |
+| `postUpdateOptions`            | `["pnpmDedupe"]`           | Dedupes pnpm lockfile after updates               |
+| `lockFileMaintenance`          | Monthly, auto-merged       | Keeps the lockfile healthy                        |
 
 ### Package rules
 
-| Rule | Scope | Automerge |
-|------|-------|-----------|
-| Major updates | All ecosystems | No (dashboard approval required) |
-| Minor & patch updates | All ecosystems | Yes |
-| Security advisories (minor/patch) | All ecosystems | Yes |
-| Security advisories (major) | All ecosystems | No |
-| devDep security (minor/patch) | devDependencies | Yes |
-| devDep security (major) | devDependencies | No |
-| devDep minor & patch | devDependencies | Yes (grouped) |
-| devDep major | devDependencies | No (grouped) |
-| GitHub Actions (minor/patch) | `github-tags` | Yes, digest-pinned |
-| GitHub Actions (major) | `github-tags` | No, digest-pinned |
-| Pin digest updates | All | Yes |
-| Digest updates | All | Yes |
-| Docker (minor/patch) | `docker` | Yes, digest-pinned |
-| Docker (major) | `docker` | No, digest-pinned |
-| TypeScript packages | TS ecosystem | Grouped |
-| Biome packages | Biome ecosystem | Grouped |
-| Testing packages | Jest, Vitest, Testing Library | Grouped |
-| Build tools | Webpack, Vite, Rollup, esbuild | Grouped |
-| Node engine | Node.js | Disabled (ignored) |
+| Rule                              | Scope                          | Automerge                        |
+| --------------------------------- | ------------------------------ | -------------------------------- |
+| Major updates                     | All ecosystems                 | No (dashboard approval required) |
+| Minor & patch updates             | All ecosystems                 | Yes                              |
+| Security advisories (minor/patch) | All ecosystems                 | Yes                              |
+| Security advisories (major)       | All ecosystems                 | No                               |
+| devDep security (minor/patch)     | devDependencies                | Yes                              |
+| devDep security (major)           | devDependencies                | No                               |
+| devDep minor & patch              | devDependencies                | Yes (grouped)                    |
+| devDep major                      | devDependencies                | No (grouped)                     |
+| GitHub Actions (minor/patch)      | `github-tags`                  | Yes, digest-pinned               |
+| GitHub Actions (major)            | `github-tags`                  | No, digest-pinned                |
+| Pin digest updates                | All                            | Yes                              |
+| Digest updates                    | All                            | Yes                              |
+| Docker (minor/patch)              | `docker`                       | Yes, digest-pinned               |
+| Docker (major)                    | `docker`                       | No, digest-pinned                |
+| TypeScript packages               | TS ecosystem                   | Grouped                          |
+| Biome packages                    | Biome ecosystem                | Grouped                          |
+| Testing packages                  | Jest, Vitest, Testing Library  | Grouped                          |
+| Build tools                       | Webpack, Vite, Rollup, esbuild | Grouped                          |
+| Node engine                       | Node.js                        | Disabled (ignored)               |
 
 ## 📋 Compatibility
 
@@ -192,4 +193,4 @@ Any key you set in your local `renovate.json` overrides the inherited value. For
 
 ---
 
-*Last updated: Renovate v43+ — repository-hosted preset usage, digest pinning, config migration, rollback PRs*
+_Last updated: Renovate v43+ — repository-hosted preset usage, digest pinning, config migration, rollback PRs_
