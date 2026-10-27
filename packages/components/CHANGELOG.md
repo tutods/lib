@@ -1,3 +1,13 @@
+## 0.9.8 (2026-10-27)
+
+### 🎨 Styles
+
+- format with Biome 2.6 (Markdown, YAML, spaces) ([8de4e527](https://github.com/tutods/lib/commit/8de4e527))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.9.7 (2026-09-29)
 
 ### 🏡 Chore

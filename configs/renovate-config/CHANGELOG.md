@@ -1,3 +1,17 @@
+## 0.0.8 (2026-10-27)
+
+### 🩹 Fixes
+
+- **renovate-config:** single PR per major jump, skip majors for pnpm overrides ([f25cc3c7](https://github.com/tutods/lib/commit/f25cc3c7))
+
+### 🎨 Styles
+
+- format with Biome 2.6 (Markdown, YAML, spaces) ([8de4e527](https://github.com/tutods/lib/commit/8de4e527))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.0.7 (2026-09-29)
 
 This was a version bump only for @tutods/renovate-config to align it with other projects, there were no code changes.
