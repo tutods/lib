@@ -6,6 +6,7 @@
 ---
 
 ## Table of Contents
+
 - [📄 Goal](#-goal)
   - [What you will find](#what-you-will-find)
 - [✨ Features](#-features)
@@ -36,15 +37,15 @@ Built with **monorepo support** in mind, every config uses glob patterns that wo
 
 Seven composable configurations. Extend only what you need:
 
-| Config | Description |
-|--------|-------------|
-| **`base.json`** | Framework-agnostic core — formatting, VCS, file exclusions, and strict linting rules for any JS/TS project. Includes type-inference rules, logic simplification, and auto-enables test domain rules when jest/vitest is detected. |
-| **`react.json`** | React rules — hooks, fragments, a11y, `noReactForwardRef`. Uses the `react` domain (auto-activates when `react` is in `package.json`). |
-| **`nextjs.json`** | Next.js rules — uses the `next` and `react` domains (auto-activates when `next >= 14` is detected). Includes App Router overrides (`noDefaultExport` off for pages/layouts/routes). Use together with `react.json` for additional a11y/fragment rules. |
-| **`tailwind.json`** | Tailwind CSS utility class sorting via `useSortedClasses`. Supports `className`, `class`, `clsx`, `cva`, `cn`, `twMerge`, `tv`. |
-| **`nestjs.json`** | NestJS — enables unsafe parameter decorators, disables a11y rules, turns off rules that conflict with NestJS patterns. Auto-enables test domain rules (Jest). |
-| **`solidjs.json`** | SolidJS — uses the `solid` domain. Includes SolidStart entry point overrides. |
-| **`sanity.json`** | Sanity CMS — uses the `react` domain. Includes overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed). |
+| Config              | Description                                                                                                                                                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`base.json`**     | Framework-agnostic core — formatting, VCS, file exclusions, and strict linting rules for any JS/TS project. Includes type-inference rules, logic simplification, and auto-enables test domain rules when jest/vitest is detected.                                               |
+| **`react.json`**    | React rules — hooks, fragments, a11y, `noReactForwardRef`. Uses the `react` domain (auto-activates when `react` is in `package.json`).                                                                                                                                          |
+| **`nextjs.json`**   | Next.js rules — uses the `next` and `react` domains (auto-activates when `next >= 14` is detected). Includes App Router overrides (`noDefaultExport` off for pages/layouts/routes). Use together with `react.json` for additional a11y/fragment rules.                          |
+| **`tailwind.json`** | Tailwind CSS utility class sorting via `nursery.useTailwindSortedClasses` (Tailwind v4 order). The top-level `tailwind` section covers `className`, `class`, `classList`, `classNames`, `css`, merge functions `clsx`, `cn`, `tw`, `twMerge` and variant functions `cva`, `tv`. |
+| **`nestjs.json`**   | NestJS — enables unsafe parameter decorators, disables a11y rules, turns off rules that conflict with NestJS patterns. Auto-enables test domain rules (Jest).                                                                                                                   |
+| **`solidjs.json`**  | SolidJS — uses the `solid` domain. Includes SolidStart entry point overrides.                                                                                                                                                                                                   |
+| **`sanity.json`**   | Sanity CMS — uses the `react` domain. Includes overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed).                                                                                                                        |
 
 
 ## ✨ Features
@@ -86,7 +87,7 @@ Edit your `biome.json` to extend the configs you need:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
   "extends": ["@tutods/biome-config"]
 }
 ```
@@ -111,11 +112,8 @@ Add lint scripts to your `package.json`:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config",
-    "@tutods/biome-config/react"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config", "@tutods/biome-config/react"]
 }
 ```
 
@@ -123,12 +121,8 @@ Add lint scripts to your `package.json`:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config",
-    "@tutods/biome-config/react",
-    "@tutods/biome-config/tailwind"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config", "@tutods/biome-config/react", "@tutods/biome-config/tailwind"]
 }
 ```
 
@@ -138,12 +132,8 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config",
-    "@tutods/biome-config/react",
-    "@tutods/biome-config/nextjs"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config", "@tutods/biome-config/react", "@tutods/biome-config/nextjs"]
 }
 ```
 
@@ -151,7 +141,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -166,11 +156,8 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config",
-    "@tutods/biome-config/nestjs"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config", "@tutods/biome-config/nestjs"]
 }
 ```
 
@@ -178,11 +165,8 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config",
-    "@tutods/biome-config/solidjs"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config", "@tutods/biome-config/solidjs"]
 }
 ```
 
@@ -192,25 +176,23 @@ Just the base — no framework, no UI rules.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
-  "extends": [
-    "@tutods/biome-config"
-  ]
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "extends": ["@tutods/biome-config"]
 }
 ```
 
 
 ### Available configurations
 
-| Export | Config | Use for |
-|--------|--------|---------|
-| `@tutods/biome-config` | `base.json` | Any JS/TS project |
-| `@tutods/biome-config/react` | `react.json` | React (Vite, CRA, Remix) |
-| `@tutods/biome-config/nextjs` | `nextjs.json` | Next.js (use with `react`) |
-| `@tutods/biome-config/tailwind` | `tailwind.json` | Tailwind CSS projects |
-| `@tutods/biome-config/nestjs` | `nestjs.json` | NestJS backends |
-| `@tutods/biome-config/solidjs` | `solidjs.json` | SolidJS, SolidStart |
-| `@tutods/biome-config/sanity` | `sanity.json` | Sanity CMS projects |
+| Export                          | Config          | Use for                    |
+| ------------------------------- | --------------- | -------------------------- |
+| `@tutods/biome-config`          | `base.json`     | Any JS/TS project          |
+| `@tutods/biome-config/react`    | `react.json`    | React (Vite, CRA, Remix)   |
+| `@tutods/biome-config/nextjs`   | `nextjs.json`   | Next.js (use with `react`) |
+| `@tutods/biome-config/tailwind` | `tailwind.json` | Tailwind CSS projects      |
+| `@tutods/biome-config/nestjs`   | `nestjs.json`   | NestJS backends            |
+| `@tutods/biome-config/solidjs`  | `solidjs.json`  | SolidJS, SolidStart        |
+| `@tutods/biome-config/sanity`   | `sanity.json`   | Sanity CMS projects        |
 
 
 ## 🏗️ Monorepo Support
@@ -235,7 +217,7 @@ The root `biome.json` extends the base config:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -244,11 +226,7 @@ The root `biome.json` extends the base config:
   },
   "extends": ["@tutods/biome-config"],
   "files": {
-    "includes": [
-      "!**/packages/**/package.json",
-      "!**/configs/**/package.json",
-      "!**/dist"
-    ]
+    "includes": ["!**/packages/**/package.json", "!**/configs/**/package.json", "!**/dist"]
   }
 }
 ```
@@ -279,22 +257,24 @@ The `"//"` always resolves to the workspace root, regardless of nesting depth.
 When using CSS selectors with single quotes (like `class*='size-'`) in JSX attributes, you may encounter issues with Biome's formatting. To resolve this:
 
 1. Use template literals for className strings with complex selectors:
-    ```jsx
-    className={`component [&_svg:not([class*='size-'])]:size-4`}
-    ```
+
+   ```jsx
+   className={`component [&_svg:not([class*='size-'])]:size-4`}
+   ```
 
 2. Or escape the single quotes in your selectors:
-    ```jsx
-    className="component [&_svg:not([class*=\\'size-\\'])]:size-4"
-    ```
+
+   ```jsx
+   className="component [&_svg:not([class*=\\'size-\\'])]:size-4"
+   ```
 
 
 ## 📋 Compatibility
 
 This configuration package is tested with:
 
-- **Biome** v2.4.x
-- **Peer dependency** `@biomejs/biome >=2.4.16`
+- **Biome** v2.6.x
+- **Peer dependency** `@biomejs/biome >=2.6.3` (2.6 renamed `useSortedClasses` to `useTailwindSortedClasses` and moved its options to the top-level `tailwind` section, so older Biome versions reject `tailwind.json`)
 - **Node.js** v20+
 
 Uses Biome v2 features:
@@ -310,4 +290,5 @@ Uses Biome v2 features:
 Issues and pull requests are welcome at [github.com/tutods/lib](https://github.com/tutods/lib).
 
 ---
-*Last updated: Biome v2.4.x — setup examples, rule groups, and domain improvements*
+
+_Last updated: Biome v2.6.x — `useTailwindSortedClasses`, top-level `tailwind` section, rule `preset`_
