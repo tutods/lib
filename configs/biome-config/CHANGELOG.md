@@ -1,3 +1,27 @@
+## 0.15.0 (2026-10-27)
+
+### 🚀 Features
+
+- ⚠️  **biome-config:** migrate presets to Biome 2.6 ([7efa7165](https://github.com/tutods/lib/commit/7efa7165))
+
+### 🏡 Chore
+
+- **deps:** Update all non-major dependencies ([#833](https://github.com/tutods/lib/pull/833))
+- **deps:** Update all non-major dependencies ([#830](https://github.com/tutods/lib/pull/830))
+- **deps:** Update all non-major dependencies ([#826](https://github.com/tutods/lib/pull/826))
+- **release:** version packages [release] ([31e7e19c](https://github.com/tutods/lib/commit/31e7e19c))
+
+### ⚠️  Breaking Changes
+
+- **biome-config:** migrate presets to Biome 2.6  ([7efa7165](https://github.com/tutods/lib/commit/7efa7165))
+  requires @biomejs/biome >=2.6.3. The tailwind preset now
+  sorts classes in Tailwind v4 order, so consumers get a one-off
+  `biome check --write` reformat of class strings.
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.14.4 (2026-09-29)
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
