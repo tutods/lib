@@ -8,13 +8,9 @@
   "linter": {
     "rules": {
       "nursery": {
-        "useSortedClasses": {
+        "useTailwindSortedClasses": {
           "fix": "safe",
-          "level": "error",
-          "options": {
-            "attributes": ["css", "class", "classList", "classNames", "className"],
-            "functions": ["clsx", "cva", "tv", "tw", "twMerge", "cn"]
-          }
+          "level": "error"
         }
       },
       "suspicious": {
@@ -39,5 +35,10 @@
         }
       }
     }
+  },
+  "tailwind": {
+    "attributes": ["css", "class", "classList", "classNames", "className"],
+    "mergeFunctions": ["clsx", "tw", "twMerge", "cn"],
+    "variantFunctions": ["cva", "tv"]
   }
 }

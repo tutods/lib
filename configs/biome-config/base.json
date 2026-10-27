@@ -63,7 +63,7 @@
             ]
           }
         },
-        "recommended": true
+        "preset": "recommended"
       }
     }
   },
@@ -121,29 +121,29 @@
     "rules": {
       "complexity": {
         "noForEach": "off",
-        "recommended": true,
+        "preset": "recommended",
         "useSimplifiedLogicExpression": {
           "fix": "safe",
           "level": "error"
         }
       },
       "correctness": {
-        "recommended": true,
+        "preset": "recommended",
         "noUnusedImports": {
           "level": "error",
           "fix": "safe"
         }
       },
       "nursery": {
-        "recommended": true
+        "preset": "recommended"
       },
       "performance": {
         "noAccumulatingSpread": "off",
-        "recommended": true
+        "preset": "recommended"
       },
-      "recommended": true,
+      "preset": "recommended",
       "security": {
-        "recommended": true
+        "preset": "recommended"
       },
       "style": {
         "noDefaultExport": "warn",
@@ -162,7 +162,7 @@
             ]
           }
         },
-        "recommended": true,
+        "preset": "recommended",
         "useBlockStatements": {
           "fix": "safe",
           "level": "error"
@@ -190,7 +190,7 @@
           }
         },
         "noEmptyBlockStatements": "off",
-        "recommended": true
+        "preset": "recommended"
       }
     }
   },
