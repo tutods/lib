@@ -67,10 +67,12 @@ This monorepo uses **fully automated releases** powered by:
 #### 1. Release PR Workflow (`.github/workflows/release-pr.yaml`)
 
 **Triggers:**
+
 - Push to `main` branch
 - Changes in `packages/**` or `configs/**`
 
 **What it does:**
+
 1. Runs `nx release --skip-publish`
 2. Analyzes commits since last release
 3. Bumps package versions based on commit types
@@ -79,16 +81,19 @@ This monorepo uses **fully automated releases** powered by:
 6. Creates/updates PR: `release/next → main`
 
 **When it runs:**
+
 - Automatically on every push to `main`
 - Manual dispatch via GitHub Actions UI
 
 #### 2. Release Workflow (`.github/workflows/release.yaml`)
 
 **Triggers:**
+
 - PR merge: `release/next → main`
 - Manual dispatch (for retry after failures)
 
 **What it does:**
+
 1. Builds all packages
 2. Publishes to npm registry
 3. Creates git tags: `@tutods/package@version`
@@ -96,6 +101,7 @@ This monorepo uses **fully automated releases** powered by:
 5. Sets `latest` dist-tag on npm
 
 **Jobs:**
+
 - `build-and-publish` - Build and publish packages
 - `tag` - Create and push git tags (only after successful publish)
 - `github-releases` - Create GitHub releases (only after tags)
@@ -135,6 +141,7 @@ You can also trigger workflows manually:
 3. Click "Run workflow"
 
 **Note:** Use manual dispatch only for:
+
 - Retrying failed releases
 - Emergency releases
 - Testing (with caution)
@@ -178,12 +185,14 @@ Within minutes of merging:
 The release PR includes:
 
 **Updated files:**
+
 - `packages/*/package.json` - Bumped versions
 - `configs/*/package.json` - Bumped versions
 - `packages/*/CHANGELOG.md` - Generated changelogs
 - `configs/*/CHANGELOG.md` - Generated changelogs
 
 **Review checklist:**
+
 - [ ] Version bumps look correct
 - [ ] Changelogs are accurate
 - [ ] No unexpected changes
@@ -204,6 +213,7 @@ After merging the release PR:
 - GitHub releases are created
 
 **Timeline:**
+
 - Build: ~1-2 minutes
 - Publish: ~30 seconds per package
 - Total: ~2-3 minutes
@@ -300,6 +310,7 @@ If `release.yaml` fails during publish:
 - The `release/next` branch still exists
 
 **Solution:**
+
 1. Check the failure reason in workflow logs
 2. Fix the issue
 3. Push a commit to `main` or manually re-run the workflow
@@ -320,6 +331,7 @@ git commit -m "fix(components): resolve critical bug"
 ```
 
 **Why not unpublish?**
+
 - Breaking change for users
 - Cannot republish same version
 - Against npm best practices
@@ -333,6 +345,7 @@ If the release PR was merged by accident:
 - GitHub releases exist
 
 **Solution:**
+
 - Evaluate if the release is actually harmful
 - If yes, publish a fix immediately (see #2)
 - If no, accept the early release
@@ -342,6 +355,7 @@ If the release PR was merged by accident:
 ### Q: Can I publish manually?
 
 **A:** Not recommended. The automated process ensures:
+
 - Consistent versioning
 - Generated changelogs
 - Proper git tags
@@ -350,6 +364,7 @@ If the release PR was merged by accident:
 ### Q: How long does a release take?
 
 **A:** Typically 2-3 minutes:
+
 - Build: 1-2 minutes
 - Publish: 30 seconds per package
 - Tags/releases: 30 seconds
@@ -357,6 +372,7 @@ If the release PR was merged by accident:
 ### Q: What if the workflow fails?
 
 **A:** Check the logs:
+
 - **Build failure**: Fix build errors and push new commit
 - **Publish failure**: Check npm token and permissions, then re-run manually
 - **Tag failure**: Rare, but can retry manually
@@ -364,6 +380,7 @@ If the release PR was merged by accident:
 ### Q: Can I skip the release PR?
 
 **A:** No, the release PR is required for:
+
 - Reviewing version bumps
 - Checking changelogs
 - Ensuring quality
@@ -371,6 +388,7 @@ If the release PR was merged by accident:
 ### Q: How do I change the version manually?
 
 **A:** You don't. Versions are determined by:
+
 1. Conventional commit types
 2. Automated analysis by NX Release
 3. No manual intervention needed
@@ -378,12 +396,14 @@ If the release PR was merged by accident:
 ### Q: What's the difference between `release-pr.yaml` and `release.yaml`?
 
 **A:**
+
 - **`release-pr.yaml`**: Creates the release PR (version bumps + changelogs)
 - **`release.yaml`**: Publishes packages and creates tags/releases
 
 ### Q: Can I release a specific package?
 
 **A:** Not directly. The release process:
+
 1. Analyzes all packages
 2. Bumps versions for changed packages only
 3. Publishes all changed packages
@@ -391,6 +411,7 @@ If the release PR was merged by accident:
 ### Q: How do I know what version will be published?
 
 **A:** Check the release PR:
+
 1. Open the `release/next` PR
 2. Look at the `package.json` changes
 3. The version in the PR will be published

@@ -50,6 +50,7 @@ To learn more about each package, read the `README.md` file inside each package 
 ## 🛠 Development
 
 This monorepo uses:
+
 - **Nx** for managing the monorepo
 - **pnpm** as the package manager
 - **Biome** for linting and formatting
@@ -125,11 +126,9 @@ Contributions are welcome! If you'd like to contribute:
 
 Please make sure to update tests as appropriate and follow the existing code style.
 
-
 ## 🔗 More About Me
 
 [![GitHub][github]](https://github.com/tutods) [![linkedin][linkedin]](https://linkedin.com/in/daniel-sousa-tutods) [![twitter][twitter]](https://twitter.com/dsousa_12) [![instagram][instagram]](https://instagram.com/dsousa_12)
-
 
 <!-- Badges -->
 [biome]: https://img.shields.io/badge/biome%20config-000000?style=for-the-badge&logo=biome&logoColor=white

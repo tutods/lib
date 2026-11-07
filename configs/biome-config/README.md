@@ -26,7 +26,6 @@
 - [📋 Compatibility](#-compatibility)
 - [🤝 Contributing](#-contributing)
 
-
 ## 📄 Goal
 
 This configuration package stores my common configurations used on **[Biome](https://biomejs.dev)** — the fast formatter and linter for JavaScript, TypeScript, JSX, JSON, CSS, and more.
@@ -47,7 +46,6 @@ Seven composable configurations. Extend only what you need:
 | **`solidjs.json`**  | SolidJS — uses the `solid` domain. Includes SolidStart entry point overrides.                                                                                                                                                                                                   |
 | **`sanity.json`**   | Sanity CMS — uses the `react` domain. Includes overrides for `sanity.config.*`, `sanity.cli.*`, schema and studio directories (default exports allowed).                                                                                                                        |
 
-
 ## ✨ Features
 
 - 🔍 **Comprehensive Linting** — Strict rules across `complexity`, `correctness`, `style`, `suspicious`, `security`, `performance`, `nursery`, and the `types` domain
@@ -57,22 +55,24 @@ Seven composable configurations. Extend only what you need:
 - 🚀 **Biome v2 Domains** — Uses `react`, `next`, `solid`, `test`, `types` domains for automatic rule activation based on your dependencies
 - 🧪 **Nursery Rules** — `nursery.recommended` is enabled to automatically benefit from new stable-quality rules as Biome evolves
 
-
 ## ❓ How to install and use it
 
 Install the package with Biome:
 
 ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+
 ```bash
 pnpm add -D @tutods/biome-config @biomejs/biome
 ```
 
 ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
+
 ```bash
 yarn add -D @tutods/biome-config @biomejs/biome
 ```
 
 ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+
 ```bash
 npm install -D @tutods/biome-config @biomejs/biome
 ```
@@ -87,7 +87,7 @@ Edit your `biome.json` to extend the configs you need:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config"]
 }
 ```
@@ -105,14 +105,13 @@ Add lint scripts to your `package.json`:
 
 > **Note:** You can customize the scripts to fit your workflow.
 
-
 ### Examples of usage
 
 #### React project (Vite, CRA)
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config", "@tutods/biome-config/react"]
 }
 ```
@@ -121,7 +120,7 @@ Add lint scripts to your `package.json`:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config", "@tutods/biome-config/react", "@tutods/biome-config/tailwind"]
 }
 ```
@@ -132,7 +131,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config", "@tutods/biome-config/react", "@tutods/biome-config/nextjs"]
 }
 ```
@@ -141,7 +140,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": [
     "@tutods/biome-config",
     "@tutods/biome-config/react",
@@ -156,7 +155,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config", "@tutods/biome-config/nestjs"]
 }
 ```
@@ -165,7 +164,7 @@ Next.js projects extend **both** `react` and `nextjs`. The `nextjs` config inclu
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config", "@tutods/biome-config/solidjs"]
 }
 ```
@@ -176,11 +175,10 @@ Just the base — no framework, no UI rules.
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "extends": ["@tutods/biome-config"]
 }
 ```
-
 
 ### Available configurations
 
@@ -193,7 +191,6 @@ Just the base — no framework, no UI rules.
 | `@tutods/biome-config/nestjs`   | `nestjs.json`   | NestJS backends            |
 | `@tutods/biome-config/solidjs`  | `solidjs.json`  | SolidJS, SolidStart        |
 | `@tutods/biome-config/sanity`   | `sanity.json`   | Sanity CMS projects        |
-
 
 ## 🏗️ Monorepo Support
 
@@ -217,7 +214,7 @@ The root `biome.json` extends the base config:
 
 ```json
 {
-  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -249,7 +246,6 @@ Each app uses the `"extends": "//"` microsyntax to inherit from the root without
 
 The `"//"` always resolves to the workspace root, regardless of nesting depth.
 
-
 ## 🔧 Troubleshooting
 
 ### Single Quotes in CSS Selectors
@@ -268,22 +264,21 @@ When using CSS selectors with single quotes (like `class*='size-'`) in JSX attri
    className="component [&_svg:not([class*=\\'size-\\'])]:size-4"
    ```
 
-
 ## 📋 Compatibility
 
 This configuration package is tested with:
 
 - **Biome** v2.6.x
-- **Peer dependency** `@biomejs/biome >=2.6.3` (2.6 renamed `useSortedClasses` to `useTailwindSortedClasses` and moved its options to the top-level `tailwind` section, so older Biome versions reject `tailwind.json`)
+- **Peer dependency** `@biomejs/biome >=2.6.6` (2.6 renamed `useSortedClasses` to `useTailwindSortedClasses` and moved its options to the top-level `tailwind` section, so older Biome versions reject `tailwind.json`)
 - **Node.js** v20+
 
 Uses Biome v2 features:
+
 - `linter.domains` for technology-specific rule groups (`react`, `next`, `solid`, `test`, `types`)
 - `"extends": "//"` microsyntax for monorepo root inheritance
 - Promoted nursery rules (`noUselessUndefined`, `useMaxParams`, `noImportCycles`, `noUnusedExpressions`, `useConsistentArrowReturn`, `noDeprecatedImports`)
 - `assist.actions.source.organizeImports` for import sorting
 - `nursery.recommended` enabled for automatic new rule adoption
-
 
 ## 🤝 Contributing
 
