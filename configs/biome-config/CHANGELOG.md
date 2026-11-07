@@ -1,3 +1,13 @@
+## 0.15.1 (2026-11-07)
+
+### 🏡 Chore
+
+- **biome-config:** bump Biome to 2.6.6 ([028461f](https://github.com/tutods/lib/commit/028461f))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.15.0 (2026-10-27)
 
 ### 🚀 Features
