@@ -80,16 +80,19 @@ For repos in the same GitHub organization, you can also use the local preset syn
 The package is also published to npm for compatibility, although Renovate now recommends repository-hosted presets over npm-hosted presets.
 
 ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+
 ```bash
 pnpm add -D @tutods/renovate-config
 ```
 
 ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
+
 ```bash
 yarn add -D @tutods/renovate-config
 ```
 
 ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+
 ```bash
 npm install -D @tutods/renovate-config
 ```

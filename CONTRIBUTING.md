@@ -60,6 +60,7 @@ Use descriptive branch names:
 - `chore/` - Maintenance tasks
 
 Examples:
+
 ```bash
 feature/button-component
 fix/input-validation
@@ -131,6 +132,7 @@ We use **Conventional Commits** to automate versioning and changelog generation.
 ### Scopes
 
 Common scopes include:
+
 - `components` - React components
 - `biome-config` - Biome configuration
 - `typescript-config` - TypeScript configuration
@@ -236,11 +238,13 @@ Technical approach (if needed).
 This project uses **Biome** for linting and formatting. Configuration is provided by `@tutods/biome-config`.
 
 **Run linter:**
+
 ```bash
 pnpm lint
 ```
 
 **Auto-fix issues:**
+
 ```bash
 pnpm lint:fix
 ```

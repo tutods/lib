@@ -43,16 +43,19 @@ This package includes TypeScript configurations for:
 Install the package with TypeScript:
 
 ![PNPM](https://img.shields.io/badge/PNPM-000?logo=pnpm&logoSize=auto&style=for-the-badge)
+
 ```bash
 pnpm add -D @tutods/typescript-config typescript
 ```
 
 ![Yarn](https://img.shields.io/badge/yarn-000?logo=yarn&logoSize=auto&style=for-the-badge)
+
 ```bash
 yarn add -D @tutods/typescript-config typescript
 ```
 
 ![npm](https://img.shields.io/badge/npm-000?logo=npm&logoSize=auto&style=for-the-badge)
+
 ```bash
 npm install -D @tutods/typescript-config typescript
 ```

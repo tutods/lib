@@ -1,6 +1,7 @@
 # TutoDS Lib
 
 @AGENTS.md
+
 ## Project Rules — lib (`@tutods/*` packages)
 
 This repo is the source of truth for shared tooling config: `@tutods/biome-config`,
