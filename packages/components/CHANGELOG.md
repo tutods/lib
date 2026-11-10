@@ -1,3 +1,9 @@
+## 0.9.10 (2026-11-10)
+
+### 🏡 Chore
+
+- **deps:** Update all non-major dependencies ([#845](https://github.com/tutods/lib/pull/845))
+
 ## 0.9.9 (2026-11-07)
 
 ### 🏡 Chore
