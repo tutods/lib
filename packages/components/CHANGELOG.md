@@ -1,3 +1,17 @@
+## 0.9.11 (2026-11-15)
+
+### 🩹 Fixes
+
+- **components:** accept typescript-config patch releases ([#850](https://github.com/tutods/lib/pull/850))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.7.3
+
+### ❤️ Thank You
+
+- Daniel Sousa
+
 ## 0.9.10 (2026-11-15)
 
 ### 🏡 Chore
