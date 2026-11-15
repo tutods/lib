@@ -1,3 +1,13 @@
+## 0.15.2 (2026-11-15)
+
+### 🚀 Features
+
+- **biome-config:** error on nested ternaries ([25a6e6a7](https://github.com/tutods/lib/commit/25a6e6a7))
+
+### ❤️ Thank You
+
+- Daniel Sousa @TutoDS
+
 ## 0.15.1 (2026-11-07)
 
 ### 🏡 Chore
