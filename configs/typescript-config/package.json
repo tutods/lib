@@ -19,6 +19,7 @@
   "files": [
     "base.json",
     "react.json",
+    "tanstack-start.json",
     "node.json",
     "nestjs.json"
   ]

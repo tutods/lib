@@ -13,6 +13,7 @@
 - [❓ How to install and use it](#-how-to-install-and-use-it)
 - [📚 Examples of usage](#-examples-of-usage)
   - [React project](#react-project)
+  - [TanStack Start project](#tanstack-start-project)
   - [Node.js project](#nodejs-project)
   - [NestJS project](#nestjs-project)
 - [📋 Available configurations](#-available-configurations)
@@ -27,6 +28,7 @@ This package includes TypeScript configurations for:
 
 - **`base.json`**: Base TypeScript configuration with strict type checking and modern ES targets
 - **`react.json`**: Configuration optimized for React projects with JSX support
+- **`tanstack-start.json`**: `react.json` with `verbatimModuleSyntax` off, as TanStack Start recommends to keep server code out of client bundles
 - **`node.json`**: Configuration optimized for Node.js projects
 - **`nestjs.json`**: Configuration optimized for NestJS backend applications
 
@@ -79,6 +81,21 @@ Create a `tsconfig.json` file in your project root and extend the configuration 
 }
 ```
 
+### TanStack Start project
+
+```json
+{
+  "extends": "@tutods/typescript-config/tanstack-start.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
+```
+
 ### Node.js project
 
 ```json
@@ -113,9 +130,10 @@ Create a `tsconfig.json` file in your project root and extend the configuration 
 
 ## 📋 Available configurations
 
-| Config                                  | Use for                                           |
-| --------------------------------------- | ------------------------------------------------- |
-| `@tutods/typescript-config/base.json`   | Shared strict defaults for any TypeScript project |
-| `@tutods/typescript-config/react.json`  | React applications and libraries                  |
-| `@tutods/typescript-config/node.json`   | Node.js applications and packages                 |
-| `@tutods/typescript-config/nestjs.json` | NestJS backend applications                       |
+| Config                                          | Use for                                           |
+| ----------------------------------------------- | ------------------------------------------------- |
+| `@tutods/typescript-config/base.json`           | Shared strict defaults for any TypeScript project |
+| `@tutods/typescript-config/react.json`          | React applications and libraries                  |
+| `@tutods/typescript-config/tanstack-start.json` | TanStack Start applications                       |
+| `@tutods/typescript-config/node.json`           | Node.js applications and packages                 |
+| `@tutods/typescript-config/nestjs.json`         | NestJS backend applications                       |
