@@ -241,7 +241,7 @@ importers:
         specifier: ^1.0.6
         version: 1.0.6(typescript@7.0.2)
       '@tutods/typescript-config':
-        specifier: 0.7.1
+        specifier: ^0.7.1
         version: 0.7.1
 
 packages:
