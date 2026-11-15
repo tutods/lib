@@ -1,3 +1,32 @@
+## 0.7.3 (2026-11-15)
+
+### 🚀 Features
+
+- **typescript-config:** add tanstack-start variant without verbatimModuleSyntax ([cfcb6739](https://github.com/tutods/lib/commit/cfcb6739))
+
+### 🩹 Fixes
+
+- **typescript-config:** add main so nx release picks it up ([#849](https://github.com/tutods/lib/pull/849))
+- package.json warnings ([d0a4f76f](https://github.com/tutods/lib/commit/d0a4f76f))
+
+### 📖 Documentation
+
+- improve package README accuracy ([416e291a](https://github.com/tutods/lib/commit/416e291a))
+- improve documentation across the monorepo ([485df2c3](https://github.com/tutods/lib/commit/485df2c3))
+
+### 🏡 Chore
+
+- **biome-config:** bump Biome to 2.6.6 ([028461fd](https://github.com/tutods/lib/commit/028461fd))
+
+### 🎨 Styles
+
+- format with Biome 2.6 (Markdown, YAML, spaces) ([8de4e527](https://github.com/tutods/lib/commit/8de4e527))
+
+### ❤️ Thank You
+
+- Daniel Sousa
+- Daniel Sousa @TutoDS
+
 ## 0.7.1
 
 This was a version bump only for @tutods/typescript-config to align it with other projects, there were no code changes.
