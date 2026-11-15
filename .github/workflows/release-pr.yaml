@@ -73,8 +73,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set -o pipefail
           BEFORE=$(git rev-parse HEAD)
-          pnpm exec nx release --skip-publish --verbose 2>&1 | tee /tmp/version-output-raw.txt | sed 's/\x1b\[[0-9;]*m//g' > /tmp/version-output.txt
+          if ! pnpm exec nx release --skip-publish --verbose 2>&1 | tee /tmp/version-output-raw.txt | sed 's/\x1b\[[0-9;]*m//g' > /tmp/version-output.txt; then
+            cat /tmp/version-output.txt
+            echo "::error::nx release failed, see the output above."
+            exit 1
+          fi
           AFTER=$(git rev-parse HEAD)
 
           if [ "$BEFORE" = "$AFTER" ]; then
