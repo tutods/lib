@@ -151,6 +151,7 @@
           "fix": "safe",
           "level": "error"
         },
+        "noNestedTernary": "error",
         "noRestrictedImports": {
           "level": "error",
           "options": {
