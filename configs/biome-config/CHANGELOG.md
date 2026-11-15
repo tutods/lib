@@ -1,3 +1,13 @@
+## 0.15.4 (2026-11-15)
+
+### 🚀 Features
+
+- **biome-config:** enforce kebab-case filenames ([#853](https://github.com/tutods/lib/pull/853))
+
+### ❤️ Thank You
+
+- Daniel Sousa
+
 ## 0.15.3 (2026-11-15)
 
 This was a version bump only for @tutods/biome-config to align it with other projects, there were no code changes.
