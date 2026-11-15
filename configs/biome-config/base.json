@@ -176,6 +176,13 @@
           "fix": "safe",
           "level": "error"
         },
+        "useFilenamingConvention": {
+          "level": "error",
+          "options": {
+            "filenameCases": ["kebab-case"],
+            "match": "[$_]*(.+?)(?:\\[[.][a-z]+\\])?[.](.+)"
+          }
+        },
         "useImportType": {
           "fix": "safe",
           "level": "error"
