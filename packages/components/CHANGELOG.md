@@ -1,3 +1,13 @@
+## 0.9.12 (2026-11-20)
+
+### 🏡 Chore
+
+- **deps:** Update all non-major dependencies ([#859](https://github.com/tutods/lib/pull/859))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.7.4
+
 ## 0.9.11 (2026-11-15)
 
 ### 🩹 Fixes
