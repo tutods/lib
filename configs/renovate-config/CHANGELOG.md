@@ -1,3 +1,7 @@
+## 0.0.12 (2026-11-20)
+
+This was a version bump only for @tutods/renovate-config to align it with other projects, there were no code changes.
+
 ## 0.0.11 (2026-11-15)
 
 This was a version bump only for @tutods/renovate-config to align it with other projects, there were no code changes.
