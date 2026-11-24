@@ -1,3 +1,13 @@
+## 0.9.13 (2026-11-24)
+
+### 🏡 Chore
+
+- **deps:** Update dependency @tutods/typescript-config to ^0.7.4 ([#861](https://github.com/tutods/lib/pull/861))
+
+### 🧱 Updated Dependencies
+
+- Updated @tutods/typescript-config to 0.7.5
+
 ## 0.9.12 (2026-11-20)
 
 ### 🏡 Chore
